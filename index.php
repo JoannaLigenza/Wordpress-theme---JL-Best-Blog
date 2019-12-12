@@ -1,1 +1,8 @@
-<h2>Hello world</h2>
+<?php
+    get_header();
+?>
+
+<?php
+    get_template_part( 'content' );
+    get_footer();
+?>
