@@ -14,4 +14,14 @@
         <header class="header container">
             <h2><a href="<?php echo home_url() ?>"><?php bloginfo('name') ?></a></h2>
             <h5><?php bloginfo('description') ?></h5>
+            <nav>
+                <?php 
+                    wp_nav_menu(
+                        array(
+                            'theme_location' => 'header-menu',
+                            'container_class' => 'header-menu-class'
+                        )
+                    );
+                ?>
+            </nav>
         </header>
