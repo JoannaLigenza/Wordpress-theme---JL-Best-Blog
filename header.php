@@ -16,6 +16,15 @@
         <?php else : ?>
         <header class="header">
         <?php endif; ?>
+            <div class="top-menu container">
+                <?php 
+                    wp_nav_menu(
+                        array(
+                            'theme_location' => 'top-menu',
+                        )
+                    );
+                ?>
+            </div>
             <div class="header-title container">
                 <!-- Displaying logo -->
                 <?php if ( has_custom_logo() ) { ?>

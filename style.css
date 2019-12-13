@@ -51,6 +51,37 @@ a:hover {
 }
 
 
+/* Top menu layout */
+
+.top-menu {
+    background-color: #fff;
+}
+
+.top-menu ul {
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+.top-menu ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 0 10px;
+    border-right: 1px solid #999;
+    color: #696969;
+    font-size: 0.8em;
+}
+
+.top-menu ul li:last-child {
+    border-right: none;
+}
+
+.top-menu ul li a {
+    color: #696969;
+    text-transform: lowercase;
+}
+
+
 /* HEADER */
 
 .header {

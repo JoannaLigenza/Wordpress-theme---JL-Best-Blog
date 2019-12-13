@@ -9,6 +9,7 @@
     function register_my_menus() {
         register_nav_menus(
             array(
+            'top-menu'    => __( 'Top Menu' ),
             'header-menu' => __( 'Header Menu' ),
             'footer-menu' => __( 'Footer Menu' )
             )
@@ -32,21 +33,23 @@
     // Include custom header
     function set_custom_header() {
         $header_info = array(
-            'flex-width'    => true,
             'width'         => 1200,
-            'flex-height'   => true,
             'height'        => 200,
-            'default-image' => get_template_directory_uri() . '/images/logo3.png',
+            'flex-width'    => true,
+            'flex-height'   => true,
+            'default-image' => get_template_directory_uri() . '/images/winter.jpg',
             // Display the header text along with the image
             'header-text'   => true,
+            // Header text color default
+            'default-text-color' => '000',
         );
         add_theme_support( 'custom-header', $header_info );
 
         // register header(s)
         $header_images = array(
             'sunset' => array(
-                    'url'           => get_template_directory_uri() . '/images/logo3.png',
-                    'thumbnail_url' => get_template_directory_uri() . '/images/logo3.png',
+                    'url'           => get_template_directory_uri() . '/images/winter.jpg',
+                    'thumbnail_url' => get_template_directory_uri() . '/images/winter.jpg',
                     'description'   => 'Sunset',
             ),
         );
@@ -55,6 +58,7 @@
     add_action( 'after_setup_theme', 'set_custom_header' );
     
 
-
+    add_theme_support( 'post-thumbnails' );
+    add_image_size( 'size-800', 800, 170 );
 
 ?>
