@@ -11,7 +11,11 @@
 </head>
 <body <?php body_class(); ?> >
     <div class="main-container">
+        <?php if ( get_header_image() ) : ?>
+        <header class="header" style="background-image: url(<?php echo get_template_directory_uri().'/images/winter.jpg' ?>)">
+        <?php else : ?>
         <header class="header">
+        <?php endif; ?>
             <div class="header-title container">
                 <!-- Displaying logo -->
                 <?php if ( has_custom_logo() ) { ?>
@@ -26,23 +30,16 @@
                 <!-- Displaying site title and description -->
                 <?php
                     if ( display_header_text() ){ ?>
-                        <div class="title">
-                            <h2><a href="<?php echo home_url() ?>"><?php bloginfo('name') ?></a></h2>
-                            <h5><?php bloginfo('description') ?></h5>
-                        </div>                           
+                        <a href="<?php echo home_url() ?>" class="header-text">
+                            <div class="title">
+                                <h2><?php bloginfo('name') ?></h2>
+                                <h5><?php bloginfo('description') ?></h5>
+                            </div>   
+                        </a>                        
                     <?php } else{
                         //do something
                     }
                 ?>
-            </div>
-            <div class="header-image container">
-                <?php if ( get_header_image() ) : ?>
-                    <div id="site-header">
-                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                            <img src="<?php header_image(); ?>" width="<?php echo absint( get_custom_header()->width ); ?>" height="<?php echo absint( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-                        </a>
-                    </div>
-                <?php endif; ?>
             </div>
             <nav>
                 <?php 
@@ -54,4 +51,7 @@
                     );
                 ?>
             </nav>
+            <?php if ( get_header_image() ) : ?>
+                <div id="site-header" class="container"></div>
+            <?php endif; ?>
         </header>
