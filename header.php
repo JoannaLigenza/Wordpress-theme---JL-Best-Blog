@@ -18,11 +18,9 @@
         <?php endif; ?>
             <div class="top-menu container">
                 <?php 
-                    wp_nav_menu(
-                        array(
-                            'theme_location' => 'top-menu',
-                        )
-                    );
+                    if ( has_nav_menu( 'top-menu' ) ) {
+                        wp_nav_menu( array( 'theme_location' => 'top-menu' ) );
+                    }
                 ?>
             </div>
             <div class="header-title container">
