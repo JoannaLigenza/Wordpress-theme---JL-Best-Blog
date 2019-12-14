@@ -58,12 +58,18 @@
     add_action( 'after_setup_theme', 'set_custom_header' );
 
 
-    // Include custom sections in customizer - all our sections, settings, and controls will be added here
+    // Include custom sections in customizer - all the sections, settings, and controls will be added here
     function myfirsttheme_customize_register( $wp_customize ) {
         // Adding settings
         $wp_customize->add_setting( 'header_textcolor' , array(
             'default'   => '#FF00FF',
             'transport' => 'refresh',   // this will refresh customizer's preview window when changes are made
+            'type'      => 'theme_mod'
+        ) );
+
+        $wp_customize->add_setting( 'menu_background_color' , array(
+            'default'   => '#A8C5FF',
+            'transport' => 'refresh',
             'type'      => 'theme_mod'
         ) );
 
@@ -76,12 +82,21 @@
         // Adding sections
         $wp_customize->add_section( 'header' , array(
             'title'      => __( 'Header', 'myfirsttheme' ),
-            'priority'   => 30,
+            'priority'   => 50,
         ) );
 
         // Adding control
-        $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'default', array(
-            'label'      => __( 'Header searchbox', 'myfirsttheme' ),
+        $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'menu_background_color', array(
+            'label'      => __( 'Menu background color', 'myfirsttheme' ),
+            // 'description' => __( 'Searchbox' ),
+            'section'    => 'colors',
+            'settings'   => 'menu_background_color',
+            // 'type'       => ''                       // do not set type for color picker
+        ) ) );
+
+        $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'header_searchbox', array(
+            'label'      => __( 'Display header searchbox', 'myfirsttheme' ),
+            // 'description' => __( 'Searchbox' ),
             'section'    => 'header',
             'settings'   => 'header_searchbox',
             'type'       => 'checkbox'

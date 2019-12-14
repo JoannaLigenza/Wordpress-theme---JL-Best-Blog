@@ -163,9 +163,12 @@ a:hover {
     top: 2px;
 }
 
+
+/* Navigation */
+
 nav {
     margin-bottom: 20px;
-    background-color: #A8C5FF;
+    /* background-color: #A8C5FF; */
 }
 
 .menu {

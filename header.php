@@ -55,7 +55,7 @@
                     }
                 ?>
             </div>
-            <nav>
+            <nav style="background-color: <?php echo get_theme_mod( 'menu_background_color', '#A8C5FF' ) ?>">
                 <?php 
                     wp_nav_menu(
                         array(
