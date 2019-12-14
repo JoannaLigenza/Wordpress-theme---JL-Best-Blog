@@ -11,6 +11,7 @@
 </head>
 <body <?php body_class(); ?> >
     <div class="main-container">
+        <!-- displaying header image -->
         <?php if ( get_header_image() ) : ?>
         <header class="header" style="background-image: url(<?php echo get_template_directory_uri().'/images/winter.jpg' ?>)">
         <?php else : ?>
@@ -24,7 +25,7 @@
                 ?>
             </div>
             <div class="header-title container">
-                <!-- Displaying logo -->
+                <!-- displaying logo -->
                 <?php if ( has_custom_logo() ) { ?>
                     <div class="logo">
                         <?php
@@ -34,7 +35,7 @@
                         ?>
                     </div>
                 <?php } ?>
-                <!-- Displaying site title and description -->
+                <!-- displaying site title and description -->
                 <?php
                     if ( display_header_text() ){ ?>
                         <a href="<?php echo home_url() ?>" class="header-text">
@@ -47,8 +48,12 @@
                         //do something
                     }
                 ?>
-                <!-- Displaying search form -->
-                <?php get_search_form(); ?>
+                <!-- displaying search form -->
+                <?php 
+                    if (get_theme_mod( 'header_searchbox' )) {
+                        get_search_form(); 
+                    }
+                ?>
             </div>
             <nav>
                 <?php 

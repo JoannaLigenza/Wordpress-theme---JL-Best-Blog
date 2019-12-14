@@ -56,9 +56,31 @@
         register_default_headers( $header_images );
     }
     add_action( 'after_setup_theme', 'set_custom_header' );
-    
 
-    add_theme_support( 'post-thumbnails' );
-    add_image_size( 'size-800', 800, 170 );
+
+    // Include custom sections in customizer - all our sections, settings, and controls will be added here
+    function myfirsttheme_customize_register( $wp_customize ) {
+        // Adding settings
+        $wp_customize->add_setting( 'header_searchbox' , array(
+            'default'   => true,
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
+        // Adding sections
+        $wp_customize->add_section( 'header' , array(
+            'title'      => __( 'Header', 'myfirsttheme' ),
+            'priority'   => 30,
+        ) );
+
+        // Adding control
+        $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'default', array(
+            'label'      => __( 'Header searchbox', 'myfirsttheme' ),
+            'section'    => 'header',
+            'settings'   => 'header_searchbox',
+            'type'       => 'checkbox'
+        ) ) );
+    }
+    add_action( 'customize_register', 'myfirsttheme_customize_register' );
 
 ?>
