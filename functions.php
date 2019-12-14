@@ -61,6 +61,12 @@
     // Include custom sections in customizer - all our sections, settings, and controls will be added here
     function myfirsttheme_customize_register( $wp_customize ) {
         // Adding settings
+        $wp_customize->add_setting( 'header_textcolor' , array(
+            'default'   => '#FF00FF',
+            'transport' => 'refresh',   // this will refresh customizer's preview window when changes are made
+            'type'      => 'theme_mod'
+        ) );
+
         $wp_customize->add_setting( 'header_searchbox' , array(
             'default'   => true,
             'transport' => 'refresh',
