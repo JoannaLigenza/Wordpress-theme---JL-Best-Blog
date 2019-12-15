@@ -135,4 +135,27 @@
     }
     add_action( 'customize_register', 'myfirsttheme_customize_register' );
 
+
+    // Register sidebars
+    function myfirsttheme_widgets_init() {
+        register_sidebar( array(
+            'name'          => __( 'Left Sidebar', 'myfirsttheme' ),
+            'id'            => 'sidebar-left',
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h3 class="widget-title">',
+            'after_title'   => '</h3>',
+        ) );
+    
+        register_sidebar( array(
+            'name'          => __( 'Right Sidebar', 'myfirsttheme' ),
+            'id'            => 'sidebar-right',
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h3 class="widget-title">',
+            'after_title'   => '</h3>',
+        ) );
+    }
+    add_action( 'widgets_init', 'myfirsttheme_widgets_init' );
+
 ?>
