@@ -79,10 +79,27 @@
             'type'      => 'theme_mod'
         ) );
 
+        $wp_customize->add_setting( 'left-column' , array(
+            'default'   => false,
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
+        $wp_customize->add_setting( 'right-column' , array(
+            'default'   => false,
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
         // Adding sections
         $wp_customize->add_section( 'header' , array(
             'title'      => __( 'Header', 'myfirsttheme' ),
             'priority'   => 50,
+        ) );
+
+        $wp_customize->add_section( 'layout' , array(
+            'title'      => __( 'Layout', 'myfirsttheme' ),
+            'priority'   => 60,
         ) );
 
         // Adding control
@@ -99,6 +116,20 @@
             // 'description' => __( 'Searchbox' ),
             'section'    => 'header',
             'settings'   => 'header_searchbox',
+            'type'       => 'checkbox'
+        ) ) );
+
+        $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'left_column', array(
+            'label'      => __( 'Display left column', 'myfirsttheme' ),
+            'section'    => 'layout',
+            'settings'   => 'left-column',
+            'type'       => 'checkbox'
+        ) ) );
+
+        $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'right_column', array(
+            'label'      => __( 'Display right column', 'myfirsttheme' ),
+            'section'    => 'layout',
+            'settings'   => 'right-column',
             'type'       => 'checkbox'
         ) ) );
     }
