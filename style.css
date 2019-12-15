@@ -136,7 +136,8 @@ a:hover {
 
 .search-input {
     padding: 10px 5px;
-    width: 300px;
+    min-width: 300px;
+    width: 100%;
 }
 
 .search-input:focus {
@@ -172,28 +173,26 @@ nav {
 
 .menu {
     text-align: center;
-    margin: 0;
     padding: 0;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.menu-item, .page-item, .page-item-2 {
+.menu-item, .page-item {
     list-style: none;
     display: inline-block;
     padding: 30px 20px;
 }
 
-.menu-item a, .page-item a, .page-item-2 a {
-    /* color: #FFD77C; */
+.menu-item a, .page-item a {
     color: #fff;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-.menu-item a:hover {
+.menu-item a:hover, .page-item a:hover {
     text-decoration: none;
     color: #AD000B;
 }
@@ -212,11 +211,13 @@ nav {
 
 .main-content--section {
     flex: 1;
+    padding: 0 10px;
 }
 
-.aside {
+.column {
     min-width: 300px;
     width: 300px;
+    padding: 0 10px;
 }
 
 @media screen and (max-width: 1199px) {
@@ -225,10 +226,78 @@ nav {
         flex: 1 0 100%;
     }
 
-    .aside {
+    .column {
         order: 2;
         flex: 1;
     }
+}
+
+/* Content */
+
+.article-section {
+    padding: 10px 0;
+    border-bottom: 1px solid #999;
+}
+
+/* Column */
+
+.widget {
+    padding: 15px 0;
+}
+
+.widget > * {
+    padding-left: 10px;
+}
+
+.widget-title {
+    border-bottom: 2px solid #AD000B;
+    padding: 15px 10px;
+    margin: 0;
+}
+
+.widget ul {
+    padding: 0;
+}
+
+.widget li {
+    list-style: none;
+    padding: 10px;
+}
+
+.widget p {
+    margin: 0;
+}
+
+.widget a {
+    color: #111;
+}
+
+.widget a:hover {
+    color: #AD000B;
+}
+
+.widget form {
+    padding-left: 0;
+}
+
+.widget .search-input {
+    min-width: 250px;
+}
+
+.widget h3 ~ div, .widget h3 ~ a, .widget h3 ~ img {
+    padding-top: 25px;
+}
+
+.widget_nav_menu li {
+    display: block;
+    text-transform: lowercase;
+    text-align: left;
+}
+
+.widget_nav_menu a {
+    font-weight: 400;
+    text-transform: lowercase;
+    letter-spacing: unset;
 }
 
 
