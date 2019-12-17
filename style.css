@@ -232,13 +232,6 @@ nav {
     }
 }
 
-/* Content */
-
-.article-section {
-    padding: 10px 0;
-    border-bottom: 1px solid #999;
-}
-
 /* Column */
 
 .widget {
@@ -298,6 +291,29 @@ nav {
     font-weight: 400;
     text-transform: lowercase;
     letter-spacing: unset;
+}
+
+/* Content */
+
+.article-section {
+    padding: 10px 0;
+    border-bottom: 1px solid #999;
+}
+
+
+/* Pagination */
+.pagination {
+    text-align: center;
+    padding: 40px 10px;
+    margin: 0;
+}
+
+.pagination h2 {
+    display: none;
+}
+
+.pagination .page-numbers  {
+    padding: 10px 15px;
 }
 
 

@@ -158,4 +158,31 @@
     }
     add_action( 'widgets_init', 'myfirsttheme_widgets_init' );
 
+
+    // Add custom style
+    function myfisttheme_set_pagination_style() {
+        wp_enqueue_style(
+            'pagination-style',
+            get_template_directory_uri() . '/css/custom_script.css'
+        );
+            $color = get_theme_mod( 'menu_background_color' );
+            $custom_css = "
+                    .page-numbers {
+                        border: 1px solid {$color};
+                    }
+                    .page-numbers:hover {
+                        background-color: {$color};
+                        text-decoration: none;
+                    }
+                    .current {
+                        background-color: {$color};
+                    }
+                    .dots:hover {
+                        background-color: unset;
+                    }
+                    ";
+            wp_add_inline_style( 'pagination-style', $custom_css );
+    }
+    add_action( 'wp_enqueue_scripts', 'myfisttheme_set_pagination_style' );
+
 ?>

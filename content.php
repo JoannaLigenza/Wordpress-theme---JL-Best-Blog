@@ -20,6 +20,7 @@
                     the_excerpt('<p>', '</p>');
                     echo "</section>";
                 endwhile; 
+                the_posts_pagination(array( 'mid_size' => 2 ));  
             else :
                 echo '<p>No content</p>';
             endif; 
