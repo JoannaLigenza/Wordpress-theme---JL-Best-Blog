@@ -15,9 +15,16 @@
             if ( have_posts() ) : 
                 while ( have_posts() ) : the_post(); 
                     echo "<section class='article-section'>";
-                    echo "<h2><a href='".get_permalink()."'>".get_the_title()."</a></h2>"; 
-                    the_post_thumbnail(); 
-                    the_excerpt('<p>', '</p>');
+                        if ( has_post_thumbnail() ) {
+                            echo "<div class='image-container'>" ;
+                                echo the_post_thumbnail( 'medium' );
+                            echo "</div>" ;
+                            echo "<div><article class='article article-padding'>";
+                        }
+                        echo "<div><article class='article'>";
+                        echo "<h2><a href='".get_permalink()."'>".get_the_title()."</a></h2>"; 
+                        the_excerpt('<p>', '</p>');
+                        echo "</article></div>";
                     echo "</section>";
                 endwhile; 
                 the_posts_pagination(array( 'mid_size' => 2 ));  

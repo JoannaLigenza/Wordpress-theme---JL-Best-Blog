@@ -185,4 +185,8 @@
     }
     add_action( 'wp_enqueue_scripts', 'myfisttheme_set_pagination_style' );
 
+
+    // Include post thumbnails
+    add_theme_support( 'post-thumbnails' );
+
 ?>

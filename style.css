@@ -296,8 +296,25 @@ nav {
 /* Content */
 
 .article-section {
-    padding: 10px 0;
+    display: flex;
     border-bottom: 1px solid #999;
+}
+
+.image-container {
+    width: 300px;
+    min-width: 300px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.article {
+    padding: 10px 0;
+}
+
+.article-padding{
+    padding-left: 10px;
 }
 
 
