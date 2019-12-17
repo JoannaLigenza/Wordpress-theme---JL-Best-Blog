@@ -16,9 +16,9 @@
                 while ( have_posts() ) : the_post(); 
                     echo "<section class='article-section'>";
                         if ( has_post_thumbnail() ) {
-                            echo "<div class='image-container'>" ;
+                            echo "<div class='image-container'><a href='".get_permalink()."'>" ;
                                 echo the_post_thumbnail( 'medium' );
-                            echo "</div>" ;
+                            echo "</div></a>" ;
                             echo "<div><article class='article article-padding'>";
                         }
                         echo "<div><article class='article'>";
