@@ -34,7 +34,7 @@
     function myfirsttheme_set_custom_header() {
         $header_info = array(
             'width'         => 1200,
-            'height'        => 200,
+            'height'        => 700,
             'flex-width'    => true,
             'flex-height'   => true,
             'default-image' => get_template_directory_uri() . '/images/winter.jpg',

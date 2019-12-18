@@ -13,7 +13,7 @@
     <div class="main-container">
         <!-- displaying header image -->
         <?php if ( get_header_image() ) : ?>
-        <header class="header" style="background-image: url(<?php echo get_template_directory_uri().'/images/winter.jpg' ?>)">
+        <header class="header" style="background-image: url(<?php echo get_custom_header()->url ?>)">
         <?php else : ?>
         <header class="header">
         <?php endif; ?>

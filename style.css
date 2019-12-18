@@ -55,6 +55,7 @@ a:hover {
 
 .header {
     border-bottom: 2px solid #999;
+    background-size: 1200px auto;
     background-repeat: no-repeat;
     background-position: top center;
     background-attachment: fixed;
