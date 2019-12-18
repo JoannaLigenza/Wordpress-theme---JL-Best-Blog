@@ -300,6 +300,10 @@ nav {
     border-bottom: 1px solid #999;
 }
 
+.image-above {
+    flex-direction: column;
+}
+
 .image-container {
     width: 300px;
     min-width: 300px;
@@ -307,6 +311,18 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.image-container-above {
+    width: 100%;
+    min-width: unset;
+    height: auto;
+    padding-top: 50px;
+}
+
+.article-section .wp-post-image {
+    max-width: 100%;
+    height: auto;
 }
 
 .article {

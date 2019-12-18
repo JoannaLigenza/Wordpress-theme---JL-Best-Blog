@@ -91,6 +91,12 @@
             'type'      => 'theme_mod'
         ) );
 
+        $wp_customize->add_setting( 'front-page-and-archive-image' , array(
+            'default'   => 'left',
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
         // Adding panel
         $wp_customize->add_panel( 'header', array(
             'title' => __( 'Header' ),
@@ -98,7 +104,7 @@
         ) );
 
         $wp_customize->add_panel( 'appearance', array(
-            'title' => __( 'Appearanse Settings' ),
+            'title' => __( 'Appearance Settings' ),
             // 'description' => $description, // Include html tags such as <p>.
             'priority' => 50, // Mixed with top-level-section hierarchy.
         ) );
@@ -119,45 +125,61 @@
         $wp_customize->add_section( 'colors' , array(
             'title'      => __( 'Colors', 'myfirsttheme' ),
             'panel' => 'appearance',
-            'priority'   => 40,
+            'priority'   => 10,
         ) );
 
         $wp_customize->add_section( 'layout' , array(
             'title'      => __( 'Layout', 'myfirsttheme' ),
             'panel' => 'appearance',
-            'priority'   => 60,
+            'priority'   => 20,
         ) );
 
-        // Adding control
+        $wp_customize->add_section( 'front-page-and-archive-settings' , array(
+            'title'      => __( 'Front Page and Archive Pages', 'myfirsttheme' ),
+            'panel' => 'appearance',
+            'priority'   => 30,
+        ) );
+
+        // Adding controls
         $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'menu_background_color', array(
             'label'      => __( 'Menu background color', 'myfirsttheme' ),
-            // 'description' => __( 'Searchbox' ),
             'section'    => 'colors',
             'settings'   => 'menu_background_color',
             // 'type'       => ''                       // do not set type for color picker
         ) ) );
 
-        $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'header_searchbox', array(
+        $wp_customize->add_control( 'header_searchbox', array(
             'label'      => __( 'Display header searchbox', 'myfirsttheme' ),
-            // 'description' => __( 'Searchbox' ),
             'section'    => 'header',
             'settings'   => 'header_searchbox',
             'type'       => 'checkbox'
-        ) ) );
+        ) );
 
-        $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'left_column', array(
+        $wp_customize->add_control( 'left_column', array(
             'label'      => __( 'Display left column', 'myfirsttheme' ),
             'section'    => 'layout',
             'settings'   => 'left-column',
             'type'       => 'checkbox'
-        ) ) );
+        ) );
 
-        $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'right_column', array(
+        $wp_customize->add_control( 'right_column', array(
             'label'      => __( 'Display right column', 'myfirsttheme' ),
             'section'    => 'layout',
             'settings'   => 'right-column',
             'type'       => 'checkbox'
-        ) ) );
+        ) );
+
+        $wp_customize->add_control( 'front-page-and-archive-image', array(
+            'label'      => __( 'Post Image Position on Front Page and Archives Pages', 'myfirsttheme' ),
+            'section'    => 'layout',
+            'settings'   => 'front-page-and-archive-image',
+            'type'       => 'radio',
+            'choices'    => array(
+                'left' => 'Left side',
+                'above' => 'Above text',
+            ),
+        ) );
+        
     }
     add_action( 'customize_register', 'myfirsttheme_customize_register' );
 

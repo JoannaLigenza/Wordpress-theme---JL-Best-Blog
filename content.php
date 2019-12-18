@@ -14,17 +14,23 @@
         <?php 
             if ( have_posts() ) : 
                 while ( have_posts() ) : the_post(); 
-                    echo "<section class='article-section'>";
+                    $imagePosition = get_theme_mod( 'front-page-and-archive-image' );
+                    echo "<section class='article-section image-".$imagePosition."'>";
                         if ( has_post_thumbnail() ) {
-                            echo "<div class='image-container'><a href='".get_permalink()."'>" ;
-                                echo the_post_thumbnail( 'medium' );
+                            echo "<div class='image-container image-container-".$imagePosition."'><a href='".get_permalink()."'>" ;
+                                if ($imagePosition === 'above') {
+                                    echo the_post_thumbnail( 'full' );
+                                } else {
+                                    echo the_post_thumbnail( 'medium' );
+                                }
                             echo "</div></a>" ;
-                            echo "<div><article class='article article-padding'>";
+                            echo "<article class='article article-padding'>";
+                        } else {
+                            echo "<article class='article'>";
                         }
-                        echo "<div><article class='article'>";
                         echo "<h2><a href='".get_permalink()."'>".get_the_title()."</a></h2>"; 
                         the_excerpt('<p>', '</p>');
-                        echo "</article></div>";
+                        echo "</article>";
                     echo "</section>";
                 endwhile; 
                 the_posts_pagination(array( 'mid_size' => 2 ));  
