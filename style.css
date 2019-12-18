@@ -340,6 +340,19 @@ nav {
     padding-left: 10px;
 }
 
+@media screen and (max-width: 768px) {
+    .article-section {
+        flex-direction: column;
+    }
+
+    .image-container {
+        width: 100%;
+        min-width: unset;
+        height: auto;
+        padding-top: 50px;
+    }
+}
+
 
 /* Pagination */
 .pagination {
