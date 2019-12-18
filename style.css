@@ -21,6 +21,7 @@ html, body {
     font-size: 16px;
     margin: 0;
     padding: 0;
+    background-color: #fff;
 }
 
 p {
@@ -310,6 +311,11 @@ nav {
     height: auto;
     display: flex;
     justify-content: center;
+}
+
+.image-container a {
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -321,8 +327,9 @@ nav {
 }
 
 .article-section .wp-post-image {
-    max-width: 100%;
+    width: 100%;
     height: auto;
+    padding: 10px 0;
 }
 
 .article {
