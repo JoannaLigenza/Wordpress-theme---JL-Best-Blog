@@ -91,14 +91,40 @@
             'type'      => 'theme_mod'
         ) );
 
+        // Adding panel
+        $wp_customize->add_panel( 'header', array(
+            'title' => __( 'Header' ),
+            'priority' => 40, // Mixed with top-level-section hierarchy.
+        ) );
+
+        $wp_customize->add_panel( 'appearance', array(
+            'title' => __( 'Appearanse Settings' ),
+            // 'description' => $description, // Include html tags such as <p>.
+            'priority' => 50, // Mixed with top-level-section hierarchy.
+        ) );
+
         // Adding sections
         $wp_customize->add_section( 'header' , array(
-            'title'      => __( 'Header', 'myfirsttheme' ),
+            'title'      => __( 'Header Search Box', 'myfirsttheme' ),
+            'panel' => 'header',
             'priority'   => 50,
+        ) );
+
+        $wp_customize->add_section( 'header_image' , array(
+            'title'      => __( 'Header Image', 'myfirsttheme' ),
+            'panel' => 'header',
+            'priority'   => 50,
+        ) );
+
+        $wp_customize->add_section( 'colors' , array(
+            'title'      => __( 'Colors', 'myfirsttheme' ),
+            'panel' => 'appearance',
+            'priority'   => 40,
         ) );
 
         $wp_customize->add_section( 'layout' , array(
             'title'      => __( 'Layout', 'myfirsttheme' ),
+            'panel' => 'appearance',
             'priority'   => 60,
         ) );
 
