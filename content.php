@@ -11,11 +11,9 @@
     ?>
     <!-- main content -->
     <main class="main-content--section">
-        <?php 
+        <?php
             if ( have_posts() ) : 
                 while ( have_posts() ) : the_post(); 
-                    // print_r( wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium' ) );
-                    // print_r( wp_get_attachment_metadata(get_post_thumbnail_id()) );
                     $imagePosition = get_theme_mod( 'front-page-and-archive-image' );
                     echo "<section class='article-section image-".$imagePosition."'>";
                         if ( has_post_thumbnail() ) {

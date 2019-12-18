@@ -340,6 +340,19 @@ nav {
     padding-left: 10px;
 }
 
+.read-more-button {
+    padding: 10px;
+    display: inline-block;
+    color: #111;
+    transition-duration: .5s;
+}
+
+.read-more-button:hover {
+    /* transform: translateX(2px); */
+    padding-left: 15px;
+    transition-duration: .5s;
+}
+
 @media screen and (max-width: 768px) {
     .article-section {
         flex-direction: column;

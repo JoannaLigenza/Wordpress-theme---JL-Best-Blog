@@ -97,6 +97,12 @@
             'type'      => 'theme_mod'
         ) );
 
+        $wp_customize->add_setting( 'excerpt-length' , array(
+            'default'   => '55',
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
         // Adding panel
         $wp_customize->add_panel( 'header', array(
             'title' => __( 'Header' ),
@@ -179,6 +185,12 @@
                 'above' => 'Above text',
             ),
         ) );
+
+        $wp_customize->add_control( 'excerpt-length', array(
+            'label'      => __( 'Choose Excerpt Length', 'myfirsttheme' ),
+            'section'    => 'layout',
+            'settings'   => 'excerpt-length',
+        ) );
         
     }
     add_action( 'customize_register', 'myfirsttheme_customize_register' );
@@ -236,5 +248,23 @@
 
     // Include post thumbnails
     add_theme_support( 'post-thumbnails' );
+
+    // Set post excerpt length
+    function wpdocs_custom_excerpt_length( $length ) {
+        $excerptLength = get_theme_mod( 'excerpt-length' );
+        return $excerptLength;
+    }
+    add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length');
+
+    function wpdocs_excerpt_more( $more ) {
+        $excerptLength = get_theme_mod( 'excerpt-length' );
+        if ($excerptLength === '0') {
+            return '';
+        } else {
+            return "<a href='".get_permalink()."'><div class='read-more-button' style='border: 1px solid ".get_theme_mod( 'menu_background_color', '#696969' )."'> Czytaj dalej...</div></a>";
+        }
+    }
+    add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+
 
 ?>
