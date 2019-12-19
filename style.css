@@ -340,6 +340,29 @@ nav {
     padding-left: 10px;
 }
 
+.post-meta > div {
+    display: inline-block;
+    padding-right: 10px;
+    font-weight: bold;
+    color: #8E8E8E;
+}
+
+.meta-author::before {
+    content: url("images/person-icon.png");
+    width: 25px;
+    height: 25px;
+    position: relative;
+    bottom: -2px;
+}
+
+.meta-date::before {
+    content: url("images/calendar-icon.png");
+    width: 25px;
+    height: 25px;
+    position: relative;
+    bottom: -2px;
+}
+
 .read-more-button {
     padding: 10px;
     display: inline-block;
@@ -348,7 +371,6 @@ nav {
 }
 
 .read-more-button:hover {
-    /* transform: translateX(2px); */
     padding-left: 15px;
     transition-duration: .5s;
 }

@@ -91,6 +91,12 @@
             'type'      => 'theme_mod'
         ) );
 
+        $wp_customize->add_setting( 'post-meta' , array(
+            'default'   => true,
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
         $wp_customize->add_setting( 'front-page-and-archive-image' , array(
             'default'   => 'left',
             'transport' => 'refresh',
@@ -172,6 +178,13 @@
             'label'      => __( 'Display right column', 'myfirsttheme' ),
             'section'    => 'layout',
             'settings'   => 'right-column',
+            'type'       => 'checkbox'
+        ) );
+
+        $wp_customize->add_control( 'post-meta', array(
+            'label'      => __( 'Enable post meta', 'myfirsttheme' ),
+            'section'    => 'layout',
+            'settings'   => 'post-meta',
             'type'       => 'checkbox'
         ) );
 
@@ -261,7 +274,7 @@
         if ($excerptLength === '0') {
             return '';
         } else {
-            return "<a href='".get_permalink()."'><div class='read-more-button' style='border: 1px solid ".get_theme_mod( 'menu_background_color', '#696969' )."'> Czytaj dalej...</div></a>";
+            return "<a href='".get_permalink()."'><div class='read-more-button' style='border: 1px solid ".get_theme_mod( 'menu_background_color', '#696969' )."'> Read more...</div></a>";
         }
     }
     add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );

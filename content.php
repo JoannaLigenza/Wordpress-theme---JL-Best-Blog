@@ -31,6 +31,12 @@
                             echo "<article class='article'>";
                         }
                         echo "<h2><a href='".get_permalink()."'>".get_the_title()."</a></h2>"; 
+                        if (get_theme_mod( 'post-meta' )) {
+                            echo "<div class='post-meta'>";
+                                echo "<div class='meta-author'> ".get_the_author()." </div>";
+                                echo "<div class='meta-date'> ".get_the_time('j-m-Y')."</div>";
+                            echo "</div>";
+                        }
                         the_excerpt('<p>', '</p>');
                         echo "</article>";
                     echo "</section>";
