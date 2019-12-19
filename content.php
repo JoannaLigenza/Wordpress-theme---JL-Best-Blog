@@ -11,9 +11,10 @@
     ?>
     <!-- main content -->
     <main class="main-content--section">
-        <?php
+        <?php 
             if ( have_posts() ) : 
                 while ( have_posts() ) : the_post(); 
+                // print_r($query);
                     $imagePosition = get_theme_mod( 'front-page-and-archive-image' );
                     echo "<section class='article-section image-".$imagePosition."'>";
                         if ( has_post_thumbnail() ) {
@@ -32,9 +33,11 @@
                         }
                         echo "<h2><a href='".get_permalink()."'>".get_the_title()."</a></h2>"; 
                         if (get_theme_mod( 'post-meta' )) {
+                            $id = get_the_author_meta('ID');
+                            $date = get_the_date( 'Y/m' );
                             echo "<div class='post-meta'>";
-                                echo "<div class='meta-author'> ".get_the_author()." </div>";
-                                echo "<div class='meta-date'> ".get_the_time('j-m-Y')."</div>";
+                                echo "<div class='meta-author'><a href='?author=".$id."'> ".get_the_author()." </a></div>";
+                                echo "<div class='meta-date'><a href='".get_home_url()."/index.php/".$date."'> ".get_the_time('j-m-Y')."</a></div>";
                             echo "</div>";
                         }
                         the_excerpt('<p>', '</p>');

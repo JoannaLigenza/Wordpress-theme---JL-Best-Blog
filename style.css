@@ -375,6 +375,10 @@ nav {
     transition-duration: .5s;
 }
 
+.specific-pages-title {
+    color: #696969;
+}
+
 @media screen and (max-width: 768px) {
     .article-section {
         flex-direction: column;
