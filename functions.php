@@ -1,9 +1,16 @@
 <?php
     // Include styles
-    function enqueue_style_myTheme() {
+    function enqueue_style_myfirsttheme() {
         wp_enqueue_style( 'style', get_stylesheet_uri() );
     }
-    add_action( 'wp_enqueue_scripts', 'enqueue_style_myTheme' );
+    add_action( 'wp_enqueue_scripts', 'enqueue_style_myfirsttheme' );
+
+    // Include scripts
+    function enqueue_script_myfirsttheme() {
+        wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', true);
+    }
+    add_action( 'wp_enqueue_scripts', 'enqueue_script_myfirsttheme' );
+
 
     // Include menus
     function myfirsttheme_register_my_menus() {
