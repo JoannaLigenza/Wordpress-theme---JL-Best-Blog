@@ -36,10 +36,11 @@
                     </div>
                 <?php } ?>
                 <!-- displaying site title and description -->
+                <div class="title">
                 <?php
                     if ( display_header_text() ){ ?>
                         <a href="<?php echo home_url() ?>" class="header-text">
-                            <div class="title">
+                            <div>
                                 <h2 style="color: #<?php echo get_theme_mod( 'header_textcolor' ) ?>"><?php bloginfo('name') ?></h2>
                                 <h5 style="color: #<?php echo get_theme_mod( 'header_textcolor' ) ?>"><?php bloginfo('description') ?></h5>
                             </div>   
@@ -54,6 +55,7 @@
                         get_search_form(); 
                     }
                 ?>
+                </div>
             </div>
             <nav style="background-color: <?php echo get_theme_mod( 'menu_background_color', '#A8C5FF' ) ?>">
                 <?php 
