@@ -1,4 +1,15 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-    console.log('DOM fully loaded and parsed');
+    
+    // Toggle mobile menu
+    const toggleMobileMenu = () => {
+        const mobileMenuIcon = document.getElementById("mobile-menu-icon");
+        const navigation = document.getElementById("navigation");
+        mobileMenuIcon.addEventListener("click", function() {
+            navigation.classList.toggle("isVisible");
+        }, true);
+    }
+    toggleMobileMenu();
+
+
 });
 

@@ -17,6 +17,13 @@
         <?php else : ?>
         <header class="header">
         <?php endif; ?>
+            <div class="mobile-menu-container" style="background-color: <?php echo get_theme_mod( 'menu_background_color', '#A8C5FF' ) ?>">
+                <div class="mobile-menu-icon" id="mobile-menu-icon">
+                    <span class="mobile-menu-icon-strip"></span>
+                    <span class="mobile-menu-icon-strip"></span>
+                    <span class="mobile-menu-icon-strip"></span>
+                </div>
+            </div>
             <div class="top-menu container">
                 <?php 
                     if ( has_nav_menu( 'top-menu' ) ) {
@@ -57,7 +64,7 @@
                 ?>
                 </div>
             </div>
-            <nav style="background-color: <?php echo get_theme_mod( 'menu_background_color', '#A8C5FF' ) ?>">
+            <nav id="navigation" style="background-color: <?php echo get_theme_mod( 'menu_background_color', '#A8C5FF' ) ?>">
                 <?php 
                     wp_nav_menu(
                         array(
