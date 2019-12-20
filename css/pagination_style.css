@@ -1,0 +1,28 @@
+/* Pagination */
+.pagination {
+    text-align: center;
+    padding: 40px 10px;
+    margin: 0;
+}
+
+.pagination h2 {
+    display: none;
+}
+
+.pagination .page-numbers  {
+    padding: 10px 15px;
+    margin: 10px 0;
+    display: inline-block;
+}
+
+.pagination .prev, .pagination .next {
+    width: 95px;
+}
+
+.pagination .prev {
+    margin-right: 10px;
+}
+
+.pagination .next {
+    margin-left: 10px;
+}

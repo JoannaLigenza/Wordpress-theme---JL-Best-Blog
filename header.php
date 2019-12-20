@@ -64,7 +64,7 @@
                 ?>
                 </div>
             </div>
-            <nav id="navigation" style="background-color: <?php echo get_theme_mod( 'menu_background_color', '#A8C5FF' ) ?>">
+            <nav id="navigation" class="menu-navigation" style="background-color: <?php echo get_theme_mod( 'menu_background_color', '#A8C5FF' ) ?>">
                 <?php 
                     wp_nav_menu(
                         array(

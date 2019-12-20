@@ -241,6 +241,10 @@
 
     // Add custom inline style
     function myfisttheme_set_pagination_style() {
+        wp_enqueue_style(
+            'pagination-style',
+            get_template_directory_uri() . '/css/pagination_style.css'
+        );
             $color = get_theme_mod( 'menu_background_color' );
             $custom_css = "
                     .page-numbers {

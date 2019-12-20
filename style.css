@@ -51,12 +51,6 @@ a:hover {
     margin: 0 auto;
 }
 
-.isVisible {
-    max-height: 999px;
-    height: auto;
-    transition: max-height .75s;
-}
-
 /* //////////////////  HEADER  ////////////////////// */
 
 .header {
@@ -280,7 +274,7 @@ a:hover {
 
 /* Navigation */
 
-nav {
+.menu-navigation {
     margin-bottom: 20px;
     height: auto;
 }
@@ -316,7 +310,7 @@ nav {
 }
 
 @media screen and (max-width: 768px) {
-    nav {
+    .menu-navigation{
         order: 1;
         margin-bottom: 0;
         overflow: hidden;
@@ -332,12 +326,12 @@ nav {
         order: 3;
     }
 
-    nav .menu-item, .page-item {
+    .menu-navigation .menu-item, .page-item {
         display: block;
         padding: 0;
     }
 
-    nav .menu-item a, .page-item a {
+    .menu-navigation .menu-item a, .page-item a {
         display: block;
         padding: 30px 20px;
     }
@@ -345,6 +339,12 @@ nav {
     #site-header {
         order: 4;
     }
+}
+
+.isVisible {
+    max-height: 999px;
+    height: auto;
+    transition: max-height .75s;
 }
 
 /* //////////////////  MAIN CONTENT  ////////////////////// */
@@ -536,22 +536,6 @@ nav {
         height: auto;
         padding-top: 50px;
     }
-}
-
-
-/* Pagination */
-.pagination {
-    text-align: center;
-    padding: 40px 10px;
-    margin: 0;
-}
-
-.pagination h2 {
-    display: none;
-}
-
-.pagination .page-numbers  {
-    padding: 10px 15px;
 }
 
 
