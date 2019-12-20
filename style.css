@@ -550,7 +550,17 @@ a:hover {
     
 }
 
-.footer p {
+.theme-author {
+    color: #fff;
+    text-align: center;
+}
+
+.theme-author-link {
+    color: #fff;
+}
+
+.theme-author-link:hover {
+    text-decoration: underline;
     color: #fff;
 }
 
