@@ -1,9 +1,16 @@
 <?php
     // Include styles
-    function enqueue_style_myTheme() {
+    function enqueue_style_myfirsttheme() {
         wp_enqueue_style( 'style', get_stylesheet_uri() );
     }
-    add_action( 'wp_enqueue_scripts', 'enqueue_style_myTheme' );
+    add_action( 'wp_enqueue_scripts', 'enqueue_style_myfirsttheme' );
+
+    // Include scripts
+    function enqueue_script_myfirsttheme() {
+        wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', true);
+    }
+    add_action( 'wp_enqueue_scripts', 'enqueue_script_myfirsttheme' );
+
 
     // Include menus
     function myfirsttheme_register_my_menus() {
@@ -232,12 +239,8 @@
     add_action( 'widgets_init', 'myfirsttheme_widgets_init' );
 
 
-    // Add custom style
+    // Add custom inline style
     function myfisttheme_set_pagination_style() {
-        wp_enqueue_style(
-            'pagination-style',
-            get_template_directory_uri() . '/css/custom_script.css'
-        );
             $color = get_theme_mod( 'menu_background_color' );
             $custom_css = "
                     .page-numbers {
@@ -263,13 +266,13 @@
     add_theme_support( 'post-thumbnails' );
 
     // Set post excerpt length
-    function wpdocs_custom_excerpt_length( $length ) {
+    function myfisttheme_custom_excerpt_length( $length ) {
         $excerptLength = get_theme_mod( 'excerpt-length' );
         return $excerptLength;
     }
-    add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length');
+    add_filter( 'excerpt_length', 'myfisttheme_custom_excerpt_length');
 
-    function wpdocs_excerpt_more( $more ) {
+    function myfisttheme_excerpt_more( $more ) {
         $excerptLength = get_theme_mod( 'excerpt-length' );
         if ($excerptLength === '0') {
             return '';
@@ -277,7 +280,7 @@
             return "<a href='".get_permalink()."'><div class='read-more-button' style='border: 1px solid ".get_theme_mod( 'menu_background_color', '#696969' )."'> Read more...</div></a>";
         }
     }
-    add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+    add_filter( 'excerpt_more', 'myfisttheme_excerpt_more' );
 
 
 ?>

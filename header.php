@@ -17,6 +17,13 @@
         <?php else : ?>
         <header class="header">
         <?php endif; ?>
+            <div class="mobile-menu-container" style="background-color: <?php echo get_theme_mod( 'menu_background_color', '#A8C5FF' ) ?>">
+                <div class="mobile-menu-icon" id="mobile-menu-icon">
+                    <span class="mobile-menu-icon-strip"></span>
+                    <span class="mobile-menu-icon-strip"></span>
+                    <span class="mobile-menu-icon-strip"></span>
+                </div>
+            </div>
             <div class="top-menu container">
                 <?php 
                     if ( has_nav_menu( 'top-menu' ) ) {
@@ -36,10 +43,11 @@
                     </div>
                 <?php } ?>
                 <!-- displaying site title and description -->
+                <div class="title">
                 <?php
                     if ( display_header_text() ){ ?>
                         <a href="<?php echo home_url() ?>" class="header-text">
-                            <div class="title">
+                            <div>
                                 <h2 style="color: #<?php echo get_theme_mod( 'header_textcolor' ) ?>"><?php bloginfo('name') ?></h2>
                                 <h5 style="color: #<?php echo get_theme_mod( 'header_textcolor' ) ?>"><?php bloginfo('description') ?></h5>
                             </div>   
@@ -54,8 +62,9 @@
                         get_search_form(); 
                     }
                 ?>
+                </div>
             </div>
-            <nav style="background-color: <?php echo get_theme_mod( 'menu_background_color', '#A8C5FF' ) ?>">
+            <nav id="navigation" style="background-color: <?php echo get_theme_mod( 'menu_background_color', '#A8C5FF' ) ?>">
                 <?php 
                     wp_nav_menu(
                         array(
