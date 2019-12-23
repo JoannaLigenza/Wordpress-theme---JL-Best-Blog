@@ -54,10 +54,10 @@
 
         // register header(s)
         $header_images = array(
-            'sunset' => array(
+            'winter' => array(
                     'url'           => get_template_directory_uri() . '/images/winter.jpg',
                     'thumbnail_url' => get_template_directory_uri() . '/images/winter.jpg',
-                    'description'   => 'Sunset',
+                    'description'   => 'Header image',
             ),
         );
         register_default_headers( $header_images );
@@ -76,6 +76,18 @@
 
         $wp_customize->add_setting( 'menu_background_color' , array(
             'default'   => '#A8C5FF',
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
+        $wp_customize->add_setting( 'menu_font_color' , array(
+            'default'   => '#FFFFFF',
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
+        $wp_customize->add_setting( 'link_hover_color' , array(
+            'default'   => '#AD000B',
             'transport' => 'refresh',
             'type'      => 'theme_mod'
         ) );
@@ -239,9 +251,23 @@
 
         // Adding controls
         $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'menu_background_color', array(
-            'label'      => __( 'Menu background color', 'myfirsttheme' ),
+            'label'      => __( 'Primary color', 'myfirsttheme' ),
             'section'    => 'colors',
             'settings'   => 'menu_background_color',
+            // 'type'       => ''                       // do not set type for color picker
+        ) ) );
+
+        $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'menu_font_color', array(
+            'label'      => __( 'Menu font color', 'myfirsttheme' ),
+            'section'    => 'colors',
+            'settings'   => 'menu_font_color',
+            // 'type'       => ''                       // do not set type for color picker
+        ) ) );
+
+        $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_hover_color', array(
+            'label'      => __( 'Secondary color', 'myfirsttheme' ),
+            'section'    => 'colors',
+            'settings'   => 'link_hover_color',
             // 'type'       => ''                       // do not set type for color picker
         ) ) );
 
@@ -420,31 +446,42 @@
     add_action( 'widgets_init', 'myfirsttheme_widgets_init' );
 
 
-    // Add custom inline style
-    function myfisttheme_set_pagination_style() {
-        wp_enqueue_style(
-            'pagination-style',
-            get_template_directory_uri() . '/css/pagination_style.css'
-        );
-            $color = get_theme_mod( 'menu_background_color' );
-            $custom_css = "
-                    .page-numbers {
-                        border: 1px solid {$color};
-                    }
-                    .page-numbers:hover {
-                        background-color: {$color};
-                        text-decoration: none;
-                    }
-                    .current {
-                        background-color: {$color};
-                    }
-                    .dots:hover {
-                        background-color: unset;
-                    }
-                    ";
-            wp_add_inline_style( 'pagination-style', $custom_css );
+    // Add custom style to header
+    function myfisttheme_set_header_style() {
+        $color = get_theme_mod( 'menu_background_color' );
+        $fontColor = get_theme_mod( 'menu_font_color' );
+        $linkHoverColor = get_theme_mod( 'link_hover_color' );
+        ?>
+            <style>
+                .page-numbers {
+                    border: 1px solid <?php echo $color ?>;
+                }
+                .page-numbers:hover {
+                    background-color: <?php echo $color ?>;
+                    text-decoration: none;
+                }
+                .current {
+                    background-color: <?php echo $color ?>;
+                }
+                .dots:hover {
+                    background-color: unset;
+                }
+                .menu-item a, .page-item a {
+                    color: <?php echo $fontColor ?>;
+                }
+                a:hover {
+                    color: <?php echo $linkHoverColor ?>;
+                }
+                .current-menu-item a {
+                    color: <?php echo $linkHoverColor ?>;
+                }
+                .widget-title {
+                    border-bottom: 2px solid <?php echo $linkHoverColor ?>;
+                }
+            </style>
+        <?php
     }
-    add_action( 'wp_enqueue_scripts', 'myfisttheme_set_pagination_style' );
+    add_action('wp_head', 'myfisttheme_set_header_style');
 
 
     // Include post thumbnails

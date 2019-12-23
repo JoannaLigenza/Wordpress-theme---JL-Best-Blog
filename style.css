@@ -34,7 +34,6 @@ a {
 }
 
 a:hover {
-    color: #AD000B;
     text-decoration: underline;
 }
 
@@ -302,11 +301,6 @@ a:hover {
 
 .menu-item a:hover, .page-item a:hover {
     text-decoration: none;
-    color: #AD000B;
-}
-
-.current-menu-item a {
-    color: #AD000B;
 }
 
 @media screen and (max-width: 768px) {
@@ -389,7 +383,6 @@ a:hover {
 }
 
 .widget-title {
-    border-bottom: 2px solid #AD000B;
     padding: 15px 10px;
     margin: 0;
 }
@@ -409,10 +402,6 @@ a:hover {
 
 .widget a {
     color: #111;
-}
-
-.widget a:hover {
-    color: #AD000B;
 }
 
 .widget .search-form {
@@ -438,6 +427,14 @@ a:hover {
     font-weight: 400;
     text-transform: lowercase;
     letter-spacing: unset;
+}
+
+.widget_recent_comments a {
+    text-decoration: underline;
+}
+
+.comment-author-link a {
+    text-decoration: none;
 }
 
 /* Content */
@@ -525,6 +522,35 @@ a:hover {
     color: #696969;
 }
 
+/* Pagination */
+.pagination {
+    text-align: center;
+    padding: 40px 10px;
+    margin: 0;
+}
+
+.pagination h2 {
+    display: none;
+}
+
+.pagination .page-numbers  {
+    padding: 10px 15px;
+    margin: 10px 0;
+    display: inline-block;
+}
+
+.pagination .prev, .pagination .next {
+    width: 95px;
+}
+
+.pagination .prev {
+    margin-right: 10px;
+}
+
+.pagination .next {
+    margin-left: 10px;
+}
+
 @media screen and (max-width: 768px) {
     .article-section {
         flex-direction: column;
@@ -586,16 +612,16 @@ a:hover {
     text-align: center;
 }
 
+.social-icon-section:hover a {
+    text-decoration: none;
+}
+
 .social-icon {
     margin: 10px;
 }
 
 .social-icon:hover {
     transform: translateY(-2px);
-}
-
-.social-icon:hover a {
-    text-decoration: none;
 }
 
 
