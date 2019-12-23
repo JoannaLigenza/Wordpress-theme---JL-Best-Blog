@@ -18,7 +18,6 @@
             array(
             'top-menu'    => __( 'Top Menu' ),
             'header-menu' => __( 'Header Menu' ),
-            'footer-menu' => __( 'Footer Menu' )
             )
         );
     }
