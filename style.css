@@ -549,6 +549,7 @@ a:hover {
     transform: translateY(100%);
     text-align: center;
     padding: 0 10px;
+    color: #999;
 }
 
 .footer-sidebars-section {
@@ -564,16 +565,17 @@ a:hover {
     width: 100%;
 }
 
-.footer-column li a {
+.footer-column a {
     color: #999;
 }
 
-.footer-column li a:hover {
+.footer-column a:hover {
+    text-decoration: underline;
     color: #fff;
 }
 
 .footer-widget-title {
-    /* border-left: 1px solid #999; */
+    color: black;
 }
 
 
@@ -598,16 +600,16 @@ a:hover {
 
 
 
-.theme-author {
+.footer-link {
     color: #fff;
 }
 
-.theme-author-link {
+.footer-theme-link {
     color: #fff;
 }
 
-.theme-author-link:hover {
-    text-decoration: underline;
+.footer-theme-link:hover {
+    text-decoration: underline solid #fff;
     color: #fff;
 }
 
@@ -629,5 +631,11 @@ a:hover {
 
     .footer-column {
         width: 300px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .footer-column {
+        width: 250px;
     }
 }

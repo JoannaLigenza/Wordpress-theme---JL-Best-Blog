@@ -99,7 +99,8 @@
                     <?php
                 }
                 ?>  <!-- end of social icons section -->
-                <p class="theme-author">Theme made by: <a href="https://love-coding.pl/en"><span class="theme-author-link">JL</span></a></p>
+                <p class="footer-link"><small>Theme made by: </small><a href="https://love-coding.pl/en" class="footer-theme-link">JL</a><small>, 
+                    used by: <a href="<?php echo home_url(); ?>" class="footer-theme-link"><?php echo bloginfo('name') ?></a></small></p>
             </div>
             
         </footer>
