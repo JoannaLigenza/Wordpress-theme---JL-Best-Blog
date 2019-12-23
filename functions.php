@@ -116,6 +116,78 @@
             'type'      => 'theme_mod'
         ) );
 
+        $wp_customize->add_setting( 'footer-column-1' , array(
+            'default'   => false,
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
+        $wp_customize->add_setting( 'footer-column-2' , array(
+            'default'   => false,
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
+        $wp_customize->add_setting( 'footer-column-3' , array(
+            'default'   => false,
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
+        $wp_customize->add_setting( 'footer-social-icon' , array(
+            'default'   => true,
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
+        $wp_customize->add_setting( 'social-icon-facebook' , array(
+            'default'   => '',
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
+        $wp_customize->add_setting( 'social-icon-twitter' , array(
+            'default'   => '',
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
+        $wp_customize->add_setting( 'social-icon-instagram' , array(
+            'default'   => '',
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
+        $wp_customize->add_setting( 'social-icon-youtube' , array(
+            'default'   => '',
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
+        $wp_customize->add_setting( 'social-icon-pinterest' , array(
+            'default'   => '',
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
+        $wp_customize->add_setting( 'social-icon-whatsapp' , array(
+            'default'   => '',
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
+        $wp_customize->add_setting( 'social-icon-messenger' , array(
+            'default'   => '',
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
+        $wp_customize->add_setting( 'social-icon-linkedin' , array(
+            'default'   => '',
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
         // Adding panel
         $wp_customize->add_panel( 'header', array(
             'title' => __( 'Header' ),
@@ -155,6 +227,12 @@
 
         $wp_customize->add_section( 'front-page-and-archive-settings' , array(
             'title'      => __( 'Front Page and Archive Pages', 'myfirsttheme' ),
+            'panel' => 'appearance',
+            'priority'   => 30,
+        ) );
+
+        $wp_customize->add_section( 'footer' , array(
+            'title'      => __( 'Footer', 'myfirsttheme' ),
             'panel' => 'appearance',
             'priority'   => 30,
         ) );
@@ -211,6 +289,82 @@
             'section'    => 'layout',
             'settings'   => 'excerpt-length',
         ) );
+
+        $wp_customize->add_control( 'footer-column-1', array(
+            'label'      => __( ' Display footer sidebar 1', 'myfirsttheme' ),
+            'section'    => 'footer',
+            'settings'   => 'footer-column-1',
+            'type'       => 'checkbox'
+        ) );
+
+        $wp_customize->add_control( 'footer-column-2', array(
+            'label'      => __( ' Display footer sidebar 2', 'myfirsttheme' ),
+            'section'    => 'footer',
+            'settings'   => 'footer-column-2',
+            'type'       => 'checkbox'
+        ) );
+
+        $wp_customize->add_control( 'footer-column-3', array(
+            'label'      => __( ' Display footer sidebar 3', 'myfirsttheme' ),
+            'section'    => 'footer',
+            'settings'   => 'footer-column-3',
+            'type'       => 'checkbox'
+        ) );
+
+        $wp_customize->add_control( 'footer-social-icon', array(
+            'label'      => __( 'Enable social icons section', 'myfirsttheme' ),
+            'section'    => 'footer',
+            'settings'   => 'footer-social-icon',
+            'type'       => 'checkbox'
+        ) );
+
+        $wp_customize->add_control( 'social-icon-facebook', array(
+            'label'      => __( 'Link to your Facebook', 'myfirsttheme' ),
+            'section'    => 'footer',
+            'settings'   => 'social-icon-facebook',
+        ) );
+
+        $wp_customize->add_control( 'social-icon-instagram', array(
+            'label'      => __( 'Link to your Instagram', 'myfirsttheme' ),
+            'section'    => 'footer',
+            'settings'   => 'social-icon-instagram',
+        ) );
+
+        $wp_customize->add_control( 'social-icon-twitter', array(
+            'label'      => __( 'Link to your Twitter', 'myfirsttheme' ),
+            'section'    => 'footer',
+            'settings'   => 'social-icon-twitter',
+        ) );
+
+        $wp_customize->add_control( 'social-icon-pinterest', array(
+            'label'      => __( 'Link to your Pinterest', 'myfirsttheme' ),
+            'section'    => 'footer',
+            'settings'   => 'social-icon-pinterest',
+        ) );
+
+        $wp_customize->add_control( 'social-icon-youtube', array(
+            'label'      => __( 'Link to your Youtube', 'myfirsttheme' ),
+            'section'    => 'footer',
+            'settings'   => 'social-icon-youtube',
+        ) );
+
+        $wp_customize->add_control( 'social-icon-whatsapp', array(
+            'label'      => __( 'Link to your Whatsapp', 'myfirsttheme' ),
+            'section'    => 'footer',
+            'settings'   => 'social-icon-whatsapp',
+        ) );
+
+        $wp_customize->add_control( 'social-icon-messenger', array(
+            'label'      => __( 'Link to your Messenger', 'myfirsttheme' ),
+            'section'    => 'footer',
+            'settings'   => 'social-icon-messenger',
+        ) );
+
+        $wp_customize->add_control( 'social-icon-linkedin', array(
+            'label'      => __( 'Link to your Linkedin', 'myfirsttheme' ),
+            'section'    => 'footer',
+            'settings'   => 'social-icon-linkedin',
+        ) );
         
     }
     add_action( 'customize_register', 'myfirsttheme_customize_register' );
@@ -233,6 +387,33 @@
             'before_widget' => '<div id="%1$s" class="widget %2$s">',
             'after_widget'  => '</div>',
             'before_title'  => '<h3 class="widget-title">',
+            'after_title'   => '</h3>',
+        ) );
+
+        register_sidebar( array(
+            'name'          => __( 'Footer Sidebar 1', 'myfirsttheme' ),
+            'id'            => 'sidebar-footer-1',
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h3 class="footer-widget-title">',
+            'after_title'   => '</h3>',
+        ) );
+
+        register_sidebar( array(
+            'name'          => __( 'Footer Sidebar 2', 'myfirsttheme' ),
+            'id'            => 'sidebar-footer-2',
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h3 class="footer-widget-title">',
+            'after_title'   => '</h3>',
+        ) );
+
+        register_sidebar( array(
+            'name'          => __( 'Footer Sidebar 3', 'myfirsttheme' ),
+            'id'            => 'sidebar-footer-3',
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h3 class="footer-widget-title">',
             'after_title'   => '</h3>',
         ) );
     }
