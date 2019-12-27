@@ -48,7 +48,7 @@
                             <?php previous_post_link('&laquo; %link', 'Previous'); ?>
                         </div>
                         <div class="next-post-link post-link">
-                            <?php previous_post_link('%link &raquo;', 'Next'); ?>
+                            <?php next_post_link('%link &raquo;', 'Next'); ?>
                         </div>
                     </div>
             <?php
