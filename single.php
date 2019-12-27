@@ -3,6 +3,6 @@
 ?>
 
 <?php
-    get_template_part( 'content-home' );
+    get_template_part( 'content-single' );
     get_footer();
 ?>

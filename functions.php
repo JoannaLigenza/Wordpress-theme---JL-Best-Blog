@@ -66,7 +66,7 @@
 
     // Include custom sections in customizer - all the sections, settings, and controls will be added here
     function myfirsttheme_customize_register( $wp_customize ) {
-        // Adding settings
+        // Adding settings - front page
         $wp_customize->add_setting( 'header_textcolor' , array(
             'default'   => '#FF00FF',
             'transport' => 'refresh',   // this will refresh customizer's preview window when changes are made
@@ -199,6 +199,31 @@
             'type'      => 'theme_mod'
         ) );
 
+        // Settings - single page
+        $wp_customize->add_setting( 'left-column-single' , array(
+            'default'   => false,
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
+        $wp_customize->add_setting( 'right-column-single' , array(
+            'default'   => false,
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
+        $wp_customize->add_setting( 'post-meta-single' , array(
+            'default'   => true,
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
+        $wp_customize->add_setting( 'post-image-single' , array(
+            'default'   => 'above',
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
         // Adding panel
         $wp_customize->add_panel( 'header', array(
             'title' => __( 'Header' ),
@@ -230,14 +255,14 @@
             'priority'   => 10,
         ) );
 
-        $wp_customize->add_section( 'layout' , array(
-            'title'      => __( 'Layout', 'myfirsttheme' ),
+        $wp_customize->add_section( 'front-page-layout' , array(
+            'title'      => __( 'Front Page Layout', 'myfirsttheme' ),
             'panel' => 'appearance',
             'priority'   => 20,
         ) );
 
-        $wp_customize->add_section( 'front-page-and-archive-settings' , array(
-            'title'      => __( 'Front Page and Archive Pages', 'myfirsttheme' ),
+        $wp_customize->add_section( 'single-post-layout' , array(
+            'title'      => __( 'Single Post Layout', 'myfirsttheme' ),
             'panel' => 'appearance',
             'priority'   => 30,
         ) );
@@ -245,10 +270,10 @@
         $wp_customize->add_section( 'footer' , array(
             'title'      => __( 'Footer', 'myfirsttheme' ),
             'panel' => 'appearance',
-            'priority'   => 30,
+            'priority'   => 40,
         ) );
 
-        // Adding controls
+        // Adding controls - main site
         $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'menu_background_color', array(
             'label'      => __( 'Primary color', 'myfirsttheme' ),
             'section'    => 'colors',
@@ -279,28 +304,28 @@
 
         $wp_customize->add_control( 'left_column', array(
             'label'      => __( 'Display left column', 'myfirsttheme' ),
-            'section'    => 'layout',
+            'section'    => 'front-page-layout',
             'settings'   => 'left-column',
             'type'       => 'checkbox'
         ) );
 
         $wp_customize->add_control( 'right_column', array(
             'label'      => __( 'Display right column', 'myfirsttheme' ),
-            'section'    => 'layout',
+            'section'    => 'front-page-layout',
             'settings'   => 'right-column',
             'type'       => 'checkbox'
         ) );
 
         $wp_customize->add_control( 'post-meta', array(
             'label'      => __( 'Enable post meta', 'myfirsttheme' ),
-            'section'    => 'layout',
+            'section'    => 'front-page-layout',
             'settings'   => 'post-meta',
             'type'       => 'checkbox'
         ) );
 
         $wp_customize->add_control( 'front-page-and-archive-image', array(
             'label'      => __( 'Post Image Position on Front Page and Archives Pages', 'myfirsttheme' ),
-            'section'    => 'layout',
+            'section'    => 'front-page-layout',
             'settings'   => 'front-page-and-archive-image',
             'type'       => 'radio',
             'choices'    => array(
@@ -311,7 +336,7 @@
 
         $wp_customize->add_control( 'excerpt-length', array(
             'label'      => __( 'Choose Excerpt Length', 'myfirsttheme' ),
-            'section'    => 'layout',
+            'section'    => 'front-page-layout',
             'settings'   => 'excerpt-length',
         ) );
 
@@ -391,6 +416,39 @@
             'settings'   => 'social-icon-linkedin',
         ) );
         
+        // Adding controls - single post
+        $wp_customize->add_control( 'left-column-single', array(
+            'label'      => __( 'Display left column', 'myfirsttheme' ),
+            'section'    => 'single-post-layout',
+            'settings'   => 'left-column-single',
+            'type'       => 'checkbox'
+        ) );
+
+        $wp_customize->add_control( 'right-column-single', array(
+            'label'      => __( 'Display right column', 'myfirsttheme' ),
+            'section'    => 'single-post-layout',
+            'settings'   => 'right-column-single',
+            'type'       => 'checkbox'
+        ) );
+
+        $wp_customize->add_control( 'post-meta-single', array(
+            'label'      => __( 'Enable post meta', 'myfirsttheme' ),
+            'section'    => 'single-post-layout',
+            'settings'   => 'post-meta-single',
+            'type'       => 'checkbox'
+        ) );
+
+        $wp_customize->add_control( 'post-image-single', array(
+            'label'      => __( 'Post Image Position on Front Page and Archives Pages', 'myfirsttheme' ),
+            'section'    => 'single-post-layout',
+            'settings'   => 'post-image-single',
+            'type'       => 'radio',
+            'choices'    => array(
+                'left' => 'Left side',
+                'above' => 'Above text',
+            ),
+        ) );
+
     }
     add_action( 'customize_register', 'myfirsttheme_customize_register' );
 
