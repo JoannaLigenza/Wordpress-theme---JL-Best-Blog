@@ -437,7 +437,7 @@ a:hover {
     text-decoration: none;
 }
 
-/* Content */
+/* Content - home */
 
 .article-section {
     display: flex;
@@ -565,6 +565,11 @@ a:hover {
 }
 
 
+/* //////////////////  SINGLE POST  ////////////////////// */
+
+
+
+
 /* //////////////////  FOOTER  ////////////////////// */
 
 .footer {
@@ -602,6 +607,10 @@ a:hover {
 
 .footer-widget-title {
     color: black;
+}
+
+.footer td a {
+    text-decoration: underline;
 }
 
 
