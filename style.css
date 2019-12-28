@@ -568,25 +568,32 @@ a:hover {
 /* //////////////////  SINGLE POST  ////////////////////// */
 
 .prev-next-post-navigation {
-    display: flex;
-    justify-content: space-between;
     padding: 35px 0;
 }
 
 .post-link {
     padding: 15px;
-    background-color: #ccc;
+    background-color: #d2d2d2;
     border-radius: 25px;
     font-weight: bold;
     color: #696969;
 }
 
+.prev-post-link {
+    float: left;
+}
+
 .next-post-link {
+    float: right;
     padding: 15px 25px;
 }
 
 
 /* Comments layout */
+
+.comments-section {
+    margin-top: 80px;
+}
 
 .comment {
     list-style: none;

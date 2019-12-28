@@ -45,12 +45,16 @@
                 endwhile; ?>
                 <!-- post navigation -->
                 <div class="prev-next-post-navigation">
-                    <div class="prev-post-link post-link">
-                        <?php previous_post_link('&laquo; %link', 'Previous'); ?>
-                    </div>
-                    <div class="next-post-link post-link">
-                        <?php next_post_link('%link &raquo;', 'Next'); ?>
-                    </div>
+                    <?php if ( get_previous_post() ) : ?>
+                        <div class="prev-post-link post-link">
+                            <?php previous_post_link('&laquo; %link', 'Previous'); ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ( get_next_post() ) : ?>
+                        <div class="next-post-link post-link">
+                            <?php next_post_link('%link &raquo;', 'Next'); ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
                 <!-- display comments -->
                 <?php
