@@ -544,6 +544,7 @@
     // Include post thumbnails
     add_theme_support( 'post-thumbnails' );
 
+
     // Set post excerpt length
     function myfisttheme_custom_excerpt_length( $length ) {
         $excerptLength = get_theme_mod( 'excerpt-length' );
@@ -562,4 +563,9 @@
     add_filter( 'excerpt_more', 'myfisttheme_excerpt_more' );
 
 
+    // delete cookies checkbox from comments
+    remove_action( 'set_comment_cookies', 'wp_set_comment_cookies' );
+
+
 ?>
+
