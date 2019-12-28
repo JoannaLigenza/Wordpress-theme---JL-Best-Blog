@@ -568,23 +568,160 @@ a:hover {
 /* //////////////////  SINGLE POST  ////////////////////// */
 
 .prev-next-post-navigation {
-    display: flex;
-    justify-content: space-between;
     padding: 35px 0;
 }
 
 .post-link {
     padding: 15px;
-    background-color: #ccc;
+    background-color: #d2d2d2;
     border-radius: 25px;
     font-weight: bold;
-    color: #696969
+    color: #696969;
+}
+
+.prev-post-link {
+    float: left;
 }
 
 .next-post-link {
+    float: right;
     padding: 15px 25px;
 }
 
+
+/* Comments layout */
+
+.comments-section {
+    margin-top: 80px;
+}
+
+.comment {
+    list-style: none;
+}
+
+.comment-body {
+    padding: 30px 0;
+    border-bottom: 1px solid #d2d2d2;
+}
+
+.comment-author {
+    float: left;
+}
+
+.avatar {
+    border-radius: 50px;
+}
+
+.fn {
+    vertical-align: top;
+    padding: 0 5px;
+}
+
+.says {
+    display: none;
+}
+
+.comment-meta {
+    float: right;
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-edit-link {
+    text-align: right;
+}
+
+.comment-body p {
+    clear: both;
+    padding: 30px 0;
+}
+
+.reply {
+    text-align: right;
+}
+
+.comment-reply-link {
+    position: relative;
+}
+
+.comment-reply-link:before {
+    content: url("images/reply-icon.png");
+    position: absolute;
+    left: -25px;
+    top: -2px;
+}
+
+/* Comment pagination */
+
+.comment-navigation {
+    padding: 50px 0;
+}
+
+.comment-nav {
+    font-size: 1.1em;
+}
+
+.nav-previous {
+    float: left;
+}
+
+.nav-next {
+    float: right;
+}
+
+nav:after {
+    content: ""; 
+    clear: both;
+}
+
+
+/* Comment form */
+
+.comment-respond {
+    margin: 50px auto;
+    max-width: 800px;
+
+}
+
+.comment-notes {
+    padding: 20px 0;
+}
+
+.comment-form label {
+    font-weight: bold;
+    padding: 15px 0;
+}
+
+.comment-form input, .comment-form textarea {
+    width: 100%;
+    outline: none;
+    margin: 15px 0;
+}
+
+.comment-form textarea {
+    resize: vertical;
+    border: 2px solid #d2d2d2;
+}
+
+.comment-form input {
+    padding: 15px 5px;
+}
+
+.comment-form input:not(.submit) {
+    border: 2px solid #d2d2d2;
+}
+
+.comment-form input:focus, .comment-form textarea:focus {
+    border: 2px solid #696969;
+}
+
+.comment-form .submit {
+    background-color: #fff;
+    font-weight: bold;
+    font-size: 1.1em;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+}
 
 
 /* //////////////////  FOOTER  ////////////////////// */
