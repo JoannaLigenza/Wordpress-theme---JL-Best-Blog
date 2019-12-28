@@ -22,7 +22,7 @@
                 <?php
                     wp_list_comments( array(
                         'short_ping'  => true,
-                        'avatar_size' => 74,
+                        'avatar_size' => 50,
                         'type' => 'comment'
                     ) );
                 ?>
