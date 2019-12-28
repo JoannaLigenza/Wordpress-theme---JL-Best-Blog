@@ -43,15 +43,20 @@
                         echo "</article>";
                     echo "</section>";
                 endwhile; ?>
-                    <div class="prev-next-post-navigation">
-                        <div class="prev-post-link post-link">
-                            <?php previous_post_link('&laquo; %link', 'Previous'); ?>
-                        </div>
-                        <div class="next-post-link post-link">
-                            <?php next_post_link('%link &raquo;', 'Next'); ?>
-                        </div>
+                <!-- post navigation -->
+                <div class="prev-next-post-navigation">
+                    <div class="prev-post-link post-link">
+                        <?php previous_post_link('&laquo; %link', 'Previous'); ?>
                     </div>
-            <?php
+                    <div class="next-post-link post-link">
+                        <?php next_post_link('%link &raquo;', 'Next'); ?>
+                    </div>
+                </div>
+                <!-- display comments -->
+                <?php
+                if ( comments_open() || get_comments_number() ) :
+                    comments_template();
+                endif;
             else :
                 echo '<p>No content</p>';
             endif; 
