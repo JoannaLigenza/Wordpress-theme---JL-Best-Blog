@@ -578,13 +578,54 @@ a:hover {
     background-color: #ccc;
     border-radius: 25px;
     font-weight: bold;
-    color: #696969
+    color: #696969;
 }
 
 .next-post-link {
     padding: 15px 25px;
 }
 
+/* Comments */
+
+.comment {
+    list-style: none;
+}
+
+/* Comment form */
+
+.comment-respond {
+    margin: 50px auto;
+    max-width: 800px;
+
+}
+
+.comment-notes {
+    padding: 20px 0;
+}
+
+#commentform label {
+    font-weight: bold;
+    padding: 15px 0;
+}
+
+#commentform input, #commentform textarea {
+    width: 100%;
+    outline: none;
+    margin: 15px 0;
+    border: 2px solid #d2d2d2;
+}
+
+#commentform textarea {
+    resize: vertical;
+}
+
+#commentform input {
+    padding: 15px 5px;
+}
+
+#commentform input:focus, #commentform textarea:focus {
+    border: 2px solid #696969;
+}
 
 
 /* //////////////////  FOOTER  ////////////////////// */
