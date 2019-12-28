@@ -503,7 +503,7 @@
     add_action( 'widgets_init', 'myfirsttheme_widgets_init' );
 
 
-    // Add custom style to header
+    // Add custom style to wordpress elements
     function myfisttheme_set_header_style() {
         $color = get_theme_mod( 'menu_background_color' );
         $fontColor = get_theme_mod( 'menu_font_color' );
@@ -535,6 +535,16 @@
                 .widget-title {
                     border-bottom: 2px solid <?php echo $linkHoverColor ?>;
                 }
+                .submit {
+                    border: 2px solid <?php echo $color ?>;
+                    color: <?php echo $color ?>;
+                    /* color: <?php echo $fontColor ?>; */
+                }
+                .submit:hover {
+                    background-color: <?php echo $color ?>;
+                    border: 2px solid <?php echo $color ?>;
+                    color: <?php echo $fontColor ?>;
+                }
             </style>
         <?php
     }
@@ -563,7 +573,7 @@
     add_filter( 'excerpt_more', 'myfisttheme_excerpt_more' );
 
 
-    // delete cookies checkbox from comments
+    // delete cookies checkbox from comment form
     remove_action( 'set_comment_cookies', 'wp_set_comment_cookies' );
 
 
