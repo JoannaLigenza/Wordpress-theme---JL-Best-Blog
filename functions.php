@@ -261,6 +261,25 @@
             'type'      => 'theme_mod'
         ) );
 
+        // Settings - archive page
+        $wp_customize->add_setting( 'left-column-archive' , array(
+            'default'   => false,
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
+        $wp_customize->add_setting( 'right-column-archive' , array(
+            'default'   => false,
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
+        $wp_customize->add_setting( 'display-header-image-on-archive' , array(
+            'default'   => true,
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
         // Adding panel
         $wp_customize->add_panel( 'header', array(
             'title' => __( 'Header' ),
@@ -310,10 +329,16 @@
             'priority'   => 40,
         ) );
 
+        $wp_customize->add_section( 'archive-layout' , array(
+            'title'      => __( 'Archive Layout', 'myfirsttheme' ),
+            'panel' => 'appearance',
+            'priority'   => 50,
+        ) );
+
         $wp_customize->add_section( 'footer' , array(
             'title'      => __( 'Footer', 'myfirsttheme' ),
             'panel' => 'appearance',
-            'priority'   => 50,
+            'priority'   => 60,
         ) );
 
         // Adding controls - main site
@@ -360,7 +385,7 @@
         ) );
 
         $wp_customize->add_control( 'post-meta', array(
-            'label'      => __( 'Enable post meta', 'myfirsttheme' ),
+            'label'      => __( 'Enable post meta on front page and archives', 'myfirsttheme' ),
             'section'    => 'front-page-layout',
             'settings'   => 'post-meta',
             'type'       => 'checkbox'
@@ -539,6 +564,27 @@
             ),
         ) );
 
+        // Adding controls - archive page
+        $wp_customize->add_control( 'left-column-archive', array(
+            'label'      => __( 'Display left column', 'myfirsttheme' ),
+            'section'    => 'archive-layout',
+            'settings'   => 'left-column-archive',
+            'type'       => 'checkbox'
+        ) );
+
+        $wp_customize->add_control( 'right-column-archive', array(
+            'label'      => __( 'Display right column', 'myfirsttheme' ),
+            'section'    => 'archive-layout',
+            'settings'   => 'right-column-archive',
+            'type'       => 'checkbox'
+        ) );
+
+        $wp_customize->add_control( 'display-header-image-on-archive', array(
+            'label'      => __( 'Display header image', 'myfirsttheme' ),
+            'section'    => 'archive-layout',
+            'settings'   => 'display-header-image-on-archive',
+            'type'       => 'checkbox'
+        ) );
     }
     add_action( 'customize_register', 'myfirsttheme_customize_register' );
 
