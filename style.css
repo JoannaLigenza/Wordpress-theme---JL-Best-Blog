@@ -544,7 +544,8 @@ a:hover {
 }
 
 .pagination .prev, .pagination .next {
-    width: 95px;
+    min-width: 95px;
+    width: auto;
 }
 
 .pagination .prev {

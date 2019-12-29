@@ -681,6 +681,9 @@
                     border: 2px solid <?php echo $color ?>;
                     color: <?php echo $fontColor ?>;
                 }
+                .read-more-button:hover {
+                    background-color: <?php echo $color ?>;
+                }
             </style>
         <?php
     }
