@@ -199,7 +199,7 @@
             'type'      => 'theme_mod'
         ) );
 
-        // Settings - single page
+        // Settings - single post
         $wp_customize->add_setting( 'left-column-single' , array(
             'default'   => false,
             'transport' => 'refresh',
@@ -220,6 +220,43 @@
 
         $wp_customize->add_setting( 'post-image-single' , array(
             'default'   => 'above',
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
+        $wp_customize->add_setting( 'display-header-image-on-post' , array(
+            'default'   => true,
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
+        // Settings - single page
+        $wp_customize->add_setting( 'left-column-single-page' , array(
+            'default'   => false,
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
+        $wp_customize->add_setting( 'right-column-single-page' , array(
+            'default'   => false,
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
+        $wp_customize->add_setting( 'page-meta' , array(
+            'default'   => true,
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
+        $wp_customize->add_setting( 'page-image' , array(
+            'default'   => 'above',
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
+        $wp_customize->add_setting( 'display-header-image-on-page' , array(
+            'default'   => true,
             'transport' => 'refresh',
             'type'      => 'theme_mod'
         ) );
@@ -267,10 +304,16 @@
             'priority'   => 30,
         ) );
 
+        $wp_customize->add_section( 'single-page-layout' , array(
+            'title'      => __( 'Single Page Layout', 'myfirsttheme' ),
+            'panel' => 'appearance',
+            'priority'   => 40,
+        ) );
+
         $wp_customize->add_section( 'footer' , array(
             'title'      => __( 'Footer', 'myfirsttheme' ),
             'panel' => 'appearance',
-            'priority'   => 40,
+            'priority'   => 50,
         ) );
 
         // Adding controls - main site
@@ -438,10 +481,57 @@
             'type'       => 'checkbox'
         ) );
 
+        $wp_customize->add_control( 'display-header-image-on-post', array(
+            'label'      => __( 'Display header image', 'myfirsttheme' ),
+            'section'    => 'single-post-layout',
+            'settings'   => 'display-header-image-on-post',
+            'type'       => 'checkbox'
+        ) );
+
         $wp_customize->add_control( 'post-image-single', array(
             'label'      => __( 'Post Image Position on Front Page and Archives Pages', 'myfirsttheme' ),
             'section'    => 'single-post-layout',
             'settings'   => 'post-image-single',
+            'type'       => 'radio',
+            'choices'    => array(
+                'left' => 'Left side',
+                'above' => 'Above text',
+            ),
+        ) );
+
+        // Adding controls - single page
+        $wp_customize->add_control( 'left-column-single-page', array(
+            'label'      => __( 'Display left column', 'myfirsttheme' ),
+            'section'    => 'single-page-layout',
+            'settings'   => 'left-column-single-page',
+            'type'       => 'checkbox'
+        ) );
+
+        $wp_customize->add_control( 'right-column-single-page', array(
+            'label'      => __( 'Display right column', 'myfirsttheme' ),
+            'section'    => 'single-page-layout',
+            'settings'   => 'right-column-single-page',
+            'type'       => 'checkbox'
+        ) );
+
+        $wp_customize->add_control( 'page-meta', array(
+            'label'      => __( 'Enable post meta', 'myfirsttheme' ),
+            'section'    => 'single-page-layout',
+            'settings'   => 'page-meta',
+            'type'       => 'checkbox'
+        ) );
+
+        $wp_customize->add_control( 'display-header-image-on-page', array(
+            'label'      => __( 'Display header image', 'myfirsttheme' ),
+            'section'    => 'single-page-layout',
+            'settings'   => 'display-header-image-on-page',
+            'type'       => 'checkbox'
+        ) );
+
+        $wp_customize->add_control( 'page-image', array(
+            'label'      => __( 'Post Image Position on Front Page and Archives Pages', 'myfirsttheme' ),
+            'section'    => 'single-page-layout',
+            'settings'   => 'page-image',
             'type'       => 'radio',
             'choices'    => array(
                 'left' => 'Left side',
