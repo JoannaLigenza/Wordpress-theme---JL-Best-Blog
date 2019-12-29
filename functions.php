@@ -280,6 +280,12 @@
             'type'      => 'theme_mod'
         ) );
 
+        $wp_customize->add_setting( 'taxonomy-description' , array(
+            'default'   => 'top',
+            'transport' => 'refresh',
+            'type'      => 'theme_mod'
+        ) );
+
         // Adding panel
         $wp_customize->add_panel( 'header', array(
             'title' => __( 'Header' ),
@@ -584,6 +590,18 @@
             'section'    => 'archive-layout',
             'settings'   => 'display-header-image-on-archive',
             'type'       => 'checkbox'
+        ) );
+
+        $wp_customize->add_control( 'taxonomy-description', array(
+            'label'      => __( 'Taxonomy description position', 'myfirsttheme' ),
+            'section'    => 'archive-layout',
+            'settings'   => 'taxonomy-description',
+            'type'       => 'radio',
+            'choices'    => array(
+                'top' => 'Above content',
+                'bottom' => 'Below content',
+                'none'  => 'None'
+            ),
         ) );
     }
     add_action( 'customize_register', 'myfirsttheme_customize_register' );

@@ -729,6 +729,33 @@ nav:after {
     cursor: pointer;
 }
 
+/* //////////////////  ARCHIVE PAGE  ////////////////////// */
+
+.taxonomy-title {
+    font-size: 1.5em;
+    padding: 20px 0;
+    color: #696969;
+}
+
+.taxonomy-description {
+    padding-bottom: 50px;
+}
+
+.main-content-taxonomy {
+    padding-bottom: 50px;
+}
+
+@media screen and (max-width: 1220px) {
+    .taxonomy-title {
+        padding: 20px 10px;
+    }
+
+    .taxonomy-description {
+        padding: 0 10px;
+        padding-bottom: 50px;
+    }
+}
+
 
 /* //////////////////  FOOTER  ////////////////////// */
 

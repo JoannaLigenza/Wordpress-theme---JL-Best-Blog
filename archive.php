@@ -3,8 +3,15 @@
 ?>
 
 <div class="content">
-
-    <div class="main-content container">
+    <!-- Archive title -->
+    <?php the_archive_title( '<h1 class="taxonomy-title container">', '</h1>' ); ?>
+    <!-- Archive description top -->
+    <?php
+        if (get_theme_mod( 'taxonomy-description' ) === "top") { 
+            the_archive_description( '<div class="taxonomy-description container">', '</div>' );
+        }
+    ?>
+    <div class="main-content main-content-taxonomy container">
         <!-- left column -->
         <?php
             if (get_theme_mod( 'left-column-archive' )) { ?>
@@ -62,6 +69,12 @@
             <?php }
         ?>
     </div>
+    <!-- Archive description bottom -->
+    <?php
+        if (get_theme_mod( 'taxonomy-description' ) === "bottom") { 
+            the_archive_description( '<div class="taxonomy-description container">', '</div>' );
+        }
+    ?>
 </div>
 
 <?php
