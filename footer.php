@@ -99,8 +99,8 @@
                     <?php
                 }
                 ?>  <!-- end of social icons section -->
-                <p class="footer-link"><small>Theme made by: </small><a href="https://love-coding.pl/en" class="footer-theme-link">JL</a><small>, 
-                    used by: <a href="<?php echo home_url(); ?>" class="footer-theme-link"><?php echo bloginfo('name') ?></a></small></p>
+                <p class="footer-link"><small><?php _e( 'Theme made by: ', 'myfirsttheme') ?></small><a href="https://love-coding.pl/en" class="footer-theme-link">JL</a><small>, 
+                    <?php _e( 'used by: ', 'myfirsttheme') ?> <a href="<?php echo home_url(); ?>" class="footer-theme-link"><?php echo bloginfo('name') ?></a></small></p>
             </div>
             
         </footer>

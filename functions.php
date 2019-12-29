@@ -724,7 +724,7 @@
         if ($excerptLength === '0') {
             return '';
         } else {
-            return "<a href='".get_permalink()."'><div class='read-more-button' style='border: 1px solid ".get_theme_mod( 'menu_background_color', '#696969' )."'> Read more...</div></a>";
+            return "<a href='".get_permalink()."'><div class='read-more-button' style='border: 1px solid ".get_theme_mod( 'menu_background_color', '#696969' )."'>".__( 'Read more...', 'myfirsttheme')."</div></a>";
         }
     }
     add_filter( 'excerpt_more', 'myfisttheme_excerpt_more' );
@@ -733,6 +733,12 @@
     // delete cookies checkbox from comment form
     remove_action( 'set_comment_cookies', 'wp_set_comment_cookies' );
 
+
+    // Add translations
+    function myfirsttheme_setup(){
+        load_theme_textdomain( 'myfirsttheme', get_template_directory() . '/languages' );
+    } 
+    add_action( 'after_setup_theme', 'myfirsttheme_setup' );
 
 ?>
 
