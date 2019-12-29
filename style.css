@@ -351,13 +351,19 @@ a:hover {
 
 .main-content--section {
     flex: 1;
-    padding: 0 10px;
+    padding: 0;
 }
 
 .column {
     min-width: 300px;
     width: 300px;
     padding: 0 10px;
+}
+
+@media screen and (max-width: 1220px) {
+    .main-content--section {
+        padding: 0 10px;
+    }
 }
 
 @media screen and (max-width: 1199px) {
@@ -754,6 +760,25 @@ nav:after {
         padding: 0 10px;
         padding-bottom: 50px;
     }
+}
+
+
+/* //////////////////  SEARCH PAGE  ////////////////////// */
+
+.nothing-found-search-results {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.nothing-found-search-results-message {
+    padding-bottom: 30px;
+}
+
+.nothing-found-search-results form {
+    width: 95%;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 
