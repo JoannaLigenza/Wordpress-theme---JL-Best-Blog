@@ -483,6 +483,10 @@ a:hover {
     padding-left: 10px;
 }
 
+.post-meta {
+    margin-bottom: 50px;
+}
+
 .post-meta > div {
     display: inline-block;
     padding-right: 10px;
@@ -569,6 +573,7 @@ a:hover {
 
 .prev-next-post-navigation {
     padding: 35px 0;
+    margin-bottom: 50px;
 }
 
 .post-link {
