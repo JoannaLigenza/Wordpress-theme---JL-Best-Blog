@@ -59,12 +59,12 @@
                             </div>
                         <?php endif; ?>
                     </div>
-                <?php endwhile; ?>
-                <!-- display comments -->
-                <?php
-                if ( comments_open() || get_comments_number() ) :
-                    comments_template();
-                endif;
+                    <?php 
+                    // display comments
+                    if ( comments_open() || get_comments_number() ) :
+                        comments_template();
+                    endif;
+                endwhile;
             else :
                 _e( '<p>No content yet, write some :)</p>', 'myfirsttheme' );
             endif; 
