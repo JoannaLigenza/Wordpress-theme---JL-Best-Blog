@@ -45,21 +45,21 @@
                         }
                         the_content('<article>', '</article>');
                         echo "</article>";
-                    echo "</section>";
-                endwhile; ?>
-                <!-- post navigation -->
-                <div class="prev-next-post-navigation">
-                    <?php if ( get_previous_post() ) : ?>
-                        <div class="prev-post-link post-link">
-                            <?php previous_post_link('&laquo; %link', __('Previous', 'myfirsttheme')); ?>
-                        </div>
-                    <?php endif; ?>
-                    <?php if ( get_next_post() ) : ?>
-                        <div class="next-post-link post-link">
-                            <?php next_post_link('%link &raquo;', __('Next', 'myfirsttheme')); ?>
-                        </div>
-                    <?php endif; ?>
-                </div>
+                    echo "</section>";?>
+                    <!-- post navigation -->
+                    <div class="prev-next-post-navigation">
+                        <?php if ( get_previous_post() ) : ?>
+                            <div class="prev-post-link post-link">
+                                <?php previous_post_link('&laquo; %link', __('Previous', 'myfirsttheme')); ?>
+                            </div>
+                        <?php endif; ?>
+                        <?php if ( get_next_post() ) : ?>
+                            <div class="next-post-link post-link">
+                                <?php next_post_link('%link &raquo;', __('Next', 'myfirsttheme')); ?>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                <?php endwhile; ?>
                 <!-- display comments -->
                 <?php
                 if ( comments_open() || get_comments_number() ) :
