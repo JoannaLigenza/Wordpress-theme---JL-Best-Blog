@@ -52,7 +52,7 @@
                 <div class="nothing-found-search-results">
                     <h2 class="nothing-found-search-results-title">Nothing Found</h2>
                     <p class="nothing-found-search-results-message">
-                        Sorry, but nothing matched your search terms. Please try again with some different keywords.
+                        <?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'myfirsttheme' ) ?>
                     </p>
                     <?php get_search_form(); ?>
                 </div>

@@ -10,11 +10,7 @@
                 <h2 class="comments-title">
                     <?php 
                         $commentsNUmber = get_comments_number();
-                        if ($commentsNUmber ===  '1') {
-                            echo $commentsNUmber." COMMENT";
-                        } else {
-                            echo $commentsNUmber." COMMENTS";
-                        }
+                        echo _e('COMMENTS: ', 'myfirsttheme').$commentsNUmber;
                     ?>  
                 </h2>
             </header>
