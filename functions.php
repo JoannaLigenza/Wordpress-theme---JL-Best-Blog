@@ -658,7 +658,7 @@
 
 
     // Add custom style to wordpress elements
-    function myfisttheme_set_header_style() {
+    function myfisttheme_set_custom_styles() {
         $color = get_theme_mod( 'menu_background_color' );
         $fontColor = get_theme_mod( 'menu_font_color' );
         $linkHoverColor = get_theme_mod( 'link_hover_color' );
@@ -711,7 +711,7 @@
             </style>
         <?php
     }
-    add_action('wp_head', 'myfisttheme_set_header_style');
+    add_action('wp_head', 'myfisttheme_set_custom_styles');
 
 
     // Include post thumbnails
@@ -741,10 +741,10 @@
 
 
     // Add translations for theme
-    function myfirsttheme_setup(){
+    function myfirsttheme_add_translations(){
         load_theme_textdomain( 'myfirsttheme', get_template_directory() . '/languages' );
     } 
-    add_action( 'after_setup_theme', 'myfirsttheme_setup' );
+    add_action( 'after_setup_theme', 'myfirsttheme_add_translations' );
 
 ?>
 
