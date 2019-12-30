@@ -24,7 +24,7 @@
                             echo "<div class='image-container image-container-".$imagePosition."'><a href='".get_permalink()."'>" ;
                                 if ($imagePosition === 'above') {
                                     $imageWidthFull = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "full" );
-                                    $imageWidthMedium = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "medium" );
+                                    // $imageWidthMedium = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "medium" );
                                     $maxWidth = $imageWidthFull[1];
                                     if ($maxWidth > 1200) {
                                         $maxWidth = 1200;
