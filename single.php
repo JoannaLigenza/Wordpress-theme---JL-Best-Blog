@@ -39,6 +39,9 @@
                         if (get_theme_mod( 'post-meta-single' )) {
                             $author = get_the_author();
                             $date = get_the_date( 'Y/m' ); ?>
+                            <div class="post-categories">
+                                <?php the_category( ' ' ); ?>
+                            </div>
                             <div class='post-meta'>
                                 <div class='meta-author'><a href='<?php echo get_home_url()."/author/".$author ?>'> <?php echo $author ?> </a></div>
                                 <div class='meta-date'><a href='<?php echo get_home_url()."/".$date ?>'> <?php echo get_the_time('j-m-Y') ?> </a></div>

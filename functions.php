@@ -702,6 +702,12 @@
                 .read-more-button:hover {
                     background-color: <?php echo $color ?>;
                 }
+                .post-categories a {
+                    border: 1px solid <?php echo $color ?>;
+                }
+                .post-categories a:hover {
+                    background-color: <?php echo $color ?>;
+                }
             </style>
         <?php
     }
