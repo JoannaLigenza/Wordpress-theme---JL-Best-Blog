@@ -1,15 +1,14 @@
 <?php
-    // Include styles
-    function enqueue_style_myfirsttheme() {
-        wp_enqueue_style( 'style', get_stylesheet_uri() );
-    }
-    add_action( 'wp_enqueue_scripts', 'enqueue_style_myfirsttheme' );
 
-    // Include scripts
-    function enqueue_script_myfirsttheme() {
+    // Adding styles and scripts
+    function myfirsttheme_add_theme_scripts() {
+        // Include styles
+        wp_enqueue_style( 'style', get_stylesheet_uri() );
+
+        // Include scripts
         wp_enqueue_script( 'script', get_theme_file_uri() . '/js/script.js', true);
     }
-    add_action( 'wp_enqueue_scripts', 'enqueue_script_myfirsttheme' );
+    add_action( 'wp_enqueue_scripts', 'myfirsttheme_add_theme_scripts' );
 
 
     // Include menus
@@ -23,6 +22,7 @@
     }
     add_action( 'init', 'myfirsttheme_register_my_menus' );
 
+
     // Include logo
     function myfirsttheme_set_custom_logo() {
         $defaults = array(
@@ -35,6 +35,7 @@
         add_theme_support( 'custom-logo', $defaults );
     }
     add_action( 'after_setup_theme', 'myfirsttheme_set_custom_logo' );
+
 
     // Include custom header
     function myfirsttheme_set_custom_header() {
@@ -63,6 +64,8 @@
     }
     add_action( 'after_setup_theme', 'myfirsttheme_set_custom_header' );
 
+
+    // setup
     function myfirsttheme_setup() {
         // Include post thumbnails
         add_theme_support( 'post-thumbnails' );
