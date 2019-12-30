@@ -33,15 +33,17 @@
                                 }
                         } else {
                             echo "<article class='article'>";
-                        }
-                        echo "<h2><a href='".get_permalink()."'>".get_the_title()."</a></h2>";
+                        } ?>
+                        <h2><a href='<?php echo get_permalink(); ?>'> <?php echo get_the_title(); ?> </a></h2>
+                        <?php 
                         if (get_theme_mod( 'post-meta-single' )) {
                             $author = get_the_author();
-                            $date = get_the_date( 'Y/m' );
-                            echo "<div class='post-meta'>";
-                                echo "<div class='meta-author'><a href='".get_home_url()."/author/".$author."'> ".$author." </a></div>";
-                                echo "<div class='meta-date'><a href='".get_home_url()."/index.php/".$date."'> ".get_the_time('j-m-Y')."</a></div>";
-                            echo "</div>";
+                            $date = get_the_date( 'Y/m' ); ?>
+                            <div class='post-meta'>
+                                <div class='meta-author'><a href='<?php echo get_home_url()."/author/".$author ?>'> <?php echo $author ?> </a></div>
+                                <div class='meta-date'><a href='<?php echo get_home_url()."/".$date ?>'> <?php echo get_the_time('j-m-Y') ?> </a></div>
+                            </div>
+                            <?php
                         }
                         the_content('<article>', '</article>');
                         echo "</article>";
