@@ -66,7 +66,7 @@
                     comments_template();
                 endif;
             else :
-                echo '<p>No content</p>';
+                _e( '<p>No content yet, write some :)</p>', 'myfirsttheme' );
             endif; 
         ?>
     </main>

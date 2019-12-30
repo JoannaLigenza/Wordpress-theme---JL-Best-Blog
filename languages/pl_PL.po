@@ -43,3 +43,11 @@ msgstr "Motyw wykonany przez: "
 msgid "used by: "
 msgstr "używany przez: "
 
+#: search.php:55
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Przepraszamy, brak wyników dla hasła, którego szukasz. Spróbuj ponownie, wpisując inne hasło."
+
+#: content-home.php:48 , single.php:69 , page.php:69 , archive.php:59
+msgid "<p>No content yet, write some :)</p>"
+msgstr "<p>Brak treści, napisz coś :)</p>"
+

@@ -56,7 +56,7 @@
                     endwhile;
                     the_posts_pagination(array( 'mid_size' => 2 ));
                 else :
-                    echo '<p>No content</p>';
+                    _e( '<p>No content yet, write some :)</p>', 'myfirsttheme' );
                 endif; 
             ?>
         </main>

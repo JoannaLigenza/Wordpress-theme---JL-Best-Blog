@@ -734,7 +734,7 @@
     remove_action( 'set_comment_cookies', 'wp_set_comment_cookies' );
 
 
-    // Add translations
+    // Add translations for theme
     function myfirsttheme_setup(){
         load_theme_textdomain( 'myfirsttheme', get_template_directory() . '/languages' );
     } 
