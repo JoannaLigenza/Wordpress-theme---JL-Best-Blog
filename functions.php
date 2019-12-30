@@ -7,7 +7,7 @@
 
     // Include scripts
     function enqueue_script_myfirsttheme() {
-        wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', true);
+        wp_enqueue_script( 'script', get_theme_file_uri() . '/js/script.js', true);
     }
     add_action( 'wp_enqueue_scripts', 'enqueue_script_myfirsttheme' );
 
@@ -43,7 +43,7 @@
             'height'        => 700,
             'flex-width'    => true,
             'flex-height'   => true,
-            'default-image' => get_template_directory_uri() . '/images/winter.jpg',
+            'default-image' => get_theme_file_uri() . '/images/winter.jpg',
             // Display the header text along with the image
             'header-text'   => true,
             // Header text color default
@@ -54,8 +54,8 @@
         // register header(s)
         $header_images = array(
             'winter' => array(
-                    'url'           => get_template_directory_uri() . '/images/winter.jpg',
-                    'thumbnail_url' => get_template_directory_uri() . '/images/winter.jpg',
+                    'url'           => get_theme_file_uri() . '/images/winter.jpg',
+                    'thumbnail_url' => get_theme_file_uri() . '/images/winter.jpg',
                     'description'   => 'Header image',
             ),
         );
