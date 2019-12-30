@@ -612,6 +612,10 @@ a:hover {
     padding: 15px 25px;
 }
 
+.post-link a {
+    padding: 15px 0;
+}
+
 
 /* Comments layout */
 
@@ -702,7 +706,7 @@ nav:after {
 /* Comment form */
 
 .comment-respond {
-    margin: 50px auto;
+    margin: 80px auto;
     max-width: 800px;
 
 }
