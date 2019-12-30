@@ -63,6 +63,19 @@
     }
     add_action( 'after_setup_theme', 'myfirsttheme_set_custom_header' );
 
+    function myfirsttheme_setup() {
+        // Include post thumbnails
+        add_theme_support( 'post-thumbnails' );
+
+        // Add default posts and comments RSS feed links to <head>
+        add_theme_support( 'automatic-feed-links' );
+
+        // Add translations for theme
+        load_theme_textdomain( 'myfirsttheme', get_template_directory() . '/languages' );
+
+    }
+    add_action( 'after_setup_theme', 'myfirsttheme_setup' );
+
 
     // Include custom sections in customizer - all the sections, settings, and controls will be added here
     function myfirsttheme_customize_register( $wp_customize ) {
@@ -714,10 +727,6 @@
     add_action('wp_head', 'myfisttheme_set_custom_styles');
 
 
-    // Include post thumbnails
-    add_theme_support( 'post-thumbnails' );
-
-
     // Set post excerpt length
     function myfisttheme_custom_excerpt_length( $length ) {
         $excerptLength = get_theme_mod( 'excerpt-length' );
@@ -738,13 +747,6 @@
 
     // delete cookies checkbox from comment form
     remove_action( 'set_comment_cookies', 'wp_set_comment_cookies' );
-
-
-    // Add translations for theme
-    function myfirsttheme_add_translations(){
-        load_theme_textdomain( 'myfirsttheme', get_template_directory() . '/languages' );
-    } 
-    add_action( 'after_setup_theme', 'myfirsttheme_add_translations' );
 
 ?>
 
