@@ -7,7 +7,7 @@
     <?php the_archive_title( '<h1 class="taxonomy-title container">', '</h1>' ); ?>
     <!-- Archive description top -->
     <?php
-        if (get_theme_mod( 'taxonomy-description' ) === "top") { 
+        if (get_theme_mod( 'taxonomy-description' ) === "top" && $paged < 2 ) { 
             the_archive_description( '<div class="taxonomy-description container">', '</div>' );
         }
     ?>
@@ -80,7 +80,7 @@
     </div>
     <!-- Archive description bottom -->
     <?php
-        if (get_theme_mod( 'taxonomy-description' ) === "bottom") { 
+        if (get_theme_mod( 'taxonomy-description' ) === "bottom" && $paged < 2) { 
             the_archive_description( '<div class="taxonomy-description container">', '</div>' );
         }
     ?>
