@@ -531,6 +531,7 @@ a:hover {
 
 .specific-pages-title {
     color: #696969;
+    padding: 50px 0;
 }
 
 /* Pagination */
@@ -755,7 +756,7 @@ nav:after {
 
 .taxonomy-title {
     font-size: 1.5em;
-    padding: 20px 0;
+    padding: 50px 0;
     color: #696969;
 }
 
@@ -769,7 +770,7 @@ nav:after {
 
 @media screen and (max-width: 1220px) {
     .taxonomy-title {
-        padding: 20px 10px;
+        padding: 50px 10px;
     }
 
     .taxonomy-description {
