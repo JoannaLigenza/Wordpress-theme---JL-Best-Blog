@@ -761,17 +761,21 @@
         if ( ! isset( $wp_customize->selective_refresh ) ) {
             return;
         }
-    
+
+        $wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
+        $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+
         $wp_customize->selective_refresh->add_partial( 'header_site_title', array(
-            'selector' => '.title a',
-            'settings' => array( 'blogname' ),
+            'selector' => '.header-text div',
+            'settings' => array( 'blogname', 'blogdescription' ),
             'render_callback' => function() {
-                bloginfo( 'name' );
+                echo "<h2 style='color: #".get_theme_mod( 'header_textcolor' )."'>".get_bloginfo( 'name' )."</h2>";
+                echo "<h5 style='color: #".get_theme_mod( 'header_textcolor' )."'>".get_bloginfo( 'description' )."</h5>";
             },
         ) );
     
         $wp_customize->selective_refresh->add_partial( 'document_title', array(
-            'selector' => 'head > title',
+            'selector' => 'head title',
             'settings' => array( 'blogname' ),
             'render_callback' => 'wp_get_document_title',
         ) );
