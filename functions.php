@@ -76,6 +76,9 @@
         // Add translations for theme
         load_theme_textdomain( 'myfirsttheme', get_template_directory() . '/languages' );
 
+        // Allow partial refreshes of widgets in a theme’s sidebars
+        add_theme_support( 'customize-selective-refresh-widgets' );
+
     }
     add_action( 'after_setup_theme', 'myfirsttheme_setup' );
 
