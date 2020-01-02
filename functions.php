@@ -751,5 +751,29 @@
     // delete cookies checkbox from comment form
     remove_action( 'set_comment_cookies', 'wp_set_comment_cookies' );
 
+
+    // Adding selective settings refresh for header title and document title
+    function my_register_blogname_partials( WP_Customize_Manager $wp_customize ) {
+        // Abort if selective refresh is not available.
+        if ( ! isset( $wp_customize->selective_refresh ) ) {
+            return;
+        }
+    
+        $wp_customize->selective_refresh->add_partial( 'header_site_title', array(
+            'selector' => '.title a',
+            'settings' => array( 'blogname' ),
+            'render_callback' => function() {
+                bloginfo( 'name' );
+            },
+        ) );
+    
+        $wp_customize->selective_refresh->add_partial( 'document_title', array(
+            'selector' => 'head > title',
+            'settings' => array( 'blogname' ),
+            'render_callback' => 'wp_get_document_title',
+        ) );
+    }
+    add_action( 'customize_register', 'my_register_blogname_partials' );
+
 ?>
 
