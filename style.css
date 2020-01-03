@@ -294,7 +294,7 @@ a:hover {
 }
 
 .menu-item a, .page-item a {
-    color: #fff;
+    color: inherit;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;

@@ -11,6 +11,14 @@
     add_action( 'wp_enqueue_scripts', 'myfirsttheme_add_theme_scripts' );
 
 
+    // Adding scripts for customizer preview
+    function myfirsttheme_add_theme_scripts_preview() {
+        // wp_enqueue_script( 'customizer', get_theme_file_uri() . '/js/customizer.js', array('jquery'), true);
+        wp_enqueue_script( 'customizer', get_theme_file_uri() . '/js/customizer.js', true);
+    }
+    add_action( 'customize_preview_init', 'myfirsttheme_add_theme_scripts_preview' );
+
+
     // Include menus
     function myfirsttheme_register_my_menus() {
         register_nav_menus(
@@ -696,7 +704,7 @@
                 .dots:hover {
                     background-color: unset;
                 }
-                .menu-item a, .page-item a {
+                .menu-item, .page-item {
                     color: <?php echo $fontColor ?>;
                 }
                 a:hover {
@@ -755,8 +763,9 @@
     remove_action( 'set_comment_cookies', 'wp_set_comment_cookies' );
 
 
+
     // Adding selective settings refresh for header title and document title
-    function my_register_blogname_partials( WP_Customize_Manager $wp_customize ) {
+    function myfirsttheme_register_partials( WP_Customize_Manager $wp_customize ) {
         // Abort if selective refresh is not available.
         if ( ! isset( $wp_customize->selective_refresh ) ) {
             return;
@@ -764,6 +773,7 @@
 
         $wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
         $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+        $wp_customize->get_setting( 'menu_font_color' )->transport = 'postMessage';
 
         $wp_customize->selective_refresh->add_partial( 'header_site_title', array(
             'selector' => '.header-text div',
@@ -774,13 +784,29 @@
             },
         ) );
     
-        $wp_customize->selective_refresh->add_partial( 'document_title', array(
-            'selector' => 'head title',
-            'settings' => array( 'blogname' ),
-            'render_callback' => 'wp_get_document_title',
+        // $wp_customize->selective_refresh->add_partial( 'document_title', array(
+        //     'selector' => 'head title',
+        //     'settings' => array( 'blogname' ),
+        //     'render_callback' => 'wp_get_document_title',
+        // ) );
+
+        $wp_customize->selective_refresh->add_partial( 'header_menu_text', array(
+            'selector' => '#navigation',
+            'settings' => array( 'menu_font_color' ),
+            'render_callback' => function() {
+                $fontColor = get_theme_mod( 'menu_font_color' , '#fff' );
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'header-menu',
+                        'container_class' => 'header-menu-class',
+                        'before' => '<span style="color: '.$fontColor.'">',
+                        'after'  => '</span>',
+                    )
+                );
+            },
         ) );
     }
-    add_action( 'customize_register', 'my_register_blogname_partials' );
+    add_action( 'customize_register', 'myfirsttheme_register_partials' );
 
 ?>
 
