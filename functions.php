@@ -1,15 +1,22 @@
 <?php
-    // Include styles
-    function enqueue_style_myfirsttheme() {
-        wp_enqueue_style( 'style', get_stylesheet_uri() );
-    }
-    add_action( 'wp_enqueue_scripts', 'enqueue_style_myfirsttheme' );
 
-    // Include scripts
-    function enqueue_script_myfirsttheme() {
-        wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', true);
+    // Adding styles and scripts
+    function myfirsttheme_add_theme_scripts() {
+        // Include styles
+        wp_enqueue_style( 'style', get_stylesheet_uri() );
+
+        // Include scripts
+        wp_enqueue_script( 'script', get_theme_file_uri() . '/js/script.js', true);
     }
-    add_action( 'wp_enqueue_scripts', 'enqueue_script_myfirsttheme' );
+    add_action( 'wp_enqueue_scripts', 'myfirsttheme_add_theme_scripts' );
+
+
+    // Adding scripts for customizer preview
+    function myfirsttheme_add_theme_scripts_preview() {
+        // wp_enqueue_script( 'customizer', get_theme_file_uri() . '/js/customizer.js', array('jquery'), true);
+        wp_enqueue_script( 'customizer', get_theme_file_uri() . '/js/customizer.js', true);
+    }
+    add_action( 'customize_preview_init', 'myfirsttheme_add_theme_scripts_preview' );
 
 
     // Include menus
@@ -22,6 +29,7 @@
         );
     }
     add_action( 'init', 'myfirsttheme_register_my_menus' );
+
 
     // Include logo
     function myfirsttheme_set_custom_logo() {
@@ -36,6 +44,7 @@
     }
     add_action( 'after_setup_theme', 'myfirsttheme_set_custom_logo' );
 
+
     // Include custom header
     function myfirsttheme_set_custom_header() {
         $header_info = array(
@@ -43,7 +52,7 @@
             'height'        => 700,
             'flex-width'    => true,
             'flex-height'   => true,
-            'default-image' => get_template_directory_uri() . '/images/winter.jpg',
+            'default-image' => get_theme_file_uri() . '/images/winter.jpg',
             // Display the header text along with the image
             'header-text'   => true,
             // Header text color default
@@ -54,14 +63,32 @@
         // register header(s)
         $header_images = array(
             'winter' => array(
-                    'url'           => get_template_directory_uri() . '/images/winter.jpg',
-                    'thumbnail_url' => get_template_directory_uri() . '/images/winter.jpg',
+                    'url'           => get_theme_file_uri() . '/images/winter.jpg',
+                    'thumbnail_url' => get_theme_file_uri() . '/images/winter.jpg',
                     'description'   => 'Header image',
             ),
         );
         register_default_headers( $header_images );
     }
     add_action( 'after_setup_theme', 'myfirsttheme_set_custom_header' );
+
+
+    // setup
+    function myfirsttheme_setup() {
+        // Include post thumbnails
+        add_theme_support( 'post-thumbnails' );
+
+        // Add default posts and comments RSS feed links to <head>
+        add_theme_support( 'automatic-feed-links' );
+
+        // Add translations for theme
+        load_theme_textdomain( 'myfirsttheme', get_template_directory() . '/languages' );
+
+        // Allow partial refreshes of widgets in a theme’s sidebars
+        add_theme_support( 'customize-selective-refresh-widgets' );
+
+    }
+    add_action( 'after_setup_theme', 'myfirsttheme_setup' );
 
 
     // Include custom sections in customizer - all the sections, settings, and controls will be added here
@@ -658,7 +685,7 @@
 
 
     // Add custom style to wordpress elements
-    function myfisttheme_set_header_style() {
+    function myfisttheme_set_custom_styles() {
         $color = get_theme_mod( 'menu_background_color' );
         $fontColor = get_theme_mod( 'menu_font_color' );
         $linkHoverColor = get_theme_mod( 'link_hover_color' );
@@ -677,7 +704,7 @@
                 .dots:hover {
                     background-color: unset;
                 }
-                .menu-item a, .page-item a {
+                .menu-item, .page-item {
                     color: <?php echo $fontColor ?>;
                 }
                 a:hover {
@@ -702,14 +729,16 @@
                 .read-more-button:hover {
                     background-color: <?php echo $color ?>;
                 }
+                .post-categories a {
+                    border: 1px solid <?php echo $color ?>;
+                }
+                .post-categories a:hover {
+                    background-color: <?php echo $color ?>;
+                }
             </style>
         <?php
     }
-    add_action('wp_head', 'myfisttheme_set_header_style');
-
-
-    // Include post thumbnails
-    add_theme_support( 'post-thumbnails' );
+    add_action('wp_head', 'myfisttheme_set_custom_styles');
 
 
     // Set post excerpt length
@@ -734,11 +763,50 @@
     remove_action( 'set_comment_cookies', 'wp_set_comment_cookies' );
 
 
-    // Add translations for theme
-    function myfirsttheme_setup(){
-        load_theme_textdomain( 'myfirsttheme', get_template_directory() . '/languages' );
-    } 
-    add_action( 'after_setup_theme', 'myfirsttheme_setup' );
+
+    // Adding selective settings refresh for header title and document title
+    function myfirsttheme_register_partials( WP_Customize_Manager $wp_customize ) {
+        // Abort if selective refresh is not available.
+        if ( ! isset( $wp_customize->selective_refresh ) ) {
+            return;
+        }
+
+        $wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
+        $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+        $wp_customize->get_setting( 'menu_font_color' )->transport = 'postMessage';
+
+        $wp_customize->selective_refresh->add_partial( 'header_site_title', array(
+            'selector' => '.header-text div',
+            'settings' => array( 'blogname', 'blogdescription' ),
+            'render_callback' => function() {
+                echo "<h2 style='color: #".get_theme_mod( 'header_textcolor' )."'>".get_bloginfo( 'name' )."</h2>";
+                echo "<h5 style='color: #".get_theme_mod( 'header_textcolor' )."'>".get_bloginfo( 'description' )."</h5>";
+            },
+        ) );
+    
+        // $wp_customize->selective_refresh->add_partial( 'document_title', array(
+        //     'selector' => 'head title',
+        //     'settings' => array( 'blogname' ),
+        //     'render_callback' => 'wp_get_document_title',
+        // ) );
+
+        $wp_customize->selective_refresh->add_partial( 'header_menu_text', array(
+            'selector' => '#navigation',
+            'settings' => array( 'menu_font_color' ),
+            'render_callback' => function() {
+                $fontColor = get_theme_mod( 'menu_font_color' , '#fff' );
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'header-menu',
+                        'container_class' => 'header-menu-class',
+                        'before' => '<span style="color: '.$fontColor.'">',
+                        'after'  => '</span>',
+                    )
+                );
+            },
+        ) );
+    }
+    add_action( 'customize_register', 'myfirsttheme_register_partials' );
 
 ?>
 

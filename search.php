@@ -23,7 +23,16 @@
                         if ( has_post_thumbnail() ) {
                             echo "<div class='image-container image-container-".$imagePosition."'><a href='".get_permalink()."'>" ;
                                 if ($imagePosition === 'above') {
-                                    echo the_post_thumbnail( 'full', array( 'sizes' => '(max-width:320px) 145px, (max-width:425px) 220px, 500px' ) );
+                                    $imageWidth = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "full" );
+                                    $maxWidth = $imageWidth[1];
+                                    if ($maxWidth > 1200) {
+                                        $maxWidth = 1200;
+                                    }
+                                    echo the_post_thumbnail( 'full', array( 
+                                        // 'sizes' => '(max-width:320px) 145px, (max-width:800px) 220px, 1200',
+                                        'sizes' => '(max-width: '.$maxWidth.') 100vw, '.$maxWidth.'px',
+                                        'alt' => 'post image'
+                                        ) );
                                     echo "</div></a>" ;
                                     echo "<article class='article'>";
                                 } else {
@@ -36,10 +45,10 @@
                         }
                         echo "<h2><a href='".get_permalink()."'>".get_the_title()."</a></h2>";
                         if (get_theme_mod( 'post-meta' )) {
-                            $id = get_the_author_meta('ID');
+                            $author = get_the_author();
                             $date = get_the_date( 'Y/m' );
                             echo "<div class='post-meta'>";
-                                echo "<div class='meta-author'><a href='?author=".$id."'> ".get_the_author()." </a></div>";
+                                echo "<div class='meta-author'><a href='".get_home_url()."/author/".$author."'> ".$author." </a></div>";
                                 echo "<div class='meta-date'><a href='".get_home_url()."/index.php/".$date."'> ".get_the_time('j-m-Y')."</a></div>";
                             echo "</div>";
                         }

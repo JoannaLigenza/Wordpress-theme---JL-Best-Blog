@@ -294,7 +294,7 @@ a:hover {
 }
 
 .menu-item a, .page-item a {
-    color: #fff;
+    color: inherit;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -531,6 +531,7 @@ a:hover {
 
 .specific-pages-title {
     color: #696969;
+    padding: 50px 0;
 }
 
 /* Pagination */
@@ -579,6 +580,17 @@ a:hover {
 
 /* //////////////////  SINGLE POST  ////////////////////// */
 
+.post-categories {
+    padding: 15px 0;
+    margin-bottom: 15px;
+}
+
+.post-categories a {
+    padding: 10px 15px;
+    margin: 10px 0;
+    display: inline-block;
+}
+
 .prev-next-post-navigation {
     padding: 35px 0;
     margin-bottom: 50px;
@@ -599,6 +611,10 @@ a:hover {
 .next-post-link {
     float: right;
     padding: 15px 25px;
+}
+
+.post-link a {
+    padding: 15px 0;
 }
 
 
@@ -691,7 +707,7 @@ nav:after {
 /* Comment form */
 
 .comment-respond {
-    margin: 50px auto;
+    margin: 80px auto;
     max-width: 800px;
 
 }
@@ -740,7 +756,7 @@ nav:after {
 
 .taxonomy-title {
     font-size: 1.5em;
-    padding: 20px 0;
+    padding: 50px 0;
     color: #696969;
 }
 
@@ -754,7 +770,7 @@ nav:after {
 
 @media screen and (max-width: 1220px) {
     .taxonomy-title {
-        padding: 20px 10px;
+        padding: 50px 10px;
     }
 
     .taxonomy-description {
@@ -780,6 +796,14 @@ nav:after {
     width: 95%;
     max-width: 500px;
     margin: 0 auto;
+}
+
+
+/* //////////////////  PAGE 404  ////////////////////// */
+
+.page-404 {
+    text-align: center;
+    margin-top: 50px;
 }
 
 

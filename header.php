@@ -52,9 +52,7 @@
                                 <h5 style="color: #<?php echo get_theme_mod( 'header_textcolor' ) ?>"><?php bloginfo('description') ?></h5>
                             </div>   
                         </a>                        
-                    <?php } else{
-                        //do something
-                    }
+                    <?php }
                 ?>
                 <!-- displaying search form -->
                 <?php 
@@ -69,7 +67,7 @@
                     wp_nav_menu(
                         array(
                             'theme_location' => 'header-menu',
-                            'container_class' => 'header-menu-class'
+                            'container_class' => 'header-menu-class',
                         )
                     );
                 ?>
