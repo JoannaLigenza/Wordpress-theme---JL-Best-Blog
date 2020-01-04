@@ -803,7 +803,7 @@
 
     function myfisttheme_excerpt_more( $more ) {
         $excerptLength = get_theme_mod( 'excerpt-length' );
-        if ($excerptLength === '0') {
+        if ($excerptLength === 0) {
             return '';
         } else {
             return "<a href='".get_permalink()."'><div class='read-more-button' style='border: 1px solid ".get_theme_mod( 'menu_background_color', '#696969' )."'>".__( 'Read more...', 'myfirsttheme')."</div></a>";
