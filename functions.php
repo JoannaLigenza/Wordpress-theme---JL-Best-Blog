@@ -97,25 +97,30 @@
         $wp_customize->add_setting( 'header_textcolor' , array(
             'default'   => '#FF00FF',
             'transport' => 'refresh',   // this will refresh customizer's preview window when changes are made
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod', // this is setted for themes
+            'sanitize_callback' => 'sanitize_hex_color',    // this is wordpress sanitization function, to ensure that no unsafe data is stored in the database
         ) );
 
         $wp_customize->add_setting( 'menu_background_color' , array(
             'default'   => '#A8C5FF',
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'sanitize_hex_color',
         ) );
 
         $wp_customize->add_setting( 'menu_font_color' , array(
             'default'   => '#FFFFFF',
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'sanitize_hex_color',
+            'sanitize_js_callback' => 'sanitize_hex_color',     // selective refresh is set for menu_font_color setting (in customizer.js), so it needs to sanitize data used by script
         ) );
 
         $wp_customize->add_setting( 'link_hover_color' , array(
             'default'   => '#AD000B',
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'sanitize_hex_color',
         ) );
 
         $wp_customize->add_setting( 'header_searchbox' , array(
