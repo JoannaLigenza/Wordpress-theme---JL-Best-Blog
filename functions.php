@@ -161,7 +161,8 @@
         $wp_customize->add_setting( 'excerpt-length' , array(
             'default'   => '55',
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'absint',
         ) );
 
         $wp_customize->add_setting( 'footer-column-1' , array(
