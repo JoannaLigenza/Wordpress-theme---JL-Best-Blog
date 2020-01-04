@@ -162,7 +162,7 @@
             'default'   => '55',
             'transport' => 'refresh',
             'type'      => 'theme_mod',
-            'sanitize_callback' => 'absint',
+            'sanitize_callback' => 'absint',    // echo absint( 'some non-numeric string' );  -> returns 0
         ) );
 
         $wp_customize->add_setting( 'footer-column-1' , array(
