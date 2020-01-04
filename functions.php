@@ -126,25 +126,29 @@
         $wp_customize->add_setting( 'header_searchbox' , array(
             'default'   => true,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'left-column' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'right-column' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'post-meta' , array(
             'default'   => true,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'front-page-and-archive-image' , array(
@@ -162,25 +166,29 @@
         $wp_customize->add_setting( 'footer-column-1' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'footer-column-2' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'footer-column-3' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'footer-social-icon' , array(
             'default'   => true,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'social-icon-facebook' , array(
@@ -235,19 +243,22 @@
         $wp_customize->add_setting( 'left-column-single' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'right-column-single' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'post-meta-single' , array(
             'default'   => true,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'post-image-single' , array(
@@ -259,26 +270,30 @@
         $wp_customize->add_setting( 'display-header-image-on-post' , array(
             'default'   => true,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         // Settings - single page
         $wp_customize->add_setting( 'left-column-single-page' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'right-column-single-page' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'page-meta' , array(
             'default'   => true,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'page-image' , array(
@@ -290,26 +305,30 @@
         $wp_customize->add_setting( 'display-header-image-on-page' , array(
             'default'   => true,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         // Settings - archive page
         $wp_customize->add_setting( 'left-column-archive' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'right-column-archive' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'display-header-image-on-archive' , array(
             'default'   => true,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'taxonomy-description' , array(
@@ -317,6 +336,11 @@
             'transport' => 'refresh',
             'type'      => 'theme_mod'
         ) );
+
+        // sanitize callback functions for settings
+        function myfirsttheme_sanitize_checkbox( $checked ) {
+            return ( ( isset( $checked ) && true == $checked ) ? true : false );
+        }
 
         // Adding panel
         $wp_customize->add_panel( 'header', array(
