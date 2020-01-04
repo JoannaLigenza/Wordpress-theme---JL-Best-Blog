@@ -195,49 +195,57 @@
         $wp_customize->add_setting( 'social-icon-facebook' , array(
             'default'   => '',
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'esc_url_raw',
         ) );
 
         $wp_customize->add_setting( 'social-icon-twitter' , array(
             'default'   => '',
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'esc_url_raw',
         ) );
 
         $wp_customize->add_setting( 'social-icon-instagram' , array(
             'default'   => '',
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'esc_url_raw',
         ) );
 
         $wp_customize->add_setting( 'social-icon-youtube' , array(
             'default'   => '',
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'esc_url_raw',
         ) );
 
         $wp_customize->add_setting( 'social-icon-pinterest' , array(
             'default'   => '',
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'esc_url_raw',
         ) );
 
         $wp_customize->add_setting( 'social-icon-whatsapp' , array(
             'default'   => '',
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'esc_url_raw',
         ) );
 
         $wp_customize->add_setting( 'social-icon-messenger' , array(
             'default'   => '',
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'esc_url_raw',
         ) );
 
         $wp_customize->add_setting( 'social-icon-linkedin' , array(
             'default'   => '',
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'esc_url_raw',
         ) );
 
         // Settings - single post
