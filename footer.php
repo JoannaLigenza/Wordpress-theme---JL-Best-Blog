@@ -90,7 +90,7 @@
                     <!-- linkedin icon -->
                     <?php
                     if (get_theme_mod( 'social-icon-linkedin' ) !== "") { ?>
-                        <a href="<?php get_theme_mod( 'social-icon-linkedin' ) ?>">
+                        <a href="<?php echo get_theme_mod( 'social-icon-linkedin' ) ?>">
                             <img src="<?php echo get_theme_file_uri() . '/images/linkedin-icon.png' ?>" alt="linkedin-icon" class="social-icon">
                         </a>
                     <?php
