@@ -154,7 +154,8 @@
         $wp_customize->add_setting( 'front-page-and-archive-image' , array(
             'default'   => 'left',
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'myfirsttheme_sanitize_radio',
         ) );
 
         $wp_customize->add_setting( 'excerpt-length' , array(
@@ -264,7 +265,8 @@
         $wp_customize->add_setting( 'post-image-single' , array(
             'default'   => 'above',
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'myfirsttheme_sanitize_radio',
         ) );
 
         $wp_customize->add_setting( 'display-header-image-on-post' , array(
@@ -299,7 +301,8 @@
         $wp_customize->add_setting( 'page-image' , array(
             'default'   => 'above',
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'myfirsttheme_sanitize_radio',
         ) );
 
         $wp_customize->add_setting( 'display-header-image-on-page' , array(
@@ -334,12 +337,24 @@
         $wp_customize->add_setting( 'taxonomy-description' , array(
             'default'   => 'top',
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'type'      => 'theme_mod',
+            'sanitize_callback' => 'myfirsttheme_sanitize_radio',
         ) );
 
         // sanitize callback functions for settings
         function myfirsttheme_sanitize_checkbox( $checked ) {
             return ( ( isset( $checked ) && true == $checked ) ? true : false );
+        }
+
+        function myfirsttheme_sanitize_radio( $input, $setting ) {
+            // Ensure input is a slug.
+            $input = sanitize_key( $input );
+            
+            // Get list of choices from the control associated with the setting.
+            $choices = $setting->manager->get_control( $setting->id )->choices;
+            
+            // If the input is a valid key, return it; otherwise, return the default.
+            return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
         }
 
         // Adding panel
