@@ -97,21 +97,19 @@
         $wp_customize->add_setting( 'header_textcolor' , array(
             'default'   => '#FF00FF',
             'transport' => 'refresh',   // this will refresh customizer's preview window when changes are made
-            'type'      => 'theme_mod', // this is setted for themes
-            'sanitize_callback' => 'sanitize_hex_color',    // this is wordpress sanitization function, to ensure that no unsafe data is stored in the database
+            'type'      => 'theme_mod', // this is setted for themes and 'theme_mod' is default setting, so it's optional in themes
+            'sanitize_callback' => 'sanitize_hex_color_no_hash',    // this is wordpress sanitization function, to ensure that no unsafe data is stored in the database
         ) );
 
         $wp_customize->add_setting( 'menu_background_color' , array(
             'default'   => '#A8C5FF',
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'sanitize_hex_color',
         ) );
 
         $wp_customize->add_setting( 'menu_font_color' , array(
             'default'   => '#FFFFFF',
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'sanitize_hex_color',
             'sanitize_js_callback' => 'sanitize_hex_color',     // selective refresh is set for menu_font_color setting (in customizer.js), so it needs to sanitize data used by script
         ) );
@@ -119,133 +117,114 @@
         $wp_customize->add_setting( 'link_hover_color' , array(
             'default'   => '#AD000B',
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'sanitize_hex_color',
         ) );
 
         $wp_customize->add_setting( 'header_searchbox' , array(
             'default'   => true,
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'left-column' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'right-column' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'post-meta' , array(
             'default'   => true,
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'front-page-and-archive-image' , array(
             'default'   => 'left',
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'myfirsttheme_sanitize_radio',
         ) );
 
         $wp_customize->add_setting( 'excerpt-length' , array(
             'default'   => '55',
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'absint',    // echo absint( 'some non-numeric string' );  -> returns 0
         ) );
 
         $wp_customize->add_setting( 'footer-column-1' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'footer-column-2' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'footer-column-3' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'footer-social-icon' , array(
             'default'   => true,
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'social-icon-facebook' , array(
             'default'   => '',
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'esc_url_raw',
         ) );
 
         $wp_customize->add_setting( 'social-icon-twitter' , array(
             'default'   => '',
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'esc_url_raw',
         ) );
 
         $wp_customize->add_setting( 'social-icon-instagram' , array(
             'default'   => '',
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'esc_url_raw',
         ) );
 
         $wp_customize->add_setting( 'social-icon-youtube' , array(
             'default'   => '',
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'esc_url_raw',
         ) );
 
         $wp_customize->add_setting( 'social-icon-pinterest' , array(
             'default'   => '',
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'esc_url_raw',
         ) );
 
         $wp_customize->add_setting( 'social-icon-whatsapp' , array(
             'default'   => '',
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'esc_url_raw',
         ) );
 
         $wp_customize->add_setting( 'social-icon-messenger' , array(
             'default'   => '',
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'esc_url_raw',
         ) );
 
         $wp_customize->add_setting( 'social-icon-linkedin' , array(
             'default'   => '',
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'esc_url_raw',
         ) );
 
@@ -253,35 +232,30 @@
         $wp_customize->add_setting( 'left-column-single' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'right-column-single' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'post-meta-single' , array(
             'default'   => true,
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'post-image-single' , array(
             'default'   => 'above',
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'myfirsttheme_sanitize_radio',
         ) );
 
         $wp_customize->add_setting( 'display-header-image-on-post' , array(
             'default'   => true,
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
@@ -289,35 +263,30 @@
         $wp_customize->add_setting( 'left-column-single-page' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'right-column-single-page' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'page-meta' , array(
             'default'   => true,
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'page-image' , array(
             'default'   => 'above',
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'myfirsttheme_sanitize_radio',
         ) );
 
         $wp_customize->add_setting( 'display-header-image-on-page' , array(
             'default'   => true,
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
@@ -325,28 +294,24 @@
         $wp_customize->add_setting( 'left-column-archive' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'right-column-archive' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'display-header-image-on-archive' , array(
             'default'   => true,
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'taxonomy-description' , array(
             'default'   => 'top',
             'transport' => 'refresh',
-            'type'      => 'theme_mod',
             'sanitize_callback' => 'myfirsttheme_sanitize_radio',
         ) );
 
