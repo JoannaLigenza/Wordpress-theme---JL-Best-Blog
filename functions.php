@@ -451,6 +451,7 @@
             'label'      => __( 'Choose Excerpt Length', 'myfirsttheme' ),
             'section'    => 'front-page-layout',
             'settings'   => 'excerpt-length',
+            'type'       => 'number',
         ) );
 
         $wp_customize->add_control( 'footer-column-1', array(
