@@ -94,17 +94,11 @@
     // Include custom sections in customizer - all the sections, settings, and controls will be added here
     function myfirsttheme_customize_register( $wp_customize ) {
         // Adding settings - front page
-        $wp_customize->add_setting( 'header_textcolor' , array(
-            'default'   => '#FF00FF',
-            'transport' => 'refresh',   // this will refresh customizer's preview window when changes are made
-            'type'      => 'theme_mod', // this is setted for themes and 'theme_mod' is default setting, so it's optional in themes
-            'sanitize_callback' => 'sanitize_hex_color_no_hash',    // this is wordpress sanitization function, to ensure that no unsafe data is stored in the database
-        ) );
-
         $wp_customize->add_setting( 'menu_background_color' , array(
             'default'   => '#A8C5FF',
-            'transport' => 'refresh',
-            'sanitize_callback' => 'sanitize_hex_color',
+            'transport' => 'refresh',                       // this will refresh customizer's preview window when changes are made
+            'type'      => 'theme_mod',                     // this is setted for themes and 'theme_mod' is default setting, so it's optional in themes
+            'sanitize_callback' => 'sanitize_hex_color',    // this is wordpress sanitization function, to ensure that no unsafe data is stored in the database
         ) );
 
         $wp_customize->add_setting( 'menu_font_color' , array(
@@ -797,8 +791,8 @@
             'selector' => '.header-text div',
             'settings' => array( 'blogname', 'blogdescription' ),
             'render_callback' => function() {
-                echo "<h2 style='color: #".get_theme_mod( 'header_textcolor' )."'>".get_bloginfo( 'name' )."</h2>";
-                echo "<h5 style='color: #".get_theme_mod( 'header_textcolor' )."'>".get_bloginfo( 'description' )."</h5>";
+                echo "<h2 style='color: #".get_header_textcolor()."'>".get_bloginfo( 'name' )."</h2>";
+                echo "<h5 style='color: #".get_header_textcolor()."'>".get_bloginfo( 'description' )."</h5>";
             },
         ) );
     

@@ -48,8 +48,8 @@
                     if ( display_header_text() ){ ?>
                         <a href="<?php echo home_url() ?>" class="header-text">
                             <div>
-                                <h2 style="color: #<?php echo get_theme_mod( 'header_textcolor' ) ?>"><?php bloginfo('name') ?></h2>
-                                <h5 style="color: #<?php echo get_theme_mod( 'header_textcolor' ) ?>"><?php bloginfo('description') ?></h5>
+                                <h2 style="color: #<?php echo get_header_textcolor(); ?>"><?php bloginfo('name') ?></h2>
+                                <h5 style="color: #<?php echo get_header_textcolor(); ?>"><?php bloginfo('description') ?></h5>
                             </div>   
                         </a>                        
                     <?php } else{
