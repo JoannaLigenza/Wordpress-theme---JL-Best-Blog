@@ -9,7 +9,7 @@
     <?php
         if (get_theme_mod( 'left-column' )) { ?>
             <aside class="column column-left">
-                <?php get_sidebar( 'left' ); ?>
+                <?php dynamic_sidebar( 'sidebar-left' ); ?>
             </aside>
         <?php }
     ?>
@@ -21,7 +21,7 @@
     <?php
         if (get_theme_mod( 'right-column' )) { ?>
             <aside class="column column-right">
-                <?php get_sidebar( 'right' ); ?>
+                <?php dynamic_sidebar( 'sidebar-right' ); ?>
             </aside>
         <?php }
     ?>
