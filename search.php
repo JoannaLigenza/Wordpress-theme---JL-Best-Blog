@@ -9,7 +9,7 @@
     <?php
         if (get_theme_mod( 'left-column' )) { ?>
             <aside class="column column-left">
-                <?php get_sidebar( 'left' ); ?>
+                <?php dynamic_sidebar( 'sidebar-left' ); ?>
             </aside>
         <?php }
     ?>
@@ -19,9 +19,9 @@
             if ( have_posts() ) :
                 while ( have_posts() ) : the_post();
                     $imagePosition = get_theme_mod( 'front-page-and-archive-image' );
-                    echo "<section class='article-section image-".$imagePosition."'>";
+                    echo "<section class='article-section image-".esc_attr( $imagePosition )."'>";
                         if ( has_post_thumbnail() ) {
-                            echo "<div class='image-container image-container-".$imagePosition."'><a href='".get_permalink()."'>" ;
+                            echo "<div class='image-container image-container-".esc_attr( $imagePosition )."'><a href='".get_permalink()."'>" ;
                                 if ($imagePosition === 'above') {
                                     $imageWidth = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "full" );
                                     $maxWidth = $imageWidth[1];
@@ -72,7 +72,7 @@
     <?php
         if (get_theme_mod( 'right-column' )) { ?>
             <aside class="column column-right">
-                <?php get_sidebar( 'right' ); ?>
+                <?php dynamic_sidebar( 'sidebar-right' ); ?>
             </aside>
         <?php }
     ?>
