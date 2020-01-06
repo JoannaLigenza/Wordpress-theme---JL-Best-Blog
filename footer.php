@@ -4,9 +4,9 @@
                 <div class="footer-sidebars-section">
                     <!-- sidebar 1 -->
                     <?php
-                        if (get_theme_mod( 'footer-column-1' )) { ?>
+                        if ( get_theme_mod( 'footer-column-1' ) ) { ?>
                             <div class="footer-column">
-                                <?php get_sidebar( 'footer-1' ); ?>
+                                <?php dynamic_sidebar( 'sidebar-footer-1' ); ?>
                             </div>
                         <?php }
                     ?>
@@ -14,7 +14,7 @@
                     <?php
                         if (get_theme_mod( 'footer-column-2' )) { ?>
                             <div class="footer-column">
-                                <?php get_sidebar( 'footer-2' ); ?>
+                                <?php dynamic_sidebar( 'sidebar-footer-2' ); ?>
                             </div>
                         <?php }
                     ?>
@@ -22,7 +22,7 @@
                     <?php
                         if (get_theme_mod( 'footer-column-3' )) { ?>
                             <div class="footer-column">
-                                <?php get_sidebar( 'footer-3' ); ?>
+                                <?php dynamic_sidebar( 'sidebar-footer-3' ); ?>
                             </div>
                         <?php }
                     ?>

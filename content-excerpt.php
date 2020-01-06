@@ -5,7 +5,7 @@
     <?php
         if (get_theme_mod( 'left-column' )) { ?>
             <aside class="column column-left">
-                <?php get_sidebar( 'left' ); ?>
+                <?php dynamic_sidebar( 'sidebar-left' ); ?>
             </aside>
         <?php }
     ?>
@@ -17,7 +17,7 @@
                     $imagePosition = get_theme_mod( 'front-page-and-archive-image' );
                     echo "<section class='article-section image-".$imagePosition."'>";
                         if ( has_post_thumbnail() ) {
-                            echo "<div class='image-container image-container-".$imagePosition."'><a href='".get_permalink()."'>" ;
+                            echo "<div class='image-container image-container-".$imagePosition."'><a href='".esc_url( get_permalink() )."'>" ;
                                 if ($imagePosition === 'above') {
                                     $imageWidth = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "full" );
                                     $maxWidth = $imageWidth[1];
@@ -39,7 +39,7 @@
                         } else {
                             echo "<article class='article'>";
                         }
-                        echo "<h2><a href='".get_permalink()."'>".get_the_title()."</a></h2>";
+                        echo "<h2><a href='".esc_url( get_permalink() )."'>".get_the_title()."</a></h2>";
                         if (get_theme_mod( 'post-meta' )) {
                             // $id = get_the_author_meta('ID');
                             $author = get_the_author();
@@ -63,7 +63,7 @@
     <?php
         if (get_theme_mod( 'right-column' )) { ?>
             <aside class="column column-right">
-                <?php get_sidebar( 'right' ); ?>
+                <?php dynamic_sidebar( 'sidebar-right' ); ?>
             </aside>
         <?php }
     ?>
