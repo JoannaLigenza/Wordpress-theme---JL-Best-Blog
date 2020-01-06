@@ -13,11 +13,11 @@
     <div class="main-container">
         <!-- displaying header image -->
         <?php if ( get_header_image() && get_theme_mod( 'display-header-image-on-archive' ) ) : ?>
-        <header class="header" style="background-image: url(<?php echo get_custom_header()->url ?>)">
+        <header class="header" style="background-image: url(<?php echo esc_url( get_custom_header()->url ) ?>)">
         <?php else : ?>
         <header class="header">
         <?php endif; ?>
-            <div class="mobile-menu-container" style="background-color: <?php echo get_theme_mod( 'menu_background_color', '#A8C5FF' ) ?>">
+            <div class="mobile-menu-container" style="background-color: <?php echo esc_attr( get_theme_mod( 'menu_background_color', '#A8C5FF' ) ); ?>">
                 <div class="mobile-menu-icon" id="mobile-menu-icon">
                     <span class="mobile-menu-icon-strip"></span>
                     <span class="mobile-menu-icon-strip"></span>
@@ -46,15 +46,13 @@
                 <div class="title">
                 <?php
                     if ( display_header_text() ){ ?>
-                        <a href="<?php echo home_url() ?>" class="header-text">
+                        <a href="<?php echo esc_url( home_url() ) ?>" class="header-text">
                             <div>
-                                <h2 style="color: #<?php echo get_header_textcolor(); ?>"><?php bloginfo('name') ?></h2>
-                                <h5 style="color: #<?php echo get_header_textcolor(); ?>"><?php bloginfo('description') ?></h5>
+                                <h2 style="color: #<?php echo esc_attr( get_header_textcolor() ); ?>"><?php bloginfo('name') ?></h2>
+                                <h5 style="color: #<?php echo esc_attr( get_header_textcolor() ); ?>"><?php bloginfo('description') ?></h5>
                             </div>   
                         </a>                        
-                    <?php } else{
-                        //do something
-                    }
+                    <?php } 
                 ?>
                 <!-- displaying search form -->
                 <?php 
@@ -64,7 +62,7 @@
                 ?>
                 </div>
             </div>
-            <nav id="navigation" class="menu-navigation" style="background-color: <?php echo get_theme_mod( 'menu_background_color', '#A8C5FF' ) ?>">
+            <nav id="navigation" class="menu-navigation" style="background-color: <?php echo esc_attr( get_theme_mod( 'menu_background_color', '#A8C5FF' ) ) ?>">
                 <?php 
                     wp_nav_menu(
                         array(
