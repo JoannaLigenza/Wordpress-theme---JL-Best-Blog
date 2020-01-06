@@ -872,12 +872,49 @@ nav:after {
     text-decoration: none;
 }
 
-.social-icon {
+.social-icon-image {
+    width: 40px;
+    height: 40px;
     margin: 10px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-.social-icon:hover {
+.social-icon-image:hover {
     transform: translateY(-2px);
+}
+
+.facebook-icon {
+    background-image: url('images/facebook-icon.png');
+}
+
+.instagram-icon {
+    background-image: url('images/instagram-icon.png');
+}
+
+.twitter-icon {
+    background-image: url('images/twitter-icon.png');
+}
+
+.pinterest-icon {
+    background-image: url('images/pinterest-icon.png');
+}
+
+.youtube-icon {
+    background-image: url('images/youtube-icon.png');
+}
+
+.whatsapp-icon {
+    background-image: url('images/whatsapp-icon.png');
+}
+
+.messenger-icon {
+    background-image: url('images/messenger-icon.png');
+}
+
+.linked-icon {
+    background-image: url('images/linkedin-icon.png');
 }
 
 

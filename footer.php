@@ -35,7 +35,7 @@
                     <?php
                     if (get_theme_mod( 'social-icon-facebook' ) !== "") { ?>
                         <a href="<?php echo esc_attr( get_theme_mod( 'social-icon-facebook' ) ); ?>">
-                            <img src="<?php echo esc_attr( get_theme_file_uri() . '/images/facebook-icon.png' ); ?>" alt="facebook-icon" class="social-icon">
+                            <div class="social-icon-image facebook-icon"> </div>
                         </a>
                     <?php
                     } ?>
@@ -43,7 +43,7 @@
                     <?php
                     if (get_theme_mod( 'social-icon-instagram' ) !== "") { ?>
                         <a href="<?php echo esc_attr( get_theme_mod( 'social-icon-instagram' ) ); ?>">
-                            <img src="<?php echo esc_attr( get_theme_file_uri() . '/images/instagram-icon.png' ); ?>" alt="instagram-icon" class="social-icon">
+                            <div class="social-icon-image instagram-icon"> </div>
                         </a>
                     <?php
                     } ?>
@@ -51,7 +51,7 @@
                     <?php
                     if (get_theme_mod( 'social-icon-twitter' ) !== "") { ?>
                         <a href="<?php echo esc_attr( get_theme_mod( 'social-icon-twitter' ) ); ?>">
-                            <img src="<?php echo esc_attr( get_theme_file_uri() . '/images/twitter-icon.png' ); ?>" alt="twitter-icon" class="social-icon">
+                            <div class="social-icon-image twitter-icon"> </div>
                         </a>
                     <?php
                     } ?>
@@ -59,7 +59,7 @@
                     <?php
                     if (get_theme_mod( 'social-icon-pinterest' ) !== "") { ?>
                         <a href="<?php echo esc_attr( get_theme_mod( 'social-icon-pinterest' ) ); ?>">
-                            <img src="<?php echo esc_attr( get_theme_file_uri() . '/images/pinterest-icon.png' ); ?>" alt="pinterest-icon" class="social-icon">
+                            <div class="social-icon-image pinterest-icon"> </div>
                         </a>
                     <?php
                     } ?>
@@ -67,7 +67,7 @@
                     <?php
                     if (get_theme_mod( 'social-icon-youtube' ) !== "") { ?>
                         <a href="<?php echo esc_attr( get_theme_mod( 'social-icon-youtube' ) ); ?>">
-                            <img src="<?php echo esc_attr( get_theme_file_uri() . '/images/youtube-icon.png' ); ?>" alt="youtube-icon" class="social-icon">
+                            <div class="social-icon-image youtube-icon"> </div>
                         </a>
                     <?php
                     } ?>
@@ -75,7 +75,7 @@
                     <?php
                     if (get_theme_mod( 'social-icon-whatsapp' ) !== "") { ?>
                         <a href="<?php echo esc_attr( get_theme_mod( 'social-icon-whatsapp' ) ); ?>">
-                            <img src="<?php echo esc_attr( get_theme_file_uri() . '/images/whatsapp-icon.png' ); ?>" alt="whatsapp-icon" class="social-icon">
+                            <div class="social-icon-image whatsapp-icon"> </div>
                         </a>
                     <?php
                     } ?>
@@ -83,7 +83,7 @@
                     <?php
                     if (get_theme_mod( 'social-icon-messenger' ) !== "") { ?>
                         <a href="<?php echo esc_attr( get_theme_mod( 'social-icon-messenger' ) ); ?>">
-                            <img src="<?php echo esc_attr( get_theme_file_uri() . '/images/messenger-icon.png' ); ?>" alt="messenger-icon" class="social-icon">
+                            <div class="social-icon-image messenger-icon"> </div>
                         </a>
                     <?php
                     } ?>
@@ -91,7 +91,7 @@
                     <?php
                     if (get_theme_mod( 'social-icon-linkedin' ) !== "") { ?>
                         <a href="<?php echo esc_attr( get_theme_mod( 'social-icon-linkedin' ) ); ?>">
-                            <img src="<?php echo esc_attr( get_theme_file_uri() . '/images/linkedin-icon.png' ); ?>" alt="linkedin-icon" class="social-icon">
+                            <div class="social-icon-image linked-icon"> </div>
                         </a>
                     <?php
                     } ?>
