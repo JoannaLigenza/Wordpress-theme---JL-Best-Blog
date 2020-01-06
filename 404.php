@@ -15,7 +15,7 @@
     ?>
     <!-- main content -->
     <main class="main-content--section">
-        <h3 class="page-404">Sorry! This page not found</h3>
+        <h3 class="page-404"><?php esc_html_e( 'Sorry! This page was not found', 'myfirsttheme') ?></h3>
     </main>
     <!-- right column -->
     <?php
