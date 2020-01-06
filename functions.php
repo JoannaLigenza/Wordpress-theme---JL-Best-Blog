@@ -787,13 +787,14 @@
         $wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
         $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
         $wp_customize->get_setting( 'menu_font_color' )->transport = 'postMessage';
+        $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
         $wp_customize->selective_refresh->add_partial( 'header_site_title', array(
             'selector' => '.header-text div',
-            'settings' => array( 'blogname', 'blogdescription' ),
+            'settings' => array( 'blogname', 'blogdescription', 'header_textcolor' ),
             'render_callback' => function() {
-                echo "<h2 style='color: #".get_header_textcolor()."'>".get_bloginfo( 'name' )."</h2>";
-                echo "<h5 style='color: #".get_header_textcolor()."'>".get_bloginfo( 'description' )."</h5>";
+                echo "<h2 style='color: #".esc_attr(get_header_textcolor())."'>".get_bloginfo( 'name' )."</h2>";
+                echo "<h5 style='color: #".esc_attr(get_header_textcolor())."'>".get_bloginfo( 'description' )."</h5>";
             },
         ) );
     
