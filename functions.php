@@ -94,224 +94,236 @@
     // Include custom sections in customizer - all the sections, settings, and controls will be added here
     function myfirsttheme_customize_register( $wp_customize ) {
         // Adding settings - front page
-        $wp_customize->add_setting( 'header_textcolor' , array(
-            'default'   => '#FF00FF',
-            'transport' => 'refresh',   // this will refresh customizer's preview window when changes are made
-            'type'      => 'theme_mod'
-        ) );
-
         $wp_customize->add_setting( 'menu_background_color' , array(
             'default'   => '#A8C5FF',
-            'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'transport' => 'refresh',                       // this will refresh customizer's preview window when changes are made
+            'type'      => 'theme_mod',                     // this is setted for themes and 'theme_mod' is default setting, so it's optional in themes
+            'sanitize_callback' => 'sanitize_hex_color',    // this is wordpress sanitization function, to ensure that no unsafe data is stored in the database
         ) );
 
         $wp_customize->add_setting( 'menu_font_color' , array(
             'default'   => '#FFFFFF',
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'sanitize_hex_color',
+            'sanitize_js_callback' => 'sanitize_hex_color',     // selective refresh is set for menu_font_color setting (in customizer.js), so it needs to sanitize data used by script
         ) );
 
         $wp_customize->add_setting( 'link_hover_color' , array(
             'default'   => '#AD000B',
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'sanitize_hex_color',
         ) );
 
         $wp_customize->add_setting( 'header_searchbox' , array(
             'default'   => true,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'left-column' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'right-column' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'post-meta' , array(
             'default'   => true,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'front-page-and-archive-image' , array(
             'default'   => 'left',
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'myfirsttheme_sanitize_radio',
         ) );
 
         $wp_customize->add_setting( 'excerpt-length' , array(
             'default'   => '55',
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'absint',    // echo absint( 'some non-numeric string' );  -> returns 0
         ) );
 
         $wp_customize->add_setting( 'footer-column-1' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'footer-column-2' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'footer-column-3' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'footer-social-icon' , array(
             'default'   => true,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'social-icon-facebook' , array(
             'default'   => '',
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'esc_url_raw',
         ) );
 
         $wp_customize->add_setting( 'social-icon-twitter' , array(
             'default'   => '',
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'esc_url_raw',
         ) );
 
         $wp_customize->add_setting( 'social-icon-instagram' , array(
             'default'   => '',
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'esc_url_raw',
         ) );
 
         $wp_customize->add_setting( 'social-icon-youtube' , array(
             'default'   => '',
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'esc_url_raw',
         ) );
 
         $wp_customize->add_setting( 'social-icon-pinterest' , array(
             'default'   => '',
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'esc_url_raw',
         ) );
 
         $wp_customize->add_setting( 'social-icon-whatsapp' , array(
             'default'   => '',
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'esc_url_raw',
         ) );
 
         $wp_customize->add_setting( 'social-icon-messenger' , array(
             'default'   => '',
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'esc_url_raw',
         ) );
 
         $wp_customize->add_setting( 'social-icon-linkedin' , array(
             'default'   => '',
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'esc_url_raw',
         ) );
 
         // Settings - single post
         $wp_customize->add_setting( 'left-column-single' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'right-column-single' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'post-meta-single' , array(
             'default'   => true,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'post-image-single' , array(
             'default'   => 'above',
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'myfirsttheme_sanitize_radio',
         ) );
 
         $wp_customize->add_setting( 'display-header-image-on-post' , array(
             'default'   => true,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         // Settings - single page
         $wp_customize->add_setting( 'left-column-single-page' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'right-column-single-page' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'page-meta' , array(
             'default'   => true,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'page-image' , array(
             'default'   => 'above',
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'myfirsttheme_sanitize_radio',
         ) );
 
         $wp_customize->add_setting( 'display-header-image-on-page' , array(
             'default'   => true,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         // Settings - archive page
         $wp_customize->add_setting( 'left-column-archive' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'right-column-archive' , array(
             'default'   => false,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'display-header-image-on-archive' , array(
             'default'   => true,
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'taxonomy-description' , array(
             'default'   => 'top',
             'transport' => 'refresh',
-            'type'      => 'theme_mod'
+            'sanitize_callback' => 'myfirsttheme_sanitize_radio',
         ) );
+
+        // sanitize callback functions for settings
+        function myfirsttheme_sanitize_checkbox( $checked ) {
+            return ( ( isset( $checked ) && true == $checked ) ? true : false );
+        }
+
+        function myfirsttheme_sanitize_radio( $input, $setting ) {
+            // Ensure input is a slug.
+            $input = sanitize_key( $input );
+            
+            // Get list of choices from the control associated with the setting.
+            $choices = $setting->manager->get_control( $setting->id )->choices;
+            
+            // If the input is a valid key, return it; otherwise, return the default.
+            return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
+        }
 
         // Adding panel
         $wp_customize->add_panel( 'header', array(
@@ -439,6 +451,7 @@
             'label'      => __( 'Choose Excerpt Length', 'myfirsttheme' ),
             'section'    => 'front-page-layout',
             'settings'   => 'excerpt-length',
+            'type'       => 'number',
         ) );
 
         $wp_customize->add_control( 'footer-column-1', array(
@@ -750,7 +763,7 @@
 
     function myfisttheme_excerpt_more( $more ) {
         $excerptLength = get_theme_mod( 'excerpt-length' );
-        if ($excerptLength === '0') {
+        if ($excerptLength === 0) {
             return '';
         } else {
             return "<a href='".get_permalink()."'><div class='read-more-button' style='border: 1px solid ".get_theme_mod( 'menu_background_color', '#696969' )."'>".__( 'Read more...', 'myfirsttheme')."</div></a>";
@@ -774,13 +787,14 @@
         $wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
         $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
         $wp_customize->get_setting( 'menu_font_color' )->transport = 'postMessage';
+        $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
         $wp_customize->selective_refresh->add_partial( 'header_site_title', array(
             'selector' => '.header-text div',
-            'settings' => array( 'blogname', 'blogdescription' ),
+            'settings' => array( 'blogname', 'blogdescription', 'header_textcolor' ),
             'render_callback' => function() {
-                echo "<h2 style='color: #".get_theme_mod( 'header_textcolor' )."'>".get_bloginfo( 'name' )."</h2>";
-                echo "<h5 style='color: #".get_theme_mod( 'header_textcolor' )."'>".get_bloginfo( 'description' )."</h5>";
+                echo "<h2 style='color: #".esc_attr(get_header_textcolor())."'>".get_bloginfo( 'name' )."</h2>";
+                echo "<h5 style='color: #".esc_attr(get_header_textcolor())."'>".get_bloginfo( 'description' )."</h5>";
             },
         ) );
     

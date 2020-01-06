@@ -9,8 +9,8 @@
             <header> 
                 <h2 class="comments-title">
                     <?php 
-                        $commentsNUmber = get_comments_number();
-                        echo _e('COMMENTS: ', 'myfirsttheme').$commentsNUmber;
+                        $commentsNumber = get_comments_number();
+                        echo _e('COMMENTS: ', 'myfirsttheme').absint( $commentsNumber );
                     ?>  
                 </h2>
             </header>

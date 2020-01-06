@@ -55,7 +55,7 @@ function myfirsttheme_get_settings( $option ) {
     <?php
         if ( myfirsttheme_get_settings( 'left-column' ) ) { ?>
             <aside class="column column-left">
-                <?php get_sidebar( 'left' ); ?>
+                <?php dynamic_sidebar( 'sidebar-left' ); ?>
             </aside>
         <?php }
     ?>
@@ -65,9 +65,9 @@ function myfirsttheme_get_settings( $option ) {
             if ( have_posts() ) :
                 while ( have_posts() ) : the_post();
                     $imagePosition = myfirsttheme_get_settings( 'imagePosition' );
-                    echo "<section class='article-section image-".$imagePosition."'>";
+                    echo "<section class='article-section image-".esc_attr( $imagePosition )."'>";
                         if ( has_post_thumbnail() ) {
-                            echo "<div class='image-container image-container-".$imagePosition."'><a href='".get_permalink()."'>" ;
+                            echo "<div class='image-container image-container-".esc_attr( $imagePosition )."'><a href='".get_permalink()."'>" ;
                                 if ($imagePosition === 'above') {
                                     $imageWidth = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "full" );
                                     $maxWidth = $imageWidth[1];
@@ -90,10 +90,10 @@ function myfirsttheme_get_settings( $option ) {
                         } else {
                             echo "<article class='article'>";
                         } ?>
-                        <h2><a href='<?php echo get_permalink(); ?>'> <?php echo get_the_title(); ?> </a></h2>
+                        <h2><a href='<?php echo get_permalink(); ?>'> <?php echo esc_html( get_the_title() ); ?> </a></h2>
                         <?php
                         if (get_theme_mod( 'post-meta-single' )) {
-                            $author = get_the_author();
+                            $id = get_the_author_meta('ID');
                             $date = get_the_date( 'Y/m' ); ?>
                             <?php if ( is_single() ) : ?>
                             <div class="post-categories">
@@ -101,8 +101,8 @@ function myfirsttheme_get_settings( $option ) {
                             </div>
                             <?php endif; ?>
                             <div class='post-meta'>
-                                <div class='meta-author'><a href='<?php echo get_home_url()."/author/".$author ?>'> <?php echo $author ?> </a></div>
-                                <div class='meta-date'><a href='<?php echo get_home_url()."/".$date ?>'> <?php echo get_the_time('j-m-Y') ?> </a></div>
+                                <div class='meta-author'><a href='<?php echo esc_url( get_author_posts_url($id) ) ?>'> <?php echo esc_html( get_the_author() ) ?> </a></div>
+                                <div class='meta-date'><a href='<?php echo esc_url( get_home_url() )."/".$date ?>'> <?php echo esc_html( get_the_time('j-m-Y') ) ?> </a></div>
                             </div>
                             <?php
                         }
@@ -141,7 +141,7 @@ function myfirsttheme_get_settings( $option ) {
     <?php
         if ( myfirsttheme_get_settings( 'right-column' ) ) { ?>
             <aside class="column column-right">
-                <?php get_sidebar( 'right' ); ?>
+                <?php dynamic_sidebar( 'sidebar-right' ); ?>
             </aside>
         <?php }
     ?>
