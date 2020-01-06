@@ -43,13 +43,13 @@
                         } else {
                             echo "<article class='article'>";
                         }
-                        echo "<h2><a href='".get_permalink()."'>".get_the_title()."</a></h2>";
+                        echo "<h2><a href='".get_permalink()."'>".esc_html( get_the_title() )."</a></h2>";
                         if (get_theme_mod( 'post-meta' )) {
-                            $author = get_the_author();
+                            $id = get_the_author_meta('ID');
                             $date = get_the_date( 'Y/m' );
                             echo "<div class='post-meta'>";
-                                echo "<div class='meta-author'><a href='".get_home_url()."/author/".$author."'> ".$author." </a></div>";
-                                echo "<div class='meta-date'><a href='".get_home_url()."/index.php/".$date."'> ".get_the_time('j-m-Y')."</a></div>";
+                                echo "<div class='meta-author'><a href='".esc_url( get_author_posts_url($id) )."'> ".esc_html( get_the_author() )." </a></div>";
+                                echo "<div class='meta-date'><a href='".esc_url( get_home_url() )."/".$date."'> ".esc_html( get_the_time('j-m-Y') )."</a></div>";
                             echo "</div>";
                         }
                         the_excerpt('<p>', '</p>');
