@@ -10,6 +10,7 @@
     <?php wp_head(); ?> 
 </head>
 <body <?php body_class(); ?> >
+    <?php wp_body_open(); ?>
     <div class="main-container">
         <!-- displaying header image -->
         <?php if ( get_header_image() ) :   // display header image url ?>
