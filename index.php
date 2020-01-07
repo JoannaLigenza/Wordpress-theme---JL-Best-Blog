@@ -3,6 +3,6 @@
 ?>
 
 <?php
-    get_template_part( 'content-excerpt' );
+    get_template_part( 'template-parts/content-excerpt' );
     get_footer();
 ?>
