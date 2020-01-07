@@ -130,12 +130,6 @@ a:hover {
     padding: 5px 10px;
 }
 
-/* @media screen and (max-width: 768px) {
-    .top-menu {
-        display: none;
-    }
-} */
-
 /* Header title and logo layout */
 
 .header-title {
@@ -294,7 +288,6 @@ a:hover {
 .menu-navigation {
     margin-bottom: 20px;
     height: auto;
-    /* min-height: 70px; */
 }
 
 .menu {
@@ -358,13 +351,12 @@ a:hover {
 
 
 @media screen and (max-width: 768px) {
-    .menu-navigation {
+    .menu-navigation{
         order: 1;
         margin-bottom: 0;
         overflow: hidden;
         max-height: 0;
-        min-height: unset;
-        transition: max-height .5s;
+        transition: max-height 1.2s;
     }
 
     .top-menu {
@@ -409,9 +401,9 @@ a:hover {
 }
 
 .isVisible {
-    max-height: 99999px;
+    max-height: 19999px;
     height: auto;
-    transition: max-height .75s;
+    transition: max-height 5s;
 }
 
 /* //////////////////  MAIN CONTENT  ////////////////////// */
