@@ -52,7 +52,7 @@
             'height'        => 700,
             'flex-width'    => true,
             'flex-height'   => true,
-            'default-image' => get_theme_file_uri() . '/images/winter.jpg',
+            'default-image' => get_theme_file_uri() . '/inc/images/winter.jpg',
             // Display the header text along with the image
             'header-text'   => true,
             // Header text color default
@@ -63,8 +63,8 @@
         // register header(s)
         $header_images = array(
             'winter' => array(
-                    'url'           => get_theme_file_uri() . '/images/winter.jpg',
-                    'thumbnail_url' => get_theme_file_uri() . '/images/winter.jpg',
+                    'url'           => get_theme_file_uri() . '/inc/images/winter.jpg',
+                    'thumbnail_url' => get_theme_file_uri() . '/inc/images/winter.jpg',
                     'description'   => 'Header image',
             ),
         );
