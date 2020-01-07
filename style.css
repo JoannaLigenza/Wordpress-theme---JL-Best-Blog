@@ -130,6 +130,18 @@ a:hover {
     padding: 5px 10px;
 }
 
+@media screen and (max-width: 768px) {
+    .top-menu ul{
+        text-align: center;
+    }
+
+    .top-menu ul li {
+        display: block;
+        padding: 5px 10px;
+        border-right: none;
+    }
+}
+
 /* Header title and logo layout */
 
 .header-title {
@@ -287,6 +299,7 @@ a:hover {
 
 .menu-navigation {
     margin-bottom: 20px;
+    min-height: 70px;
     height: auto;
 }
 
@@ -355,8 +368,9 @@ a:hover {
         order: 1;
         margin-bottom: 0;
         overflow: hidden;
+        min-height: 0;
         max-height: 0;
-        transition: max-height 1.2s;
+        transition: max-height 1s;
     }
 
     .top-menu {
