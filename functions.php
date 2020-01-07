@@ -720,11 +720,17 @@
                 .menu-item, .page-item {
                     color: <?php echo $fontColor ?>;
                 }
+                .menu-item:hover > ul li:hover {
+                    background-color: rgba( 255, 255, 255, 0.2 );
+                }
                 a:hover {
                     color: <?php echo $linkHoverColor ?>;
                 }
                 .current-menu-item a {
                     color: <?php echo $linkHoverColor ?>;
+                }
+                .sub-menu {
+                    background-color: <?php echo $color ?>;
                 }
                 .widget-title {
                     border-bottom: 2px solid <?php echo $linkHoverColor ?>;
