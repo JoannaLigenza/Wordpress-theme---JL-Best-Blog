@@ -6,7 +6,7 @@
         wp_enqueue_style( 'style', get_stylesheet_uri() );
 
         // Include scripts
-        wp_enqueue_script( 'script', get_theme_file_uri() . '/js/script.js', true);
+        wp_enqueue_script( 'script', get_theme_file_uri() . '/assets/js/script.js', true);
     }
     add_action( 'wp_enqueue_scripts', 'myfirsttheme_add_theme_scripts' );
 
@@ -14,7 +14,7 @@
     // Adding scripts for customizer preview
     function myfirsttheme_add_theme_scripts_preview() {
         // wp_enqueue_script( 'customizer', get_theme_file_uri() . '/js/customizer.js', array('jquery'), true);
-        wp_enqueue_script( 'customizer', get_theme_file_uri() . '/js/customizer.js', true);
+        wp_enqueue_script( 'customizer', get_theme_file_uri() . '/assets/js/customizer.js', true);
     }
     add_action( 'customize_preview_init', 'myfirsttheme_add_theme_scripts_preview' );
 
@@ -52,7 +52,7 @@
             'height'        => 700,
             'flex-width'    => true,
             'flex-height'   => true,
-            'default-image' => get_theme_file_uri() . '/images/winter.jpg',
+            'default-image' => get_theme_file_uri() . '/inc/images/winter.jpg',
             // Display the header text along with the image
             'header-text'   => true,
             // Header text color default
@@ -63,8 +63,8 @@
         // register header(s)
         $header_images = array(
             'winter' => array(
-                    'url'           => get_theme_file_uri() . '/images/winter.jpg',
-                    'thumbnail_url' => get_theme_file_uri() . '/images/winter.jpg',
+                    'url'           => get_theme_file_uri() . '/inc/images/winter.jpg',
+                    'thumbnail_url' => get_theme_file_uri() . '/inc/images/winter.jpg',
                     'description'   => 'Header image',
             ),
         );

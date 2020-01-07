@@ -512,7 +512,7 @@ a:hover {
 }
 
 .meta-author::before {
-    content: url("images/person-icon.png");
+    content: url("inc/images/person-icon.png");
     width: 25px;
     height: 25px;
     position: relative;
@@ -520,7 +520,7 @@ a:hover {
 }
 
 .meta-date::before {
-    content: url("images/calendar-icon.png");
+    content: url("inc/images/calendar-icon.png");
     width: 25px;
     height: 25px;
     position: relative;
@@ -684,7 +684,7 @@ a:hover {
 }
 
 .comment-reply-link:before {
-    content: url("images/reply-icon.png");
+    content: url("inc/images/reply-icon.png");
     position: absolute;
     left: -25px;
     top: -2px;
@@ -886,35 +886,35 @@ nav:after {
 }
 
 .facebook-icon {
-    background-image: url('images/facebook-icon.png');
+    background-image: url('inc/images/facebook-icon.png');
 }
 
 .instagram-icon {
-    background-image: url('images/instagram-icon.png');
+    background-image: url('inc/images/instagram-icon.png');
 }
 
 .twitter-icon {
-    background-image: url('images/twitter-icon.png');
+    background-image: url('inc/images/twitter-icon.png');
 }
 
 .pinterest-icon {
-    background-image: url('images/pinterest-icon.png');
+    background-image: url('inc/images/pinterest-icon.png');
 }
 
 .youtube-icon {
-    background-image: url('images/youtube-icon.png');
+    background-image: url('inc/images/youtube-icon.png');
 }
 
 .whatsapp-icon {
-    background-image: url('images/whatsapp-icon.png');
+    background-image: url('inc/images/whatsapp-icon.png');
 }
 
 .messenger-icon {
-    background-image: url('images/messenger-icon.png');
+    background-image: url('inc/images/messenger-icon.png');
 }
 
 .linked-icon {
-    background-image: url('images/linkedin-icon.png');
+    background-image: url('inc/images/linkedin-icon.png');
 }
 
 
