@@ -70,7 +70,7 @@
                     wp_nav_menu(
                         array(
                             'theme_location' => 'header-menu',
-                            'container_class' => 'header-menu-class',
+                            'container_class' => 'main-menu-class',
                             'depth' => 4
                         )
                     );

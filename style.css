@@ -300,11 +300,12 @@ a:hover {
 .menu-item, .page-item {
     list-style: none;
     display: inline-block;
-    padding: 30px 20px;
     position: relative;
 }
 
 .menu-item a, .page-item a {
+    display: inline-block;
+    padding: 30px 20px;
     color: inherit;
     font-weight: 700;
     text-transform: uppercase;
@@ -319,17 +320,21 @@ a:hover {
     width: 200px;
     margin: 0;
     padding: 0;
-    padding-top: 15px;
+    padding-top: 0;
     display: none;
     position: absolute;
-    top: 50px;
+    top: 78px;
     left: 0;
 }
 
 .sub-menu li {
     display: block;
     text-align: left;
-    padding: 15px 20px;
+}
+
+.sub-menu li a {
+    display: block;
+    padding: 20px 20px;
 }
 
 .menu-item-has-children:hover > ul {
@@ -364,20 +369,34 @@ a:hover {
     .menu-navigation .menu-item, .page-item {
         display: block;
         padding: 0;
+        text-align: left;
+        border-top:  1px solid gray;
     }
 
     .menu-navigation .menu-item a, .page-item a {
         display: block;
-        padding: 30px 20px;
+        padding: 10px 20px;
     }
 
     #site-header {
         order: 4;
     }
 
-    .menu-item-has-children:hover > ul {
-        display: none;
+    .sub-menu {
+        display: block;
+        position: static;
+        width: 100%;
+        /* padding-left: 30px; */
+        padding-top: 0;
     }
+
+    .menu-navigation ul li a:hover, .menu-navigation ul li a:active {
+        background-color: rgba( 255, 255, 255, 0.2 );
+    }
+
+    .menu-navigation .menu-item li a:active {
+        background-color: rgba( 255, 255, 255, 0.2 );
+    } 
 }
 
 .isVisible {

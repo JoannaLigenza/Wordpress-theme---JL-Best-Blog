@@ -720,13 +720,13 @@
                 .menu-item, .page-item {
                     color: <?php echo $fontColor ?>;
                 }
-                .menu-item:hover > ul li:hover {
+                .menu-item:hover > ul li a:hover {
                     background-color: rgba( 255, 255, 255, 0.2 );
                 }
                 a:hover {
                     color: <?php echo $linkHoverColor ?>;
                 }
-                .current-menu-item a {
+                .current-menu-item > a {
                     color: <?php echo $linkHoverColor ?>;
                 }
                 .sub-menu {
