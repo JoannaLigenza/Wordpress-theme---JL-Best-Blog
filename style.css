@@ -127,7 +127,14 @@ a:hover {
 .top-menu ul li a {
     color: #696969;
     text-transform: lowercase;
+    padding: 5px 10px;
 }
+
+/* @media screen and (max-width: 768px) {
+    .top-menu {
+        display: none;
+    }
+} */
 
 /* Header title and logo layout */
 
@@ -282,11 +289,12 @@ a:hover {
 }
 
 
-/* Navigation */
+/* Main menu */
 
 .menu-navigation {
     margin-bottom: 20px;
     height: auto;
+    min-height: 70px;
 }
 
 .menu {
@@ -334,7 +342,7 @@ a:hover {
 
 .sub-menu li a {
     display: block;
-    padding: 20px 20px;
+    padding: 15px 20px;
 }
 
 .menu-item-has-children:hover > ul {
@@ -350,20 +358,21 @@ a:hover {
 
 
 @media screen and (max-width: 768px) {
-    .menu-navigation{
+    .menu-navigation {
         order: 1;
         margin-bottom: 0;
         overflow: hidden;
         max-height: 0;
+        min-height: 0;
         transition: max-height .5s;
     }
 
     .top-menu {
-        order: 2;
+        order: 4;
     }
 
     .header-title {
-        order: 3;
+        order: 2;
     }
 
     .menu-navigation .menu-item, .page-item {
@@ -379,14 +388,14 @@ a:hover {
     }
 
     #site-header {
-        order: 4;
+        order: 3;
     }
 
     .sub-menu {
         display: block;
         position: static;
         width: 100%;
-        /* padding-left: 30px; */
+        padding-left: 30px;
         padding-top: 0;
     }
 
@@ -400,7 +409,8 @@ a:hover {
 }
 
 .isVisible {
-    max-height: 999px;
+    max-height: 99999px;
+    min-height: 0;
     height: auto;
     transition: max-height .75s;
 }
