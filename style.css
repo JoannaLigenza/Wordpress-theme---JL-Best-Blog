@@ -222,11 +222,11 @@ input:focus {
     text-decoration: none;
 }
 
-.site-title {
+.title h2 {
     font-size: 1.7em;
 }
 
-.site-description {
+.title h5 {
     font-size: 1.1em;
 }
 
@@ -270,11 +270,11 @@ input:focus {
         display: none;
     }
 
-    .site-title {
+    .title h2 {
         font-size: 1.3em;
     }
 
-    .site-description {
+    .title h5 {
        display: none;
     }
 }
