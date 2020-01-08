@@ -74,6 +74,16 @@ a:hover {
     text-decoration: underline;
 }
 
+a:focus:not(.read-more-link) {
+    outline-color: #6a5acd;
+    outline-style: groove;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+input:focus {
+    background-color: rgba(106, 90, 205, 0.2);
+}
+
 .main-container {
     margin: 0;
     padding: 0;
@@ -300,7 +310,7 @@ a:hover {
     background-color: #696969;
     border: 2px solid #696969;
     height: 40px;
-}
+} 
 
 .wp-block-search__button {
     padding: 4px 30px;
@@ -311,7 +321,7 @@ a:hover {
 .search-submit:focus, .wp-block-search__button:focus {
     outline: none;
     background-color: #A0A0A0;
-    border: 2px solid #A0A0A0;
+    border: 2px solid #696969;
 }
 
 .search-submit img {
@@ -663,6 +673,15 @@ a:hover {
     transition-duration: .5s;
 }
 
+.read-more-link {
+    padding: 11px 0;
+}
+
+.read-more-link:focus {
+    outline: none;
+    background-color: rgba(106, 90, 205, 0.2);
+}
+
 .specific-pages-title {
     color: #696969;
     padding: 50px 0;
@@ -698,6 +717,11 @@ a:hover {
     margin-left: 10px;
 }
 
+.pagination .page-numbers:focus:not(span) {
+    outline: none;
+    background-color: rgba(106, 90, 205, 0.2);
+}
+
 @media screen and (max-width: 768px) {
     .article-section {
         flex-direction: column;
@@ -725,6 +749,11 @@ a:hover {
     display: inline-block;
 }
 
+.post-categories a:focus {
+    outline: none;
+    background-color: rgba(106, 90, 205, 0.2);
+}
+
 .prev-next-post-navigation {
     padding: 35px 0;
     margin-bottom: 50px;
@@ -749,6 +778,11 @@ a:hover {
 
 .post-link a {
     padding: 15px 0;
+}
+
+.post-link a:focus {
+    outline: none;
+    background-color: rgba(106, 90, 205, 0.2);
 }
 
 
@@ -874,7 +908,7 @@ nav:after {
     border: 2px solid #d2d2d2;
 }
 
-.comment-form input:focus, .comment-form textarea:focus {
+.comment-form input:focus:not(.submit), .comment-form textarea:focus {
     border: 2px solid #696969;
 }
 
@@ -884,6 +918,10 @@ nav:after {
     font-size: 1.1em;
     letter-spacing: 0.05em;
     cursor: pointer;
+}
+
+.comment-form .submit:focus {
+    background-color: rgba(106, 90, 205, 0.2);
 }
 
 /* //////////////////  ARCHIVE PAGE  ////////////////////// */

@@ -705,54 +705,54 @@
         ?>
             <style>
                 .page-numbers {
-                    border: 1px solid <?php echo $color ?>;
+                    border: 1px solid <?php echo sanitize_hex_color( $color ) ?>;
                 }
                 .page-numbers:hover {
-                    background-color: <?php echo $color ?>;
+                    background-color: <?php echo sanitize_hex_color( $color ) ?>;
                     text-decoration: none;
                 }
                 .current {
-                    background-color: <?php echo $color ?>;
+                    background-color: <?php echo sanitize_hex_color( $color ) ?>;
                 }
                 .dots:hover {
                     background-color: unset;
                 }
                 .menu-item, .page-item {
-                    color: <?php echo $fontColor ?>;
+                    color: <?php echo sanitize_hex_color( $fontColor ) ?>;
                 }
                 .menu-item:hover > ul li a:hover {
                     background-color: rgba( 255, 255, 255, 0.2 );
                 }
                 a:hover {
-                    color: <?php echo $linkHoverColor ?>;
+                    color: <?php echo sanitize_hex_color( $linkHoverColor ) ?>;
                 }
                 .current-menu-item > a {
-                    color: <?php echo $linkHoverColor ?>;
+                    color: <?php echo sanitize_hex_color( $linkHoverColor ) ?>;
                 }
                 .sub-menu {
-                    background-color: <?php echo $color ?>;
+                    background-color: <?php echo sanitize_hex_color( $color ) ?>;
                 }
                 .widget-title {
-                    border-bottom: 2px solid <?php echo $linkHoverColor ?>;
+                    border-bottom: 2px solid <?php echo sanitize_hex_color( $linkHoverColor ) ?>;
                 }
                 .submit {
-                    border: 2px solid <?php echo $color ?>;
-                    color: <?php echo $color ?>;
-                    /* color: <?php echo $fontColor ?>; */
+                    border: 2px solid <?php echo sanitize_hex_color( $color ) ?>;
+                    color: <?php echo sanitize_hex_color( $color ) ?>;
+                    /* color: <?php echo sanitize_hex_color( $fontColor ) ?>; */
                 }
                 .submit:hover {
-                    background-color: <?php echo $color ?>;
-                    border: 2px solid <?php echo $color ?>;
-                    color: <?php echo $fontColor ?>;
+                    background-color: <?php echo sanitize_hex_color( $color ) ?>;
+                    border: 2px solid <?php echo sanitize_hex_color( $color ) ?>;
+                    color: <?php echo sanitize_hex_color( $fontColor ) ?>;
                 }
                 .read-more-button:hover {
-                    background-color: <?php echo $color ?>;
+                    background-color: <?php echo sanitize_hex_color( $color ) ?>;
                 }
                 .post-categories a {
-                    border: 1px solid <?php echo $color ?>;
+                    border: 1px solid <?php echo sanitize_hex_color( $color ) ?>;
                 }
                 .post-categories a:hover {
-                    background-color: <?php echo $color ?>;
+                    background-color: <?php echo sanitize_hex_color( $color ) ?>;
                 }
             </style>
         <?php
@@ -772,7 +772,7 @@
         if ($excerptLength === 0) {
             return '';
         } else {
-            return "<a href='".get_permalink()."'><div class='read-more-button' style='border: 1px solid ".get_theme_mod( 'menu_background_color', '#696969' )."'>".__( 'Read more...', 'myfirsttheme')."</div></a>";
+            return "<a class='read-more-link' href='".get_permalink()."'><div class='read-more-button' style='border: 1px solid ".sanitize_hex_color( get_theme_mod( 'menu_background_color', '#696969' ) )."'>".__( 'Read more...', 'myfirsttheme')."</div></a>";
         }
     }
     add_filter( 'excerpt_more', 'myfisttheme_excerpt_more' );
