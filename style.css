@@ -429,6 +429,7 @@ figcaption {
     position: absolute;
     top: 78px;
     left: 0;
+    z-index: 10;
 }
 
 .sub-menu li {
@@ -441,7 +442,7 @@ figcaption {
     padding: 15px 20px;
 }
 
-.menu-item-has-children:hover > ul {
+.menu-item-has-children:hover > ul, .menu-item-has-children:focus-within > ul {
     display: block;
 }
 
