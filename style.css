@@ -84,6 +84,40 @@ input:focus {
     background-color: rgba(106, 90, 205, 0.2);
 }
 
+select {
+    padding: 10px 5px;
+    min-width: 280px;
+}
+
+select:focus {
+    outline-color: #6a5acd;
+    outline-style: groove;
+    border: 1px solid #6a5acd;
+}
+
+pre {
+    overflow-x: auto;
+    background-color: #efefef;
+    padding: 10px;
+    max-width: 900px;
+}
+
+.wp-block-embed {
+    margin: 50px;
+}
+
+iframe { 
+    width: 100%;
+    max-width: 500px;
+    min-width: unset !important;
+    display: block;
+    margin: 0 auto !important;
+}
+
+figcaption {
+    text-align: center;
+}
+
 .main-container {
     margin: 0;
     padding: 0;
@@ -96,6 +130,7 @@ input:focus {
     max-width: 1200px;
     margin: 0 auto;
 }
+
 
 /* //////////////////  HEADER  ////////////////////// */
 
@@ -484,6 +519,7 @@ input:focus {
 
 .main-content--section {
     flex: 1;
+    width: 100%;
     padding: 0;
 }
 
@@ -574,6 +610,12 @@ input:focus {
 
 .comment-author-link a {
     text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+    .calendar_wrap table {
+        margin: 0 auto;
+    }
 }
 
 /* Content - home */
@@ -923,6 +965,27 @@ nav:after {
 .comment-form .submit:focus {
     background-color: rgba(106, 90, 205, 0.2);
 }
+
+
+/* wordpress widgets in single post */
+
+.wp-block-embed-twitter, .wp-block-embed-facebook {
+    background-color: #efefef;
+    padding: 20px 5px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.wp-block-archives li, .wp-block-categories li, .wp-block-latest-posts li {
+    list-style: none;
+    padding: 10px 0;
+}
+
+.wp-block-archives-dropdown label {
+    display: none;
+}
+
+
 
 /* //////////////////  ARCHIVE PAGE  ////////////////////// */
 

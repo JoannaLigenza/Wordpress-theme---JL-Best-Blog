@@ -733,7 +733,7 @@
                     background-color: <?php echo sanitize_hex_color( $color ) ?>;
                 }
                 .widget-title {
-                    border-bottom: 2px solid <?php echo sanitize_hex_color( $linkHoverColor ) ?>;
+                    border-bottom: 2px solid <?php echo sanitize_hex_color( $color ) ?>;
                 }
                 .submit {
                     border: 2px solid <?php echo sanitize_hex_color( $color ) ?>;
@@ -753,6 +753,9 @@
                 }
                 .post-categories a:hover {
                     background-color: <?php echo sanitize_hex_color( $color ) ?>;
+                }
+                .wp-block-embed-twitter, .wp-block-embed-facebook {
+                    border-bottom: 2px solid <?php echo sanitize_hex_color( $color ) ?>;
                 }
             </style>
         <?php
