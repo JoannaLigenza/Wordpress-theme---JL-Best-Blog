@@ -127,6 +127,19 @@ a:hover {
 .top-menu ul li a {
     color: #696969;
     text-transform: lowercase;
+    padding: 5px 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .top-menu ul{
+        text-align: center;
+    }
+
+    .top-menu ul li {
+        display: block;
+        padding: 5px 10px;
+        border-right: none;
+    }
 }
 
 /* Header title and logo layout */
@@ -282,10 +295,11 @@ a:hover {
 }
 
 
-/* Navigation */
+/* Main menu */
 
 .menu-navigation {
     margin-bottom: 20px;
+    min-height: 70px;
     height: auto;
 }
 
@@ -300,10 +314,12 @@ a:hover {
 .menu-item, .page-item {
     list-style: none;
     display: inline-block;
-    padding: 30px 20px;
+    position: relative;
 }
 
 .menu-item a, .page-item a {
+    display: inline-block;
+    padding: 30px 20px;
     color: inherit;
     font-weight: 700;
     text-transform: uppercase;
@@ -314,42 +330,94 @@ a:hover {
     text-decoration: none;
 }
 
+.sub-menu {      
+    width: 200px;
+    margin: 0;
+    padding: 0;
+    padding-top: 0;
+    display: none;
+    position: absolute;
+    top: 78px;
+    left: 0;
+}
+
+.sub-menu li {
+    display: block;
+    text-align: left;
+}
+
+.sub-menu li a {
+    display: block;
+    padding: 15px 20px;
+}
+
+.menu-item-has-children:hover > ul {
+    display: block;
+}
+
+.sub-menu li ul {
+    left: 200px;
+    top: 0;
+    padding-top: 0;
+}
+
+
+
 @media screen and (max-width: 768px) {
     .menu-navigation{
         order: 1;
         margin-bottom: 0;
         overflow: hidden;
+        min-height: 0;
         max-height: 0;
-        transition: max-height .5s;
+        transition: max-height 1s;
     }
 
     .top-menu {
-        order: 2;
+        order: 4;
     }
 
     .header-title {
-        order: 3;
+        order: 2;
     }
 
     .menu-navigation .menu-item, .page-item {
         display: block;
         padding: 0;
+        text-align: left;
+        border-top:  1px solid gray;
     }
 
     .menu-navigation .menu-item a, .page-item a {
         display: block;
-        padding: 30px 20px;
+        padding: 10px 20px;
     }
 
     #site-header {
-        order: 4;
+        order: 3;
     }
+
+    .sub-menu {
+        display: block;
+        position: static;
+        width: 100%;
+        padding-left: 30px;
+        padding-top: 0;
+    }
+
+    .menu-navigation ul li a:hover, .menu-navigation ul li a:active {
+        background-color: rgba( 255, 255, 255, 0.2 );
+    }
+
+    .menu-navigation .menu-item li a:active {
+        background-color: rgba( 255, 255, 255, 0.2 );
+    } 
 }
 
 .isVisible {
-    max-height: 999px;
+    max-height: 19999px;
     height: auto;
-    transition: max-height .75s;
+    transition: max-height 5s;
 }
 
 /* //////////////////  MAIN CONTENT  ////////////////////// */

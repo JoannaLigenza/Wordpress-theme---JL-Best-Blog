@@ -28,7 +28,9 @@
             <div class="top-menu container">
                 <?php
                     if ( has_nav_menu( 'top-menu' ) ) {     // returns true or false
-                        wp_nav_menu( array( 'theme_location' => 'top-menu' ) );
+                        wp_nav_menu( array( 
+                            'theme_location' => 'top-menu' 
+                        ) );
                     }
                 ?>
             </div>
@@ -68,7 +70,8 @@
                     wp_nav_menu(
                         array(
                             'theme_location' => 'header-menu',
-                            'container_class' => 'header-menu-class',
+                            'container_class' => 'main-menu-class',
+                            'depth' => 4
                         )
                     );
                 ?>
