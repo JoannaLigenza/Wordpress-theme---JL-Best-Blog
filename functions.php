@@ -762,13 +762,13 @@
 
     // Set post excerpt length
     function myfisttheme_custom_excerpt_length( $length ) {
-        $excerptLength = get_theme_mod( 'excerpt-length' );
+        $excerptLength = absint( get_theme_mod( 'excerpt-length' ) );
         return $excerptLength;
     }
     add_filter( 'excerpt_length', 'myfisttheme_custom_excerpt_length');
 
     function myfisttheme_excerpt_more( $more ) {
-        $excerptLength = get_theme_mod( 'excerpt-length' );
+        $excerptLength = absint( get_theme_mod( 'excerpt-length' ) );
         if ($excerptLength === 0) {
             return '';
         } else {
@@ -819,7 +819,7 @@
                     array(
                         'theme_location' => 'header-menu',
                         'container_class' => 'header-menu-class',
-                        'before' => '<span style="color: '.$fontColor.'">',
+                        'before' => '<span style="color: '.sanitize_hex_color( $fontColor ).'">',
                         'after'  => '</span>',
                     )
                 );
