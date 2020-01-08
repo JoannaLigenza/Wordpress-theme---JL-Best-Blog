@@ -74,10 +74,14 @@ a:hover {
     text-decoration: underline;
 }
 
-a:focus:not(.read-more-link) {
-    outline-color: #6a5acd;
-    outline-style: groove;
+a:focus {
+    outline: 1px groove #6a5acd;
     background-color: rgba(255, 255, 255, 0.2);
+}
+
+a:focus:hover {
+    outline: none;
+    background-color: unset;
 }
 
 input:focus {
@@ -847,11 +851,6 @@ figcaption {
     color: #696969;
 }
 
-.post-link a:focus {
-    outline: none;
-    background-color: rgba(106, 90, 205, 0.2);
-}
-
 
 /* Comments layout */
 
@@ -868,8 +867,16 @@ figcaption {
     border-bottom: 1px solid #d2d2d2;
 }
 
+.comment-body a {
+    color: #000;
+}
+
 .comment-author {
     float: left;
+}
+
+.comment-author a:hover{
+    color: #000;
 }
 
 .avatar {

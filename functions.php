@@ -751,6 +751,9 @@
                     border: 2px solid <?php echo sanitize_hex_color( $color ) ?>;
                     color: <?php echo sanitize_hex_color( $fontColor ) ?>;
                 }
+                .submit:focus:hover {
+                    color: <?php echo sanitize_hex_color( $color ) ?>;
+                }
                 .read-more-button:hover {
                     background-color: <?php echo sanitize_hex_color( $color ) ?>;
                 }
