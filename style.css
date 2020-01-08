@@ -63,6 +63,7 @@ h6 a{
 
 p {
     line-height: 1.5em;
+    word-wrap: break-word;
 }
 
 a {
@@ -98,8 +99,8 @@ select:focus {
 pre {
     overflow-x: auto;
     background-color: #efefef;
-    padding: 10px;
-    max-width: 900px;
+    padding: 20px;
+    white-space: pre;
 }
 
 .wp-block-embed {
@@ -518,7 +519,9 @@ figcaption {
 }
 
 .main-content--section {
-    flex: 1;
+    /* flex: 1; */
+    flex-shrink: 1;
+    width: 100%;
     width: 100%;
     padding: 0;
 }
@@ -529,6 +532,14 @@ figcaption {
     padding: 0 10px;
 }
 
+.column-left {
+    padding-right: 20px;
+}
+
+.column-right {
+    padding-left: 20px;
+}
+
 @media screen and (max-width: 1220px) {
     .main-content--section {
         padding: 0 10px;
@@ -536,8 +547,15 @@ figcaption {
 }
 
 @media screen and (max-width: 1199px) {
-    .main-content--section {
+    .wp-block-preformatted {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    #main-content--section {
         order: -1;
+        max-width: 100%;
         flex: 1 0 100%;
     }
 

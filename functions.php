@@ -757,6 +757,19 @@
                 .wp-block-embed-twitter, .wp-block-embed-facebook {
                     border-bottom: 2px solid <?php echo sanitize_hex_color( $color ) ?>;
                 }
+                <?php if ( get_theme_mod( 'left-column-single' ) && get_theme_mod( 'right-column-single' ) ) : ?>
+                .main-content--section {
+                    max-width: calc( 100% - 600px);
+                }
+                <?php elseif ( get_theme_mod( 'left-column-single' ) || get_theme_mod( 'right-column-single' ) ) : ?>
+                .main-content--section {
+                    max-width: calc( 100% - 300px);
+                }
+                <?php elseif ( ! get_theme_mod( 'left-column-single' ) && ! get_theme_mod( 'right-column-single' ) ) : ?>
+                .main-content--section {
+                    max-width: 100%;
+                }
+                <?php endif; ?>
             </style>
         <?php
     }

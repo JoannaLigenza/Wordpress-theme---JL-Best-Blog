@@ -10,7 +10,7 @@
         <?php }
     ?>
     <!-- main content -->
-    <main class="main-content--section">
+    <main id="main-content--section" class="main-content--section">
         <?php
             if ( have_posts() ) :
                 while ( have_posts() ) : the_post();
