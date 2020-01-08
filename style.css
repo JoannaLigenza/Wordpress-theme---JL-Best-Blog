@@ -67,7 +67,6 @@ p {
 }
 
 a {
-    color: #696969;
     text-decoration: none;
 }
 
@@ -679,6 +678,10 @@ figcaption {
     padding: 10px 0;
 }
 
+.article > h2 a {
+    color: #000;
+}
+
 .article-padding{
     padding-left: 10px;
 }
@@ -694,16 +697,14 @@ figcaption {
     color: #8E8E8E;
 }
 
-.meta-author {
+.meta-author, .meta-date {
     font-family: Lora, Arial, serif;
     font-weight: 700;
     font-size: 1.1em;
 }
 
-.meta-date {
-    font-family: Lora, Arial, serif;
-    font-weight: 700;
-    font-size: 1.1em;
+.meta-author a, .meta-date a {
+    color: #696969;
 }
 
 .meta-author::before {
@@ -839,6 +840,11 @@ figcaption {
 
 .post-link a {
     padding: 15px 0;
+    color: #696969;
+}
+
+.post-link a:hover {
+    color: #696969;
 }
 
 .post-link a:focus {
@@ -943,6 +949,10 @@ nav:after {
 
 .comment-notes {
     padding: 20px 0;
+}
+
+.logged-in-as a {
+    color: #696969;
 }
 
 .comment-form label {

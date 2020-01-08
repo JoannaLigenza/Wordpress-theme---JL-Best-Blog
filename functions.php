@@ -723,7 +723,13 @@
                 .menu-item:hover > ul li a:hover {
                     background-color: rgba( 255, 255, 255, 0.2 );
                 }
+                a {
+                    color: <?php echo sanitize_hex_color( $color ) ?>;
+                }
                 a:hover {
+                    color: <?php echo sanitize_hex_color( $linkHoverColor ) ?>;
+                }
+                .article > h2 a:hover {
                     color: <?php echo sanitize_hex_color( $linkHoverColor ) ?>;
                 }
                 .current-menu-item > a {
