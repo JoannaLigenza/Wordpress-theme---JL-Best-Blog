@@ -10,6 +10,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
     toggleMobileMenu();
 
+    // Toggle mobile top menu
+    const toggleMobileTopMenu = () => {
+        const mobileMenuIcon = document.getElementById("mobile-top-menu-container");
+        const navigation = document.querySelector(".top-menu-class");
+        mobileMenuIcon.addEventListener("click", function() {
+            navigation.classList.toggle("isVisible");
+        }, true);
+    }
+    toggleMobileTopMenu();
+
 
 });
 

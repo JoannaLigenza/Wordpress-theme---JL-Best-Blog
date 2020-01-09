@@ -25,10 +25,17 @@
                 </div>
             </div>
             <div class="top-menu container">
-                <?php 
-                    if ( has_nav_menu( 'top-menu' ) ) {
-                        wp_nav_menu( array( 'theme_location' => 'top-menu' ) );
-                    }
+                <?php
+                    if ( has_nav_menu( 'top-menu' ) ) : ?>
+                    <div class="mobile-top-menu-container" id="mobile-top-menu-container">
+                        <p><span> TOP MENU </span></p>
+                    </div>
+                        <?php
+                        wp_nav_menu( array( 
+                            'theme_location' => 'top-menu',
+                            'container_class' => 'top-menu-class',
+                        ) );
+                    endif;
                 ?>
             </div>
             <div class="header-title container">

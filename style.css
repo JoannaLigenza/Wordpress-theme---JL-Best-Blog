@@ -234,7 +234,15 @@ ul li, ol li {
 
 .top-menu {
     background-color: #fff;
+    position: relative;
 }
+
+.mobile-top-menu-container {
+    background-color: #fff;
+    text-align: center;
+    display: none;
+}
+
 
 .top-menu ul {
     margin: 0;
@@ -312,18 +320,48 @@ ul li, ol li {
 }
 
 @media screen and (max-width: 768px) {
+    .mobile-top-menu-container {
+        display: block;
+    }
+
+    .mobile-top-menu-container p {
+        color: #515151;
+        font-family: Lora, Arial, serif;
+        margin: 0;
+        padding: 16px;
+        cursor: pointer;
+    }
+
+    .top-menu-class { 
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 1s;
+    }
+
+    .mobile-top-menu-container p span:after {
+        content: url("inc/images/arrow-down.svg");
+    }
+
+    .mobile-top-menu-container p {
+        color: #515151;
+        font-family: Lora, Arial, serif;
+    }
+
     .top-menu ul{
         text-align: left;
     }
 
     .top-menu ul li {
         display: block;
-        padding: 0 10px;
+        padding: 0;
         border-right: none;
+        /* border-bottom:  1px solid gray; */
     }
 
     .top-menu ul li a {
         display: block;
+        padding: 10px;
+        border-bottom: 1px solid gray;
     }
 
     .top-menu .sub-menu, .top-menu .children {
@@ -333,6 +371,15 @@ ul li, ol li {
         max-width: 100%;
         box-shadow: unset;
         padding-left: 20px;
+        /* border-top: 1px solid gray; */
+    }
+
+    .top-menu .sub-menu li, .top-menu .children li {
+        padding: 0;
+    }
+
+    .top-menu .sub-menu li a, .top-menu .children li a {
+        padding: 10px;
     }
 
     .top-menu .menu-item-has-children:after, .top-menu .page_item_has_children:after {
