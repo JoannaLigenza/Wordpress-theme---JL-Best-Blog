@@ -51,7 +51,7 @@
                     if ( display_header_text() ){    // returns true or false ?>
                         <a href="<?php echo esc_url(home_url()) ?>" class="header-text">
                             <div>
-                                <h2 class="site-title" style="color: #<?php echo esc_attr(get_header_textcolor()); ?>"><?php bloginfo('name') ?></h2>
+                                <h1 class="site-title" style="color: #<?php echo esc_attr(get_header_textcolor()); ?>"><?php bloginfo('name') ?></h1>
                                 <h5 class="site-description" style="color: #<?php echo esc_attr(get_header_textcolor()); ?>"><?php bloginfo('description') ?></h5>
                             </div>   
                         </a>                        
