@@ -54,7 +54,15 @@
             <?php }
         ?>
         <!-- main content -->
-        <main class="main-content--section">
+        <main id="main-content--section"
+            class="<?php if ( get_theme_mod( 'left-column-archive' ) && get_theme_mod( 'right-column-archive' ) ) {
+                echo 'main-content-section main-content-two-sidebars';
+            } else if ( get_theme_mod( 'left-column-archive' ) || get_theme_mod( 'right-column-archive' ) ) {
+                echo 'main-content-section main-content-one-sidebar';
+            } else if ( ! get_theme_mod( 'left-column-archive' ) && ! get_theme_mod( 'right-column-archive' ) ) {
+                echo 'main-content-section main-content-no-sidebars';
+            } ?>
+    ">
             <?php
                 if ( have_posts() ) :
                     while ( have_posts() ) : the_post();

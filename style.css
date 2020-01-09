@@ -416,9 +416,10 @@ ul li, ol li {
     }
 }
 
-@media screen and (max-width: 350px) {
-    .search-input {
+@media screen and (max-width: 335px) {
+    .search-input, .wp-block-search__input {
         min-width: 250px;
+        width: unset;
     }
 }
 
@@ -555,14 +556,27 @@ ul li, ol li {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    padding: 0 10px;
 }
 
-.main-content--section {
+.main-content-section {
     /* flex: 1; */
     flex-shrink: 1;
     width: 100%;
     width: 100%;
     padding: 0;
+}
+
+.main-content-two-sidebars {
+    max-width: calc( 100% - 600px);
+}
+
+.main-content-one-sidebar {
+    max-width: calc( 100% - 300px);
+}
+
+.main-content-no-sidebars {
+    max-width: 100%;
 }
 
 .column {
@@ -601,6 +615,20 @@ ul li, ol li {
     .column {
         order: 2;
         flex: 1;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .column {
+        min-width: 250px;
+    }
+
+    .column-left {
+        padding: 0;
+    }
+
+    .column-right {
+        padding: 0;
     }
 }
 
@@ -669,9 +697,26 @@ ul li, ol li {
     text-decoration: none;
 }
 
+@media screen and (max-width: 991px) {
+    .widget .search-form {
+        margin: 0;
+    }
+    .widget .search-input {
+        min-width: unset;
+        width: 100%;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .calendar_wrap table {
         margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 335px) {
+    .widget .search-input {
+        min-width: 250px;
+        width: unset;
     }
 }
 

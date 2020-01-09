@@ -31,25 +31,9 @@ function myfirsttheme_get_settings( $option ) {
             return $var;
         }
     }
-    if (is_archive()) {
-        if ( $option === 'left-column' ) {
-            $var = get_theme_mod( 'left-column-archive' );
-            return $var;
-        } else if ( $option === 'right-column' ) {
-            $var = get_theme_mod( 'right-column-archive' );
-            return $var;
-        } else if ( $option === 'imagePosition' ) {
-            $var = get_theme_mod( 'front-page-and-archive-image' );
-            return $var;
-        } else if ( $option === 'meta' ) {
-            $var = get_theme_mod( 'post-meta' );
-            return $var;
-        }
-    }
 }
 
 ?>
-
 
     <!-- left column -->
     <?php
@@ -60,7 +44,15 @@ function myfirsttheme_get_settings( $option ) {
         <?php }
     ?>
     <!-- main content -->
-    <main id="main-content--section" class="main-content--section">
+    <main id="main-content--section"
+            class="<?php if ( myfirsttheme_get_settings( 'left-column' ) && myfirsttheme_get_settings( 'right-column' ) ) {
+                echo 'main-content-section main-content-two-sidebars';
+            } else if ( myfirsttheme_get_settings( 'left-column' ) || myfirsttheme_get_settings( 'right-column' ) ) {
+                echo 'main-content-section main-content-one-sidebar';
+            } else if ( ! myfirsttheme_get_settings( 'left-column' ) && ! myfirsttheme_get_settings( 'right-column' ) ) {
+                echo 'main-content-section main-content-no-sidebars';
+            } ?>
+    ">
         <?php
             if ( have_posts() ) :
                 while ( have_posts() ) : the_post();
@@ -92,7 +84,7 @@ function myfirsttheme_get_settings( $option ) {
                         } ?>
                         <h2><a href='<?php echo get_permalink(); ?>'> <?php echo esc_html( get_the_title() ); ?> </a></h2>
                         <?php
-                        if (get_theme_mod( 'post-meta-single' )) {
+                        if ( myfirsttheme_get_settings( 'meta' ) ) {
                             $id = get_the_author_meta('ID');
                             $date = get_the_date( 'Y/m' ); ?>
                             <?php if ( is_single() ) : ?>
