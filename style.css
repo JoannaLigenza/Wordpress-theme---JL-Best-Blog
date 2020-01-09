@@ -261,15 +261,82 @@ ul li, ol li {
     padding: 5px 10px;
 }
 
+.top-menu ul li a:hover {
+    text-decoration: underline;
+}
+
+.top-menu .menu-item-has-children, .top-menu .page_item_has_children {
+    position: relative;
+}
+
+.top-menu .menu-item-has-children:after, .top-menu .page_item_has_children:after {
+    content: url("inc/images/arrow-down.svg");
+    width: 20px;
+    height: 12px;
+    position: absolute;
+    top: 50%;  
+    right: 0;  
+    transform: translateY(-55%);
+}
+
+.top-menu .sub-menu, .top-menu .children {      
+    max-width: 200px;
+    margin: 0;
+    padding: 0;
+    padding-top: 0;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    z-index: 10;
+    box-shadow: 0 10px 10px -5px;
+    background-color: #fff;
+}
+
+.top-menu .sub-menu li, .top-menu .children li {
+    display: block;
+    text-align: left;
+    padding: 0;
+    border-right: none;
+    font-size: inherit;
+}
+
+.top-menu .sub-menu li a, .top-menu .children li a {
+    display: block;
+    padding: 5px 10px;
+}
+
+.top-menu .sub-menu li ul, .top-menu .children li ul {
+    left: 200px;
+    top: 0;
+    padding-top: 0;
+}
+
 @media screen and (max-width: 768px) {
     .top-menu ul{
-        text-align: center;
+        text-align: left;
     }
 
     .top-menu ul li {
         display: block;
-        padding: 5px 10px;
+        padding: 0 10px;
         border-right: none;
+    }
+
+    .top-menu ul li a {
+        display: block;
+    }
+
+    .top-menu .sub-menu, .top-menu .children {
+        display: block;
+        position: static;
+        margin: 0 auto;
+        max-width: 100%;
+        box-shadow: unset;
+        padding-left: 20px;
+    }
+
+    .top-menu .menu-item-has-children:after, .top-menu .page_item_has_children:after {
+        content: "";
     }
 }
 
