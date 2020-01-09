@@ -467,7 +467,7 @@ ul li, ol li {
 
 .menu-item a, .page-item a, .page_item a {
     display: inline-block;
-    padding: 30px 10px;
+    padding: 30px 15px;
     color: inherit;
     font-weight: 700;
     text-transform: uppercase;
@@ -501,6 +501,20 @@ ul li, ol li {
     padding: 15px 20px;
 }
 
+.menu-item-has-children, .page_item_has_children {
+    position: relative;
+}
+
+.menu-item-has-children:after, .page_item_has_children:after {
+    content: url("inc/images/arrow-down.svg");
+    width: 20px;
+    height: 12px;
+    position: absolute;
+    top: 50%;  
+    right: -5px;  
+    transform: translateY(-75%);
+}
+
 .menu-item-has-children:hover > ul, .menu-item-has-children:focus-within > ul {
     display: block;
 }
@@ -513,6 +527,10 @@ ul li, ol li {
     left: 200px;
     top: 0;
     padding-top: 0;
+}
+
+.sub-menu li:after, .children li:after {
+    right: 5px; 
 }
 
 
@@ -557,6 +575,11 @@ ul li, ol li {
         width: 100%;
         padding-left: 30px;
         padding-top: 0;
+        box-shadow: unset;
+    }
+
+    .menu-item-has-children:after, .page_item_has_children:after {
+        content: unset;
     }
 
     .menu-navigation ul li a:hover, .menu-navigation ul li a:active {
