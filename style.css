@@ -91,6 +91,13 @@ input:focus {
     background-color: rgba(106, 90, 205, 0.2);
 }
 
+/* Images */
+
+body * {
+    max-width: 100%;
+    height: auto;
+}
+
 /* Select */
 select {
     padding: 10px 5px;
@@ -1101,6 +1108,35 @@ nav:after {
     display: none;
 }
 
+
+/* Aligment in single post */
+
+.aligncenter {
+    display: block;
+    margin: 0 auto;
+}
+
+.alignleft {
+    display: block;
+    float: left;
+    margin: 20px;
+    margin-left: 0;
+}
+
+.alignright {
+    display: block;
+    float: right;
+    margin: 20px;
+    margin-right: 0;
+}
+
+.alignnone {
+    display: block;
+}
+
+.wp-caption-text {
+    text-align: center;
+}
 
 
 /* //////////////////  ARCHIVE PAGE  ////////////////////// */
