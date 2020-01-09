@@ -72,6 +72,8 @@ a {
 
 a:hover {
     text-decoration: underline;
+    outline: none;
+    background-color: unset;
 }
 
 a:focus {
