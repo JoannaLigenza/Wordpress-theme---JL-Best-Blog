@@ -1049,6 +1049,12 @@ ul li, ol li {
     background-color: #fff;
 }
 
+@media screen and (max-width: 768px) {
+    ul.comment-list, ul.comment-list .children {
+        padding-left: 20px;
+    }
+}
+
 /* Comment pagination */
 
 .comment-navigation {
