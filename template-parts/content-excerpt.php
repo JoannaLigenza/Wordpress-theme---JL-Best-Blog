@@ -61,7 +61,9 @@
                                 echo "<div class='meta-date'><a href='".esc_url( get_home_url() )."/".$date."'> ".esc_html( get_the_time('j-m-Y') )."</a></div>";
                             echo "</div>";
                         }
-                        the_excerpt('<p>', '</p>');
+                        if ( ! post_password_required() ) {
+                            the_excerpt('<p>', '</p>');
+                        }
                         echo "</article>";
                     echo "</section>";
                 endwhile;
