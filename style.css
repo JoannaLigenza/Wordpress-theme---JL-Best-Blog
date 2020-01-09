@@ -59,6 +59,8 @@ h6 a{
     font-weight: 700;
 	line-height: 1.5;
 	margin: 0.83em 0;
+    word-wrap: break-word;
+    clear: both;
 }
 
 p {
