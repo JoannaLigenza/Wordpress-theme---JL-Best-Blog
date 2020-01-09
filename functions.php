@@ -717,10 +717,10 @@
                 .dots:hover {
                     background-color: unset;
                 }
-                .menu-item, .page-item {
+                .menu-item, .page-item, .page_item {
                     color: <?php echo sanitize_hex_color( $fontColor ) ?>;
                 }
-                .menu-item:hover > ul li a:hover {
+                .menu-item:hover > ul li a:hover, .page-item:hover > ul li a:hover, .page_item:hover > ul li a:hover {
                     background-color: rgba( 255, 255, 255, 0.2 );
                 }
                 a {
@@ -735,7 +735,7 @@
                 .current-menu-item > a {
                     color: <?php echo sanitize_hex_color( $linkHoverColor ) ?>;
                 }
-                .sub-menu {
+                .sub-menu, .children {
                     background-color: <?php echo sanitize_hex_color( $color ) ?>;
                 }
                 .widget-title {
