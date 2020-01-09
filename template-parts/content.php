@@ -120,9 +120,11 @@ function myfirsttheme_get_settings( $option ) {
                     </div>
                     <?php 
                     // display comments
-                    if ( comments_open() || get_comments_number() ) :
-                        comments_template();
-                    endif;
+                    if ( ! post_password_required() ) {
+                        if ( comments_open() || get_comments_number() ) {
+                            comments_template();
+                        }
+                    }
                 endwhile;
             else :
                 _e( '<p>No content yet, write some :)</p>', 'myfirsttheme' );
