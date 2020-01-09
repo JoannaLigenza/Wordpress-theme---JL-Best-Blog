@@ -56,7 +56,7 @@
             // Display the header text along with the image
             'header-text'   => true,
             // Header text color default
-            'default-text-color' => '000',
+            'default-text-color' => '#1e73be',
         );
         add_theme_support( 'custom-header', $header_info );
 
@@ -102,14 +102,14 @@
         ) );
 
         $wp_customize->add_setting( 'menu_font_color' , array(
-            'default'   => '#FFFFFF',
+            'default'   => '#1e73be',
             'transport' => 'refresh',
             'sanitize_callback' => 'sanitize_hex_color',
             'sanitize_js_callback' => 'sanitize_hex_color',     // selective refresh is set for menu_font_color setting (in customizer.js), so it needs to sanitize data used by script
         ) );
 
         $wp_customize->add_setting( 'link_hover_color' , array(
-            'default'   => '#AD000B',
+            'default'   => '#515151',
             'transport' => 'refresh',
             'sanitize_callback' => 'sanitize_hex_color',
         ) );
@@ -699,9 +699,9 @@
 
     // Add custom style to wordpress elements
     function myfisttheme_set_custom_styles() {
-        $color = get_theme_mod( 'menu_background_color' );
-        $fontColor = get_theme_mod( 'menu_font_color' );
-        $linkHoverColor = get_theme_mod( 'link_hover_color' );
+        $color = get_theme_mod( 'menu_background_color', '#a8c5ff' );
+        $fontColor = get_theme_mod( 'menu_font_color', '#1e73be' );
+        $linkHoverColor = get_theme_mod( 'link_hover_color', '#515151' );
         ?>
             <style>
                 .page-numbers {
