@@ -456,6 +456,7 @@ ul li, ol li {
 
     .logo img {
         width: auto;
+        max-width: unset;
         height: 100px;
     }
 
