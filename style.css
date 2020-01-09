@@ -66,6 +66,7 @@ p {
     word-wrap: break-word;
 }
 
+/* Links */
 a {
     text-decoration: none;
 }
@@ -90,6 +91,7 @@ input:focus {
     background-color: rgba(106, 90, 205, 0.2);
 }
 
+/* Select */
 select {
     padding: 10px 5px;
     min-width: 280px;
@@ -101,6 +103,7 @@ select:focus {
     border: 1px solid #6a5acd;
 }
 
+/* Pre */
 pre {
     overflow-x: auto;
     background-color: #efefef;
@@ -108,6 +111,7 @@ pre {
     white-space: pre;
 }
 
+/* Embeded blocks */
 .wp-block-embed {
     margin: 50px;
 }
@@ -124,6 +128,35 @@ figcaption {
     text-align: center;
 }
 
+/* Definition Lists */
+dt {
+    font-weight: 700;
+    line-height: 1.5em;
+}
+
+dd {
+    line-height: 1.5em;
+}
+
+/* Tables */
+th, tr, td {
+    padding: 10px;
+}
+
+.calendar_wrap th, tr, td {
+    padding: 2px;
+}
+
+.calendar_wrap a {
+    text-decoration: underline;
+}
+
+/* Unordered and ordered Lists */
+ul li, ol li {
+    padding: 5px 0;
+}
+
+/* Main container */
 .main-container {
     margin: 0;
     padding: 0;
@@ -1119,11 +1152,7 @@ nav:after {
     color: black;
 }
 
-.footer td a {
-    text-decoration: underline;
-}
-
-
+/* social icon */
 .social-icon-section {
     display: inline-block;
     padding-top: 30px;
@@ -1181,7 +1210,7 @@ nav:after {
 }
 
 
-
+/* footer author link */
 .footer-link {
     color: #fff;
 }
