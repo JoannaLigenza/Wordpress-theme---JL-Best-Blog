@@ -23,7 +23,11 @@
             if ( have_posts() ) :
                 while ( have_posts() ) : the_post();
                     $imagePosition = get_theme_mod( 'front-page-and-archive-image' );
-                    echo "<section class='article-section image-".esc_attr( $imagePosition )."'>";
+                    $class = 'article-section image-'.esc_attr( $imagePosition );
+                    if ( is_sticky( $post->ID ) ){
+                        $class = 'sticky article-section image-'.esc_attr( $imagePosition );
+                    }
+                    echo "<section class='".$class."'>";
                         if ( has_post_thumbnail() ) {
                             echo "<div class='image-container image-container-".esc_attr( $imagePosition )."'><a href='".esc_url( get_permalink() )."'>" ;
                                 if ($imagePosition === 'above') {
