@@ -488,6 +488,7 @@ ul li, ol li {
     top: 78px;
     left: 0;
     z-index: 10;
+    box-shadow: 0 10px 10px -5px;
 }
 
 .sub-menu li, .children li {
