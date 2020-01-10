@@ -744,7 +744,7 @@
                 a:hover {
                     color: <?php echo sanitize_hex_color( $linkHoverColor ) ?>;
                 }
-                .article > h2 a:hover {
+                .article heading > h2 a:hover {
                     color: <?php echo sanitize_hex_color( $linkHoverColor ) ?>;
                 }
                 .current-menu-item > a {
