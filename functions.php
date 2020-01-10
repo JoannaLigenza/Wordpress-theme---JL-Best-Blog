@@ -56,7 +56,7 @@
             // Display the header text along with the image
             'header-text'   => true,
             // Header text color default
-            'default-text-color' => '000',
+            'default-text-color' => '#1e73be',
         );
         add_theme_support( 'custom-header', $header_info );
 
@@ -102,14 +102,14 @@
         ) );
 
         $wp_customize->add_setting( 'menu_font_color' , array(
-            'default'   => '#FFFFFF',
+            'default'   => '#1e73be',
             'transport' => 'refresh',
             'sanitize_callback' => 'sanitize_hex_color',
             'sanitize_js_callback' => 'sanitize_hex_color',     // selective refresh is set for menu_font_color setting (in customizer.js), so it needs to sanitize data used by script
         ) );
 
         $wp_customize->add_setting( 'link_hover_color' , array(
-            'default'   => '#AD000B',
+            'default'   => '#515151',
             'transport' => 'refresh',
             'sanitize_callback' => 'sanitize_hex_color',
         ) );
@@ -699,61 +699,86 @@
 
     // Add custom style to wordpress elements
     function myfisttheme_set_custom_styles() {
-        $color = get_theme_mod( 'menu_background_color' );
-        $fontColor = get_theme_mod( 'menu_font_color' );
-        $linkHoverColor = get_theme_mod( 'link_hover_color' );
+        $color = get_theme_mod( 'menu_background_color', '#a8c5ff' );
+        $fontColor = get_theme_mod( 'menu_font_color', '#1e73be' );
+        $linkHoverColor = get_theme_mod( 'link_hover_color', '#515151' );
         ?>
             <style>
                 .page-numbers {
-                    border: 1px solid <?php echo $color ?>;
+                    border: 1px solid <?php echo sanitize_hex_color( $color ) ?>;
                 }
                 .page-numbers:hover {
-                    background-color: <?php echo $color ?>;
+                    background-color: <?php echo sanitize_hex_color( $color ) ?>;
                     text-decoration: none;
                 }
                 .current {
-                    background-color: <?php echo $color ?>;
+                    background-color: <?php echo sanitize_hex_color( $color ) ?>;
                 }
                 .dots:hover {
                     background-color: unset;
                 }
-                .menu-item, .page-item {
-                    color: <?php echo $fontColor ?>;
+                .menu-item, .page-item, .page_item {
+                    color: <?php echo sanitize_hex_color( $fontColor ) ?>;
                 }
-                .menu-item:hover > ul li a:hover {
+                .menu-item:hover > ul li a:hover, .page-item:hover > ul li a:hover, .page_item:hover > ul li a:hover {
                     background-color: rgba( 255, 255, 255, 0.2 );
                 }
+                a {
+                    color: <?php echo sanitize_hex_color( $color ) ?>;
+                }
                 a:hover {
-                    color: <?php echo $linkHoverColor ?>;
+                    color: <?php echo sanitize_hex_color( $linkHoverColor ) ?>;
+                }
+                .article > h2 a:hover {
+                    color: <?php echo sanitize_hex_color( $linkHoverColor ) ?>;
                 }
                 .current-menu-item > a {
-                    color: <?php echo $linkHoverColor ?>;
+                    color: <?php echo sanitize_hex_color( $linkHoverColor ) ?>;
                 }
-                .sub-menu {
-                    background-color: <?php echo $color ?>;
+                .menu-navigation .sub-menu, .menu-navigation .children {
+                    background-color: <?php echo sanitize_hex_color( $color ) ?>;
                 }
                 .widget-title {
-                    border-bottom: 2px solid <?php echo $linkHoverColor ?>;
+                    border-bottom: 2px solid <?php echo sanitize_hex_color( $color ) ?>;
                 }
                 .submit {
-                    border: 2px solid <?php echo $color ?>;
-                    color: <?php echo $color ?>;
-                    /* color: <?php echo $fontColor ?>; */
+                    border: 2px solid <?php echo sanitize_hex_color( $color ) ?>;
+                    color: <?php echo sanitize_hex_color( $color ) ?>;
+                    /* color: <?php echo sanitize_hex_color( $fontColor ) ?>; */
                 }
                 .submit:hover {
-                    background-color: <?php echo $color ?>;
-                    border: 2px solid <?php echo $color ?>;
-                    color: <?php echo $fontColor ?>;
+                    background-color: <?php echo sanitize_hex_color( $color ) ?>;
+                    border: 2px solid <?php echo sanitize_hex_color( $color ) ?>;
+                    color: <?php echo sanitize_hex_color( $fontColor ) ?>;
+                }
+                .submit:focus:hover {
+                    color: <?php echo sanitize_hex_color( $color ) ?>;
                 }
                 .read-more-button:hover {
-                    background-color: <?php echo $color ?>;
+                    background-color: <?php echo sanitize_hex_color( $color ) ?>;
                 }
                 .post-categories a {
-                    border: 1px solid <?php echo $color ?>;
+                    border: 1px solid <?php echo sanitize_hex_color( $color ) ?>;
                 }
                 .post-categories a:hover {
-                    background-color: <?php echo $color ?>;
+                    background-color: <?php echo sanitize_hex_color( $color ) ?>;
                 }
+                .wp-block-embed-twitter, .wp-block-embed-facebook {
+                    border-bottom: 2px solid <?php echo sanitize_hex_color( $color ) ?>;
+                }
+                <?php if ( get_theme_mod( 'left-column-single' ) && get_theme_mod( 'right-column-single' ) ) : ?>
+                .main-content--section {
+                    max-width: calc( 100% - 600px);
+                }
+                <?php elseif ( get_theme_mod( 'left-column-single' ) || get_theme_mod( 'right-column-single' ) ) : ?>
+                .main-content--section {
+                    max-width: calc( 100% - 300px);
+                }
+                <?php elseif ( ! get_theme_mod( 'left-column-single' ) && ! get_theme_mod( 'right-column-single' ) ) : ?>
+                .main-content--section {
+                    max-width: 100%;
+                }
+                <?php endif; ?>
             </style>
         <?php
     }
@@ -762,17 +787,17 @@
 
     // Set post excerpt length
     function myfisttheme_custom_excerpt_length( $length ) {
-        $excerptLength = get_theme_mod( 'excerpt-length' );
+        $excerptLength = absint( get_theme_mod( 'excerpt-length' ) );
         return $excerptLength;
     }
     add_filter( 'excerpt_length', 'myfisttheme_custom_excerpt_length');
 
     function myfisttheme_excerpt_more( $more ) {
-        $excerptLength = get_theme_mod( 'excerpt-length' );
+        $excerptLength = absint( get_theme_mod( 'excerpt-length' ) );
         if ($excerptLength === 0) {
             return '';
         } else {
-            return "<a href='".get_permalink()."'><div class='read-more-button' style='border: 1px solid ".get_theme_mod( 'menu_background_color', '#696969' )."'>".__( 'Read more...', 'myfirsttheme')."</div></a>";
+            return "<a class='read-more-link' href='".get_permalink()."'><div class='read-more-button' style='border: 1px solid ".sanitize_hex_color( get_theme_mod( 'menu_background_color', '#696969' ) )."'>".__( 'Read more...', 'myfirsttheme')."</div></a>";
         }
     }
     add_filter( 'excerpt_more', 'myfisttheme_excerpt_more' );
@@ -796,11 +821,17 @@
         $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
         $wp_customize->selective_refresh->add_partial( 'header_site_title', array(
-            'selector' => '.header-text div',
+            'selector' => '.title',
             'settings' => array( 'blogname', 'blogdescription', 'header_textcolor' ),
             'render_callback' => function() {
-                echo "<h2 style='color: #".esc_attr(get_header_textcolor())."'>".get_bloginfo( 'name' )."</h2>";
-                echo "<h5 style='color: #".esc_attr(get_header_textcolor())."'>".get_bloginfo( 'description' )."</h5>";
+                    if ( display_header_text() ){ ?>
+                        <a href="<?php echo esc_url(home_url()) ?>" class="header-text">
+                            <div>
+                                <h1 style="color: #<?php echo esc_attr(get_header_textcolor()); ?>"><?php bloginfo('name') ?></h1>
+                                <h5 style="color: #<?php echo esc_attr(get_header_textcolor()); ?>"><?php bloginfo('description') ?></h5>
+                            </div>   
+                        </a>                        
+                    <?php }
             },
         ) );
     
@@ -819,7 +850,7 @@
                     array(
                         'theme_location' => 'header-menu',
                         'container_class' => 'header-menu-class',
-                        'before' => '<span style="color: '.$fontColor.'">',
+                        'before' => '<span style="color: '.sanitize_hex_color( $fontColor ).'">',
                         'after'  => '</span>',
                     )
                 );

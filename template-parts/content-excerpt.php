@@ -10,12 +10,24 @@
         <?php }
     ?>
     <!-- main content -->
-    <main class="main-content--section">
+    <main id="main-content--section"
+            class="<?php if ( get_theme_mod( 'left-column' ) && get_theme_mod( 'right-column' ) ) {
+                echo 'main-content-section main-content-two-sidebars';
+            } else if ( get_theme_mod( 'left-column' ) || get_theme_mod( 'right-column' ) ) {
+                echo 'main-content-section main-content-one-sidebar';
+            } else if ( ! get_theme_mod( 'left-column' ) && ! get_theme_mod( 'right-column' ) ) {
+                echo 'main-content-section main-content-no-sidebars';
+            } ?>
+    ">
         <?php
             if ( have_posts() ) :
                 while ( have_posts() ) : the_post();
                     $imagePosition = get_theme_mod( 'front-page-and-archive-image' );
-                    echo "<section class='article-section image-".esc_attr( $imagePosition )."'>";
+                    $class = 'article-section image-'.esc_attr( $imagePosition );
+                    if ( is_sticky( $post->ID ) ){
+                        $class = 'sticky article-section image-'.esc_attr( $imagePosition );
+                    }
+                    echo "<section class='".$class."'>";
                         if ( has_post_thumbnail() ) {
                             echo "<div class='image-container image-container-".esc_attr( $imagePosition )."'><a href='".esc_url( get_permalink() )."'>" ;
                                 if ($imagePosition === 'above') {
@@ -49,7 +61,9 @@
                                 echo "<div class='meta-date'><a href='".esc_url( get_home_url() )."/".$date."'> ".esc_html( get_the_time('j-m-Y') )."</a></div>";
                             echo "</div>";
                         }
-                        the_excerpt('<p>', '</p>');
+                        if ( ! post_password_required() ) {
+                            the_excerpt('<p>', '</p>');
+                        }
                         echo "</article>";
                     echo "</section>";
                 endwhile;
