@@ -735,7 +735,7 @@
                 .current-menu-item > a {
                     color: <?php echo sanitize_hex_color( $linkHoverColor ) ?>;
                 }
-                .sub-menu, .children {
+                .menu-navigation .sub-menu, .menu-navigation .children {
                     background-color: <?php echo sanitize_hex_color( $color ) ?>;
                 }
                 .widget-title {
