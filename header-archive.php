@@ -34,6 +34,7 @@
                         wp_nav_menu( array( 
                             'theme_location' => 'top-menu',
                             'container_class' => 'top-menu-class',
+                            'depth' => 4
                         ) );
                     endif;
                 ?>
