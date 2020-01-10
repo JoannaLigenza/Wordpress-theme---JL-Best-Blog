@@ -84,9 +84,7 @@ function myfirsttheme_get_settings( $option ) {
                         } else {
                             echo "<section class='section'>";
                         } ?>
-                        <heading>
-                            <h2><a href='<?php echo get_permalink(); ?>'> <?php echo esc_html( get_the_title() ); ?> </a></h2>
-                        </heading>
+                        <h2><a href='<?php echo get_permalink(); ?>'> <?php echo esc_html( get_the_title() ); ?> </a></h2>
                         <?php
                         if ( myfirsttheme_get_settings( 'meta' ) ) {
                             $id = get_the_author_meta('ID');
