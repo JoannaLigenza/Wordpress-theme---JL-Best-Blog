@@ -41,13 +41,13 @@
                                         'sizes' => '(max-width: '.$maxWidth.') 100vw, '.$maxWidth.'px',
                                         'alt' => 'post-image',
                                         ) );
-                                    echo "</div></a>" ;
+                                    echo "</a></div>" ;
                                     echo "<article class='article'>";
                                 } else {
                                     echo the_post_thumbnail( 'medium', array(
                                         'alt' => 'post-image'
                                     ) );
-                                    echo "</div></a>" ;
+                                    echo "</a></div>" ;
                                     echo "<article class='article article-padding'>";
                                 }
                         } else {

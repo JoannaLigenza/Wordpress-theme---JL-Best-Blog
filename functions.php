@@ -811,7 +811,7 @@
         if ($excerptLength === 0) {
             return '';
         } else {
-            return "<a class='read-more-link' href='".get_permalink()."'><div class='read-more-button' style='border: 1px solid ".sanitize_hex_color( get_theme_mod( 'menu_background_color', '#696969' ) )."'>".__( 'Read more...', 'myfirsttheme')."</div></a>";
+            return "<div class='read-more-button'><a class='read-more-link' href='".get_permalink()."' style='border: 1px solid ".sanitize_hex_color( get_theme_mod( 'menu_background_color', '#696969' ) )."'>".__( 'Read more...', 'myfirsttheme')."</a></div>";
         }
     }
     add_filter( 'excerpt_more', 'myfisttheme_excerpt_more' );

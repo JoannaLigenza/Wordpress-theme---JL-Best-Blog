@@ -988,19 +988,21 @@ ul li, ol li {
 }
 
 .read-more-button {
-    padding: 10px;
+    padding: 0;
     display: inline-block;
     color: #111;
-    transition-duration: .5s;
-}
-
-.read-more-button:hover {
-    padding-left: 15px;
-    transition-duration: .5s;
 }
 
 .read-more-link {
-    padding: 11px 0;
+    padding: 10px;
+    display: block;
+    transition-duration: .5s;
+}
+
+.read-more-link:hover {
+    text-decoration: none;
+    padding-left: 15px;
+    transition-duration: .5s;
 }
 
 .read-more-link:focus {

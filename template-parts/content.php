@@ -72,13 +72,13 @@ function myfirsttheme_get_settings( $option ) {
                                         'alt' => 'post-image',
                                         // 'srcset' => $imageWidthFull[0].' '.$imageWidthFull[1].'w,'. $imageWidthMedium[0].' 400w'
                                         ) );
-                                    echo "</div></a>" ;
+                                    echo "</a></div>" ;
                                     echo "<article class='article'>";
                                 } else {
                                     echo the_post_thumbnail( 'medium', array(
                                         'alt' => 'post-image'
                                     ) );
-                                    echo "</div></a>" ;
+                                    echo "</a></div>" ;
                                     echo "<article class='article article-padding'>";
                                 }
                         } else {
