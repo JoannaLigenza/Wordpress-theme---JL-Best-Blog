@@ -150,6 +150,7 @@
             'sanitize_callback' => 'absint',    // echo absint( 'some non-numeric string' );  -> returns 0
         ) );
 
+        // Adding settings - footer
         $wp_customize->add_setting( 'footer-column-1' , array(
             'default'   => false,
             'transport' => 'refresh',
@@ -220,6 +221,12 @@
             'default'   => '',
             'transport' => 'refresh',
             'sanitize_callback' => 'esc_url_raw',
+        ) );
+
+        $wp_customize->add_setting( 'footer-privacy-policy' , array(
+            'default'   => false,
+            'transport' => 'postMessage',
+            'sanitize_callback' => 'myfirsttheme_sanitize_checkbox',
         ) );
 
         // Settings - single post
@@ -475,6 +482,13 @@
             'type'       => 'checkbox'
         ) );
 
+        $wp_customize->add_control( 'footer-privacy-policy', array(
+            'label'      => __( ' Display link to privacy policy', 'myfirsttheme' ),
+            'section'    => 'footer',
+            'settings'   => 'footer-privacy-policy',
+            'type'       => 'checkbox'
+        ) );
+
         $wp_customize->add_control( 'footer-social-icon', array(
             'label'      => __( 'Enable social icons section', 'myfirsttheme' ),
             'section'    => 'footer',
@@ -529,6 +543,7 @@
             'section'    => 'footer',
             'settings'   => 'social-icon-linkedin',
         ) );
+        
         
         // Adding controls - single post
         $wp_customize->add_control( 'left-column-single', array(
@@ -820,6 +835,7 @@
         $wp_customize->get_setting( 'menu_font_color' )->transport = 'postMessage';
         $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
+        // header site title
         $wp_customize->selective_refresh->add_partial( 'header_site_title', array(
             'selector' => '.title',
             'settings' => array( 'blogname', 'blogdescription', 'header_textcolor' ),
@@ -841,6 +857,7 @@
         //     'render_callback' => 'wp_get_document_title',
         // ) );
 
+        // header menu text
         $wp_customize->selective_refresh->add_partial( 'header_menu_text', array(
             'selector' => '#navigation',
             'settings' => array( 'menu_font_color' ),
@@ -854,6 +871,20 @@
                         'after'  => '</span>',
                     )
                 );
+            },
+        ) );
+
+        // footer privacy policy link
+        $wp_customize->selective_refresh->add_partial( 'privacy-policy-link', array(
+            'selector' => '#footer-links-container',
+            'settings' => array( 'footer-privacy-policy' ),
+            'render_callback' => function() {
+                if ( get_theme_mod( 'footer-privacy-policy') ) {
+                    $privacy_policy_page = get_option( 'wp_page_for_privacy_policy' );
+                    if( $privacy_policy_page ) : ?>
+                        <a href="<?php echo esc_url( get_permalink( $privacy_policy_page ) ) ?>" class='privacy-policy-link'> <?php _e( 'Privacy Policy', 'myfirsttheme' ) ?> </a>
+                    <?php endif;
+                }
             },
         ) );
     }
