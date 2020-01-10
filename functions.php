@@ -821,11 +821,17 @@
         $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
         $wp_customize->selective_refresh->add_partial( 'header_site_title', array(
-            'selector' => '.header-text div',
+            'selector' => '.title',
             'settings' => array( 'blogname', 'blogdescription', 'header_textcolor' ),
             'render_callback' => function() {
-                echo "<h2 style='color: #".esc_attr(get_header_textcolor())."'>".get_bloginfo( 'name' )."</h2>";
-                echo "<h5 style='color: #".esc_attr(get_header_textcolor())."'>".get_bloginfo( 'description' )."</h5>";
+                    if ( display_header_text() ){ ?>
+                        <a href="<?php echo esc_url(home_url()) ?>" class="header-text">
+                            <div>
+                                <h1 style="color: #<?php echo esc_attr(get_header_textcolor()); ?>"><?php bloginfo('name') ?></h1>
+                                <h5 style="color: #<?php echo esc_attr(get_header_textcolor()); ?>"><?php bloginfo('description') ?></h5>
+                            </div>   
+                        </a>                        
+                    <?php }
             },
         ) );
     
