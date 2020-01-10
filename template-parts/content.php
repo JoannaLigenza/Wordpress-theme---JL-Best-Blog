@@ -57,7 +57,7 @@ function myfirsttheme_get_settings( $option ) {
             if ( have_posts() ) :
                 while ( have_posts() ) : the_post();
                     $imagePosition = myfirsttheme_get_settings( 'imagePosition' );
-                    echo "<section class='article-section image-".esc_attr( $imagePosition )."'>";
+                    echo "<article class='article image-".esc_attr( $imagePosition )."'>";
                         if ( has_post_thumbnail() ) {
                             echo "<div class='image-container image-container-".esc_attr( $imagePosition )."'><a href='".get_permalink()."'>" ;
                                 if ($imagePosition === 'above') {
@@ -73,20 +73,20 @@ function myfirsttheme_get_settings( $option ) {
                                         // 'srcset' => $imageWidthFull[0].' '.$imageWidthFull[1].'w,'. $imageWidthMedium[0].' 400w'
                                         ) );
                                     echo "</a></div>" ;
-                                    echo "<article class='article'>";
+                                    echo "<section class='section'>";
                                 } else {
                                     echo the_post_thumbnail( 'medium', array(
                                         'alt' => 'post-image'
                                     ) );
                                     echo "</a></div>" ;
-                                    echo "<article class='article article-padding'>";
+                                    echo "<section class='section section-padding'>";
                                 }
                         } else {
-                            echo "<article class='article'>";
+                            echo "<section class='section'>";
                         } ?>
                         <heading>
                             <h2><a href='<?php echo get_permalink(); ?>'> <?php echo esc_html( get_the_title() ); ?> </a></h2>
-                        <heading>
+                        </heading>
                         <?php
                         if ( myfirsttheme_get_settings( 'meta' ) ) {
                             $id = get_the_author_meta('ID');
@@ -103,12 +103,12 @@ function myfirsttheme_get_settings( $option ) {
                             <?php
                         }
                         if ( is_single() || is_page() ) {
-                                the_content('<article>', '</article>');
+                                the_content('<p>', '</p>');
                             } else {
                                 the_excerpt('<p>', '</p>');
                             }
-                        echo "</article>";
-                    echo "</section>";?>
+                        echo "</section>";
+                    echo "</article>";?>
                     <!-- post navigation -->
                     <div class="prev-next-post-navigation">
                         <?php if ( get_previous_post() ) : ?>

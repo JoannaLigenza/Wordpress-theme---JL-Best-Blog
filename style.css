@@ -897,7 +897,7 @@ ul li, ol li {
 
 /* Content - home */
 
-.article-section {
+.article {
     display: flex;
     border-bottom: 1px solid #c6c6c6;
 }
@@ -927,21 +927,21 @@ ul li, ol li {
     padding-top: 50px;
 }
 
-.article-section .wp-post-image {
+.article .wp-post-image {
     width: 100%;
     height: auto;
     padding: 10px 0;
 }
 
-.article {
+.section {
     padding: 10px 0;
 }
 
-.article heading > h2 a {
+.section heading > h2 a {
     color: #000;
 }
 
-.article-padding{
+.section-padding{
     padding-left: 10px;
 }
 
@@ -1051,7 +1051,7 @@ ul li, ol li {
 }
 
 @media screen and (max-width: 768px) {
-    .article-section {
+    .article {
         flex-direction: column;
     }
 
