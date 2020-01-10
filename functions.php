@@ -763,7 +763,7 @@
                 }
                 .submit:hover {
                     background-color: <?php echo sanitize_hex_color( $color ) ?>;
-                    border: 2px solid <?php echo sanitize_hex_color( $color ) ?>;
+                    border: 2px solid transparent;
                     color: <?php echo sanitize_hex_color( $fontColor ) ?>;
                 }
                 .submit:focus:hover {
