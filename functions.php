@@ -759,7 +759,6 @@
                 .submit {
                     border: 2px solid <?php echo sanitize_hex_color( $color ) ?>;
                     color: <?php echo sanitize_hex_color( $color ) ?>;
-                    /* color: <?php echo sanitize_hex_color( $fontColor ) ?>; */
                 }
                 .submit:hover {
                     background-color: <?php echo sanitize_hex_color( $color ) ?>;
