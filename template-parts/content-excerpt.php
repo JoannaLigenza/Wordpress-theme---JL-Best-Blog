@@ -53,7 +53,7 @@
                         } else {
                             echo "<article class='article'>";
                         }
-                        echo "<h2><a href='".esc_url( get_permalink() )."'>".esc_html( get_the_title() )."</a></h2>";
+                        echo "<heading><h2><a href='".esc_url( get_permalink() )."'>".esc_html( get_the_title() )."</a></h2><heading>";
                         if (get_theme_mod( 'post-meta' )) {
                             // $id = get_the_author_meta('ID');
                             $id = get_the_author_meta('ID');
