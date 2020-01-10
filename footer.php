@@ -99,8 +99,17 @@
                     <?php
                 }
                 ?>  <!-- end of social icons section -->
-                <p class="footer-link"><small><?php _e( 'Theme made by: ', 'myfirsttheme') ?></small><a href="<?php echo esc_url( 'https://love-coding.pl/en' ); ?>" class="footer-theme-link">JL</a><small>, 
+                <div class="footer-links-container">
+                    <?php 
+                    if ( get_theme_mod( 'footer-privacy-policy') ) {
+                        $privacy_policy_page = get_option( 'wp_page_for_privacy_policy' );
+                        if( $privacy_policy_page ) : ?>
+                            <p><?php echo _e( 'Read our ', 'myfirsttheme' ) ?><a href="<?php echo esc_url( get_permalink( $privacy_policy_page ) ) ?>" class='privacy-policy-link'> <?php _e( 'Privacy Policy', 'myfirsttheme' ) ?> </a></p>
+                        <?php endif;
+                    } ?>
+                    <p class="footer-link"><small><?php _e( 'Theme made by: ', 'myfirsttheme') ?></small><a href="<?php echo esc_url( 'https://love-coding.pl/en' ); ?>" class="footer-theme-link">JL</a><small>, 
                     <?php _e( 'used by: ', 'myfirsttheme') ?> <a href="<?php echo esc_url( home_url() ); ?>" class="footer-theme-link"><?php echo bloginfo('name') ?></a></small></p>
+                </div>
             </div>
             
         </footer>
