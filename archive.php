@@ -67,7 +67,7 @@
                 if ( have_posts() ) :
                     while ( have_posts() ) : the_post();
                         $imagePosition = get_theme_mod( 'front-page-and-archive-image' );
-                        echo "<section class='article-section image-".$imagePosition."'>";
+                        echo "<article class='article image-".$imagePosition."'>";
                             if ( has_post_thumbnail() ) {
                                 echo "<div class='image-container image-container-".esc_attr( $imagePosition )."'><a href='".get_permalink()."'>" ;
                                     if ($imagePosition === 'above') {
@@ -82,14 +82,14 @@
                                             'alt' => 'post image'
                                             ) );
                                         echo "</div></a>" ;
-                                        echo "<article class='article'>";
+                                        echo "<section class='section'>";
                                     } else {
                                         echo the_post_thumbnail( 'medium' );
                                         echo "</div></a>" ;
-                                        echo "<article class='article article-padding'>";
+                                        echo "<section class='section section-padding'>";
                                     }
                             } else {
-                                echo "<article class='article'>";
+                                echo "<section class='section'>";
                             }
                             echo "<h2><a href='".get_permalink()."'>".esc_html( get_the_title() )."</a></h2>";
                             if (get_theme_mod( 'post-meta' )) {
@@ -101,8 +101,8 @@
                                 echo "</div>";
                             }
                             the_excerpt('<p>', '</p>');
-                            echo "</article>";
-                        echo "</section>";
+                            echo "</section>";
+                        echo "</article>";
                     endwhile;
                     the_posts_pagination(array( 'mid_size' => 2 ));
                 else :
