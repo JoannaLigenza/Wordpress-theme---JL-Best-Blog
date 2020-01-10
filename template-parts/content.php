@@ -68,7 +68,7 @@ function myfirsttheme_get_settings( $option ) {
                                     }
                                     echo the_post_thumbnail( 'full', array( 
                                         // 'sizes' => '(max-width:320px) 145px, (max-width:800px) 220px, 1200',
-                                        'sizes' => '(max-width: '.$maxWidth.') 100vw, '.$maxWidth.'px',
+                                        'sizes' => '(max-width: '.$maxWidth.'px) 100vw, '.$maxWidth.'px',
                                         'alt' => 'post-image',
                                         // 'srcset' => $imageWidthFull[0].' '.$imageWidthFull[1].'w,'. $imageWidthMedium[0].' 400w'
                                         ) );

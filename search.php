@@ -33,11 +33,11 @@
                                         'sizes' => '(max-width: '.$maxWidth.') 100vw, '.$maxWidth.'px',
                                         'alt' => 'post image'
                                         ) );
-                                    echo "</div></a>" ;
+                                    echo "</a></div>" ;
                                     echo "<section class='section'>";
                                 } else {
                                     echo the_post_thumbnail( 'medium' );
-                                    echo "</div></a>" ;
+                                    echo "</a></div>" ;
                                     echo "<section class='section section-padding'>";
                                 }
                         } else {
