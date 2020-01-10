@@ -1523,6 +1523,9 @@ nav:after {
     color: #fff;
 }
 
+.privacy-policy-link:hover {
+    color: #f97c00;
+}
 
 
 @media screen and (max-width: 1200px) {
