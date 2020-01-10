@@ -645,6 +645,10 @@ ul li, ol li {
     padding-top: 0;
 }
 
+.sub-menu li ul li a, .children li ul li a {
+    padding: 15px;
+}
+
 .sub-menu li:after, .children li:after {
     right: 5px; 
 }
