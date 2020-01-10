@@ -376,7 +376,6 @@ ul li, ol li {
     .top-menu .sub-menu, .top-menu .children {
         display: block;
         position: static;
-        margin: 0 auto;
         max-width: 100%;
         box-shadow: unset;
         padding-left: 20px;
