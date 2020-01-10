@@ -165,6 +165,7 @@ th, tr, td {
 /* Unordered and ordered Lists */
 ul li, ol li {
     padding: 5px 0;
+    word-wrap: break-word;
 }
 
 /* Main container */
