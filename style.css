@@ -347,7 +347,7 @@ ul li, ol li {
     .top-menu-class { 
         overflow: hidden;
         max-height: 0;
-        transition: max-height 1s;
+        transition: max-height 0.5s;
     }
 
     .mobile-top-menu-container p span:after {
@@ -676,7 +676,7 @@ ul li, ol li {
         overflow: hidden;
         min-height: 0;
         max-height: 0;
-        transition: max-height 1s;
+        transition: max-height 0.5s;
     }
 
     .top-menu {
