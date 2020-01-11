@@ -259,7 +259,7 @@ ul li, ol li {
 .top-menu ul li {
     list-style: none;
     display: inline-block;
-    padding: 0 10px;
+    padding: 0;
     border-right: 1px solid #c6c6c6;
     color: #696969;
     font-size: 0.8em;
@@ -272,7 +272,7 @@ ul li, ol li {
 .top-menu ul li a {
     color: #696969;
     text-transform: lowercase;
-    padding: 5px 10px;
+    padding: 10px;
 }
 
 .top-menu ul li a:hover {
@@ -281,6 +281,7 @@ ul li, ol li {
 
 .top-menu .menu-item-has-children, .top-menu .page_item_has_children {
     position: relative;
+    padding-right: 15px;
 }
 
 .top-menu .menu-item-has-children:after, .top-menu .page_item_has_children:after {
@@ -584,13 +585,13 @@ ul li, ol li {
     margin: 0 auto;
 }
 
-.menu-item, .page-item, .page_item {
+.menu-navigation .menu-item, .menu-navigation .page-item, .menu-navigation .page_item {
     list-style: none;
     display: inline-block;
     position: relative;
 }
 
-.menu-item a, .page-item a, .page_item a {
+.menu-navigation .menu-item a, .menu-navigation .page-item a, .menu-navigation .page_item a {
     display: inline-block;
     padding: 30px 15px;
     color: inherit;
@@ -599,8 +600,12 @@ ul li, ol li {
     letter-spacing: 1px;
 }
 
-.menu-item a:hover, .page-item a:hover, .page_item a:hover {
+.menu-navigation .menu-item a:hover, .menu-navigation .page-item a:hover, .menu-navigation .page_item a:hover {
     text-decoration: none;
+}
+
+.menu-navigation .menu-item:hover > ul li a:hover, .menu-navigation .page-item:hover > ul li a:hover, .menu-navigation .page_item:hover > ul li a:hover {
+    background-color: rgba( 255, 255, 255, 0.2 );
 }
 
 .menu-navigation .sub-menu, .menu-navigation .children {      
@@ -1453,18 +1458,42 @@ nav:after {
     width: 100%;
 }
 
+.footer-column li {
+    display: block;
+}
+
 .footer-column a {
     color: #c6c6c6;
+    padding: 0;
 }
 
 .footer-column a:hover {
     text-decoration: underline;
     color: #fff;
+    background-color: unset;
+}
+
+.footer-column a:focus:hover {
+    background-color: unset;
+}
+
+.footer-column .children {
+    color: #c6c6c6;
+    padding: 0;
 }
 
 .footer-widget-title {
     color: black;
 }
+
+/* .footer li {
+    padding: 10px;
+}
+
+.footer li a{
+    padding: 0;
+} */
+
 
 /* social icon */
 .social-icon-section {
