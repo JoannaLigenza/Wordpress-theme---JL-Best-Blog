@@ -1,5 +1,5 @@
 <?php 
-function myfirsttheme_get_settings( $option ) {
+function jlbestblog_get_settings( $option ) {
     $var = '';
     if ( is_single() ) {
         if ( $option === 'left-column' ) {
@@ -37,7 +37,7 @@ function myfirsttheme_get_settings( $option ) {
 
     <!-- left column -->
     <?php
-        if ( myfirsttheme_get_settings( 'left-column' ) ) { ?>
+        if ( jlbestblog_get_settings( 'left-column' ) ) { ?>
             <aside class="column column-left">
                 <?php dynamic_sidebar( 'sidebar-left' ); ?>
             </aside>
@@ -45,18 +45,18 @@ function myfirsttheme_get_settings( $option ) {
     ?>
     <!-- main content -->
     <main id="main-content--section"
-            class="<?php if ( myfirsttheme_get_settings( 'left-column' ) && myfirsttheme_get_settings( 'right-column' ) ) {
+            class="<?php if ( jlbestblog_get_settings( 'left-column' ) && jlbestblog_get_settings( 'right-column' ) ) {
                 echo 'main-content-section main-content-two-sidebars';
-            } else if ( myfirsttheme_get_settings( 'left-column' ) || myfirsttheme_get_settings( 'right-column' ) ) {
+            } else if ( jlbestblog_get_settings( 'left-column' ) || jlbestblog_get_settings( 'right-column' ) ) {
                 echo 'main-content-section main-content-one-sidebar';
-            } else if ( ! myfirsttheme_get_settings( 'left-column' ) && ! myfirsttheme_get_settings( 'right-column' ) ) {
+            } else if ( ! jlbestblog_get_settings( 'left-column' ) && ! jlbestblog_get_settings( 'right-column' ) ) {
                 echo 'main-content-section main-content-no-sidebars';
             } ?>
     ">
         <?php
             if ( have_posts() ) :
                 while ( have_posts() ) : the_post();
-                    $imagePosition = myfirsttheme_get_settings( 'imagePosition' );
+                    $imagePosition = jlbestblog_get_settings( 'imagePosition' );
                     echo "<article class='article image-".esc_attr( $imagePosition )."'>";
                         if ( has_post_thumbnail() ) {
                             echo "<div class='image-container image-container-".esc_attr( $imagePosition )."'><a href='".get_permalink()."'>" ;
@@ -86,7 +86,7 @@ function myfirsttheme_get_settings( $option ) {
                         } ?>
                         <h2><a href='<?php echo get_permalink(); ?>'> <?php echo esc_html( get_the_title() ); ?> </a></h2>
                         <?php
-                        if ( myfirsttheme_get_settings( 'meta' ) ) {
+                        if ( jlbestblog_get_settings( 'meta' ) ) {
                             $id = get_the_author_meta('ID');
                             $date = get_the_date( 'Y/m' ); ?>
                             <?php if ( is_single() ) : ?>
@@ -111,12 +111,12 @@ function myfirsttheme_get_settings( $option ) {
                     <div class="prev-next-post-navigation">
                         <?php if ( get_previous_post() ) : ?>
                             <div class="prev-post-link post-link">
-                                <?php previous_post_link('&laquo; %link', __('Previous', 'myfirsttheme')); ?>
+                                <?php previous_post_link('&laquo; %link', __('Previous', 'jlbestblog')); ?>
                             </div>
                         <?php endif; ?>
                         <?php if ( get_next_post() ) : ?>
                             <div class="next-post-link post-link">
-                                <?php next_post_link('%link &raquo;', __('Next', 'myfirsttheme')); ?>
+                                <?php next_post_link('%link &raquo;', __('Next', 'jlbestblog')); ?>
                             </div>
                         <?php endif; ?>
                     </div>
@@ -129,13 +129,13 @@ function myfirsttheme_get_settings( $option ) {
                     }
                 endwhile;
             else :
-                _e( '<p>No content yet, write some :)</p>', 'myfirsttheme' );
+                _e( '<p>No content yet, write some :)</p>', 'jlbestblog' );
             endif; 
         ?>
     </main>
     <!-- right column -->
     <?php
-        if ( myfirsttheme_get_settings( 'right-column' ) ) { ?>
+        if ( jlbestblog_get_settings( 'right-column' ) ) { ?>
             <aside class="column column-right">
                 <?php dynamic_sidebar( 'sidebar-right' ); ?>
             </aside>

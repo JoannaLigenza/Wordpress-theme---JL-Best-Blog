@@ -1,6 +1,6 @@
 <?php 
     // Change 'standard' archive title - modyfying wordpress get_the_archive_title() function
-    function myfirsttheme_set_archive_title() {
+    function jlbestblog_set_archive_title() {
         $title = __( 'Archives' );
  
         if ( is_category() ) {
@@ -36,7 +36,7 @@
 <div class="content">
     <!-- Archive title -->
     <h1 class="taxonomy-title container">
-        <?php echo esc_html( myfirsttheme_set_archive_title() ); ?>
+        <?php echo esc_html( jlbestblog_set_archive_title() ); ?>
     </h1>
     <!-- Archive description top -->
     <?php
@@ -106,7 +106,7 @@
                     endwhile;
                     the_posts_pagination(array( 'mid_size' => 2 ));
                 else :
-                    _e( '<p>No content yet, write some :)</p>', 'myfirsttheme' );
+                    _e( '<p>No content yet, write some :)</p>', 'jlbestblog' );
                 endif; 
             ?>
         </main>

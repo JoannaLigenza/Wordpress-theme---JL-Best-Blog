@@ -71,7 +71,7 @@
                 endwhile;
                 the_posts_pagination(array( 'mid_size' => 2 ));
             else :
-                _e( '<p>No content yet, write some :)</p>', 'myfirsttheme' );
+                _e( '<p>No content yet, write some :)</p>', 'jlbestblog' );
             endif; 
         ?>
     </main>

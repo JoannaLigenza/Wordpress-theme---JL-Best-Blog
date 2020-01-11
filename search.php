@@ -69,7 +69,7 @@
                 <div class="nothing-found-search-results">
                     <h2 class="nothing-found-search-results-title">Nothing Found</h2>
                     <p class="nothing-found-search-results-message">
-                        <?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'myfirsttheme' ) ?>
+                        <?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'jlbestblog' ) ?>
                     </p>
                     <?php get_search_form(); ?>
                 </div>
