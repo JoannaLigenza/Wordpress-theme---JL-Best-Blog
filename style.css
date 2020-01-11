@@ -97,7 +97,7 @@ input:focus {
 
 /* Images */
 
-body * {
+body *:not(iframe) {
     max-width: 100%;
     height: auto;
 }
@@ -124,7 +124,9 @@ pre {
 
 /* Embeded blocks */
 .wp-block-embed {
-    margin: 50px;
+    margin: 50px 0;
+
+    max-width: 100%;
 }
 
 iframe { 
@@ -1326,6 +1328,10 @@ nav:after {
     display: none;
 }
 
+.wp-block-cover, .wp-block-cover-image {
+    height: auto;
+}
+
 
 /* Aligment in single post */
 
@@ -1354,6 +1360,14 @@ nav:after {
 
 .wp-caption-text {
     text-align: center;
+}
+
+/* Embeds in single post */
+
+.wp-block-embed-facebook iframe {
+    max-width: 500px;
+    width: 100% !important;
+    overflow: auto;
 }
 
 
