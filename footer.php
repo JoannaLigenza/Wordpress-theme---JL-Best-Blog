@@ -108,7 +108,7 @@
                         <?php endif;
                     } ?>
                     <p class="footer-link"><small><?php _e( 'Theme made by: ', 'myfirsttheme') ?></small><a href="<?php echo esc_url( 'https://love-coding.pl/en' ); ?>" class="footer-theme-link">JL</a><small>, 
-                    <?php _e( 'used by: ', 'myfirsttheme') ?> <a href="<?php echo esc_url( home_url() ); ?>" class="footer-theme-link"><?php echo bloginfo('name') ?></a></small></p>
+                    <?php _e( 'to: ', 'myfirsttheme') ?> <a href="<?php echo esc_url( home_url() ); ?>" class="footer-theme-link"><?php echo bloginfo('name') ?></a></small></p>
                 </div>
             </div>
             

@@ -35,13 +35,21 @@ msgstr "&larr; Starsze komentarze"
 msgid "Newer Comments &rarr;"
 msgstr "Nowsze komentarze &rarr;"
 
-#: footer.php:102
+#: footer.php:107
+msgid "Read our "
+msgstr "Zobacz naszą "
+
+#: footer.php:107
+msgid "Privacy Policy"
+msgstr "Politykę Prywatności"
+
+#: footer.php:110
 msgid "Theme made by: "
 msgstr "Motyw wykonany przez: "
 
-#: footer.php:103
-msgid "used by: "
-msgstr "używany przez: "
+#: footer.php:111
+msgid "to: "
+msgstr "dla: "
 
 #: search.php:55
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
