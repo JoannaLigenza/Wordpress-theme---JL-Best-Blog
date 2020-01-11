@@ -8,7 +8,7 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: jlbestblog
 Domain Path: /languages
-Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 */
 
 
@@ -271,7 +271,6 @@ ul li, ol li {
 
 .top-menu ul li a {
     color: #696969;
-    text-transform: lowercase;
     padding: 10px;
 }
 
