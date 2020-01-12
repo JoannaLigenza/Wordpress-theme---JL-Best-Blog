@@ -5,7 +5,7 @@ Tags: blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar,
 Requires at least: 4.8
 Tested up to: 5.3.2
 Requires PHP: 7.2
-Stable tag : 3.0.0
+Stable tag : 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,3 +28,19 @@ GPLv2 or later
 === Screenshots ===
 
 * https://www.pexels.com/photo/adult-beautiful-christmas-cold-293029/
+
+
+== Frequently Asked Questions ==
+
+1. In your admin panel, go to Appearance > Themes and click the Add New button.
+2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
+3. Click Activate to use your new theme right away.
+
+
+== Changelog ==
+
+This is first version
+
+== Upgrade Notice ==
+
+This is first version
