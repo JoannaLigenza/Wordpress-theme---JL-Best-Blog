@@ -272,6 +272,7 @@ ul li, ol li {
 .top-menu ul li a {
     color: #696969;
     padding: 10px;
+    padding-bottom: 20px;
 }
 
 .top-menu ul li a:hover {
@@ -297,10 +298,10 @@ ul li, ol li {
     width: 200px;
     margin: 0;
     padding: 0;
-    padding-top: 0;
+    padding-top: 10px;
     position: absolute;
     display: none;
-    top: 25px;
+    top: 15px;
     left: 0;
     z-index: 10;
     box-shadow: 0 10px 10px -5px;
@@ -320,12 +321,16 @@ ul li, ol li {
     padding: 5px 10px;
 }
 
-.top-menu .menu-item-has-children:hover > ul, .top-menu .menu-item-has-children:focus-within > ul {
+.top-menu .menu-item-has-children:hover > ul {
+    display: block;
+}
+
+.top-menu .menu-item-has-children:focus-within > ul {
     display: block;
 }
 
 .top-menu .sub-menu li ul, .top-menu .children li ul {
-    left: 200px;
+    left: -200px;
     top: 0;
     padding-top: 0;
 }
@@ -381,6 +386,7 @@ ul li, ol li {
         width: 100%;
         box-shadow: unset;
         padding-left: 20px;
+        padding-top: 0;
         /* border-top: 1px solid gray; */
     }
 
@@ -644,11 +650,19 @@ ul li, ol li {
     transform: translateY(-75%);
 }
 
-.menu-navigation .menu-item-has-children:hover > ul, .menu-navigation .menu-item-has-children:focus-within > ul {
+.menu-navigation .menu-item-has-children:hover > ul {
     display: block;
 }
 
-.menu-navigation .page_item_has_children:hover > ul, .menu-navigation .page_item_has_children:focus-within > ul {
+.menu-navigation .menu-item-has-children:focus-within > ul {
+    display: block;
+}
+
+.menu-navigation .page_item_has_children:hover > ul {
+    display: block;
+}
+
+.menu-navigation .page_item_has_children:focus-within > ul {
     display: block;
 }
 
