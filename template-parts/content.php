@@ -9,7 +9,7 @@ function jlbestblog_get_settings( $option ) {
             $var = get_theme_mod( 'right-column-single' );
             return $var;
         } else if ( $option === 'imagePosition' ) {
-            $var = get_theme_mod( 'post-image-single' );
+            $var = get_theme_mod( 'post-image-single', 'above' );
             return $var;
         } else if ( $option === 'meta' ) {
             $var = get_theme_mod( 'post-meta-single' );
@@ -24,7 +24,7 @@ function jlbestblog_get_settings( $option ) {
             $var = get_theme_mod( 'right-column-single-page' );
             return $var;
         } else if ( $option === 'imagePosition' ) {
-            $var = get_theme_mod( 'page-image' );
+            $var = get_theme_mod( 'page-image', 'above' );
             return $var;
         } else if ( $option === 'meta' ) {
             $var = get_theme_mod( 'page-meta' );

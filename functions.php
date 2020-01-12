@@ -56,7 +56,7 @@
             // Display the header text along with the image
             'header-text'   => true,
             // Header text color default
-            'default-text-color' => '#1e73be',
+            'default-text-color' => '1e73be',
         );
         add_theme_support( 'custom-header', $header_info );
 

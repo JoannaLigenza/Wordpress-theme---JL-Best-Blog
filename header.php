@@ -87,7 +87,7 @@
                 ?>
                 <!-- displaying search form -->
                 <?php 
-                    if (get_theme_mod( 'header_searchbox' )) {
+                    if (get_theme_mod( 'header_searchbox', true )) {
                         get_search_form(); 
                     }
                 ?>

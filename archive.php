@@ -66,7 +66,7 @@
             <?php
                 if ( have_posts() ) :
                     while ( have_posts() ) : the_post();
-                        $imagePosition = get_theme_mod( 'front-page-and-archive-image' );
+                        $imagePosition = get_theme_mod( 'front-page-and-archive-image', 'above' );
                         echo "<article class='article image-".$imagePosition."'>";
                             if ( has_post_thumbnail() ) {
                                 echo "<div class='image-container image-container-".esc_attr( $imagePosition )."'><a href='".get_permalink()."'>" ;
