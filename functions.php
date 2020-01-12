@@ -741,6 +741,9 @@
                 a:hover {
                     color: <?php echo sanitize_hex_color( $linkHoverColor ) ?>;
                 }
+                .menu-navigation .menu-item a:hover, .menu-navigation .page-item a:hover, .menu-navigation .page_item a:hover {
+                    color: <?php echo sanitize_hex_color( $linkHoverColor ) ?>;
+                }
                 .section > h2 a:hover {
                     color: <?php echo sanitize_hex_color( $linkHoverColor ) ?>;
                 }
