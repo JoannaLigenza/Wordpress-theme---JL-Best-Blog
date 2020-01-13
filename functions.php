@@ -49,6 +49,12 @@
     }
     add_action( 'after_setup_theme', 'jlbestblog_set_custom_logo' );
 
+    // Include custom style editor (TinyMCE visual editor)
+    function jlbestblog_add_editor_styles() {
+        add_editor_style( 'inc/css/editor-style.css' );
+    }
+    add_action( 'admin_init', 'jlbestblog_add_editor_styles' );
+
 
     // Include custom header
     function jlbestblog_set_custom_header() {
