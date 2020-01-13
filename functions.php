@@ -83,6 +83,9 @@
         // Add site title support (and remove hard coded <title> tag from header)
         add_theme_support( 'title-tag' );
 
+        // Add custom background color
+        add_theme_support( 'custom-background', array( 'default-color' => 'fff' ) );
+
         // Include post thumbnails
         add_theme_support( 'post-thumbnails' );
 

@@ -751,6 +751,7 @@ ul li, ol li {
     flex-wrap: wrap;
     flex-direction: row;
     padding: 0 10px;
+    background-color: #fff;
 }
 
 .main-content-section {
@@ -788,7 +789,7 @@ ul li, ol li {
 }
 
 @media screen and (max-width: 1220px) {
-    .main-content--section {
+    .main-content-section {
         padding: 0 10px;
     }
 }
