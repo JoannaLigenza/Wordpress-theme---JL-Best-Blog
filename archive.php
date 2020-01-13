@@ -9,16 +9,16 @@
             $title = single_tag_title( '', false );
         } elseif ( is_author() ) {
             /* translators: Author archive title. %s: Author name. */
-            $title = sprintf( __( 'Author: %s' ), esc_html( get_the_author() ) );
+            $title = sprintf( __( 'Author: %s', 'jlbestblog' ), esc_html( get_the_author() ) );
         } elseif ( is_year() ) {
             /* translators: Yearly archive title. %s: Year. */
-            $title = sprintf( __( 'Year: %s' ), esc_html( get_the_date( _x( 'Y', 'yearly archives date format' ) ) ) );
+            $title = sprintf( __( 'Year: %s', 'jlbestblog' ), esc_html( get_the_date( _x( 'Y', 'yearly archives date format', 'jlbestblog' ) ) ) );
         } elseif ( is_month() ) {
             /* translators: Monthly archive title. %s: Month name and year. */
-            $title = sprintf( __( 'Month: %s' ), esc_html( get_the_date( _x( 'F Y', 'monthly archives date format' ) ) ) );
+            $title = sprintf( __( 'Month: %s', 'jlbestblog' ), esc_html( get_the_date( _x( 'F Y', 'monthly archives date format', 'jlbestblog' ) ) ) );
         } elseif ( is_day() ) {
             /* translators: Daily archive title. %s: Date. */
-            $title = sprintf( __( 'Day: %s' ), esc_html( get_the_date( _x( 'F j, Y', 'daily archives date format' ) ) ) );
+            $title = sprintf( __( 'Day: %s', 'jlbestblog' ), esc_html( get_the_date( _x( 'F j, Y', 'daily archives date format', 'jlbestblog' ) ) ) );
         } elseif ( is_post_type_archive() ) {
             $title = post_type_archive_title( '', false );
         } elseif ( is_tax() ) {

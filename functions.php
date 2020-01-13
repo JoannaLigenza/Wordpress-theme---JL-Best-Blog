@@ -23,8 +23,8 @@
     function jlbestblog_register_my_menus() {
         register_nav_menus(
             array(
-            'top-menu'    => __( 'Top Menu' ),
-            'header-menu' => __( 'Header Menu' ),
+            'top-menu'    => __( 'Top Menu', 'jlbestblog' ),
+            'header-menu' => __( 'Header Menu', 'jlbestblog' ),
             )
         );
     }
@@ -340,12 +340,12 @@
 
         // Adding panel
         $wp_customize->add_panel( 'header', array(
-            'title' => __( 'Header' ),
+            'title' => __( 'Header', 'jlbestblog' ),
             'priority' => 40, // Mixed with top-level-section hierarchy.
         ) );
 
         $wp_customize->add_panel( 'appearance', array(
-            'title' => __( 'Appearance Settings' ),
+            'title' => __( 'Appearance Settings', 'jlbestblog' ),
             // 'description' => $description, // Include html tags such as <p>.
             'priority' => 50, // Mixed with top-level-section hierarchy.
         ) );
