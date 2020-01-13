@@ -1,6 +1,5 @@
 === JL Best-blog ===
 
-Contributors: acmethemes
 Tags: blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, full-width-template ,post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, wide-blocks
 Requires at least: 4.8
 Tested up to: 5.3.2
