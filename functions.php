@@ -75,6 +75,9 @@
 
     // setup
     function jlbestblog_setup() {
+        // Add site title support (and remove hard coded <title> tag from header)
+        add_theme_support( 'title-tag' );
+
         // Include post thumbnails
         add_theme_support( 'post-thumbnails' );
 
