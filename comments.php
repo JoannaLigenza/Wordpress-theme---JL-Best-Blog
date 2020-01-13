@@ -10,7 +10,7 @@
                 <h2 class="comments-title">
                     <?php 
                         $commentsNumber = get_comments_number();
-                        echo _e('COMMENTS: ', 'myfirsttheme').absint( $commentsNumber );
+                        echo _e('COMMENTS: ', 'jlbestblog').absint( $commentsNumber );
                     ?>  
                 </h2>
             </header>
@@ -26,13 +26,13 @@
             <!-- Comments navigation -->
             <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
                 <nav class="navigation comment-navigation" role="navigation">
-                    <div class="comment-nav nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'myfirsttheme' ) ); ?></div>
-                    <div class="comment-nav nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'myfirsttheme' ) ); ?></div>
+                    <div class="comment-nav nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'jlbestblog' ) ); ?></div>
+                    <div class="comment-nav nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'jlbestblog' ) ); ?></div>
                 </nav>
             <?php endif; ?>
             <!-- if comments are closed -->
             <?php if ( ! comments_open() && get_comments_number() ) : ?>
-                <p class="no-comments"><?php _e( 'Comments are closed.' , 'myfirsttheme' ); ?></p>
+                <p class="no-comments"><?php _e( 'Comments are closed.' , 'jlbestblog' ); ?></p>
             <?php endif; ?>
         </section>
     <?php

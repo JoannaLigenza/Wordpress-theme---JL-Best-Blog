@@ -1,6 +1,6 @@
 <?php 
     // Change 'standard' archive title - modyfying wordpress get_the_archive_title() function
-    function myfirsttheme_set_archive_title() {
+    function jlbestblog_set_archive_title() {
         $title = __( 'Archives' );
  
         if ( is_category() ) {
@@ -36,7 +36,7 @@
 <div class="content">
     <!-- Archive title -->
     <h1 class="taxonomy-title container">
-        <?php echo esc_html( myfirsttheme_set_archive_title() ); ?>
+        <?php echo esc_html( jlbestblog_set_archive_title() ); ?>
     </h1>
     <!-- Archive description top -->
     <?php
@@ -66,8 +66,8 @@
             <?php
                 if ( have_posts() ) :
                     while ( have_posts() ) : the_post();
-                        $imagePosition = get_theme_mod( 'front-page-and-archive-image' );
-                        echo "<section class='article-section image-".$imagePosition."'>";
+                        $imagePosition = get_theme_mod( 'front-page-and-archive-image', 'above' );
+                        echo "<article class='article image-".$imagePosition."'>";
                             if ( has_post_thumbnail() ) {
                                 echo "<div class='image-container image-container-".esc_attr( $imagePosition )."'><a href='".get_permalink()."'>" ;
                                     if ($imagePosition === 'above') {
@@ -81,15 +81,15 @@
                                             'sizes' => '(max-width: '.$maxWidth.') 100vw, '.$maxWidth.'px',
                                             'alt' => 'post image'
                                             ) );
-                                        echo "</div></a>" ;
-                                        echo "<article class='article'>";
+                                        echo "</a></div>" ;
+                                        echo "<section class='section'>";
                                     } else {
                                         echo the_post_thumbnail( 'medium' );
-                                        echo "</div></a>" ;
-                                        echo "<article class='article article-padding'>";
+                                        echo "</a></div>" ;
+                                        echo "<section class='section section-padding'>";
                                     }
                             } else {
-                                echo "<article class='article'>";
+                                echo "<section class='section'>";
                             }
                             echo "<h2><a href='".get_permalink()."'>".esc_html( get_the_title() )."</a></h2>";
                             if (get_theme_mod( 'post-meta' )) {
@@ -101,12 +101,12 @@
                                 echo "</div>";
                             }
                             the_excerpt('<p>', '</p>');
-                            echo "</article>";
-                        echo "</section>";
+                            echo "</section>";
+                        echo "</article>";
                     endwhile;
                     the_posts_pagination(array( 'mid_size' => 2 ));
                 else :
-                    _e( '<p>No content yet, write some :)</p>', 'myfirsttheme' );
+                    _e( '<p>No content yet, write some :)</p>', 'jlbestblog' );
                 endif; 
             ?>
         </main>

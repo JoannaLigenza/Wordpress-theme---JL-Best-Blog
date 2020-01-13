@@ -23,11 +23,11 @@
             if ( have_posts() ) :
                 while ( have_posts() ) : the_post();
                     $imagePosition = get_theme_mod( 'front-page-and-archive-image' );
-                    $class = 'article-section image-'.esc_attr( $imagePosition );
+                    $class = 'article image-'.esc_attr( $imagePosition );
                     if ( is_sticky( $post->ID ) ){
-                        $class = 'sticky article-section image-'.esc_attr( $imagePosition );
+                        $class = 'sticky article image-'.esc_attr( $imagePosition );
                     }
-                    echo "<section class='".$class."'>";
+                    echo "<article class='".$class."'>";
                         if ( has_post_thumbnail() ) {
                             echo "<div class='image-container image-container-".esc_attr( $imagePosition )."'><a href='".esc_url( get_permalink() )."'>" ;
                                 if ($imagePosition === 'above') {
@@ -41,17 +41,17 @@
                                         'sizes' => '(max-width: '.$maxWidth.') 100vw, '.$maxWidth.'px',
                                         'alt' => 'post-image',
                                         ) );
-                                    echo "</div></a>" ;
-                                    echo "<article class='article'>";
+                                    echo "</a></div>" ;
+                                    echo "<section class='section'>";
                                 } else {
                                     echo the_post_thumbnail( 'medium', array(
                                         'alt' => 'post-image'
                                     ) );
-                                    echo "</div></a>" ;
-                                    echo "<article class='article article-padding'>";
+                                    echo "</a></div>" ;
+                                    echo "<section class='section section-padding'>";
                                 }
                         } else {
-                            echo "<article class='article'>";
+                            echo "<section class='section'>";
                         }
                         echo "<h2><a href='".esc_url( get_permalink() )."'>".esc_html( get_the_title() )."</a></h2>";
                         if (get_theme_mod( 'post-meta' )) {
@@ -66,12 +66,12 @@
                         if ( ! post_password_required() ) {
                             the_excerpt('<p>', '</p>');
                         }
-                        echo "</article>";
-                    echo "</section>";
+                        echo "</section>";
+                    echo "</article>";
                 endwhile;
                 the_posts_pagination(array( 'mid_size' => 2 ));
             else :
-                _e( '<p>No content yet, write some :)</p>', 'myfirsttheme' );
+                _e( '<p>No content yet, write some :)</p>', 'jlbestblog' );
             endif; 
         ?>
     </main>

@@ -1,31 +1,31 @@
 /*
-Theme Name: My Test Theme
-Author: Joanna Ligenza
-Author URI: love-coding.pl
-Description: Theme description
+Theme Name: JL Best-Blog
+Author: JL Themes
+Author URI: https://love-coding.pl/en
+Description: Although JL Best-Blog is simple blog theme, it gives you great personalization options - from colors, through sidebars to header image and post meta. You can choose different settings for front page, single post, page and archives. You have at your disposal two menus (main-menu and top-menu), left and right sidebars and three footer sidebars. You can switch on/off header image, site title and description or header searchbar. You can use this theme for any blog type, because it has universial character.
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: myfirsttheme
+Text Domain: jlbestblog
 Domain Path: /languages
-Tags: 
+Tags: blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 */
 
 
 /* //////////////////  Fonts  ////////////////////// */
 
-/* lora-700 - latin */
+/* lora-700 - latin-ext_latin */
 @font-face {
   font-family: 'Lora';
   font-style: normal;
   font-weight: 700;
-  src: url('inc/fonts/lora-v14-latin-700.eot'); /* IE9 Compat Modes */
+  src: url('inc/fonts/lora-v14-latin-ext_latin-700.eot'); /* IE9 Compat Modes */
   src: local('Lora Bold'), local('Lora-Bold'),
-       url('inc/fonts/lora-v14-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('inc/fonts/lora-v14-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
-       url('inc/fonts/lora-v14-latin-700.woff') format('woff'), /* Modern Browsers */
-       url('inc/fonts/lora-v14-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('inc/fonts/lora-v14-latin-700.svg#Lora') format('svg'); /* Legacy iOS */
+       url('inc/fonts/lora-v14-latin-ext_latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('inc/fonts/lora-v14-latin-ext_latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('inc/fonts/lora-v14-latin-ext_latin-700.woff') format('woff'), /* Modern Browsers */
+       url('inc/fonts/lora-v14-latin-ext_latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('inc/fonts/lora-v14-latin-ext_latin-700.svg#Lora') format('svg'); /* Legacy iOS */
 }
 
 
@@ -97,7 +97,7 @@ input:focus {
 
 /* Images */
 
-body * {
+body *:not(iframe) {
     max-width: 100%;
     height: auto;
 }
@@ -124,7 +124,9 @@ pre {
 
 /* Embeded blocks */
 .wp-block-embed {
-    margin: 50px;
+    margin: 50px 0;
+
+    max-width: 100%;
 }
 
 iframe { 
@@ -257,7 +259,7 @@ ul li, ol li {
 .top-menu ul li {
     list-style: none;
     display: inline-block;
-    padding: 0 10px;
+    padding: 0;
     border-right: 1px solid #c6c6c6;
     color: #696969;
     font-size: 0.8em;
@@ -269,8 +271,8 @@ ul li, ol li {
 
 .top-menu ul li a {
     color: #696969;
-    text-transform: lowercase;
-    padding: 5px 10px;
+    padding: 10px;
+    padding-bottom: 20px;
 }
 
 .top-menu ul li a:hover {
@@ -279,6 +281,7 @@ ul li, ol li {
 
 .top-menu .menu-item-has-children, .top-menu .page_item_has_children {
     position: relative;
+    padding-right: 15px;
 }
 
 .top-menu .menu-item-has-children:after, .top-menu .page_item_has_children:after {
@@ -295,10 +298,10 @@ ul li, ol li {
     width: 200px;
     margin: 0;
     padding: 0;
-    padding-top: 0;
+    padding-top: 10px;
     position: absolute;
     display: none;
-    top: 25px;
+    top: 15px;
     left: 0;
     z-index: 10;
     box-shadow: 0 10px 10px -5px;
@@ -318,12 +321,16 @@ ul li, ol li {
     padding: 5px 10px;
 }
 
-.top-menu .menu-item-has-children:hover > ul, .top-menu .menu-item-has-children:focus-within > ul {
+.top-menu .menu-item-has-children:hover > ul {
+    display: block;
+}
+
+.top-menu .menu-item-has-children:focus-within > ul {
     display: block;
 }
 
 .top-menu .sub-menu li ul, .top-menu .children li ul {
-    left: 200px;
+    left: -200px;
     top: 0;
     padding-top: 0;
 }
@@ -344,7 +351,7 @@ ul li, ol li {
     .top-menu-class { 
         overflow: hidden;
         max-height: 0;
-        transition: max-height 1s;
+        transition: max-height 0.5s;
     }
 
     .mobile-top-menu-container p span:after {
@@ -376,10 +383,10 @@ ul li, ol li {
     .top-menu .sub-menu, .top-menu .children {
         display: block;
         position: static;
-        margin: 0 auto;
-        max-width: 100%;
+        width: 100%;
         box-shadow: unset;
         padding-left: 20px;
+        padding-top: 0;
         /* border-top: 1px solid gray; */
     }
 
@@ -434,7 +441,7 @@ ul li, ol li {
     font-size: 1.7em;
 }
 
-.title h5 {
+.title h2 {
     font-size: 1.1em;
 }
 
@@ -517,7 +524,7 @@ ul li, ol li {
     position: absolute;
     right: 0;
     background-color: #696969;
-    border: 2px solid #696969;
+    border: 2px solid transparent;
     height: 40px;
 } 
 
@@ -583,13 +590,13 @@ ul li, ol li {
     margin: 0 auto;
 }
 
-.menu-item, .page-item, .page_item {
+.menu-navigation .menu-item, .menu-navigation .page-item, .menu-navigation .page_item {
     list-style: none;
     display: inline-block;
     position: relative;
 }
 
-.menu-item a, .page-item a, .page_item a {
+.menu-navigation .menu-item a, .menu-navigation .page-item a, .menu-navigation .page_item a {
     display: inline-block;
     padding: 30px 15px;
     color: inherit;
@@ -598,8 +605,12 @@ ul li, ol li {
     letter-spacing: 1px;
 }
 
-.menu-item a:hover, .page-item a:hover, .page_item a:hover {
+.menu-navigation .menu-item a:hover, .menu-navigation .page-item a:hover, .menu-navigation .page_item a:hover {
     text-decoration: none;
+}
+
+.menu-navigation .menu-item:hover > ul li a:hover, .menu-navigation .page-item:hover > ul li a:hover, .menu-navigation .page_item:hover > ul li a:hover {
+    background-color: rgba( 255, 255, 255, 0.2 );
 }
 
 .menu-navigation .sub-menu, .menu-navigation .children {      
@@ -612,7 +623,7 @@ ul li, ol li {
     top: 78px;
     left: 0;
     z-index: 10;
-    box-shadow: 0 10px 10px -5px;
+    box-shadow: 0 5px 5px -1px;
 }
 
 .menu-navigation .sub-menu li, .menu-navigation .children li {
@@ -639,11 +650,19 @@ ul li, ol li {
     transform: translateY(-75%);
 }
 
-.menu-navigation .menu-item-has-children:hover > ul, .menu-navigation .menu-item-has-children:focus-within > ul {
+.menu-navigation .menu-item-has-children:hover > ul {
     display: block;
 }
 
-.menu-navigation .page_item_has_children:hover > ul, .menu-navigation .page_item_has_children:focus-within > ul {
+.menu-navigation .menu-item-has-children:focus-within > ul {
+    display: block;
+}
+
+.menu-navigation .page_item_has_children:hover > ul {
+    display: block;
+}
+
+.menu-navigation .page_item_has_children:focus-within > ul {
     display: block;
 }
 
@@ -670,7 +689,7 @@ ul li, ol li {
         overflow: hidden;
         min-height: 0;
         max-height: 0;
-        transition: max-height 1s;
+        transition: max-height 0.5s;
     }
 
     .top-menu {
@@ -897,7 +916,7 @@ ul li, ol li {
 
 /* Content - home */
 
-.article-section {
+.article {
     display: flex;
     border-bottom: 1px solid #c6c6c6;
 }
@@ -927,21 +946,21 @@ ul li, ol li {
     padding-top: 50px;
 }
 
-.article-section .wp-post-image {
+.article .wp-post-image {
     width: 100%;
     height: auto;
     padding: 10px 0;
 }
 
-.article {
+.section {
     padding: 10px 0;
 }
 
-.article > h2 a {
+.section > h2 a {
     color: #000;
 }
 
-.article-padding{
+.section-padding{
     padding-left: 10px;
 }
 
@@ -988,19 +1007,21 @@ ul li, ol li {
 }
 
 .read-more-button {
-    padding: 10px;
+    padding: 0;
     display: inline-block;
     color: #111;
-    transition-duration: .5s;
-}
-
-.read-more-button:hover {
-    padding-left: 15px;
-    transition-duration: .5s;
 }
 
 .read-more-link {
-    padding: 11px 0;
+    padding: 10px;
+    display: block;
+    transition-duration: .5s;
+}
+
+.read-more-link:hover {
+    text-decoration: none;
+    padding-left: 15px;
+    transition-duration: .5s;
 }
 
 .read-more-link:focus {
@@ -1049,7 +1070,7 @@ ul li, ol li {
 }
 
 @media screen and (max-width: 768px) {
-    .article-section {
+    .article {
         flex-direction: column;
     }
 
@@ -1206,13 +1227,18 @@ ul li, ol li {
     float: right;
     margin-bottom: 60px;
     background-color: #d2d2d2;
-    border: 2px solid #d2d2d2;
+    border: 2px solid transparent;
     padding: 15px 0;
     border-radius: 20px;
 }
 
 .post-password-form input[type='submit']:hover {
     background-color: #fff;
+    border: 2px solid #d2d2d2;
+}
+
+.post-password-form input[type='submit']:focus:hover {
+    outline: none;
 }
 
 @media screen and (max-width: 768px) {
@@ -1320,6 +1346,10 @@ nav:after {
     display: none;
 }
 
+.wp-block-cover, .wp-block-cover-image {
+    height: auto;
+}
+
 
 /* Aligment in single post */
 
@@ -1348,6 +1378,14 @@ nav:after {
 
 .wp-caption-text {
     text-align: center;
+}
+
+/* Embeds in single post */
+
+.wp-block-embed-facebook iframe {
+    max-width: 500px;
+    width: 100% !important;
+    overflow: auto;
 }
 
 
@@ -1433,18 +1471,42 @@ nav:after {
     width: 100%;
 }
 
+.footer-column li {
+    display: block;
+}
+
 .footer-column a {
     color: #c6c6c6;
+    padding: 0;
 }
 
 .footer-column a:hover {
     text-decoration: underline;
     color: #fff;
+    background-color: unset;
+}
+
+.footer-column a:focus:hover {
+    background-color: unset;
+}
+
+.footer-column .children {
+    color: #c6c6c6;
+    padding: 0;
 }
 
 .footer-widget-title {
     color: black;
 }
+
+/* .footer li {
+    padding: 10px;
+}
+
+.footer li a{
+    padding: 0;
+} */
+
 
 /* social icon */
 .social-icon-section {

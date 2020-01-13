@@ -14,12 +14,20 @@
         <?php }
     ?>
     <!-- main content -->
-    <main class="main-content--section">
+    <main id="main-content--section"
+            class="<?php if ( get_theme_mod( 'left-column' ) && get_theme_mod( 'right-column' ) ) {
+                echo 'main-content-section main-content-two-sidebars';
+            } else if ( get_theme_mod( 'left-column' ) || get_theme_mod( 'right-column' ) ) {
+                echo 'main-content-section main-content-one-sidebar';
+            } else if ( ! get_theme_mod( 'left-column' ) && ! get_theme_mod( 'right-column' ) ) {
+                echo 'main-content-section main-content-no-sidebars';
+            } ?>
+    ">
         <?php
             if ( have_posts() ) :
                 while ( have_posts() ) : the_post();
-                    $imagePosition = get_theme_mod( 'front-page-and-archive-image' );
-                    echo "<section class='article-section image-".esc_attr( $imagePosition )."'>";
+                    $imagePosition = get_theme_mod( 'front-page-and-archive-image', 'above' );
+                    echo "<article class='article image-".esc_attr( $imagePosition )."'>";
                         if ( has_post_thumbnail() ) {
                             echo "<div class='image-container image-container-".esc_attr( $imagePosition )."'><a href='".get_permalink()."'>" ;
                                 if ($imagePosition === 'above') {
@@ -33,15 +41,15 @@
                                         'sizes' => '(max-width: '.$maxWidth.') 100vw, '.$maxWidth.'px',
                                         'alt' => 'post image'
                                         ) );
-                                    echo "</div></a>" ;
-                                    echo "<article class='article'>";
+                                    echo "</a></div>" ;
+                                    echo "<section class='section'>";
                                 } else {
                                     echo the_post_thumbnail( 'medium' );
-                                    echo "</div></a>" ;
-                                    echo "<article class='article article-padding'>";
+                                    echo "</a></div>" ;
+                                    echo "<section class='section section-padding'>";
                                 }
                         } else {
-                            echo "<article class='article'>";
+                            echo "<section class='section'>";
                         }
                         echo "<h2><a href='".get_permalink()."'>".esc_html( get_the_title() )."</a></h2>";
                         if (get_theme_mod( 'post-meta' )) {
@@ -53,15 +61,15 @@
                             echo "</div>";
                         }
                         the_excerpt('<p>', '</p>');
-                        echo "</article>";
-                    echo "</section>";
+                        echo "</section>";
+                    echo "</article>";
                 endwhile;
                 the_posts_pagination(array( 'mid_size' => 2 ));
             else : ?>
                 <div class="nothing-found-search-results">
                     <h2 class="nothing-found-search-results-title">Nothing Found</h2>
                     <p class="nothing-found-search-results-message">
-                        <?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'myfirsttheme' ) ?>
+                        <?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'jlbestblog' ) ?>
                     </p>
                     <?php get_search_form(); ?>
                 </div>

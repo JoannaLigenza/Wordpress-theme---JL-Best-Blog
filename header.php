@@ -80,14 +80,14 @@
                         <a href="<?php echo esc_url(home_url()) ?>" class="header-text">
                             <div>
                                 <h1 style="color: #<?php echo esc_attr(get_header_textcolor()); ?>"><?php bloginfo('name') ?></h1>
-                                <h5 style="color: #<?php echo esc_attr(get_header_textcolor()); ?>"><?php bloginfo('description') ?></h5>
+                                <h2 style="color: #<?php echo esc_attr(get_header_textcolor()); ?>"><?php bloginfo('description') ?></h2>
                             </div>   
                         </a>                        
                     <?php }
                 ?>
                 <!-- displaying search form -->
                 <?php 
-                    if (get_theme_mod( 'header_searchbox' )) {
+                    if (get_theme_mod( 'header_searchbox', true )) {
                         get_search_form(); 
                     }
                 ?>

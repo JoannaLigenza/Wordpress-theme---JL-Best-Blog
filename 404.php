@@ -14,8 +14,16 @@
         <?php }
     ?>
     <!-- main content -->
-    <main class="main-content--section">
-        <h3 class="page-404"><?php esc_html_e( 'Sorry! This page was not found', 'myfirsttheme') ?></h3>
+    <main id="main-content--section"
+            class="<?php if ( get_theme_mod( 'left-column' ) && get_theme_mod( 'right-column' ) ) {
+                echo 'main-content-section main-content-two-sidebars';
+            } else if ( get_theme_mod( 'left-column' ) || get_theme_mod( 'right-column' ) ) {
+                echo 'main-content-section main-content-one-sidebar';
+            } else if ( ! get_theme_mod( 'left-column' ) && ! get_theme_mod( 'right-column' ) ) {
+                echo 'main-content-section main-content-no-sidebars';
+            } ?>
+    ">
+        <h3 class="page-404"><?php esc_html_e( 'Sorry! This page was not found', 'jlbestblog') ?></h3>
     </main>
     <!-- right column -->
     <?php
