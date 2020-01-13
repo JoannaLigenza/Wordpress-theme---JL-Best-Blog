@@ -382,34 +382,40 @@
             'priority'   => 10,
         ) );
 
+        $wp_customize->add_section( 'background_image' , array(
+            'title'      => __( 'Background image', 'jlbestblog' ),
+            'panel' => 'appearance',
+            'priority'   => 20,
+        ) );
+
         $wp_customize->add_section( 'front-page-layout' , array(
             'title'      => __( 'Front Page Layout', 'jlbestblog' ),
             'panel' => 'appearance',
-            'priority'   => 20,
+            'priority'   => 30,
         ) );
 
         $wp_customize->add_section( 'single-post-layout' , array(
             'title'      => __( 'Single Post Layout', 'jlbestblog' ),
             'panel' => 'appearance',
-            'priority'   => 30,
+            'priority'   => 40,
         ) );
 
         $wp_customize->add_section( 'single-page-layout' , array(
             'title'      => __( 'Single Page Layout', 'jlbestblog' ),
             'panel' => 'appearance',
-            'priority'   => 40,
+            'priority'   => 50,
         ) );
 
         $wp_customize->add_section( 'archive-layout' , array(
             'title'      => __( 'Archive Layout', 'jlbestblog' ),
             'panel' => 'appearance',
-            'priority'   => 50,
+            'priority'   => 60,
         ) );
 
         $wp_customize->add_section( 'footer' , array(
             'title'      => __( 'Footer', 'jlbestblog' ),
             'panel' => 'appearance',
-            'priority'   => 60,
+            'priority'   => 70,
         ) );
 
         // Adding controls - main site
