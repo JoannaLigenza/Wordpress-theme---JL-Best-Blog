@@ -7,6 +7,11 @@
 
         // Include scripts
         wp_enqueue_script( 'script', get_theme_file_uri() . '/assets/js/script.js', true);
+
+        // Include comments
+        if ( is_singular() ) {
+            wp_enqueue_script( 'comment-reply' );
+        }
     }
     add_action( 'wp_enqueue_scripts', 'jlbestblog_add_theme_scripts' );
 
@@ -89,6 +94,8 @@
 
         // Allow partial refreshes of widgets in a theme’s sidebars
         add_theme_support( 'customize-selective-refresh-widgets' );
+
+        if ( ! isset( $content_width ) ) $content_width = 1200;
 
     }
     add_action( 'after_setup_theme', 'jlbestblog_setup' );
