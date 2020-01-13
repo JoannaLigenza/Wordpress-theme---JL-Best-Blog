@@ -26,8 +26,9 @@
                     $class = 'article image-'.esc_attr( $imagePosition );
                     if ( is_sticky( $post->ID ) ){
                         $class = 'sticky article image-'.esc_attr( $imagePosition );
-                    }
-                    echo "<article class='".$class."'>";
+                    } ?>
+                    <article id="post-<?php the_ID(); ?>" <?php post_class( 'article image-'.esc_attr( $imagePosition ) ); ?>>
+                    <?php
                         if ( has_post_thumbnail() ) {
                             echo "<div class='image-container image-container-".esc_attr( $imagePosition )."'><a href='".esc_url( get_permalink() )."'>" ;
                                 if ($imagePosition === 'above') {

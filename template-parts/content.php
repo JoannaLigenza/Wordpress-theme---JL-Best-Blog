@@ -57,7 +57,9 @@ function jlbestblog_get_settings( $option ) {
             if ( have_posts() ) :
                 while ( have_posts() ) : the_post();
                     $imagePosition = jlbestblog_get_settings( 'imagePosition' );
-                    echo "<article class='article image-".esc_attr( $imagePosition )."'>";
+                    ?>
+                    <article id="post-<?php the_ID(); ?>" <?php post_class( 'article image-'.esc_attr( $imagePosition ) ); ?>>
+                    <?php
                         if ( has_post_thumbnail() ) {
                             echo "<div class='image-container image-container-".esc_attr( $imagePosition )."'><a href='".get_permalink()."'>" ;
                                 if ($imagePosition === 'above') {
