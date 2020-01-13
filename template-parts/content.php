@@ -108,9 +108,15 @@ function jlbestblog_get_settings( $option ) {
                         echo "</section>";
                         // post tags
                         if ( is_single() &&  get_theme_mod( 'display-tags-in-post', true ) ) {
-                            the_tags( '<div style="padding-bottom: 5px">Tags:</div> <span>', ', ', '</span>' );
+                            the_tags( '<div class="tag-label">Tags:</div> <span class="tag-list">', ', ', '</span>' );
                         }
-                    echo "</article>";?>
+                    echo "</article>";
+                    // post page numbers
+                        wp_link_pages( array( 
+                            'before' => '<div class="page-numbers-container"> Preview page', 
+                            'after' => ' Next Page</div>',
+                            ) );
+                    ?>
                     <!-- post navigation -->
                     <div class="prev-next-post-navigation">
                         <?php if ( get_previous_post() ) : ?>

@@ -1085,6 +1085,8 @@ ul li, ol li {
 
 /* //////////////////  SINGLE POST  ////////////////////// */
 
+/* Post categories */
+
 .post-categories {
     padding: 15px 0;
     margin-bottom: 15px;
@@ -1100,6 +1102,34 @@ ul li, ol li {
     outline: none;
     background-color: rgba(106, 90, 205, 0.2);
 }
+
+
+/* Post tags */
+
+.tag-label {
+    padding-top: 30px;
+    padding-bottom: 5px
+}
+
+.tag-list {
+    padding-bottom: 30px;
+}
+
+
+/* post page numbers */
+
+.page-numbers-container {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.post-page-numbers {
+    padding: 10px 15px;
+    margin: 10px 0;
+}
+
+
+/* Post navigation */
 
 .prev-next-post-navigation {
     padding: 35px 0;
@@ -1130,6 +1160,44 @@ ul li, ol li {
 
 .post-link a:hover {
     color: #696969;
+}
+
+.post-password-form {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.post-password-form label {
+    display: block;
+    margin-top: 60px;
+}
+
+.post-password-form input {
+    display: block;
+    padding: 8px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.post-password-form input[type='submit'] {
+    width: 150px;
+    float: right;
+    margin-bottom: 60px;
+    background-color: #d2d2d2;
+    border: 2px solid transparent;
+    padding: 15px 0;
+    border-radius: 20px;
+}
+
+.post-password-form input[type='submit']:hover {
+    background-color: #fff;
+    border: 2px solid #d2d2d2;
+}
+
+.post-password-form input[type='submit']:focus:hover {
+    outline: none;
 }
 
 
@@ -1201,44 +1269,6 @@ ul li, ol li {
     position: absolute;
     left: -25px;
     top: -2px;
-}
-
-.post-password-form {
-    text-align: center;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.post-password-form label {
-    display: block;
-    margin-top: 60px;
-}
-
-.post-password-form input {
-    display: block;
-    padding: 8px;
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.post-password-form input[type='submit'] {
-    width: 150px;
-    float: right;
-    margin-bottom: 60px;
-    background-color: #d2d2d2;
-    border: 2px solid transparent;
-    padding: 15px 0;
-    border-radius: 20px;
-}
-
-.post-password-form input[type='submit']:hover {
-    background-color: #fff;
-    border: 2px solid #d2d2d2;
-}
-
-.post-password-form input[type='submit']:focus:hover {
-    outline: none;
 }
 
 @media screen and (max-width: 768px) {
