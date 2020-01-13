@@ -1327,6 +1327,9 @@ nav:after {
     background-color: rgba(106, 90, 205, 0.2);
 }
 
+.bypostauthor {
+    font-weight: bold;
+}
 
 /* wordpress widgets in single post */
 
@@ -1379,6 +1382,11 @@ nav:after {
 .wp-caption-text {
     text-align: center;
 }
+
+.gallery-caption {
+    text-align: center;
+}
+
 
 /* Embeds in single post */
 
@@ -1613,4 +1621,39 @@ nav:after {
     .footer-column {
         width: 250px;
     }
+}
+
+
+/* //////////////////  SCREEN READERS  ////////////////////// */
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+	background-color: #eee;
+	clip: auto !important;
+	clip-path: none;
+	color: #444;
+	display: block;
+	font-size: 1em;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+	/* Above WP toolbar. */
 }
