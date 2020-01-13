@@ -260,6 +260,12 @@
             'sanitize_callback' => 'jlbestblog_sanitize_checkbox',
         ) );
 
+        $wp_customize->add_setting( 'display-tags-in-post' , array(
+            'default'   => true,
+            'transport' => 'refresh',
+            'sanitize_callback' => 'jlbestblog_sanitize_checkbox',
+        ) );
+
         // Settings - single page
         $wp_customize->add_setting( 'left-column-single-page' , array(
             'default'   => false,
@@ -571,6 +577,13 @@
             'label'      => __( 'Display header image', 'jlbestblog' ),
             'section'    => 'single-post-layout',
             'settings'   => 'display-header-image-on-post',
+            'type'       => 'checkbox'
+        ) );
+
+        $wp_customize->add_control( 'display-tags-in-post', array(
+            'label'      => __( 'Display tags', 'jlbestblog' ),
+            'section'    => 'single-post-layout',
+            'settings'   => 'display-tags-in-post',
             'type'       => 'checkbox'
         ) );
 

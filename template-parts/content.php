@@ -106,6 +106,10 @@ function jlbestblog_get_settings( $option ) {
                                 the_excerpt('<p>', '</p>');
                             }
                         echo "</section>";
+                        // post tags
+                        if ( is_single() &&  get_theme_mod( 'display-tags-in-post', true ) ) {
+                            the_tags( '<div style="padding-bottom: 5px">Tags:</div> <span>', ', ', '</span>' );
+                        }
                     echo "</article>";?>
                     <!-- post navigation -->
                     <div class="prev-next-post-navigation">
