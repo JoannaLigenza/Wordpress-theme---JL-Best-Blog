@@ -123,12 +123,12 @@ function jlbestblog_get_settings( $option ) {
                     <div class="prev-next-post-navigation">
                         <?php if ( get_previous_post() ) : ?>
                             <div class="prev-post-link post-link">
-                                <?php previous_post_link('&laquo; %link', __('Previous', 'jlbestblog')); ?>
+                                <?php previous_post_link('&laquo; %link', __('Previous', 'jl-best-blog')); ?>
                             </div>
                         <?php endif; ?>
                         <?php if ( get_next_post() ) : ?>
                             <div class="next-post-link post-link">
-                                <?php next_post_link('%link &raquo;', __('Next', 'jlbestblog')); ?>
+                                <?php next_post_link('%link &raquo;', __('Next', 'jl-best-blog')); ?>
                             </div>
                         <?php endif; ?>
                     </div>
@@ -141,7 +141,7 @@ function jlbestblog_get_settings( $option ) {
                     }
                 endwhile;
             else :
-                _e( '<p>No content yet, write some :)</p>', 'jlbestblog' );
+                _e( '<p>No content yet, write some :)</p>', 'jl-best-blog' );
             endif; 
         ?>
     </main>
