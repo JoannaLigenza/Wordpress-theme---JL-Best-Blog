@@ -31,7 +31,7 @@
                     <article id="post-<?php the_ID(); ?>" <?php post_class( 'article image-'.esc_attr( $imagePosition ) ); ?>>
                     <?php
                         if ( has_post_thumbnail() ) {
-                            echo "<div class='image-container image-container-".esc_attr( $imagePosition )."'><a href='".get_permalink()."'>" ;
+                            echo "<div class='image-container image-container-".esc_attr( $imagePosition )."'><a href='".esc_url( get_permalink() )."'>" ;
                                 if ($imagePosition === 'above') {
                                     $imageWidth = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "full" );
                                     $maxWidth = $imageWidth[1];
@@ -46,7 +46,9 @@
                                     echo "</a></div>" ;
                                     echo "<section class='section'>";
                                 } else {
-                                    echo the_post_thumbnail( 'medium' );
+                                    echo the_post_thumbnail( 'medium', array(
+                                        'alt' => 'post-image'
+                                    ) );
                                     echo "</a></div>" ;
                                     echo "<section class='section section-padding'>";
                                 }
@@ -71,7 +73,7 @@
                 <div class="nothing-found-search-results">
                     <h2 class="nothing-found-search-results-title">Nothing Found</h2>
                     <p class="nothing-found-search-results-message">
-                        <?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'jlbestblog' ) ?>
+                        <?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'jl-best-blog' ) ?>
                     </p>
                     <?php get_search_form(); ?>
                 </div>
