@@ -4,7 +4,7 @@ Tags: blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar,
 Requires at least: 4.8
 Tested up to: 5.3.2
 Requires PHP: 7.2
-Stable tag : 1.0
+Stable tag : 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,10 +36,13 @@ GPLv2 or later
 3. Click Activate to use your new theme right away.
 
 
-== Changelog ==
-
-This is first version
-
 == Upgrade Notice ==
+= 1.2 =
+Release Date: 02.03.2020
+* Fixed error appeared when top menu wasn't active 
 
-This is first version
+= 1.1 =
+* Added missing text-domain
+
+1.0 
+First version
