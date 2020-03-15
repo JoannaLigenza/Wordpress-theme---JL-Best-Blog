@@ -3,8 +3,8 @@
 Tags: blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, full-width-template ,post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, wide-blocks
 Requires at least: 4.8
 Tested up to: 5.3.2
-Requires PHP: 7.2
-Stable tag : 1.2
+Requires PHP: 5.2
+Stable tag : 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,14 +31,14 @@ GPLv2 or later
 
 == Frequently Asked Questions ==
 
-1. In your admin panel, go to Appearance > Themes and click the Add New button.
-2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
-3. Click Activate to use your new theme right away.
+No questions yet.
 
 
 == Upgrade Notice ==
+= 1.3 =
+* Changed way of displaying images on single post and page
+
 = 1.2 =
-Release Date: 02.03.2020
 * Fixed error appeared when top menu wasn't active 
 
 = 1.1 =
