@@ -157,8 +157,8 @@
             'sanitize_callback' => 'jlbestblog_sanitize_checkbox',
         ) );
 
-        $wp_customize->add_setting( 'front-page-and-archive-image' , array(
-            'default'   => 'left',
+        $wp_customize->add_setting( 'front-page-image' , array(
+            'default'   => 'above',
             'transport' => 'refresh',
             'sanitize_callback' => 'jlbestblog_sanitize_radio',
         ) );
@@ -268,9 +268,9 @@
         ) );
 
         $wp_customize->add_setting( 'post-image-single' , array(
-            'default'   => 'above',
+            'default'   => true,
             'transport' => 'refresh',
-            'sanitize_callback' => 'jlbestblog_sanitize_radio',
+            'sanitize_callback' => 'jlbestblog_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'display-header-image-on-post' , array(
@@ -305,9 +305,9 @@
         ) );
 
         $wp_customize->add_setting( 'page-image' , array(
-            'default'   => 'above',
+            'default'   => true,
             'transport' => 'refresh',
-            'sanitize_callback' => 'jlbestblog_sanitize_radio',
+            'sanitize_callback' => 'jlbestblog_sanitize_checkbox',
         ) );
 
         $wp_customize->add_setting( 'display-header-image-on-page' , array(
@@ -337,6 +337,18 @@
 
         $wp_customize->add_setting( 'taxonomy-description' , array(
             'default'   => 'top',
+            'transport' => 'refresh',
+            'sanitize_callback' => 'jlbestblog_sanitize_radio',
+        ) );
+
+        $wp_customize->add_setting( 'post-meta-archive' , array(
+            'default'   => true,
+            'transport' => 'refresh',
+            'sanitize_callback' => 'jlbestblog_sanitize_checkbox',
+        ) );
+
+        $wp_customize->add_setting( 'archive-image' , array(
+            'default'   => 'left',
             'transport' => 'refresh',
             'sanitize_callback' => 'jlbestblog_sanitize_radio',
         ) );
@@ -468,16 +480,16 @@
         ) );
 
         $wp_customize->add_control( 'post-meta', array(
-            'label'      => __( 'Enable post meta on front page and archives', 'jl-best-blog' ),
+            'label'      => __( 'Enable post meta on front page', 'jl-best-blog' ),
             'section'    => 'front-page-layout',
             'settings'   => 'post-meta',
             'type'       => 'checkbox'
         ) );
 
-        $wp_customize->add_control( 'front-page-and-archive-image', array(
+        $wp_customize->add_control( 'front-page-image', array(
             'label'      => __( 'Post Image Position on Front Page and Archives Pages', 'jl-best-blog' ),
             'section'    => 'front-page-layout',
-            'settings'   => 'front-page-and-archive-image',
+            'settings'   => 'front-page-image',
             'type'       => 'radio',
             'choices'    => array(
                 'left' => 'Left side',
@@ -613,14 +625,10 @@
         ) );
 
         $wp_customize->add_control( 'post-image-single', array(
-            'label'      => __( 'Post Image Position on Front Page and Archives Pages', 'jl-best-blog' ),
+            'label'      => __( 'Display post image in single post', 'jl-best-blog' ),
             'section'    => 'single-post-layout',
             'settings'   => 'post-image-single',
-            'type'       => 'radio',
-            'choices'    => array(
-                'left' => 'Left side',
-                'above' => 'Above text',
-            ),
+            'type'       => 'checkbox',
         ) );
 
         // Adding controls - single page
@@ -653,14 +661,10 @@
         ) );
 
         $wp_customize->add_control( 'page-image', array(
-            'label'      => __( 'Post Image Position on Front Page and Archives Pages', 'jl-best-blog' ),
+            'label'      => __( 'Display image on single page', 'jl-best-blog' ),
             'section'    => 'single-page-layout',
             'settings'   => 'page-image',
-            'type'       => 'radio',
-            'choices'    => array(
-                'left' => 'Left side',
-                'above' => 'Above text',
-            ),
+            'type'       => 'checkbox',
         ) );
 
         // Adding controls - archive page
@@ -685,6 +689,13 @@
             'type'       => 'checkbox'
         ) );
 
+        $wp_customize->add_control( 'post-meta-archive', array(
+            'label'      => __( 'Enable post meta on archive pages', 'jl-best-blog' ),
+            'section'    => 'archive-layout',
+            'settings'   => 'post-meta-archive',
+            'type'       => 'checkbox'
+        ) );
+
         $wp_customize->add_control( 'taxonomy-description', array(
             'label'      => __( 'Taxonomy description position', 'jl-best-blog' ),
             'section'    => 'archive-layout',
@@ -694,6 +705,17 @@
                 'top' => 'Above content',
                 'bottom' => 'Below content',
                 'none'  => 'None'
+            ),
+        ) );
+
+        $wp_customize->add_control( 'archive-image', array(
+            'label'      => __( 'Post Image Position on Front Page and Archives Pages', 'jl-best-blog' ),
+            'section'    => 'archive-layout',
+            'settings'   => 'archive-image',
+            'type'       => 'radio',
+            'choices'    => array(
+                'left' => 'Left side',
+                'above' => 'Above text',
             ),
         ) );
     }

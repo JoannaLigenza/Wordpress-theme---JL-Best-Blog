@@ -8,8 +8,8 @@ function jlbestblog_get_settings( $option ) {
         } else if ( $option === 'right-column' ) {
             $var = get_theme_mod( 'right-column-single' );
             return $var;
-        } else if ( $option === 'imagePosition' ) {
-            $var = get_theme_mod( 'post-image-single', 'above' );
+        } else if ( $option === 'display-image' ) {
+            $var = get_theme_mod( 'post-image-single');
             return $var;
         } else if ( $option === 'meta' ) {
             $var = get_theme_mod( 'post-meta-single' );
@@ -23,8 +23,8 @@ function jlbestblog_get_settings( $option ) {
         } else if ( $option === 'right-column' ) {
             $var = get_theme_mod( 'right-column-single-page' );
             return $var;
-        } else if ( $option === 'imagePosition' ) {
-            $var = get_theme_mod( 'page-image', 'above' );
+        } else if ( $option === 'display-image' ) {
+            $var = get_theme_mod( 'page-image');
             return $var;
         } else if ( $option === 'meta' ) {
             $var = get_theme_mod( 'page-meta' );
@@ -56,33 +56,27 @@ function jlbestblog_get_settings( $option ) {
         <?php
             if ( have_posts() ) :
                 while ( have_posts() ) : the_post();
-                    $imagePosition = jlbestblog_get_settings( 'imagePosition' );
+                    $displayImage = jlbestblog_get_settings( 'display-image' );
                     ?>
-                    <article id="post-<?php the_ID(); ?>" <?php post_class( 'article image-'.esc_attr( $imagePosition ) ); ?>>
+                    <article id="post-<?php the_ID(); ?>" <?php post_class( 'article article-single' ); ?>>
                     <?php
                         if ( has_post_thumbnail() ) {
-                            echo "<div class='image-container image-container-".esc_attr( $imagePosition )."'><a href='".get_permalink()."'>" ;
-                                if ($imagePosition === 'above') {
-                                    $imageWidth = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "full" );
-                                    $maxWidth = $imageWidth[1];
-                                    if ($maxWidth > 1200) {
-                                        $maxWidth = 1200;
-                                    }
-                                    echo the_post_thumbnail( 'full', array( 
-                                        // 'sizes' => '(max-width:320px) 145px, (max-width:800px) 220px, 1200',
-                                        'sizes' => '(max-width: '.$maxWidth.'px) 100vw, '.$maxWidth.'px',
-                                        'alt' => 'post-image',
-                                        // 'srcset' => $imageWidthFull[0].' '.$imageWidthFull[1].'w,'. $imageWidthMedium[0].' 400w'
-                                        ) );
-                                    echo "</a></div>" ;
-                                    echo "<section class='section'>";
-                                } else {
-                                    echo the_post_thumbnail( 'medium', array(
-                                        'alt' => 'post-image'
-                                    ) );
-                                    echo "</a></div>" ;
-                                    echo "<section class='section section-padding'>";
+                            if ( $displayImage ) {
+                                echo "<div class='image-container image-container-above'><a href='".get_permalink()."'>" ;
+                                $imageWidth = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "full" );
+                                $maxWidth = $imageWidth[1];
+                                if ($maxWidth > 1200) {
+                                    $maxWidth = 1200;
                                 }
+                                echo the_post_thumbnail( 'full', array( 
+                                    // 'sizes' => '(max-width:320px) 145px, (max-width:800px) 220px, 1200',
+                                    'sizes' => '(max-width: '.$maxWidth.'px) 100vw, '.$maxWidth.'px',
+                                    'alt' => 'post-image',
+                                    // 'srcset' => $imageWidthFull[0].' '.$imageWidthFull[1].'w,'. $imageWidthMedium[0].' 400w'
+                                    ) );
+                                echo "</a></div>" ;
+                                echo "<section class='section'>";
+                            }       
                         } else {
                             echo "<section class='section'>";
                         } ?>

@@ -66,7 +66,7 @@
             <?php
                 if ( have_posts() ) :
                     while ( have_posts() ) : the_post();
-                        $imagePosition = get_theme_mod( 'front-page-and-archive-image', 'above' );
+                        $imagePosition = get_theme_mod( 'archive-image', 'above' );
                         ?>
                         <article id="post-<?php the_ID(); ?>" <?php post_class( 'article image-'.esc_attr( $imagePosition ) ); ?>>
                         <?php
@@ -94,7 +94,7 @@
                                 echo "<section class='section'>";
                             }
                             echo "<h2><a href='".get_permalink()."'>".esc_html( get_the_title() )."</a></h2>";
-                            if (get_theme_mod( 'post-meta' )) {
+                            if (get_theme_mod( 'post-meta-archive' )) {
                                 $id = get_the_author_meta('ID');
                                 $date = get_the_date( 'Y/m' );
                                 echo "<div class='post-meta'>";
