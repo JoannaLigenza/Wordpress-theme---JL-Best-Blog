@@ -949,5 +949,4 @@
     }
     add_action( 'customize_register', 'jlbestblog_register_partials' );
 
-?>
 
