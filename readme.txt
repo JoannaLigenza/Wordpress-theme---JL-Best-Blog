@@ -4,7 +4,7 @@ Tags: blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar,
 Requires at least: 4.8
 Tested up to: 5.3.2
 Requires PHP: 5.2
-Stable tag : 1.3
+Stable tag : 1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,6 +35,9 @@ No questions yet.
 
 
 == Upgrade Notice ==
+= 1.4 =
+* Changed way of displaying custom taxonomies archive title
+
 = 1.3 =
 * Changed way of displaying images on single post and page
 

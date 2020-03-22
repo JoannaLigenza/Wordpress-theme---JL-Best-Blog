@@ -22,7 +22,8 @@
         } elseif ( is_post_type_archive() ) {
             $title = post_type_archive_title( '', false );
         } elseif ( is_tax() ) {
-            single_term_title( '', false );
+            // Taxonomy name (first letter uppercase)
+            $title = ucfirst( get_queried_object()->taxonomy );
         }
  
         return apply_filters( 'get_the_archive_title', $title );
