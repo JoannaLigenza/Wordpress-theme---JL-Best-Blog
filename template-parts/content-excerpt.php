@@ -56,12 +56,11 @@
                         }
                         echo "<h2><a href='".esc_url( get_permalink() )."'>".esc_html( get_the_title() )."</a></h2>";
                         if (get_theme_mod( 'post-meta' )) {
-                            // $id = get_the_author_meta('ID');
-                            $id = get_the_author_meta('ID');
+                            $author_id = get_the_author_meta('ID');
                             $date = get_the_date( 'Y/m' );
                             echo "<div class='post-meta'>";
-                                echo "<div class='meta-author'><a href='".esc_url( get_author_posts_url($id) )."'> ".esc_html( get_the_author() )." </a></div>";
-                                echo "<div class='meta-date'><a href='".esc_url( get_home_url() )."/".$date."'> ".esc_html( get_the_time('j-m-Y') )."</a></div>";
+                                echo "<div class='meta-author'><a href='".esc_url( get_author_posts_url($author_id) )."'> ".esc_html( get_the_author() )." </a></div>";
+                                echo "<div class='meta-date'><a href='".esc_url( get_home_url()."/".$date )."'> ".esc_html( get_the_time('j-m-Y') )."</a></div>";
                             echo "</div>";
                         }
                         if ( ! post_password_required() ) {
@@ -72,7 +71,7 @@
                 endwhile;
                 the_posts_pagination(array( 'mid_size' => 2 ));
             else :
-                _e( '<p>No content yet</p>', 'jl-best-blog' );
+                esc_html_e( '<p>No content yet</p>', 'jlbestblog' );
             endif; 
         ?>
     </main>
