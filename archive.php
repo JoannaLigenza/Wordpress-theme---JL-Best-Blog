@@ -1,7 +1,7 @@
 <?php 
-    // Change 'standard' archive title - modyfying wordpress get_the_archive_title() function
+    // Change 'standard' archive title - modyfying WordPress get_the_archive_title() function
     function jlbestblog_set_archive_title() {
-        $title = __( 'Archives', 'jl-best-blog' );
+        $title = __( 'Archives', 'jlbestblog' );
  
         if ( is_category() ) {
             $title = single_cat_title( '', false );
@@ -9,16 +9,16 @@
             $title = single_tag_title( '', false );
         } elseif ( is_author() ) {
             /* translators: Author archive title. %s: Author name. */
-            $title = sprintf( __( 'Author: %s', 'jl-best-blog' ), esc_html( get_the_author() ) );
+            $title = sprintf( __( 'Author: %s', 'jlbestblog' ), esc_html( get_the_author() ) );
         } elseif ( is_year() ) {
             /* translators: Yearly archive title. %s: Year. */
-            $title = sprintf( __( 'Year: %s', 'jl-best-blog' ), esc_html( get_the_date( _x( 'Y', 'yearly archives date format', 'jl-best-blog' ) ) ) );
+            $title = sprintf( __( 'Year: %s', 'jlbestblog' ), esc_html( get_the_date( _x( 'Y', 'yearly archives date format', 'jlbestblog' ) ) ) );
         } elseif ( is_month() ) {
             /* translators: Monthly archive title. %s: Month name and year. */
-            $title = sprintf( __( 'Month: %s', 'jl-best-blog' ), esc_html( get_the_date( _x( 'F Y', 'monthly archives date format', 'jl-best-blog' ) ) ) );
+            $title = sprintf( __( 'Month: %s', 'jlbestblog' ), esc_html( get_the_date( _x( 'F Y', 'monthly archives date format', 'jlbestblog' ) ) ) );
         } elseif ( is_day() ) {
             /* translators: Daily archive title. %s: Date. */
-            $title = sprintf( __( 'Day: %s', 'jl-best-blog' ), esc_html( get_the_date( _x( 'F j, Y', 'daily archives date format', 'jl-best-blog' ) ) ) );
+            $title = sprintf( __( 'Day: %s', 'jlbestblog' ), esc_html( get_the_date( _x( 'F j, Y', 'daily archives date format', 'jlbestblog' ) ) ) );
         } elseif ( is_post_type_archive() ) {
             $title = post_type_archive_title( '', false );
         } elseif ( is_tax() ) {
@@ -26,7 +26,7 @@
             $title = ucfirst( get_queried_object()->taxonomy );
         }
  
-        return apply_filters( 'get_the_archive_title', $title );
+        return apply_filters( 'jlbestblog_get_the_archive_title', $title );
     }
 ?>
 
@@ -72,7 +72,7 @@
                         <article id="post-<?php the_ID(); ?>" <?php post_class( 'article image-'.esc_attr( $imagePosition ) ); ?>>
                         <?php
                             if ( has_post_thumbnail() ) {
-                                echo "<div class='image-container image-container-".esc_attr( $imagePosition )."'><a href='".get_permalink()."'>" ;
+                                echo "<div class='image-container image-container-".esc_attr( $imagePosition )."'><a href='".esc_html( get_permalink() )."'>" ;
                                     if ($imagePosition === 'above') {
                                         $imageWidth = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "full" );
                                         $maxWidth = $imageWidth[1];
@@ -94,13 +94,13 @@
                             } else {
                                 echo "<section class='section'>";
                             }
-                            echo "<h2><a href='".get_permalink()."'>".esc_html( get_the_title() )."</a></h2>";
+                            echo "<h2><a href='".esc_html( get_permalink() )."'>".esc_html( get_the_title() )."</a></h2>";
                             if (get_theme_mod( 'post-meta-archive' )) {
-                                $id = get_the_author_meta('ID');
+                                $author_id = get_the_author_meta('ID');
                                 $date = get_the_date( 'Y/m' );
                                 echo "<div class='post-meta'>";
-                                    echo "<div class='meta-author'><a href='".esc_url( get_author_posts_url($id) )."'> ".esc_html( get_the_author() )." </a></div>";
-                                    echo "<div class='meta-date'><a href='".esc_url( get_home_url() )."/".$date."'> ".esc_html( get_the_time('j-m-Y') )."</a></div>";
+                                    echo "<div class='meta-author'><a href='".esc_url( get_author_posts_url($author_id) )."'> ".esc_html( get_the_author() )." </a></div>";
+                                    echo "<div class='meta-date'><a href='".esc_url( get_home_url() )."/".esc_url( $date )."'> ".esc_html( get_the_time('j-m-Y') )."</a></div>";
                                 echo "</div>";
                             }
                             the_excerpt('<p>', '</p>');
@@ -108,8 +108,9 @@
                         echo "</article>";
                     endwhile;
                     the_posts_pagination(array( 'mid_size' => 2 ));
-                else :
-                    _e( '<p>No content yet</p>', 'jl-best-blog' );
+                else : ?>
+                    <p><?php esc_html_e( 'No content yet', 'jlbestblog' ); ?></p>
+                <?php
                 endif; 
             ?>
         </main>
