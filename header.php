@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php echo language_attributes(); ?> >
+<html <?php echo esc_attr( language_attributes() ); ?> >
 <head>
     <meta charset="<?php echo bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,24 +13,19 @@
     <div class="main-container">
         <!-- displaying header image depends of page type -->
         <?php
+        function jlbestblog_is_header_image_visible( $theme_mod ) {
+            if ( get_header_image() && esc_html( get_theme_mod( $theme_mod ) ) ) {
+                ?> <header class="header" style="background-image: url(<?php echo esc_url(get_custom_header()->url) ?>)"> <?php
+            } else {
+                ?> <header class="header"> <?php
+            }
+        }
         if ( is_single() ) {
-            if ( get_header_image() && get_theme_mod( 'display-header-image-on-post' ) ) : ?>
-            <header class="header" style="background-image: url(<?php echo esc_url(get_custom_header()->url) ?>)">
-            <?php else : ?>
-            <header class="header">
-            <?php endif;
+            jlbestblog_is_header_image_visible( 'display-header-image-on-post' );
         } elseif ( is_page() ) {
-            if ( get_header_image() && get_theme_mod( 'display-header-image-on-page' ) ) : ?>
-            <header class="header" style="background-image: url(<?php echo esc_url(get_custom_header()->url) ?>)">
-            <?php else : ?>
-            <header class="header">
-            <?php endif;
+            jlbestblog_is_header_image_visible( 'display-header-image-on-page' );
         } elseif ( is_archive() ) {
-            if ( get_header_image() && get_theme_mod( 'display-header-image-on-archive' ) ) : ?>
-            <header class="header" style="background-image: url(<?php echo esc_url(get_custom_header()->url) ?>)">
-            <?php else : ?>
-            <header class="header">
-            <?php endif;
+            jlbestblog_is_header_image_visible( 'display-header-image-on-archive' );
         } else {
             if ( get_header_image() ) :   // display header image url ?>
             <header class="header" style="background-image: url(<?php echo esc_url(get_custom_header()->url) ?>)">
