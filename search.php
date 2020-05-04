@@ -55,13 +55,13 @@
                         } else {
                             echo "<section class='section'>";
                         }
-                        echo "<h2><a href='".get_permalink()."'>".esc_html( get_the_title() )."</a></h2>";
+                        echo "<h2><a href='".esc_url( get_permalink() )."'>".esc_html( get_the_title() )."</a></h2>";
                         if (get_theme_mod( 'post-meta' )) {
-                            $id = get_the_author_meta('ID');
+                            $author_id = get_the_author_meta('ID');
                             $date = get_the_date( 'Y/m' );
                             echo "<div class='post-meta'>";
-                                echo "<div class='meta-author'><a href='".esc_url( get_author_posts_url($id) )."'> ".esc_html( get_the_author() )." </a></div>";
-                                echo "<div class='meta-date'><a href='".esc_url( get_home_url() )."/".$date."'> ".esc_html( get_the_time('j-m-Y') )."</a></div>";
+                                echo "<div class='meta-author'><a href='".esc_url( get_author_posts_url($author_id) )."'> ".esc_html( get_the_author() )." </a></div>";
+                                echo "<div class='meta-date'><a href='".esc_url( get_home_url()."/".$date )."'> ".esc_html( get_the_time('j-m-Y') )."</a></div>";
                             echo "</div>";
                         }
                         the_excerpt('<p>', '</p>');
@@ -73,7 +73,7 @@
                 <div class="nothing-found-search-results">
                     <h2 class="nothing-found-search-results-title">Nothing Found</h2>
                     <p class="nothing-found-search-results-message">
-                        <?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'jl-best-blog' ) ?>
+                        <?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'jlbestblog' ) ?>
                     </p>
                     <?php get_search_form(); ?>
                 </div>
