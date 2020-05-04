@@ -908,12 +908,6 @@
                     <?php }
             },
         ) );
-    
-        // $wp_customize->selective_refresh->add_partial( 'document_title', array(
-        //     'selector' => 'head title',
-        //     'settings' => array( 'blogname' ),
-        //     'render_callback' => 'wp_get_document_title',
-        // ) );
 
         // header menu text
         $wp_customize->selective_refresh->add_partial( 'header_menu_text', array(
