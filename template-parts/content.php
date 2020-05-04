@@ -62,7 +62,7 @@ function jlbestblog_get_settings( $option ) {
                     <?php
                         if ( has_post_thumbnail() ) {
                             if ( $displayImage ) {
-                                echo "<div class='image-container image-container-above'><a href='".get_permalink()."'>" ;
+                                echo "<div class='image-container image-container-above'><a href='".esc_url( get_permalink() )."'>" ;
                                 $imageWidth = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "full" );
                                 $maxWidth = $imageWidth[1];
                                 if ($maxWidth > 1200) {
@@ -80,10 +80,10 @@ function jlbestblog_get_settings( $option ) {
                         } else {
                             echo "<section class='section'>";
                         } ?>
-                        <h2><a href='<?php echo get_permalink(); ?>'> <?php echo esc_html( get_the_title() ); ?> </a></h2>
+                        <h2><a href='<?php echo esc_url( get_permalink() ); ?>'> <?php echo esc_html( get_the_title() ); ?> </a></h2>
                         <?php
                         if ( jlbestblog_get_settings( 'meta' ) ) {
-                            $id = get_the_author_meta('ID');
+                            $author_id = get_the_author_meta('ID');
                             $date = get_the_date( 'Y/m' ); ?>
                             <?php if ( is_single() ) : ?>
                             <div class="post-categories">
@@ -91,8 +91,8 @@ function jlbestblog_get_settings( $option ) {
                             </div>
                             <?php endif; ?>
                             <div class='post-meta'>
-                                <div class='meta-author'><a href='<?php echo esc_url( get_author_posts_url($id) ) ?>'> <?php echo esc_html( get_the_author() ) ?> </a></div>
-                                <div class='meta-date'><a href='<?php echo esc_url( get_home_url() )."/".$date ?>'> <?php echo esc_html( get_the_time('j-m-Y') ) ?> </a></div>
+                                <div class='meta-author'><a href='<?php echo esc_url( get_author_posts_url($author_id) ) ?>'> <?php echo esc_html( get_the_author() ) ?> </a></div>
+                                <div class='meta-date'><a href='<?php echo esc_url( get_home_url()."/".$date) ?>'> <?php echo esc_html( get_the_time('j-m-Y') ) ?> </a></div>
                             </div>
                             <?php
                         }
@@ -117,12 +117,12 @@ function jlbestblog_get_settings( $option ) {
                     <div class="prev-next-post-navigation">
                         <?php if ( get_previous_post() ) : ?>
                             <div class="prev-post-link post-link">
-                                <?php previous_post_link('&laquo; %link', __('Previous', 'jl-best-blog')); ?>
+                                <?php previous_post_link('&laquo; %link', __('Previous', 'jlbestblog')); ?>
                             </div>
                         <?php endif; ?>
                         <?php if ( get_next_post() ) : ?>
                             <div class="next-post-link post-link">
-                                <?php next_post_link('%link &raquo;', __('Next', 'jl-best-blog')); ?>
+                                <?php next_post_link('%link &raquo;', __('Next', 'jlbestblog')); ?>
                             </div>
                         <?php endif; ?>
                     </div>
@@ -135,7 +135,7 @@ function jlbestblog_get_settings( $option ) {
                     }
                 endwhile;
             else :
-                _e( '<p>No content yet</p>', 'jl-best-blog' );
+                esc_html_e( '<p>No content yet</p>', 'jlbestblog' );
             endif; 
         ?>
     </main>
