@@ -870,7 +870,7 @@
         if ($excerptLength === 0) {
             return '';
         } else {
-            return "<div class='read-more-button'><a class='read-more-link' href='".get_permalink()."' style='border: 1px solid ".esc_attr( get_theme_mod( 'menu_background_color', '#696969' ) )."'>".__( 'Read more...', 'jl-best-blog')."</a></div>";
+            return "<div class='read-more-button'><a class='read-more-link' href='".esc_url( get_permalink() )."' style='border: 1px solid ".esc_attr( get_theme_mod( 'menu_background_color', '#696969' ) )."'>".__( 'Read more...', 'jl-best-blog')."</a></div>";
         }
     }
     add_filter( 'excerpt_more', 'jlbestblog_excerpt_more' );

@@ -72,7 +72,7 @@
                         <article id="post-<?php the_ID(); ?>" <?php post_class( 'article image-'.esc_attr( $imagePosition ) ); ?>>
                         <?php
                             if ( has_post_thumbnail() ) {
-                                echo "<div class='image-container image-container-".esc_attr( $imagePosition )."'><a href='".esc_html( get_permalink() )."'>" ;
+                                echo "<div class='image-container image-container-".esc_attr( $imagePosition )."'><a href='".esc_url( get_permalink() )."'>" ;
                                     if ($imagePosition === 'above') {
                                         $imageWidth = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "full" );
                                         $maxWidth = $imageWidth[1];
@@ -96,7 +96,7 @@
                             } else {
                                 echo "<section class='section'>";
                             }
-                            echo "<h2><a href='".esc_html( get_permalink() )."'>".esc_html( get_the_title() )."</a></h2>";
+                            echo "<h2><a href='".esc_url( get_permalink() )."'>".esc_html( get_the_title() )."</a></h2>";
                             if (get_theme_mod( 'post-meta-archive' )) {
                                 $author_id = get_the_author_meta('ID');
                                 $date = get_the_date( 'Y/m' );

@@ -5,8 +5,8 @@ Requires at least: 5.0
 Tested up to: 5.4.1
 Requires PHP: 7.0
 Stable tag : 1.6
-License: GPLv3 or later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+License: GPL-3.0-or-later
+License URI: https://www.gnu.org/licenses/gpl.html
 
 
 === Description ===
@@ -21,12 +21,20 @@ JL Best-blog theme is translation ready.
 
 === License ===
 
-GPLv3 or later
+GPL-3.0-or-later
 
 
 === Screenshots ===
 
-* https://unsplash.com/photos/5867BKGyCu4
+* https://pxhere.com/en/photo/1390043
+* https://www.iconfinder.com/icons/107153/circle_facebook_icon
+* https://www.iconfinder.com/icons/1161954/instagram_icon
+* https://www.iconfinder.com/icons/104461/twitter_icon
+* https://www.iconfinder.com/icons/287676/pinterest_icon
+* https://www.iconfinder.com/icons/287629/youtube_icon
+* https://www.iconfinder.com/icons/843773/whatsapp_icon
+* https://www.iconfinder.com/icons/1181202/facebook_messenger_icon
+* https://www.iconfinder.com/icons/834713/linkedin_icon
 
 
 == Frequently Asked Questions ==
