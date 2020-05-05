@@ -5,8 +5,8 @@ Requires at least: 5.0
 Tested up to: 5.4.1
 Requires PHP: 7.0
 Stable tag : 1.6
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GPLv3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 
 === Description ===
@@ -21,12 +21,12 @@ JL Best-blog theme is translation ready.
 
 === License ===
 
-GPLv2 or later
+GPLv3 or later
 
 
 === Screenshots ===
 
-* https://www.pexels.com/photo/adult-beautiful-christmas-cold-293029/
+* https://unsplash.com/photos/5867BKGyCu4
 
 
 == Frequently Asked Questions ==
@@ -35,6 +35,11 @@ No questions yet.
 
 
 == Upgrade Notice ==
+
+= 1.6 =
+* Corrected text-domain
+* Added escaping functions, 
+
 = 1.5 =
 * Corrected text-domain
 

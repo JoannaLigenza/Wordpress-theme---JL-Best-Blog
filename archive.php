@@ -1,7 +1,7 @@
 <?php 
     // Change 'standard' archive title - modyfying WordPress get_the_archive_title() function
     function jlbestblog_set_archive_title() {
-        $title = __( 'Archives', 'jlbestblog' );
+        $title = __( 'Archives', 'jl-best-blog' );
  
         if ( is_category() ) {
             $title = single_cat_title( '', false );
@@ -9,16 +9,16 @@
             $title = single_tag_title( '', false );
         } elseif ( is_author() ) {
             /* translators: Author archive title. %s: Author name. */
-            $title = sprintf( __( 'Author: %s', 'jlbestblog' ), esc_html( get_the_author() ) );
+            $title = sprintf( __( 'Author: %s', 'jl-best-blog' ), esc_html( get_the_author() ) );
         } elseif ( is_year() ) {
             /* translators: Yearly archive title. %s: Year. */
-            $title = sprintf( __( 'Year: %s', 'jlbestblog' ), esc_html( get_the_date( _x( 'Y', 'yearly archives date format', 'jlbestblog' ) ) ) );
+            $title = sprintf( __( 'Year: %s', 'jl-best-blog' ), esc_html( get_the_date( _x( 'Y', 'yearly archives date format', 'jl-best-blog' ) ) ) );
         } elseif ( is_month() ) {
             /* translators: Monthly archive title. %s: Month name and year. */
-            $title = sprintf( __( 'Month: %s', 'jlbestblog' ), esc_html( get_the_date( _x( 'F Y', 'monthly archives date format', 'jlbestblog' ) ) ) );
+            $title = sprintf( __( 'Month: %s', 'jl-best-blog' ), esc_html( get_the_date( _x( 'F Y', 'monthly archives date format', 'jl-best-blog' ) ) ) );
         } elseif ( is_day() ) {
             /* translators: Daily archive title. %s: Date. */
-            $title = sprintf( __( 'Day: %s', 'jlbestblog' ), esc_html( get_the_date( _x( 'F j, Y', 'daily archives date format', 'jlbestblog' ) ) ) );
+            $title = sprintf( __( 'Day: %s', 'jl-best-blog' ), esc_html( get_the_date( _x( 'F j, Y', 'daily archives date format', 'jl-best-blog' ) ) ) );
         } elseif ( is_post_type_archive() ) {
             $title = post_type_archive_title( '', false );
         } elseif ( is_tax() ) {
@@ -109,7 +109,7 @@
                     endwhile;
                     the_posts_pagination(array( 'mid_size' => 2 ));
                 else : ?>
-                    <p><?php esc_html_e( 'No content yet', 'jlbestblog' ); ?></p>
+                    <p><?php esc_html_e( 'No content yet', 'jl-best-blog' ); ?></p>
                 <?php
                 endif; 
             ?>

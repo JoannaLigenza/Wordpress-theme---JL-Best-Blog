@@ -71,7 +71,7 @@
                 endwhile;
                 the_posts_pagination(array( 'mid_size' => 2 ));
             else :
-                esc_html_e( '<p>No content yet</p>', 'jlbestblog' );
+                esc_html_e( '<p>No content yet</p>', 'jl-best-blog' );
             endif; 
         ?>
     </main>

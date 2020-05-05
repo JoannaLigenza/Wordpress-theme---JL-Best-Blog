@@ -104,11 +104,11 @@
                     if ( get_theme_mod( 'footer-privacy-policy') ) {
                         $privacy_policy_page = get_option( 'wp_page_for_privacy_policy' );
                         if( $privacy_policy_page ) : ?>
-                            <p><?php echo esc_html_e( 'Read our ', 'jlbestblog' ) ?><a href="<?php echo esc_url( get_permalink( $privacy_policy_page ) ) ?>" class='privacy-policy-link'> <?php esc_html_e( 'Privacy Policy', 'jlbestblog' ) ?> </a></p>
+                            <p><?php echo esc_html_e( 'Read our ', 'jl-best-blog' ) ?><a href="<?php echo esc_url( get_permalink( $privacy_policy_page ) ) ?>" class='privacy-policy-link'> <?php esc_html_e( 'Privacy Policy', 'jl-best-blog' ) ?> </a></p>
                         <?php endif;
                     } ?>
-                    <p class="footer-link"><small><?php esc_html_e( 'Theme made by: ', 'jlbestblog') ?></small><a href="<?php echo esc_url( 'https://love-coding.pl/en' ); ?>" class="footer-theme-link">JL</a><small>, 
-                    <?php esc_html_e( 'to: ', 'jlbestblog') ?> <a href="<?php echo esc_url( home_url() ); ?>" class="footer-theme-link"><?php echo bloginfo('name') ?></a></small></p>
+                    <p class="footer-link"><small><?php esc_html_e( 'Theme made by: ', 'jl-best-blog') ?></small><a href="<?php echo esc_url( 'https://love-coding.pl/en' ); ?>" class="footer-theme-link">JL</a><small>, 
+                    <?php esc_html_e( 'to: ', 'jl-best-blog') ?> <a href="<?php echo esc_url( home_url() ); ?>" class="footer-theme-link"><?php echo bloginfo('name') ?></a></small></p>
                 </div>
             </div>
             

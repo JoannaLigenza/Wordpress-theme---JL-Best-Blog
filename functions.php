@@ -27,8 +27,8 @@
     function jlbestblog_register_my_menus() {
         register_nav_menus(
             array(
-            'top-menu'    => __( 'Top Menu', 'jlbestblog' ),
-            'header-menu' => __( 'Header Menu', 'jlbestblog' ),
+            'top-menu'    => __( 'Top Menu', 'jl-best-blog' ),
+            'header-menu' => __( 'Header Menu', 'jl-best-blog' ),
             )
         );
     }
@@ -98,7 +98,7 @@
         add_theme_support( 'automatic-feed-links' );
 
         // Add translations for theme
-        load_theme_textdomain( 'jlbestblog', get_template_directory() . '/languages' );
+        load_theme_textdomain( 'jl-best-blog', get_template_directory() . '/languages' );
 
         // Allow partial refreshes of widgets in a theme’s sidebars
         add_theme_support( 'customize-selective-refresh-widgets' );
@@ -370,123 +370,123 @@
 
         // Adding panel
         $wp_customize->add_panel( 'header', array(
-            'title' => __( 'Header', 'jlbestblog' ),
+            'title' => __( 'Header', 'jl-best-blog' ),
             'priority' => 40, // Mixed with top-level-section hierarchy.
         ) );
 
         $wp_customize->add_panel( 'appearance', array(
-            'title' => __( 'Appearance Settings', 'jlbestblog' ),
+            'title' => __( 'Appearance Settings', 'jl-best-blog' ),
             // 'description' => $description, // Include html tags such as <p>.
             'priority' => 50, // Mixed with top-level-section hierarchy.
         ) );
 
         // Adding sections
         $wp_customize->add_section( 'header' , array(
-            'title'      => __( 'Header Search Box', 'jlbestblog' ),
+            'title'      => __( 'Header Search Box', 'jl-best-blog' ),
             'panel' => 'header',
             'priority'   => 50,
         ) );
 
         $wp_customize->add_section( 'header_image' , array(
-            'title'      => __( 'Header Image', 'jlbestblog' ),
+            'title'      => __( 'Header Image', 'jl-best-blog' ),
             'panel' => 'header',
             'priority'   => 50,
         ) );
 
         $wp_customize->add_section( 'colors' , array(
-            'title'      => __( 'Colors', 'jlbestblog' ),
+            'title'      => __( 'Colors', 'jl-best-blog' ),
             'panel' => 'appearance',
             'priority'   => 10,
         ) );
 
         $wp_customize->add_section( 'background_image' , array(
-            'title'      => __( 'Background image', 'jlbestblog' ),
+            'title'      => __( 'Background image', 'jl-best-blog' ),
             'panel' => 'appearance',
             'priority'   => 20,
         ) );
 
         $wp_customize->add_section( 'front-page-layout' , array(
-            'title'      => __( 'Front Page Layout', 'jlbestblog' ),
+            'title'      => __( 'Front Page Layout', 'jl-best-blog' ),
             'panel' => 'appearance',
             'priority'   => 30,
         ) );
 
         $wp_customize->add_section( 'single-post-layout' , array(
-            'title'      => __( 'Single Post Layout', 'jlbestblog' ),
+            'title'      => __( 'Single Post Layout', 'jl-best-blog' ),
             'panel' => 'appearance',
             'priority'   => 40,
         ) );
 
         $wp_customize->add_section( 'single-page-layout' , array(
-            'title'      => __( 'Single Page Layout', 'jlbestblog' ),
+            'title'      => __( 'Single Page Layout', 'jl-best-blog' ),
             'panel' => 'appearance',
             'priority'   => 50,
         ) );
 
         $wp_customize->add_section( 'archive-layout' , array(
-            'title'      => __( 'Archive Layout', 'jlbestblog' ),
+            'title'      => __( 'Archive Layout', 'jl-best-blog' ),
             'panel' => 'appearance',
             'priority'   => 60,
         ) );
 
         $wp_customize->add_section( 'footer' , array(
-            'title'      => __( 'Footer', 'jlbestblog' ),
+            'title'      => __( 'Footer', 'jl-best-blog' ),
             'panel' => 'appearance',
             'priority'   => 70,
         ) );
 
         // Adding controls - main site
         $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'menu_background_color', array(
-            'label'      => __( 'Primary color', 'jlbestblog' ),
+            'label'      => __( 'Primary color', 'jl-best-blog' ),
             'section'    => 'colors',
             'settings'   => 'menu_background_color',
             // 'type'       => ''                       // do not set type for color picker
         ) ) );
 
         $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'menu_font_color', array(
-            'label'      => __( 'Menu font color', 'jlbestblog' ),
+            'label'      => __( 'Menu font color', 'jl-best-blog' ),
             'section'    => 'colors',
             'settings'   => 'menu_font_color',
             // 'type'       => ''                       // do not set type for color picker
         ) ) );
 
         $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'link_hover_color', array(
-            'label'      => __( 'Secondary color', 'jlbestblog' ),
+            'label'      => __( 'Secondary color', 'jl-best-blog' ),
             'section'    => 'colors',
             'settings'   => 'link_hover_color',
             // 'type'       => ''                       // do not set type for color picker
         ) ) );
 
         $wp_customize->add_control( 'header_searchbox', array(
-            'label'      => __( 'Display header searchbox', 'jlbestblog' ),
+            'label'      => __( 'Display header searchbox', 'jl-best-blog' ),
             'section'    => 'header',
             'settings'   => 'header_searchbox',
             'type'       => 'checkbox'
         ) );
 
         $wp_customize->add_control( 'left_column', array(
-            'label'      => __( 'Display left column', 'jlbestblog' ),
+            'label'      => __( 'Display left column', 'jl-best-blog' ),
             'section'    => 'front-page-layout',
             'settings'   => 'left-column',
             'type'       => 'checkbox'
         ) );
 
         $wp_customize->add_control( 'right_column', array(
-            'label'      => __( 'Display right column', 'jlbestblog' ),
+            'label'      => __( 'Display right column', 'jl-best-blog' ),
             'section'    => 'front-page-layout',
             'settings'   => 'right-column',
             'type'       => 'checkbox'
         ) );
 
         $wp_customize->add_control( 'post-meta', array(
-            'label'      => __( 'Enable post meta on front page', 'jlbestblog' ),
+            'label'      => __( 'Enable post meta on front page', 'jl-best-blog' ),
             'section'    => 'front-page-layout',
             'settings'   => 'post-meta',
             'type'       => 'checkbox'
         ) );
 
         $wp_customize->add_control( 'front-page-image', array(
-            'label'      => __( 'Post Image Position on Front Page and Archives Pages', 'jlbestblog' ),
+            'label'      => __( 'Post Image Position on Front Page and Archives Pages', 'jl-best-blog' ),
             'section'    => 'front-page-layout',
             'settings'   => 'front-page-image',
             'type'       => 'radio',
@@ -497,91 +497,91 @@
         ) );
 
         $wp_customize->add_control( 'excerpt-length', array(
-            'label'      => __( 'Choose Excerpt Length', 'jlbestblog' ),
+            'label'      => __( 'Choose Excerpt Length', 'jl-best-blog' ),
             'section'    => 'front-page-layout',
             'settings'   => 'excerpt-length',
             'type'       => 'number',
         ) );
 
         $wp_customize->add_control( 'footer-column-1', array(
-            'label'      => __( ' Display footer sidebar 1', 'jlbestblog' ),
+            'label'      => __( ' Display footer sidebar 1', 'jl-best-blog' ),
             'section'    => 'footer',
             'settings'   => 'footer-column-1',
             'type'       => 'checkbox'
         ) );
 
         $wp_customize->add_control( 'footer-column-2', array(
-            'label'      => __( ' Display footer sidebar 2', 'jlbestblog' ),
+            'label'      => __( ' Display footer sidebar 2', 'jl-best-blog' ),
             'section'    => 'footer',
             'settings'   => 'footer-column-2',
             'type'       => 'checkbox'
         ) );
 
         $wp_customize->add_control( 'footer-column-3', array(
-            'label'      => __( ' Display footer sidebar 3', 'jlbestblog' ),
+            'label'      => __( ' Display footer sidebar 3', 'jl-best-blog' ),
             'section'    => 'footer',
             'settings'   => 'footer-column-3',
             'type'       => 'checkbox'
         ) );
 
         $wp_customize->add_control( 'footer-privacy-policy', array(
-            'label'      => __( ' Display link to privacy policy', 'jlbestblog' ),
+            'label'      => __( ' Display link to privacy policy', 'jl-best-blog' ),
             'section'    => 'footer',
             'settings'   => 'footer-privacy-policy',
             'type'       => 'checkbox'
         ) );
 
         $wp_customize->add_control( 'footer-social-icon', array(
-            'label'      => __( 'Enable social icons section', 'jlbestblog' ),
+            'label'      => __( 'Enable social icons section', 'jl-best-blog' ),
             'section'    => 'footer',
             'settings'   => 'footer-social-icon',
             'type'       => 'checkbox'
         ) );
 
         $wp_customize->add_control( 'social-icon-facebook', array(
-            'label'      => __( 'Link to your Facebook', 'jlbestblog' ),
+            'label'      => __( 'Link to your Facebook', 'jl-best-blog' ),
             'section'    => 'footer',
             'settings'   => 'social-icon-facebook',
         ) );
 
         $wp_customize->add_control( 'social-icon-instagram', array(
-            'label'      => __( 'Link to your Instagram', 'jlbestblog' ),
+            'label'      => __( 'Link to your Instagram', 'jl-best-blog' ),
             'section'    => 'footer',
             'settings'   => 'social-icon-instagram',
         ) );
 
         $wp_customize->add_control( 'social-icon-twitter', array(
-            'label'      => __( 'Link to your Twitter', 'jlbestblog' ),
+            'label'      => __( 'Link to your Twitter', 'jl-best-blog' ),
             'section'    => 'footer',
             'settings'   => 'social-icon-twitter',
         ) );
 
         $wp_customize->add_control( 'social-icon-pinterest', array(
-            'label'      => __( 'Link to your Pinterest', 'jlbestblog' ),
+            'label'      => __( 'Link to your Pinterest', 'jl-best-blog' ),
             'section'    => 'footer',
             'settings'   => 'social-icon-pinterest',
         ) );
 
         $wp_customize->add_control( 'social-icon-youtube', array(
-            'label'      => __( 'Link to your Youtube', 'jlbestblog' ),
+            'label'      => __( 'Link to your Youtube', 'jl-best-blog' ),
             'section'    => 'footer',
             'settings'   => 'social-icon-youtube',
         ) );
 
         $wp_customize->add_control( 'social-icon-whatsapp', array(
-            'label'      => __( 'Link to your Whatsapp', 'jlbestblog' ),
+            'label'      => __( 'Link to your Whatsapp', 'jl-best-blog' ),
             'section'    => 'footer',
             'settings'   => 'social-icon-whatsapp',
         ) );
 
         $wp_customize->add_control( 'social-icon-messenger', array(
-            'label'      => __( 'Link to your Messenger', 'jlbestblog' ),
+            'label'      => __( 'Link to your Messenger', 'jl-best-blog' ),
             'section'    => 'footer',
             'settings'   => 'social-icon-messenger',
         ) );
 
         $wp_customize->add_control( 'social-icon-linkedin', array(
-            'label'      => __( 'Link to your Linkedin', 'jlbestblog' ),
+            'label'      => __( 'Link to your Linkedin', 'jl-best-blog' ),
             'section'    => 'footer',
             'settings'   => 'social-icon-linkedin',
         ) );
@@ -589,42 +589,42 @@
         
         // Adding controls - single post
         $wp_customize->add_control( 'left-column-single', array(
-            'label'      => __( 'Display left column', 'jlbestblog' ),
+            'label'      => __( 'Display left column', 'jl-best-blog' ),
             'section'    => 'single-post-layout',
             'settings'   => 'left-column-single',
             'type'       => 'checkbox'
         ) );
 
         $wp_customize->add_control( 'right-column-single', array(
-            'label'      => __( 'Display right column', 'jlbestblog' ),
+            'label'      => __( 'Display right column', 'jl-best-blog' ),
             'section'    => 'single-post-layout',
             'settings'   => 'right-column-single',
             'type'       => 'checkbox'
         ) );
 
         $wp_customize->add_control( 'post-meta-single', array(
-            'label'      => __( 'Enable post meta', 'jlbestblog' ),
+            'label'      => __( 'Enable post meta', 'jl-best-blog' ),
             'section'    => 'single-post-layout',
             'settings'   => 'post-meta-single',
             'type'       => 'checkbox'
         ) );
 
         $wp_customize->add_control( 'display-header-image-on-post', array(
-            'label'      => __( 'Display header image', 'jlbestblog' ),
+            'label'      => __( 'Display header image', 'jl-best-blog' ),
             'section'    => 'single-post-layout',
             'settings'   => 'display-header-image-on-post',
             'type'       => 'checkbox'
         ) );
 
         $wp_customize->add_control( 'display-tags-in-post', array(
-            'label'      => __( 'Display tags', 'jlbestblog' ),
+            'label'      => __( 'Display tags', 'jl-best-blog' ),
             'section'    => 'single-post-layout',
             'settings'   => 'display-tags-in-post',
             'type'       => 'checkbox'
         ) );
 
         $wp_customize->add_control( 'post-image-single', array(
-            'label'      => __( 'Display post image in single post', 'jlbestblog' ),
+            'label'      => __( 'Display post image in single post', 'jl-best-blog' ),
             'section'    => 'single-post-layout',
             'settings'   => 'post-image-single',
             'type'       => 'checkbox',
@@ -632,35 +632,35 @@
 
         // Adding controls - single page
         $wp_customize->add_control( 'left-column-single-page', array(
-            'label'      => __( 'Display left column', 'jlbestblog' ),
+            'label'      => __( 'Display left column', 'jl-best-blog' ),
             'section'    => 'single-page-layout',
             'settings'   => 'left-column-single-page',
             'type'       => 'checkbox'
         ) );
 
         $wp_customize->add_control( 'right-column-single-page', array(
-            'label'      => __( 'Display right column', 'jlbestblog' ),
+            'label'      => __( 'Display right column', 'jl-best-blog' ),
             'section'    => 'single-page-layout',
             'settings'   => 'right-column-single-page',
             'type'       => 'checkbox'
         ) );
 
         $wp_customize->add_control( 'page-meta', array(
-            'label'      => __( 'Enable post meta', 'jlbestblog' ),
+            'label'      => __( 'Enable post meta', 'jl-best-blog' ),
             'section'    => 'single-page-layout',
             'settings'   => 'page-meta',
             'type'       => 'checkbox'
         ) );
 
         $wp_customize->add_control( 'display-header-image-on-page', array(
-            'label'      => __( 'Display header image', 'jlbestblog' ),
+            'label'      => __( 'Display header image', 'jl-best-blog' ),
             'section'    => 'single-page-layout',
             'settings'   => 'display-header-image-on-page',
             'type'       => 'checkbox'
         ) );
 
         $wp_customize->add_control( 'page-image', array(
-            'label'      => __( 'Display image on single page', 'jlbestblog' ),
+            'label'      => __( 'Display image on single page', 'jl-best-blog' ),
             'section'    => 'single-page-layout',
             'settings'   => 'page-image',
             'type'       => 'checkbox',
@@ -668,35 +668,35 @@
 
         // Adding controls - archive page
         $wp_customize->add_control( 'left-column-archive', array(
-            'label'      => __( 'Display left column', 'jlbestblog' ),
+            'label'      => __( 'Display left column', 'jl-best-blog' ),
             'section'    => 'archive-layout',
             'settings'   => 'left-column-archive',
             'type'       => 'checkbox'
         ) );
 
         $wp_customize->add_control( 'right-column-archive', array(
-            'label'      => __( 'Display right column', 'jlbestblog' ),
+            'label'      => __( 'Display right column', 'jl-best-blog' ),
             'section'    => 'archive-layout',
             'settings'   => 'right-column-archive',
             'type'       => 'checkbox'
         ) );
 
         $wp_customize->add_control( 'display-header-image-on-archive', array(
-            'label'      => __( 'Display header image', 'jlbestblog' ),
+            'label'      => __( 'Display header image', 'jl-best-blog' ),
             'section'    => 'archive-layout',
             'settings'   => 'display-header-image-on-archive',
             'type'       => 'checkbox'
         ) );
 
         $wp_customize->add_control( 'post-meta-archive', array(
-            'label'      => __( 'Enable post meta on archive pages', 'jlbestblog' ),
+            'label'      => __( 'Enable post meta on archive pages', 'jl-best-blog' ),
             'section'    => 'archive-layout',
             'settings'   => 'post-meta-archive',
             'type'       => 'checkbox'
         ) );
 
         $wp_customize->add_control( 'taxonomy-description', array(
-            'label'      => __( 'Taxonomy description position', 'jlbestblog' ),
+            'label'      => __( 'Taxonomy description position', 'jl-best-blog' ),
             'section'    => 'archive-layout',
             'settings'   => 'taxonomy-description',
             'type'       => 'radio',
@@ -708,7 +708,7 @@
         ) );
 
         $wp_customize->add_control( 'archive-image', array(
-            'label'      => __( 'Post Image Position on Front Page and Archives Pages', 'jlbestblog' ),
+            'label'      => __( 'Post Image Position on Front Page and Archives Pages', 'jl-best-blog' ),
             'section'    => 'archive-layout',
             'settings'   => 'archive-image',
             'type'       => 'radio',
@@ -724,7 +724,7 @@
     // Register sidebars
     function jlbestblog_widgets_init() {
         register_sidebar( array(
-            'name'          => __( 'Left Sidebar', 'jlbestblog' ),
+            'name'          => __( 'Left Sidebar', 'jl-best-blog' ),
             'id'            => 'sidebar-left',
             'before_widget' => '<div id="%1$s" class="widget %2$s">',
             'after_widget'  => '</div>',
@@ -733,7 +733,7 @@
         ) );
     
         register_sidebar( array(
-            'name'          => __( 'Right Sidebar', 'jlbestblog' ),
+            'name'          => __( 'Right Sidebar', 'jl-best-blog' ),
             'id'            => 'sidebar-right',
             'before_widget' => '<div id="%1$s" class="widget %2$s">',
             'after_widget'  => '</div>',
@@ -742,7 +742,7 @@
         ) );
 
         register_sidebar( array(
-            'name'          => __( 'Footer Sidebar 1', 'jlbestblog' ),
+            'name'          => __( 'Footer Sidebar 1', 'jl-best-blog' ),
             'id'            => 'sidebar-footer-1',
             'before_widget' => '<div id="%1$s" class="widget %2$s">',
             'after_widget'  => '</div>',
@@ -751,7 +751,7 @@
         ) );
 
         register_sidebar( array(
-            'name'          => __( 'Footer Sidebar 2', 'jlbestblog' ),
+            'name'          => __( 'Footer Sidebar 2', 'jl-best-blog' ),
             'id'            => 'sidebar-footer-2',
             'before_widget' => '<div id="%1$s" class="widget %2$s">',
             'after_widget'  => '</div>',
@@ -760,7 +760,7 @@
         ) );
 
         register_sidebar( array(
-            'name'          => __( 'Footer Sidebar 3', 'jlbestblog' ),
+            'name'          => __( 'Footer Sidebar 3', 'jl-best-blog' ),
             'id'            => 'sidebar-footer-3',
             'before_widget' => '<div id="%1$s" class="widget %2$s">',
             'after_widget'  => '</div>',
@@ -860,17 +860,17 @@
 
     // Set post excerpt length
     function jlbestblog_custom_excerpt_length( $length ) {
-        $excerptLength = absint( get_theme_mod( 'excerpt-length' ) );
+        $excerptLength = absint( get_theme_mod( 'excerpt-length', '55' ) );
         return $excerptLength;
     }
     add_filter( 'excerpt_length', 'jlbestblog_custom_excerpt_length');
 
     function jlbestblog_excerpt_more( $more ) {
-        $excerptLength = absint( get_theme_mod( 'excerpt-length' ) );
+        $excerptLength = absint( get_theme_mod( 'excerpt-length', '55' ) );
         if ($excerptLength === 0) {
             return '';
         } else {
-            return "<div class='read-more-button'><a class='read-more-link' href='".get_permalink()."' style='border: 1px solid ".esc_attr( get_theme_mod( 'menu_background_color', '#696969' ) )."'>".__( 'Read more...', 'jlbestblog')."</a></div>";
+            return "<div class='read-more-button'><a class='read-more-link' href='".get_permalink()."' style='border: 1px solid ".esc_attr( get_theme_mod( 'menu_background_color', '#696969' ) )."'>".__( 'Read more...', 'jl-best-blog')."</a></div>";
         }
     }
     add_filter( 'excerpt_more', 'jlbestblog_excerpt_more' );
@@ -934,7 +934,7 @@
                 if ( get_theme_mod( 'footer-privacy-policy') ) {
                     $privacy_policy_page = get_option( 'wp_page_for_privacy_policy' );
                     if( $privacy_policy_page ) : ?>
-                        <a href="<?php echo esc_url( get_permalink( $privacy_policy_page ) ) ?>" class='privacy-policy-link'> <?php esc_attr_e( 'Privacy Policy', 'jlbestblog' ) ?> </a>
+                        <a href="<?php echo esc_url( get_permalink( $privacy_policy_page ) ) ?>" class='privacy-policy-link'> <?php esc_attr_e( 'Privacy Policy', 'jl-best-blog' ) ?> </a>
                     <?php endif;
                 }
             },
