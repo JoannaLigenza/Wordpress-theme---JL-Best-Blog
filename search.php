@@ -38,17 +38,17 @@
                                     if ($maxWidth > 1200) {
                                         $maxWidth = 1200;
                                     }
-                                    echo the_post_thumbnail( 'full', array( 
+                                    echo esc_html( the_post_thumbnail( 'full', array( 
                                         // 'sizes' => '(max-width:320px) 145px, (max-width:800px) 220px, 1200',
                                         'sizes' => '(max-width: '.$maxWidth.') 100vw, '.$maxWidth.'px',
                                         'alt' => 'post image'
-                                        ) );
+                                        ) ) );
                                     echo "</a></div>" ;
                                     echo "<section class='section'>";
                                 } else {
-                                    echo the_post_thumbnail( 'medium', array(
+                                    echo esc_html( the_post_thumbnail( 'medium', array(
                                         'alt' => 'post-image'
-                                    ) );
+                                    ) ) );
                                     echo "</a></div>" ;
                                     echo "<section class='section section-padding'>";
                                 }

@@ -68,12 +68,12 @@ function jlbestblog_get_settings( $option ) {
                                 if ($maxWidth > 1200) {
                                     $maxWidth = 1200;
                                 }
-                                echo the_post_thumbnail( 'full', array( 
+                                echo esc_html( the_post_thumbnail( 'full', array( 
                                     // 'sizes' => '(max-width:320px) 145px, (max-width:800px) 220px, 1200',
                                     'sizes' => '(max-width: '.$maxWidth.'px) 100vw, '.$maxWidth.'px',
                                     'alt' => 'post-image',
                                     // 'srcset' => $imageWidthFull[0].' '.$imageWidthFull[1].'w,'. $imageWidthMedium[0].' 400w'
-                                    ) );
+                                    ) ) );
                                 echo "</a></div>" ;
                                 echo "<section class='section'>";
                             }       
