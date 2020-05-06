@@ -3,31 +3,31 @@ function jlbestblog_get_settings( $option ) {
     $var = '';
     if ( is_single() ) {
         if ( $option === 'left-column' ) {
-            $var = get_theme_mod( 'left-column-single' );
+            $var = get_theme_mod( 'left-column-single', false );
             return $var;
         } else if ( $option === 'right-column' ) {
-            $var = get_theme_mod( 'right-column-single' );
+            $var = get_theme_mod( 'right-column-single', false );
             return $var;
         } else if ( $option === 'display-image' ) {
-            $var = get_theme_mod( 'post-image-single');
+            $var = get_theme_mod( 'post-image-single', true);
             return $var;
         } else if ( $option === 'meta' ) {
-            $var = get_theme_mod( 'post-meta-single' );
+            $var = get_theme_mod( 'post-meta-single', true );
             return $var;
         }
     }
     if ( is_page() ) {
         if ( $option === 'left-column' ) {
-            $var = get_theme_mod( 'left-column-single-page' );
+            $var = get_theme_mod( 'left-column-single-page', false );
             return $var;
         } else if ( $option === 'right-column' ) {
-            $var = get_theme_mod( 'right-column-single-page' );
+            $var = get_theme_mod( 'right-column-single-page', false );
             return $var;
         } else if ( $option === 'display-image' ) {
-            $var = get_theme_mod( 'page-image');
+            $var = get_theme_mod( 'page-image', true);
             return $var;
         } else if ( $option === 'meta' ) {
-            $var = get_theme_mod( 'page-meta' );
+            $var = get_theme_mod( 'page-meta', true );
             return $var;
         }
     }

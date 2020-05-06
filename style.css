@@ -1006,7 +1006,7 @@ ul li, ol li {
     width: 25px;
     height: 25px;
     position: relative;
-    bottom: -2px;
+    bottom: -4px;
 }
 
 .meta-date::before {
