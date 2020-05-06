@@ -45,6 +45,11 @@ GPL-3.0-or-later
 * https://www.iconfinder.com/icons/322497/search_icon
 
 
+=== Fonts ===
+
+https://google-webfonts-helper.herokuapp.com/fonts/lora?subsets=latin
+
+
 == Frequently Asked Questions ==
 
 No questions yet.
