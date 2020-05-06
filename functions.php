@@ -377,7 +377,7 @@
         $wp_customize->add_panel( 'appearance', array(
             'title' => __( 'Appearance Settings', 'jl-best-blog' ),
             // 'description' => $description, // Include html tags such as <p>.
-            'priority' => 50, // Mixed with top-level-section hierarchy.
+            'priority' => 50,
         ) );
 
         // Adding sections

@@ -45,7 +45,7 @@
                 <?php
                     if ( has_nav_menu( 'top-menu' ) ) : ?>
                     <div class="mobile-top-menu-container" id="mobile-top-menu-container">
-                        <p><span> TOP MENU </span></p>
+                        <p><span><?php esc_html_e( 'TOP MENU', 'jl-best-blog' ) ?></span></p>
                     </div>
                         <?php
                         wp_nav_menu( array( 

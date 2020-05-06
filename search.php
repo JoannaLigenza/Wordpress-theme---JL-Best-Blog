@@ -39,7 +39,6 @@
                                         $maxWidth = 1200;
                                     }
                                     echo esc_html( the_post_thumbnail( 'full', array( 
-                                        // 'sizes' => '(max-width:320px) 145px, (max-width:800px) 220px, 1200',
                                         'sizes' => '(max-width: '.$maxWidth.') 100vw, '.$maxWidth.'px',
                                         'alt' => 'post image'
                                         ) ) );
