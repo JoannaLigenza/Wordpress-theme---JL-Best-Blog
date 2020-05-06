@@ -27,6 +27,10 @@ GPL-3.0-or-later
 === Screenshots ===
 
 * https://pxhere.com/en/photo/1390043
+
+
+=== Icons ===
+
 * https://www.iconfinder.com/icons/107153/circle_facebook_icon
 * https://www.iconfinder.com/icons/1161954/instagram_icon
 * https://www.iconfinder.com/icons/104461/twitter_icon
@@ -35,6 +39,10 @@ GPL-3.0-or-later
 * https://www.iconfinder.com/icons/843773/whatsapp_icon
 * https://www.iconfinder.com/icons/1181202/facebook_messenger_icon
 * https://www.iconfinder.com/icons/834713/linkedin_icon
+* https://www.iconfinder.com/icons/308964/arrow_down_expand_icon
+* https://www.iconfinder.com/icons/1608599/calendar_icon
+* https://www.iconfinder.com/icons/5340287/man_people_person_user_users_icon
+* https://www.iconfinder.com/icons/322497/search_icon
 
 
 == Frequently Asked Questions ==
@@ -70,3 +78,6 @@ No questions yet.
 
 1.0 
 First version
+
+== Contributors ==
+JL-lovecoding
