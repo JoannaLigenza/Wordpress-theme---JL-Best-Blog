@@ -46,7 +46,10 @@ No questions yet.
 
 = 1.6 =
 * Corrected text-domain
-* Added escaping functions, 
+* Added escaping functions,
+* Changed collision variable names
+* Removed whitespaces and unneccessary closing tags
+* Removed untranslatable texts
 
 = 1.5 =
 * Corrected text-domain

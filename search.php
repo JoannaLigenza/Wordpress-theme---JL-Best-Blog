@@ -71,7 +71,7 @@
                 the_posts_pagination(array( 'mid_size' => 2 ));
             else : ?>
                 <div class="nothing-found-search-results">
-                    <h2 class="nothing-found-search-results-title">Nothing Found</h2>
+                    <h2 class="nothing-found-search-results-title"><?php esc_html_e( 'Nothing Found', 'jl-best-blog' ) ?></h2>
                     <p class="nothing-found-search-results-message">
                         <?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'jl-best-blog' ) ?>
                     </p>
