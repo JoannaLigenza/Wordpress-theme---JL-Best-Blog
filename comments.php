@@ -9,7 +9,7 @@
                 <h2 class="comments-title">
                     <?php 
                         $commentsNumber = get_comments_number();
-                        echo esc_html_e('COMMENTS: ', 'jl-best-blog').absint( $commentsNumber );
+                        esc_html_e('COMMENTS: ', 'jl-best-blog').absint( $commentsNumber );
                     ?>  
                 </h2>
             </header>

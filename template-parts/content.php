@@ -132,9 +132,9 @@ function jlbestblog_get_settings( $option ) {
                         }
                     }
                 endwhile;
-            else :
-                esc_html_e( '<p>No content yet</p>', 'jl-best-blog' );
-            endif; 
+            else : ?>
+                <p><?php esc_html_e( 'No content yet', 'jl-best-blog' ); ?></p>
+            <?php endif; 
         ?>
     </main>
     <!-- right column -->

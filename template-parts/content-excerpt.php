@@ -37,16 +37,16 @@
                                     if ($maxWidth > 1200) {
                                         $maxWidth = 1200;
                                     }
-                                    echo esc_html( the_post_thumbnail( 'full', array( 
+                                    the_post_thumbnail( 'full', array( 
                                         'sizes' => '(max-width: '.$maxWidth.') 100vw, '.$maxWidth.'px',
                                         'alt' => 'post-image',
-                                        ) ) );
+                                        ) );
                                     echo "</a></div>" ;
                                     echo "<section class='section'>";
                                 } else {
-                                    echo esc_html( the_post_thumbnail( 'medium', array(
+                                    the_post_thumbnail( 'medium', array(
                                         'alt' => 'post-image'
-                                    ) ) );
+                                    ) );
                                     echo "</a></div>" ;
                                     echo "<section class='section section-padding'>";
                                 }
@@ -69,9 +69,9 @@
                     echo "</article>";
                 endwhile;
                 the_posts_pagination(array( 'mid_size' => 2 ));
-            else :
-                esc_html_e( '<p>No content yet</p>', 'jl-best-blog' );
-            endif; 
+            else : ?>
+                <p><?php esc_html_e( 'No content yet', 'jl-best-blog' ); ?></p>
+            <?php endif; 
         ?>
     </main>
     <!-- right column -->
