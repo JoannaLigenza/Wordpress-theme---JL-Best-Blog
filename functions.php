@@ -3,10 +3,10 @@
     // Adding styles and scripts
     function jlbestblog_add_theme_scripts() {
         // Include styles
-        wp_enqueue_style( 'style', get_stylesheet_uri() );
+        wp_enqueue_style( 'jlbestblog_style', get_stylesheet_uri() );
 
         // Include scripts
-        wp_enqueue_script( 'script', get_theme_file_uri() . '/assets/js/script.js', array(), 1.0, true);
+        wp_enqueue_script( 'jlbestblog_script', get_theme_file_uri() . '/assets/js/script.js', array(), 1.0, true);
 
         // Include comments
         if ( is_singular() && comments_open() ) {
@@ -18,7 +18,7 @@
 
     // Adding scripts for customizer preview
     function jlbestblog_add_theme_scripts_preview() {
-        wp_enqueue_script( 'customizer', get_theme_file_uri() . '/assets/js/customizer.js', array(), 1.0, true);
+        wp_enqueue_script( 'jlbestblog_customizer', get_theme_file_uri() . '/assets/js/customizer.js', array(), 1.0, true);
     }
     add_action( 'customize_preview_init', 'jlbestblog_add_theme_scripts_preview' );
 
@@ -860,13 +860,13 @@
 
     // Set post excerpt length
     function jlbestblog_custom_excerpt_length( $length ) {
-        $excerptLength = absint( get_theme_mod( 'excerpt-length', '55' ) );
+        $excerptLength =  is_admin() ? $length : absint( get_theme_mod( 'excerpt-length', '55' ) );
         return $excerptLength;
     }
     add_filter( 'excerpt_length', 'jlbestblog_custom_excerpt_length');
 
     function jlbestblog_excerpt_more( $more ) {
-        $excerptLength = absint( get_theme_mod( 'excerpt-length', '55' ) );
+        $excerptLength =  is_admin() ? $more : absint( get_theme_mod( 'excerpt-length', '55' ) );
         if ($excerptLength === 0) {
             return '';
         } else {
@@ -874,11 +874,6 @@
         }
     }
     add_filter( 'excerpt_more', 'jlbestblog_excerpt_more' );
-
-
-    // delete cookies checkbox from comment form
-    remove_action( 'set_comment_cookies', 'wp_set_comment_cookies' );
-
 
 
     // Adding selective settings refresh for header title and document title
@@ -941,5 +936,43 @@
         ) );
     }
     add_action( 'customize_register', 'jlbestblog_register_partials' );
+
+
+    // Set custom archive title
+    function jlbestblog_set_archive_title() {
+        $title = __( '', 'jl-best-blog' );
+ 
+        if ( is_category() ) {
+            $title = single_cat_title( '', false );
+        } elseif ( is_tag() ) {
+            $title = single_tag_title( '', false );
+        } elseif ( is_author() ) {
+            /* translators: Author archive title. %s: Author name. */
+            $title = sprintf( __( 'Author: %s', 'jl-best-blog' ), esc_html( get_the_author() ) );
+        } elseif ( is_year() ) {
+            /* translators: Yearly archive title. %s: Year. */
+            $title = sprintf( __( 'Year: %s', 'jl-best-blog' ), esc_html( get_the_date( _x( 'Y', 'yearly archives date format', 'jl-best-blog' ) ) ) );
+        } elseif ( is_month() ) {
+            /* translators: Monthly archive title. %s: Month name and year. */
+            $title = sprintf( __( 'Month: %s', 'jl-best-blog' ), esc_html( get_the_date( _x( 'F Y', 'monthly archives date format', 'jl-best-blog' ) ) ) );
+        } elseif ( is_day() ) {
+            /* translators: Daily archive title. %s: Date. */
+            $title = sprintf( __( 'Day: %s', 'jl-best-blog' ), esc_html( get_the_date( _x( 'F j, Y', 'daily archives date format', 'jl-best-blog' ) ) ) );
+        } elseif ( is_post_type_archive() ) {
+            $title = post_type_archive_title( '', false );
+        } elseif ( is_tax() ) {
+            // Taxonomy name (first letter uppercase)
+            $queried_object = get_queried_object();
+            if ( $queried_object->taxonomy === $queried_object->slug ) {
+                $title = ucfirst( $queried_object->taxonomy );
+            } else {
+                $title = ucfirst( $queried_object->taxonomy ).': '.ucfirst( $queried_object->name );
+            }
+        }
+
+        return $title;
+    }
+    add_filter( 'get_the_archive_title', 'jlbestblog_set_archive_title' );
+
 
 
