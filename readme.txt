@@ -140,7 +140,8 @@ No questions yet.
 
 = 1.7 =
 * Removing unneccessary code
-* Added additional info to readme file
+* Changed Icons
+* Added contributors info and license info to readme file
 
 = 1.6 =
 * Corrected text-domain
