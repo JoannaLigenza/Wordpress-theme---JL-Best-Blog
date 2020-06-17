@@ -214,7 +214,18 @@ ul li, ol li {
     width: 55px;
     height: 45px;
     background-color: #D8D8D8;
+    border: none;
     border-radius: 5px;
+}
+
+.mobile-menu-icon:focus {
+    outline: 1px groove #6a5acd;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.mobile-menu-icon:focus:hover {
+    outline: none;
+    background-color: unset;
 }
 
 .mobile-menu-icon-strip {
