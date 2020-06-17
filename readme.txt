@@ -24,30 +24,111 @@ JL Best-blog theme is translation ready.
 GPL-3.0-or-later
 
 
-=== Screenshots ===
+=== Images ===
 
-* https://pxhere.com/en/photo/1390043
+{{{
+Image for theme screenshot, it is released free of copyrights under Creative Commons CC0
+License: CC0 1.0 Universal (CC0 1.0) - https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://pxhere.com/en/photo/1390043
+}}}
+{{{
+Image for logo screenshot, it is released free of copyrights under Creative Commons CC0
+License: CC0 1.0 Universal (CC0 1.0) - https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://pxhere.com/en/photo/878603
+}}}
 
 
 === Icons ===
 
-* https://www.iconfinder.com/icons/107153/circle_facebook_icon
-* https://www.iconfinder.com/icons/1161954/instagram_icon
-* https://www.iconfinder.com/icons/104461/twitter_icon
-* https://www.iconfinder.com/icons/287676/pinterest_icon
-* https://www.iconfinder.com/icons/287629/youtube_icon
-* https://www.iconfinder.com/icons/843773/whatsapp_icon
-* https://www.iconfinder.com/icons/1181202/facebook_messenger_icon
-* https://www.iconfinder.com/icons/834713/linkedin_icon
-* https://www.iconfinder.com/icons/308964/arrow_down_expand_icon
-* https://www.iconfinder.com/icons/1608599/calendar_icon
-* https://www.iconfinder.com/icons/5340287/man_people_person_user_users_icon
-* https://www.iconfinder.com/icons/322497/search_icon
+{{{
+Facebook icon, Copyright CoreUI
+License: Creative Commons Attribution 4.0 International - https://creativecommons.org/licenses/by/4.0/
+Source: https://commons.wikimedia.org/wiki/File:Cib-facebook_(CoreUI_Icons_v1.0.0).svg
+Modifications: Changed size and color
+}}}
+
+{{{
+Instagram icon, Copyright CoreUI
+License: Creative Commons Attribution 4.0 International - https://creativecommons.org/licenses/by/4.0/
+Source: https://commons.wikimedia.org/wiki/File:Instagram_(CoreUI_Icons_v1.0.0).svg
+Modifications: Changed size and color
+}}}
+
+{{{
+Twitter icon, Copyright CoreUI
+License: Creative Commons Attribution 4.0 International - https://creativecommons.org/licenses/by/4.0/
+Source: https://commons.wikimedia.org/wiki/File:Cib-twitter_(CoreUI_Icons_v1.0.0).svg
+Modifications: Changed size and color
+}}}
+
+{{{
+Pinterest icon, Copyright CoreUI
+License: Creative Commons Attribution 4.0 International - https://creativecommons.org/licenses/by/4.0/
+Source: https://commons.wikimedia.org/wiki/File:Cib-pinterest_(CoreUI_Icons_v1.0.0).svg
+Modifications: Changed size and color
+}}}
+
+{{{
+Youtube icon, Copyright CoreUI
+License: Creative Commons Attribution 4.0 International - https://creativecommons.org/licenses/by/4.0/
+Source: https://commons.wikimedia.org/wiki/File:Cib-youtube_(CoreUI_Icons_v1.0.0).svg
+Modifications: Changed size and color
+}}}
+
+{{{
+Whatsapp icon, Copyright CoreUI
+License: Creative Commons Attribution 4.0 International - https://creativecommons.org/licenses/by/4.0/
+Source: https://commons.wikimedia.org/wiki/File:Cib-whatsapp_(CoreUI_Icons_v1.0.0).svg
+Modifications: Changed size and color
+}}}
+
+{{{
+Messenger icon, Copyright CoreUI
+License: Creative Commons Attribution 4.0 International - https://creativecommons.org/licenses/by/4.0/
+Source: https://commons.wikimedia.org/wiki/File:Cib-messenger_(CoreUI_Icons_v1.0.0).svg
+Modifications: Changed size and color
+}}}
+
+{{{
+Linkedin icon, Copyright CoreUI
+License: Creative Commons Attribution 4.0 International - https://creativecommons.org/licenses/by/4.0/
+Source: https://commons.wikimedia.org/wiki/File:Cib-linkedin-in_(CoreUI_Icons_v1.0.0).svg
+Modifications: Changed size and color
+}}}
+
+{{{
+Search icon, Copyright Google Inc.
+License: Creative Commons Attribution 4.0 International - https://creativecommons.org/licenses/by/4.0/
+Source: https://commons.wikimedia.org/wiki/File:Ic_search_48px.svg
+Modifications: Changed size and color
+}}}
+
+{{{
+User icon, Copyright MCruz (WMF)
+License: Creative Commons Attribution 4.0 International - https://creativecommons.org/licenses/by/4.0/
+Source: https://commons.wikimedia.org/wiki/File:User_icon_BLACK-01.png
+Modifications: Changed size and color
+}}}
+
+{{{
+Calendar icon, Copyright: Original artwork by User:MCruz (WMF), Derived work by Subhashish Panigrahi
+License: Creative Commons Attribution 4.0 International - https://creativecommons.org/licenses/by/4.0/
+Source: https://commons.wikimedia.org/wiki/File:Calendar_Icon_v1.svg
+Modifications: Changed size and color
+}}}
+
+{{{
+Reply icon, Copyright Font Awesome
+License: Creative Commons Attribution 4.0 International - https://creativecommons.org/licenses/by/4.0/
+Source: https://commons.wikimedia.org/wiki/File:Font_Awesome_5_solid_reply.svg
+Modifications: Changed size and color
+}}}
 
 
 === Fonts ===
 
-https://google-webfonts-helper.herokuapp.com/fonts/lora?subsets=latin
+Source: https://google-webfonts-helper.herokuapp.com/fonts/lora
+License: SIL Open Font License, 1.1 - https://opensource.org/licenses/OFL-1.1
 
 
 == Frequently Asked Questions ==
@@ -56,6 +137,10 @@ No questions yet.
 
 
 == Upgrade Notice ==
+
+= 1.7 =
+* Removing unneccessary code
+* Added additional info to readme file
 
 = 1.6 =
 * Corrected text-domain

@@ -524,12 +524,16 @@ ul li, ol li {
 }
 
 .search-submit, .wp-block-search__button {
-    padding: 4px 10px;
+    padding: 0 10px;
     position: absolute;
     right: 0;
     background-color: #696969;
     border: 2px solid transparent;
     height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 } 
 
 .wp-block-search__button {
@@ -1005,15 +1009,15 @@ ul li, ol li {
 }
 
 .meta-author::before {
-    content: url("inc/images/person-icon.png");
-    width: 25px;
-    height: 25px;
+    content: url("inc/images/user-icon.png");
+    width: 20px;
+    height: 20px;
     position: relative;
     bottom: -4px;
 }
 
 .meta-date::before {
-    content: url("inc/images/calendar-icon.png");
+    content: url("inc/images/calendar-icon.svg");
     width: 25px;
     height: 25px;
     position: relative;
@@ -1279,7 +1283,7 @@ ul li, ol li {
 }
 
 .comment-reply-link:before {
-    content: url("inc/images/reply-icon.png");
+    content: url("inc/images/reply-icon.svg");
     position: absolute;
     left: -25px;
     top: -2px;
@@ -1333,13 +1337,13 @@ nav:after {
 
 .comment-form label {
     font-weight: bold;
-    padding: 15px 0;
+    padding: 5px 0;
 }
 
 .comment-form input, .comment-form textarea {
     width: 100%;
     outline: none;
-    margin: 15px 0;
+    margin: 5px 0;
 }
 
 .comment-form textarea {
@@ -1369,6 +1373,15 @@ nav:after {
 
 .comment-form .submit:focus {
     background-color: rgba(106, 90, 205, 0.2);
+}
+
+.comment-form input[type='checkbox'] {
+    display: inline;
+    width: auto;
+}
+
+.comment-form input[type='checkbox'] + label {
+    font-size: 14px;
 }
 
 .bypostauthor {
@@ -1586,35 +1599,35 @@ nav:after {
 }
 
 .facebook-icon {
-    background-image: url('inc/images/facebook-icon.png');
+    background-image: url('inc/images/facebook-icon.svg');
 }
 
 .instagram-icon {
-    background-image: url('inc/images/instagram-icon.png');
+    background-image: url('inc/images/instagram-icon.svg');
 }
 
 .twitter-icon {
-    background-image: url('inc/images/twitter-icon.png');
+    background-image: url('inc/images/twitter-icon.svg');
 }
 
 .pinterest-icon {
-    background-image: url('inc/images/pinterest-icon.png');
+    background-image: url('inc/images/pinterest-icon.svg');
 }
 
 .youtube-icon {
-    background-image: url('inc/images/youtube-icon.png');
+    background-image: url('inc/images/youtube-icon.svg');
 }
 
 .whatsapp-icon {
-    background-image: url('inc/images/whatsapp-icon.png');
+    background-image: url('inc/images/whatsapp-icon.svg');
 }
 
 .messenger-icon {
-    background-image: url('inc/images/messenger-icon.png');
+    background-image: url('inc/images/messenger-icon.svg');
 }
 
 .linked-icon {
-    background-image: url('inc/images/linkedin-icon.png');
+    background-image: url('inc/images/linkedin-icon.svg');
 }
 
 
