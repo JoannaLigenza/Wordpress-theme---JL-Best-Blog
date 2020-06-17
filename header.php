@@ -10,6 +10,8 @@
 <body <?php body_class(); ?> >
     <?php wp_body_open(); ?>
     <div class="main-container">
+        <a class="skip-link screen-reader-text" href="#main-content--section">
+        <?php _e( 'Skip to content', 'jlbestblog' ); ?></a>
         <!-- displaying header image depends of page type -->
         <?php
         function jlbestblog_is_header_image_visible( $theme_mod ) {
@@ -34,11 +36,11 @@
         }
         ?>
             <div class="mobile-menu-container" style="background-color: <?php echo esc_attr( get_theme_mod( 'menu_background_color', '#A8C5FF' ) ) ?>">
-                <div class="mobile-menu-icon" id="mobile-menu-icon">
+                <button class="mobile-menu-icon" id="mobile-menu-icon">
                     <span class="mobile-menu-icon-strip"></span>
                     <span class="mobile-menu-icon-strip"></span>
                     <span class="mobile-menu-icon-strip"></span>
-                </div>
+                </button>
             </div>
             <div class="top-menu container">
                 <?php
