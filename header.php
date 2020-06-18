@@ -35,17 +35,10 @@
             <?php endif;
         }
         ?>
-            <div class="mobile-menu-container" style="background-color: <?php echo esc_attr( get_theme_mod( 'menu_background_color', '#A8C5FF' ) ) ?>">
-                <button class="mobile-menu-icon" id="mobile-menu-icon">
-                    <span class="mobile-menu-icon-strip"></span>
-                    <span class="mobile-menu-icon-strip"></span>
-                    <span class="mobile-menu-icon-strip"></span>
-                </button>
-            </div>
             <div class="top-menu container">
                 <?php
                     if ( has_nav_menu( 'top-menu' ) ) : ?>
-                    <div class="mobile-top-menu-container" id="mobile-top-menu-container">
+                    <div class="mobile-top-menu-container" id="mobile-top-menu-container" tabindex="0">
                         <p><span><?php esc_html_e( 'TOP MENU', 'jl-best-blog' ) ?></span></p>
                     </div>
                         <?php
@@ -87,6 +80,13 @@
                     }
                 ?>
                 </div>
+            </div>
+            <div class="mobile-menu-container" style="background-color: <?php echo esc_attr( get_theme_mod( 'menu_background_color', '#A8C5FF' ) ) ?>">
+                <button class="mobile-menu-icon" id="mobile-menu-icon">
+                    <span class="mobile-menu-icon-strip"></span>
+                    <span class="mobile-menu-icon-strip"></span>
+                    <span class="mobile-menu-icon-strip"></span>
+                </button>
             </div>
             <nav id="navigation" class="menu-navigation" style="background-color: <?php echo esc_attr( get_theme_mod( 'menu_background_color', '#A8C5FF' ) ) ?>">
                 <?php 
