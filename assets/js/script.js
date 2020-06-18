@@ -11,6 +11,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
             mobileMenuIcon.addEventListener("focus", function() {
                 navigation.classList.add("isVisible");
             }, true);
+            mobileMenuIcon.addEventListener("keydown", function(e) {
+                const code = e.which;
+                if ( code === 13 ) {
+                    navigation.classList.toggle("isVisible");
+		        }
+            }, true);
         }
     }
     jlbestblog_toggleMobileMenu();
@@ -28,7 +34,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             }, true);
             mobileMenuIcon.addEventListener("keydown", function(e) {
                 const code = e.which;
-                if ( (code === 13) ) {
+                if ( code === 13 ) {
                     navigation.classList.toggle("isVisible");
 		        }
             }, true);
@@ -36,47 +42,45 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
     jlbestblog_toggleMobileTopMenu();
 
-    // Set tabindex order on mobile
+
     function jlbestblog_set_mobile_elements_order() {
-        const skip_link = document.querySelector(".skip-link");
-        const last_menu_element = document.querySelector(".main-menu-class ul").lastElementChild.querySelector("[href]:last-child");
-        const search_submit = document.querySelector(".search-submit");
-        const last_top_menu_element = document.querySelector(".top-menu-class ul").lastElementChild.querySelector("[href]:last-child");
-        const main_content = document.getElementById("main-content--section");
-        const focusable_content_element = main_content.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-        const last_focusable_content_element = main_content.lastElementChild.querySelector('button:last-child, [href]:last-child, input:last-child, select:last-child, textarea:last-child, [tabindex]:not([tabindex="-1"]):last-child');
-        const column = document.querySelector(".column");
-        const last_focusable_column_element = column.lastElementChild.querySelector('button:last-child, [href]:last-child, input:last-child, select:last-child, textarea:last-child, [tabindex]:not([tabindex="-1"]):last-child');
-        const footer = document.querySelector(".footer");
-console.log(last_top_menu_element)
-        skip_link.addEventListener("blur", function() {
-            document.getElementById("mobile-menu-icon").focus();
-        });
-
-        last_menu_element.addEventListener("blur", function() {
-            document.getElementById("navigation").classList.toggle("isVisible");
-            document.querySelector(".header-text").focus();
-        });
-
-        search_submit.addEventListener("blur", function() {
-            document.getElementById("mobile-top-menu-container").focus();
-        });
-
-        last_top_menu_element.addEventListener("blur", function() {
-            document.querySelector(".top-menu-class").classList.toggle("isVisible");
-            focusable_content_element.focus();
-        });
-
-        last_focusable_content_element.addEventListener("blur", function() {
-            column.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])').focus();
-        });
-
-        last_focusable_column_element.addEventListener("blur", function() {
-            footer.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])').focus();
-            console.log(footer)
-        });
+        const is_mobile = window.matchMedia("screen and (max-width: 768px)").matches;
+        if(is_mobile) {
+            const skip_link = document.querySelector(".skip-link");
+            const mobile_menu = document.getElementById("mobile-menu-icon");
+            const last_menu_element = document.querySelector(".main-menu-class ul").lastElementChild.querySelector("[href]:last-child");
+            const header_text = document.querySelector(".header-text");
+            const navigation = document.getElementById("navigation");
+            const search_submit = document.querySelector(".search-submit");
+            const mobile_top_menu = document.getElementById("mobile-top-menu-container");
+            const top_menu = document.querySelector(".top-menu-class");
+            const last_top_menu_element = document.querySelector(".top-menu-class ul").lastElementChild.querySelector("[href]:last-child");
+            const main_content = document.getElementById("main-content--section");
+            const focusable_content_element = main_content.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+            let last_focusable_content_element = main_content.lastElementChild.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+            last_focusable_content_element = last_focusable_content_element[last_focusable_content_element.length -1];
+            const column = document.querySelector(".column").querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+            let last_focusable_column_element = document.querySelector(".column").lastElementChild.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+            last_focusable_column_element = last_focusable_column_element[last_focusable_column_element.length - 1];
+            const footer = document.querySelector(".footer").querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+            on_blur(skip_link, mobile_menu);
+            on_blur(last_menu_element, header_text, navigation);
+            on_blur(search_submit, mobile_top_menu);
+            on_blur(last_top_menu_element, focusable_content_element, top_menu);
+            on_blur(last_focusable_content_element, column);
+            on_blur(last_focusable_column_element, footer);
+        }
     }
     jlbestblog_set_mobile_elements_order();
+
+    function on_blur(blur_element, focus_element, remove_class_element = null) {
+        blur_element.addEventListener("blur", function() {
+            focus_element.focus();
+            if (remove_class_element !== null) {
+                remove_class_element.classList.toggle("isVisible");
+            }
+        });
+    }
     
 });
 
