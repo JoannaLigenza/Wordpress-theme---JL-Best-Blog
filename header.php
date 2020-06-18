@@ -11,7 +11,7 @@
     <?php wp_body_open(); ?>
     <div class="main-container">
         <a class="skip-link screen-reader-text" href="#main-content--section">
-        <?php _e( 'Skip to content', 'jlbestblog' ); ?></a>
+        <?php esc_html_e( 'Skip to content', 'jl-best-blog' ); ?></a>
         <!-- displaying header image depends of page type -->
         <?php
         function jlbestblog_is_header_image_visible( $theme_mod ) {
