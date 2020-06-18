@@ -26,103 +26,82 @@ GPL-3.0-or-later
 
 === Images ===
 
-{{{
 Image for theme screenshot, it is released free of copyrights under Creative Commons CC0
 License: CC0 1.0 Universal (CC0 1.0) - https://creativecommons.org/publicdomain/zero/1.0/
 Source: https://pxhere.com/en/photo/1390043
-}}}
-{{{
+
 Image for logo screenshot, it is released free of copyrights under Creative Commons CC0
 License: CC0 1.0 Universal (CC0 1.0) - https://creativecommons.org/publicdomain/zero/1.0/
 Source: https://pxhere.com/en/photo/878603
-}}}
+
+Image used in header is released free of copyrights under Creative Commons CC0
+License: CC0 1.0 Universal (CC0 1.0) - https://creativecommons.org/publicdomain/zero/1.0/
+Source: https://pxhere.com/en/photo/1390043
+
 
 
 === Icons ===
 
-{{{
 Facebook icon, Copyright CoreUI
 License: Creative Commons Attribution 4.0 International - https://creativecommons.org/licenses/by/4.0/
 Source: https://commons.wikimedia.org/wiki/File:Cib-facebook_(CoreUI_Icons_v1.0.0).svg
 Modifications: Changed size and color
-}}}
 
-{{{
 Instagram icon, Copyright CoreUI
 License: Creative Commons Attribution 4.0 International - https://creativecommons.org/licenses/by/4.0/
 Source: https://commons.wikimedia.org/wiki/File:Instagram_(CoreUI_Icons_v1.0.0).svg
 Modifications: Changed size and color
-}}}
 
-{{{
 Twitter icon, Copyright CoreUI
 License: Creative Commons Attribution 4.0 International - https://creativecommons.org/licenses/by/4.0/
 Source: https://commons.wikimedia.org/wiki/File:Cib-twitter_(CoreUI_Icons_v1.0.0).svg
 Modifications: Changed size and color
-}}}
 
-{{{
 Pinterest icon, Copyright CoreUI
 License: Creative Commons Attribution 4.0 International - https://creativecommons.org/licenses/by/4.0/
 Source: https://commons.wikimedia.org/wiki/File:Cib-pinterest_(CoreUI_Icons_v1.0.0).svg
 Modifications: Changed size and color
-}}}
 
-{{{
 Youtube icon, Copyright CoreUI
 License: Creative Commons Attribution 4.0 International - https://creativecommons.org/licenses/by/4.0/
 Source: https://commons.wikimedia.org/wiki/File:Cib-youtube_(CoreUI_Icons_v1.0.0).svg
 Modifications: Changed size and color
-}}}
 
-{{{
 Whatsapp icon, Copyright CoreUI
 License: Creative Commons Attribution 4.0 International - https://creativecommons.org/licenses/by/4.0/
 Source: https://commons.wikimedia.org/wiki/File:Cib-whatsapp_(CoreUI_Icons_v1.0.0).svg
 Modifications: Changed size and color
-}}}
 
-{{{
 Messenger icon, Copyright CoreUI
 License: Creative Commons Attribution 4.0 International - https://creativecommons.org/licenses/by/4.0/
 Source: https://commons.wikimedia.org/wiki/File:Cib-messenger_(CoreUI_Icons_v1.0.0).svg
 Modifications: Changed size and color
-}}}
 
-{{{
 Linkedin icon, Copyright CoreUI
 License: Creative Commons Attribution 4.0 International - https://creativecommons.org/licenses/by/4.0/
 Source: https://commons.wikimedia.org/wiki/File:Cib-linkedin-in_(CoreUI_Icons_v1.0.0).svg
 Modifications: Changed size and color
-}}}
 
-{{{
 Search icon, Copyright Google Inc.
 License: Creative Commons Attribution 4.0 International - https://creativecommons.org/licenses/by/4.0/
 Source: https://commons.wikimedia.org/wiki/File:Ic_search_48px.svg
 Modifications: Changed size and color
-}}}
 
-{{{
 User icon, Copyright MCruz (WMF)
 License: Creative Commons Attribution 4.0 International - https://creativecommons.org/licenses/by/4.0/
 Source: https://commons.wikimedia.org/wiki/File:User_icon_BLACK-01.png
 Modifications: Changed size and color
-}}}
 
-{{{
 Calendar icon, Copyright: Original artwork by User:MCruz (WMF), Derived work by Subhashish Panigrahi
 License: Creative Commons Attribution 4.0 International - https://creativecommons.org/licenses/by/4.0/
 Source: https://commons.wikimedia.org/wiki/File:Calendar_Icon_v1.svg
 Modifications: Changed size and color
-}}}
 
-{{{
 Reply icon, Copyright Font Awesome
 License: Creative Commons Attribution 4.0 International - https://creativecommons.org/licenses/by/4.0/
 Source: https://commons.wikimedia.org/wiki/File:Font_Awesome_5_solid_reply.svg
 Modifications: Changed size and color
-}}}
+
 
 
 === Fonts ===
