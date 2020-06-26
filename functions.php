@@ -940,7 +940,7 @@
 
     // Set custom archive title
     function jlbestblog_set_archive_title() {
-        $title = esc_html( the_archive_title() );
+        $title = __( 'Title', 'jl-best-blog' );
  
         if ( is_category() ) {
             $title = single_cat_title( '', false );
