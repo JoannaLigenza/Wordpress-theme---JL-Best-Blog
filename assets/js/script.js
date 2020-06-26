@@ -48,7 +48,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const navigation = document.getElementById("navigation");
         const last_top_menu_element = document.querySelector(".mobile-top-menu-class ul").lastElementChild.querySelector("[href]:last-child");
         const top_menu = document.querySelector(".mobile-top-menu-class");
-        console.log(top_menu)
         on_blur(last_menu_element, navigation);
         on_blur(last_top_menu_element, top_menu);
     }
@@ -58,7 +57,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         blur_element.addEventListener("blur", function() {
             if (remove_class_element !== null) {
                 remove_class_element.classList.toggle("isVisible");
-                console.log('blur')
             }
         });
     }
