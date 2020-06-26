@@ -101,7 +101,7 @@ input:focus {
 
 /* Images */
 
-body *:not(iframe) {
+body img {
     max-width: 100%;
     height: auto;
 }
@@ -129,7 +129,6 @@ pre {
 /* Embeded blocks */
 .wp-block-embed {
     margin: 50px 0;
-
     max-width: 100%;
 }
 
@@ -998,6 +997,11 @@ ul li, ol li {
     width: 100%;
     height: auto;
     padding: 10px 0;
+}
+
+.full-article-content *:not(iframe)  {
+    max-width: 100%;
+    height: auto;
 }
 
 .section {

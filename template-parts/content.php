@@ -73,10 +73,10 @@ function jlbestblog_get_settings( $option ) {
                                     'alt' => 'post-image',
                                     ) ) );
                                 echo "</a></div>" ;
-                                echo "<section class='section'>";
+                                echo "<section class='section full-article-content'>";
                             }       
                         } else {
-                            echo "<section class='section'>";
+                            echo "<section class='section full-article-content'>";
                         } ?>
                         <h2><a href='<?php echo esc_url( get_permalink() ); ?>'> <?php echo esc_html( get_the_title() ); ?> </a></h2>
                         <?php

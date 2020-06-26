@@ -43,7 +43,7 @@
                                         'alt' => 'post image'
                                         ) );
                                     echo "</a></div>" ;
-                                    echo "<section class='section'>";
+                                    echo "<section class='section full-article-content'>";
                                 } else {
                                     the_post_thumbnail( 'medium', array(
                                         'alt' => 'post-image'
