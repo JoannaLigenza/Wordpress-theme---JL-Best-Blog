@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Toggle mobile top menu
     const jlbestblog_toggleMobileTopMenu = () => {
         const mobileMenuIcon = document.getElementById("mobile-top-menu-container");
-        const navigation = document.querySelector(".top-menu-class");
+        const navigation = document.querySelector(".mobile-top-menu-class");
         if (mobileMenuIcon) {
             mobileMenuIcon.addEventListener("mousedown", function() {
                 navigation.classList.toggle("isVisible");
@@ -42,42 +42,23 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
     jlbestblog_toggleMobileTopMenu();
 
-
-    function jlbestblog_set_mobile_elements_order() {
-        const is_mobile = window.matchMedia("screen and (max-width: 768px)").matches;
-        if(is_mobile) {
-            const skip_link = document.querySelector(".skip-link");
-            const mobile_menu = document.getElementById("mobile-menu-icon");
-            const last_menu_element = document.querySelector(".main-menu-class ul").lastElementChild.querySelector("[href]:last-child");
-            const header_text = document.querySelector(".header-text");
-            const navigation = document.getElementById("navigation");
-            const search_submit = document.querySelector(".search-submit");
-            const mobile_top_menu = document.getElementById("mobile-top-menu-container");
-            const top_menu = document.querySelector(".top-menu-class");
-            const last_top_menu_element = document.querySelector(".top-menu-class ul").lastElementChild.querySelector("[href]:last-child");
-            const main_content = document.getElementById("main-content--section");
-            const focusable_content_element = main_content.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-            let last_focusable_content_element = main_content.lastElementChild.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-            last_focusable_content_element = last_focusable_content_element[last_focusable_content_element.length -1];
-            const column = document.querySelector(".column").querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-            let last_focusable_column_element = document.querySelector(".column").lastElementChild.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-            last_focusable_column_element = last_focusable_column_element[last_focusable_column_element.length - 1];
-            const footer = document.querySelector(".footer").querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-            on_blur(skip_link, mobile_menu);
-            on_blur(last_menu_element, header_text, navigation);
-            on_blur(search_submit, mobile_top_menu);
-            on_blur(last_top_menu_element, focusable_content_element, top_menu);
-            on_blur(last_focusable_content_element, column);
-            on_blur(last_focusable_column_element, footer);
-        }
+    // Actions made when tabbing content
+    function jlbestblog_tab_mobile() {
+        const last_menu_element = document.querySelector(".main-menu-class ul").lastElementChild.querySelector("[href]:last-child");
+        const navigation = document.getElementById("navigation");
+        const last_top_menu_element = document.querySelector(".mobile-top-menu-class ul").lastElementChild.querySelector("[href]:last-child");
+        const top_menu = document.querySelector(".mobile-top-menu-class");
+        console.log(top_menu)
+        on_blur(last_menu_element, navigation);
+        on_blur(last_top_menu_element, top_menu);
     }
-    jlbestblog_set_mobile_elements_order();
+    jlbestblog_tab_mobile();
 
-    function on_blur(blur_element, focus_element, remove_class_element = null) {
+    function on_blur(blur_element, remove_class_element = null) {
         blur_element.addEventListener("blur", function() {
-            focus_element.focus();
             if (remove_class_element !== null) {
                 remove_class_element.classList.toggle("isVisible");
+                console.log('blur')
             }
         });
     }

@@ -35,12 +35,10 @@
             <?php endif;
         }
         ?>
+            <!-- Top menu desktop -->
             <div class="top-menu container">
                 <?php
                     if ( has_nav_menu( 'top-menu' ) ) : ?>
-                    <div class="mobile-top-menu-container" id="mobile-top-menu-container" tabindex="0">
-                        <p><span><?php esc_html_e( 'TOP MENU', 'jl-best-blog' ) ?></span></p>
-                    </div>
                         <?php
                         wp_nav_menu( array( 
                             'theme_location' => 'top-menu',
@@ -50,6 +48,26 @@
                     endif;
                 ?>
             </div>
+            <!-- mobile navigation -->
+            <div class="mobile-menu-container" style="background-color: <?php echo esc_attr( get_theme_mod( 'menu_background_color', '#A8C5FF' ) ) ?>">
+                <button class="mobile-menu-icon" id="mobile-menu-icon">
+                    <span class="mobile-menu-icon-strip"></span>
+                    <span class="mobile-menu-icon-strip"></span>
+                    <span class="mobile-menu-icon-strip"></span>
+                </button>
+            </div>
+            <nav id="navigation" class="menu-navigation mobile-navigation" style="background-color: <?php echo esc_attr( get_theme_mod( 'menu_background_color', '#A8C5FF' ) ) ?>">
+                <?php 
+                    wp_nav_menu(
+                        array(
+                            'theme_location' => 'header-menu',
+                            'container_class' => 'main-menu-class',
+                            'depth' => 4
+                        )
+                    );
+                ?>
+            </nav>
+            <!-- headder title -->
             <div class="header-title container">
                 <!-- displaying logo -->
                 <?php if ( has_custom_logo() ) {    // returns true or false ?>
@@ -81,14 +99,8 @@
                 ?>
                 </div>
             </div>
-            <div class="mobile-menu-container" style="background-color: <?php echo esc_attr( get_theme_mod( 'menu_background_color', '#A8C5FF' ) ) ?>">
-                <button class="mobile-menu-icon" id="mobile-menu-icon">
-                    <span class="mobile-menu-icon-strip"></span>
-                    <span class="mobile-menu-icon-strip"></span>
-                    <span class="mobile-menu-icon-strip"></span>
-                </button>
-            </div>
-            <nav id="navigation" class="menu-navigation" style="background-color: <?php echo esc_attr( get_theme_mod( 'menu_background_color', '#A8C5FF' ) ) ?>">
+            <!-- desktop navigation -->
+            <nav class="menu-navigation desktop-navigation" style="background-color: <?php echo esc_attr( get_theme_mod( 'menu_background_color', '#A8C5FF' ) ) ?>">
                 <?php 
                     wp_nav_menu(
                         array(
@@ -121,4 +133,20 @@
                 <?php endif; 
             }
             ?>
+            <!-- Top menu mobile -->
+            <div class="top-menu top-menu-mobile container">
+                <?php
+                    if ( has_nav_menu( 'top-menu' ) ) : ?>
+                    <div class="mobile-top-menu-container" id="mobile-top-menu-container" tabindex="0">
+                        <p><span><?php esc_html_e( 'TOP MENU', 'jl-best-blog' ) ?></span></p>
+                    </div>
+                        <?php
+                        wp_nav_menu( array( 
+                            'theme_location' => 'top-menu',
+                            'container_class' => 'mobile-top-menu-class',
+                            'depth' => 4
+                        ) );
+                    endif;
+                ?>
+            </div>
         </header>
