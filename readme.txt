@@ -4,7 +4,7 @@ Tags: blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar,
 Requires at least: 5.0
 Tested up to: 5.4.2
 Requires PHP: 7.0
-Stable tag : 1.9
+Stable tag : 2.0
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl.html
 
@@ -116,6 +116,10 @@ No questions yet.
 
 
 == Upgrade Notice ==
+
+= 2.0 =
+* Corrected tabbing content on mobile
+* Removed js errors
 
 = 1.9 =
 * Corrected tabbing content on mobile
