@@ -370,9 +370,11 @@ ul li, ol li {
     }
 
     .top-menu-class, .mobile-top-menu-class { 
+        visibility: hidden;
+        opacity: 0;
         overflow: hidden;
         max-height: 0;
-        transition: max-height 0.5s;
+        transition: max-height 0.2s;
     }
 
     .mobile-top-menu-container p span:after {
@@ -608,7 +610,7 @@ ul li, ol li {
 }
 
 .mobile-navigation {
-    display: none;
+    display: none;    
 }
 
 .menu-navigation * {
@@ -735,6 +737,9 @@ ul li, ol li {
 
     .mobile-navigation {
         display: block;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.5s;
     }
 
     .desktop-navigation {
@@ -778,7 +783,9 @@ ul li, ol li {
 .isVisible {
     max-height: 19999px;
     height: auto;
-    transition: max-height 3s;
+    opacity: 1;
+    visibility: visible;
+    transition: 0.5s;
 }
 
 /* //////////////////  MAIN CONTENT  ////////////////////// */
