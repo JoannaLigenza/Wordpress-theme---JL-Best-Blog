@@ -41,15 +41,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Actions made when tabbing content
     function jlbestblog_tab_mobile_menu() {
         const navigation = document.getElementById("navigation");
-        const all_mobile_menu_tabs = jlbestblog_get_mobile_menu_tabs( navigation, document.getElementById('mobile-menu-icon') )
+        const all_mobile_menu_tabs = jlbestblog_get_mobile_menu_tabs( navigation, document.getElementById('mobile-menu-icon') );
         jlbestblog_set_tab_mobile( all_mobile_menu_tabs );
     }
     jlbestblog_tab_mobile_menu();
 
     function jlbestblog_tab_mobile_top_menu() {
         const navigation = document.querySelector(".mobile-top-menu-class");
-        const all_mobile_menu_tabs = jlbestblog_get_mobile_menu_tabs( navigation, document.getElementById("mobile-top-menu-container") )
-        jlbestblog_set_tab_mobile( all_mobile_menu_tabs );
+        if (navigation !== null) {
+            const all_mobile_menu_tabs = jlbestblog_get_mobile_menu_tabs( navigation, document.getElementById("mobile-top-menu-container") );
+            jlbestblog_set_tab_mobile( all_mobile_menu_tabs );
+        }
     }
     jlbestblog_tab_mobile_top_menu();
 

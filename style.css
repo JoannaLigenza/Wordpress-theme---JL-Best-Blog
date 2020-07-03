@@ -4,7 +4,7 @@ Theme URI: https://github.com/JoannaLigenza/Wordpress-theme---JL-Best-Blog
 Author: JL-lovecoding
 Author URI: https://love-coding.pl/en
 Description: Although JL Best-Blog is simple blog theme, it gives you great personalization options - from colors, through sidebars to header image and post meta. You can choose different settings for front page, single post, page and archives. You have at your disposal two menus (main-menu and top-menu), left and right sidebars and three footer sidebars. You can switch on/off header image, site title and description or header searchbar. You can use this theme for any blog type, because it has universial character.
-Version: 2.0
+Version: 2.1
 Requires at least: 5.0
 Tested up to: 5.4.2
 Requires PHP: 7.0
@@ -63,13 +63,13 @@ h6 a{
     font-weight: 700;
 	line-height: 1.5;
 	margin: 0.83em 0;
-    word-wrap: break-word;
+    word-break: break-word;
     clear: both;
 }
 
 p {
     line-height: 1.5em;
-    word-wrap: break-word;
+    word-break: break-word;
     clear: both;
 }
 
@@ -170,7 +170,7 @@ th, tr, td {
 /* Unordered and ordered Lists */
 ul li, ol li {
     padding: 5px 0;
-    word-wrap: break-word;
+    word-break: break-word;
 }
 
 /* Main container */
@@ -1013,6 +1013,7 @@ ul li, ol li {
 
 .section {
     padding: 10px 0;
+    width: 100%;
 }
 
 .section > h2 a {
