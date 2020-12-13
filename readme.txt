@@ -2,9 +2,9 @@
 
 Tags: blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, full-width-template ,post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, wide-blocks
 Requires at least: 5.0
-Tested up to: 5.4.2
+Tested up to: 5.6
 Requires PHP: 7.0
-Stable tag : 2.1
+Stable tag : 2.4
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl.html
 
@@ -116,6 +116,16 @@ No questions yet.
 
 
 == Upgrade Notice ==
+
+= 2.4 =
+* Changed styles for wordpress buttons and audio content
+* Changed styles for alignleft and alignright class
+
+= 2.3 =
+* Corrected displaying images with float property in older versions
+
+= 2.2 =
+* Corrected displaying images with float property
 
 = 2.1 =
 * Removed js errors

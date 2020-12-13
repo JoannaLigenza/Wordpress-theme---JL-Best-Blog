@@ -4,9 +4,9 @@ Theme URI: https://github.com/JoannaLigenza/Wordpress-theme---JL-Best-Blog
 Author: JL-lovecoding
 Author URI: https://love-coding.pl/en
 Description: Although JL Best-Blog is simple blog theme, it gives you great personalization options - from colors, through sidebars to header image and post meta. You can choose different settings for front page, single post, page and archives. You have at your disposal two menus (main-menu and top-menu), left and right sidebars and three footer sidebars. You can switch on/off header image, site title and description or header searchbar. You can use this theme for any blog type, because it has universial character.
-Version: 2.1
+Version: 2.4
 Requires at least: 5.0
-Tested up to: 5.4.2
+Tested up to: 5.6
 Requires PHP: 7.0
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl.html
@@ -64,13 +64,11 @@ h6 a{
 	line-height: 1.5;
 	margin: 0.83em 0;
     word-break: break-word;
-    clear: both;
 }
 
 p {
     line-height: 1.5em;
     word-break: break-word;
-    clear: both;
 }
 
 /* Links */
@@ -904,6 +902,7 @@ ul li, ol li {
 .widget .search-form {
     padding-left: 0;
     max-width: unset;
+    margin: 30px 0 0 0;
 }
 
 .widget .search-input {
@@ -1366,7 +1365,6 @@ nav:after {
 .comment-respond {
     margin: 80px auto;
     max-width: 800px;
-
 }
 
 .comment-notes {
@@ -1419,7 +1417,6 @@ nav:after {
 
 .comment-form input[type='checkbox'] {
     display: inline;
-    width: auto;
 }
 
 .comment-form input[type='checkbox'] + label {
@@ -1455,23 +1452,52 @@ nav:after {
 
 /* Aligment in single post */
 
-.aligncenter {
+.wp-block-image .alignleft {
+    float: left;
+    margin: 0 20px 0 0;
+}
+
+.wp-block-image .alignleft:after {
+    content: "";
     display: block;
-    margin: 0 auto;
+    clear: both;
+}
+
+.wp-block-image .alignright {
+    float: right;
+    margin: 0 0 0 20px;
+}
+
+.wp-block-image .alignright:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.wp-block-image .alignnone {
+    display: block;
 }
 
 .alignleft {
-    display: block;
     float: left;
-    margin: 20px;
-    margin-left: 0;
+    margin: 0 20px 0 0;
+}
+
+.alignleft:after {
+    content: "";
+    display: block;
+    clear: both;
 }
 
 .alignright {
-    display: block;
     float: right;
-    margin: 20px;
-    margin-right: 0;
+    margin: 0 0 0 20px;
+}
+
+.alignright:after {
+    content: "";
+    display: block;
+    clear: both;
 }
 
 .alignnone {
@@ -1482,8 +1508,18 @@ nav:after {
     text-align: center;
 }
 
+.wp-caption-text {
+    text-align: center;
+}
+
 .gallery-caption {
     text-align: center;
+}
+
+.wp-block-image .aligncenter>figcaption, .wp-block-image .alignleft>figcaption, .wp-block-image .alignright>figcaption, .wp-block-image.is-resized>figcaption {
+    text-align: center;
+    display: block;
+    font-size: 13px;
 }
 
 
@@ -1495,6 +1531,45 @@ nav:after {
     overflow: auto;
 }
 
+
+/* Blocks in single post */
+
+.wp-block-search__button-outside {
+    display: flex;
+}
+
+.wp-block-search__button-outside .wp-block-search__label {
+    margin: 0 20px 0 0;
+    width: auto;
+}
+
+.wp-block-search__button-outside button[type="submit"] {
+    position: static;
+    margin: 0;
+}
+
+.wp-block-button {
+    margin: 20px 0;
+}
+
+.wp-block-button.alignleft {
+    margin: 0 20px 0 0;
+}
+
+.wp-block-button.alignright {
+    margin: 0 0 0 20px;
+}
+
+.full-article-content .mejs-controls {
+    height: 40px;
+}
+
+.full-article-content .mejs-time-total,
+.full-article-content .mejs-time-total *,
+.full-article-content .mejs-horizontal-volume-total,
+.full-article-content .mejs-horizontal-volume-total * {
+    height: 10px;
+}
 
 /* //////////////////  ARCHIVE PAGE  ////////////////////// */
 
@@ -1605,14 +1680,6 @@ nav:after {
 .footer-widget-title {
     color: black;
 }
-
-/* .footer li {
-    padding: 10px;
-}
-
-.footer li a{
-    padding: 0;
-} */
 
 
 /* social icon */
