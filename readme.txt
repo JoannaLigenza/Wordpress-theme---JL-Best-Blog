@@ -2,9 +2,9 @@
 
 Tags: blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, full-width-template ,post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, wide-blocks
 Requires at least: 5.0
-Tested up to: 5.6
+Tested up to: 6.1
 Requires PHP: 7.0
-Stable tag : 2.4
+Stable tag : 2.6
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl.html
 
@@ -116,6 +116,16 @@ No questions yet.
 
 
 == Upgrade Notice ==
+
+= 2.6 =
+* Added custom styles for admin edit page
+* Compressed screenshot image
+
+= 2.5 =
+* Changed styles for wordpress blockquote block
+* Changed styles for wordpress pullquote block
+* Changed styles for wordpress separator block
+* Fixed bug with empty post title on archives pages
 
 = 2.4 =
 * Changed styles for wordpress buttons and audio content
