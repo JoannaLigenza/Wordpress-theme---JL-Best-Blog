@@ -30,6 +30,20 @@ blockquote {
     border: none;
 }
 
+.wp-block-pullquote.has-background blockquote  {
+    border-top: none;
+    border-bottom: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 80%;
+}
+
+@media screen and (min-width: 768px) {
+    .wp-block-pullquote.has-background blockquote {
+        max-width: 60%;
+    }
+}
+
 /* separator */
 .wp-block-separator {
     width: 100%;
