@@ -860,7 +860,8 @@
                     max-width: 100%;
                 }
                 <?php endif; ?>
-                .wp-block-quote {
+                .wp-block-quote,
+                .wp-block-separator {
                     --jlbestblog-theme-color: <?php echo esc_attr( $color ) ?>
                 }
             </style>

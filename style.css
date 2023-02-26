@@ -1551,6 +1551,27 @@ nav:after {
     border: none;
 }
 
+/* separator */
+.wp-block-separator {
+    width: 100%;
+    margin: 40px 0;
+    border-color: var(--jlbestblog-theme-color);
+}
+
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+    max-width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wp-block-separator.is-style-wide {
+    width: 100%;
+}
+
+.wp-block-separator.is-style-dots::before {
+    color: var(--jlbestblog-theme-color);
+}
+
 
 /* Embeds in single post */
 
