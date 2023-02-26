@@ -78,7 +78,7 @@ function jlbestblog_get_settings( $option ) {
                         } else {
                             echo "<section class='section full-article-content'>";
                         } ?>
-                        <h2><a href='<?php echo esc_url( get_permalink() ); ?>'> <?php echo esc_html( get_the_title() ); ?> </a></h2>
+                        <h2><a href='<?php echo esc_url( get_permalink() ); ?>'> <?php echo wp_kses_post( get_the_title() ); ?> </a></h2>
                         <?php
                         if ( jlbestblog_get_settings( 'meta' ) ) {
                             $author_id = get_the_author_meta('ID');
