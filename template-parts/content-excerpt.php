@@ -53,7 +53,11 @@
                         } else {
                             echo "<section class='section'>";
                         }
-                        echo "<h2><a href='".esc_url( get_permalink() )."'>".wp_kses_post( get_the_title() )."</a></h2>";
+                        $post_title = get_the_title();
+                        if ($post_title === '') {
+                            $post_title = __('(No title)', 'jl-best-blog');
+                        }
+                        echo "<h2><a href='".esc_url( get_permalink() )."'>".wp_kses_post( $post_title )."</a></h2>";
                         if (get_theme_mod( 'post-meta' )) {
                             $author_id = get_the_author_meta('ID');
                             $date = get_the_date( 'Y/m' );
