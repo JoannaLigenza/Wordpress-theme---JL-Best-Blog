@@ -1,0 +1,22 @@
+/* blockquote */
+.wp-block-quote {
+    padding: 0 20px 20px 20px;
+    border-top: 2px solid var(--jlbestblog-theme-color);
+    border-bottom: 2px solid var(--jlbestblog-theme-color);
+    border-left: none;
+}
+
+.wp-block-quote.is-style-large,
+.wp-block-quote.is-style-large:not(.is-style-plain) {
+    padding: 0 20px 20px 20px;
+    border-top: 2px solid var(--jlbestblog-theme-color);
+    border-bottom: 2px solid var(--jlbestblog-theme-color);
+}
+
+.wp-block-quote.has-text-align-right {
+    border-right: none;
+}
+
+.wp-block-pullquote {
+    border: none;
+}

@@ -1,12 +1,14 @@
 <?php
 
+    $jlbestblog_version = '2.5';
+
     // Adding styles and scripts
-    function jlbestblog_add_theme_scripts() {
+    function jlbestblog_add_theme_scripts($jlbestblog_version) {
         // Include styles
         wp_enqueue_style( 'jlbestblog_style', get_stylesheet_uri() );
 
         // Include scripts
-        wp_enqueue_script( 'jlbestblog_script', get_theme_file_uri() . '/assets/js/script.js', array(), 1.0, true);
+        wp_enqueue_script( 'jlbestblog_script', get_theme_file_uri() . '/assets/js/script.js', array(), $jlbestblog_version, true);
 
         // Include comments
         if ( is_singular() && comments_open() ) {
@@ -17,8 +19,8 @@
 
 
     // Adding scripts for customizer preview
-    function jlbestblog_add_theme_scripts_preview() {
-        wp_enqueue_script( 'jlbestblog_customizer', get_theme_file_uri() . '/assets/js/customizer.js', array(), 1.0, true);
+    function jlbestblog_add_theme_scripts_preview($jlbestblog_version) {
+        wp_enqueue_script( 'jlbestblog_customizer', get_theme_file_uri() . '/assets/js/customizer.js', array(), $jlbestblog_version, true);
     }
     add_action( 'customize_preview_init', 'jlbestblog_add_theme_scripts_preview' );
 
@@ -52,8 +54,14 @@
     function jlbestblog_add_editor_styles() {
         add_editor_style( 'inc/css/editor-style.css' );
     }
-    add_action( 'admin_init', 'jlbestblog_add_editor_styles' );
+    // add_action( 'admin_init', 'jlbestblog_add_editor_styles' );
 
+
+    // Include custom styles for admin blocks
+    function jlbestblog_enqueue_admin_stylesheet($jlbestblog_version) {
+        wp_enqueue_style( 'jlbestblog-admin-css', get_stylesheet_directory_uri() . '/inc/css/editor-style.css', false, $jlbestblog_version ); 
+    }
+    add_action( 'admin_enqueue_scripts', 'jlbestblog_enqueue_admin_stylesheet' ); 
 
     // Include custom header
     function jlbestblog_set_custom_header() {
@@ -852,10 +860,14 @@
                     max-width: 100%;
                 }
                 <?php endif; ?>
+                .wp-block-quote {
+                    --jlbestblog-theme-color: <?php echo esc_attr( $color ) ?>
+                }
             </style>
         <?php
     }
     add_action('wp_head', 'jlbestblog_set_custom_styles');
+    add_action('admin_head', 'jlbestblog_set_custom_styles');
 
 
     // Set post excerpt length

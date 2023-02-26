@@ -4,9 +4,9 @@ Theme URI: https://github.com/JoannaLigenza/Wordpress-theme---JL-Best-Blog
 Author: JL-lovecoding
 Author URI: https://love-coding.pl/en
 Description: Although JL Best-Blog is simple blog theme, it gives you great personalization options - from colors, through sidebars to header image and post meta. You can choose different settings for front page, single post, page and archives. You have at your disposal two menus (main-menu and top-menu), left and right sidebars and three footer sidebars. You can switch on/off header image, site title and description or header searchbar. You can use this theme for any blog type, because it has universial character.
-Version: 2.4
+Version: 2.5
 Requires at least: 5.0
-Tested up to: 5.6
+Tested up to: 6.1.1
 Requires PHP: 7.0
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl.html
@@ -1478,6 +1478,14 @@ nav:after {
     display: block;
 }
 
+.wp-block-gallery.alignleft {
+    margin-right: 20px;
+}
+
+.wp-block-gallery.alignright {
+    margin-left: 20px;
+}
+
 .alignleft {
     float: left;
     margin: 0 20px 0 0;
@@ -1522,6 +1530,27 @@ nav:after {
     font-size: 13px;
 }
 
+/* blockquote */
+.wp-block-quote {
+    padding: 0 20px 20px 20px;
+    border-top: 2px solid var(--jlbestblog-theme-color);
+    border-bottom: 2px solid var(--jlbestblog-theme-color);
+    border-left: none;
+}
+
+.wp-block-quote.is-style-large,
+.wp-block-quote.is-style-large:not(.is-style-plain) {
+    padding: 0 20px 20px 20px;
+}
+
+.wp-block-quote.has-text-align-right {
+    border-right: none;
+}
+
+.wp-block-pullquote {
+    border: none;
+}
+
 
 /* Embeds in single post */
 
@@ -1558,6 +1587,10 @@ nav:after {
 
 .wp-block-button.alignright {
     margin: 0 0 0 20px;
+}
+
+.wp-block-button.is-style-squared .wp-block-button__link {
+    border-radius: 0;
 }
 
 .full-article-content .mejs-controls {
