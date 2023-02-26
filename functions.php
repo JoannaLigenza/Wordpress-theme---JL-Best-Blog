@@ -860,6 +860,7 @@
                     max-width: 100%;
                 }
                 <?php endif; ?>
+                blockquote,
                 .wp-block-quote,
                 .wp-block-separator {
                     --jlbestblog-theme-color: <?php echo esc_attr( $color ) ?>
@@ -868,7 +869,6 @@
         <?php
     }
     add_action('wp_head', 'jlbestblog_set_custom_styles');
-    add_action('admin_head', 'jlbestblog_set_custom_styles');
 
 
     // Set post excerpt length

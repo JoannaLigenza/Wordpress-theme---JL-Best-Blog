@@ -1,8 +1,17 @@
 /* blockquote */
+blockquote,
 .wp-block-quote {
     padding: 0 20px 20px 20px;
     border-top: 2px solid var(--jlbestblog-theme-color);
     border-bottom: 2px solid var(--jlbestblog-theme-color);
+    border-left: none;
+}
+
+blockquote {
+    padding-top: 20px;
+}
+
+.wp-block-freeform.block-library-rich-text__tinymce blockquote {
     border-left: none;
 }
 
