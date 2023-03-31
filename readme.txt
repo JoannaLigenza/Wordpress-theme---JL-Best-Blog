@@ -2,9 +2,9 @@
 
 Tags: blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, full-width-template ,post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, wide-blocks
 Requires at least: 5.0
-Tested up to: 6.1
+Tested up to: 6.2
 Requires PHP: 7.0
-Stable tag : 2.6
+Stable tag : 2.7
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl.html
 
@@ -116,6 +116,9 @@ No questions yet.
 
 
 == Upgrade Notice ==
+
+= 2.7 =
+* Upgrade version to 2.7 - tested on WP 6.2
 
 = 2.6 =
 * Added custom styles for admin edit page
