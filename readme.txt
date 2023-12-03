@@ -117,6 +117,9 @@ No questions yet.
 
 == Upgrade Notice ==
 
+= 2.8 =
+* Changed styles for WordPress button block on front
+
 = 2.7 =
 * Upgrade version to 2.7 - tested on WP 6.2
 
@@ -125,13 +128,13 @@ No questions yet.
 * Compressed screenshot image
 
 = 2.5 =
-* Changed styles for wordpress blockquote block
-* Changed styles for wordpress pullquote block
-* Changed styles for wordpress separator block
+* Changed styles for WordPress blockquote block
+* Changed styles for WordPress pullquote block
+* Changed styles for WordPress separator block
 * Fixed bug with empty post title on archives pages
 
 = 2.4 =
-* Changed styles for wordpress buttons and audio content
+* Changed styles for WordPress buttons and audio content
 * Changed styles for alignleft and alignright class
 
 = 2.3 =

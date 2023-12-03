@@ -54,7 +54,7 @@
     function jlbestblog_add_editor_styles() {
         add_editor_style( 'inc/css/editor-style.css' );
     }
-    // add_action( 'admin_init', 'jlbestblog_add_editor_styles' );
+    add_action( 'admin_init', 'jlbestblog_add_editor_styles' );
 
 
     // Include custom styles for admin blocks
@@ -808,6 +808,23 @@
                 a:hover {
                     color: <?php echo esc_attr( $linkHoverColor ) ?>;
                 }
+                .wp-block-button .wp-block-button__link:not(.has-background) {
+                    color: <?php echo esc_attr( $color ) ?>;
+                    border: 2px solid <?php echo esc_attr( $color ) ?>;
+                    background-color: transparent;
+                }
+                .wp-block-button .wp-block-button__link:not(.has-background):hover {
+                    color: <?php echo esc_attr( $fontColor ) ?>;
+                    border: 2px solid <?php echo esc_attr( $color ) ?>;
+                    background-color: <?php echo esc_attr( $color ) ?>;
+                }
+                .wp-block-button.is-style-outline > .wp-block-button__link:not(.has-text-color) {
+                    color: <?php echo esc_attr( $color ) ?>;
+                }
+                .wp-block-button.is-style-outline > .wp-block-button__link:not(.has-text-color):hover {
+                    color: <?php echo esc_attr( $fontColor ) ?>;
+                    background-color: <?php echo esc_attr( $color ) ?>;
+                }
                 .menu-navigation .menu-item a:hover, .menu-navigation .page-item a:hover, .menu-navigation .page_item a:hover {
                     color: <?php echo esc_attr( $linkHoverColor ) ?>;
                 }
@@ -842,6 +859,7 @@
                     border: 1px solid <?php echo esc_attr( $color ) ?>;
                 }
                 .post-categories a:hover {
+                    color: <?php echo esc_attr( $fontColor ) ?>;
                     background-color: <?php echo esc_attr( $color ) ?>;
                 }
                 .wp-block-embed-twitter, .wp-block-embed-facebook {
