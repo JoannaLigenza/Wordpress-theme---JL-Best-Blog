@@ -4,7 +4,7 @@ Tags: blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar,
 Requires at least: 5.0
 Tested up to: 6.6
 Requires PHP: 7.0
-Stable tag : 2.9
+Stable tag : 3.0
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl.html
 
@@ -117,6 +117,10 @@ No questions yet.
 
 == Upgrade Notice ==
 
+= 3.0 =
+* Optimized screenschot image
+* Added copyright notice
+
 = 2.9 =
 * Upgrade version to 2.9 - tested on WP 6.6
 
@@ -190,6 +194,23 @@ No questions yet.
 
 1.0 
 First version
+
+== Copyright ==
+
+JL Best-blog WordPress Theme, (C) 2020 JL-lovecoding.
+JL Best-blog WordPress Theme is distributed under the terms of the GNU GPL.
+
+This file is part of JL Best-blog WordPress Theme.
+
+JL Best-blog WordPress Theme is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, 
+either version 3 of the License, or (at your option) any later version.
+
+JL Best-blog WordPress Theme is distributed in the hope that it will be useful, 
+but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with JL Best-blog WordPress Theme. 
+If not, see <https://www.gnu.org/licenses/>.
 
 == Contributors ==
 JL-lovecoding
