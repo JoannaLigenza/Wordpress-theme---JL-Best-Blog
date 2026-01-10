@@ -10,7 +10,7 @@
     <!-- Archive description top -->
     <?php
         if (get_theme_mod( 'taxonomy-description' ) === "top" && $paged < 2 ) { 
-            esc_html(the_archive_description( '<div class="taxonomy-description container">', '</div>' ) );
+            the_archive_description( '<div class="taxonomy-description container">', '</div>' );
         }
     ?>
     <div class="main-content main-content-taxonomy container">
@@ -43,7 +43,7 @@
                                 echo "<div class='image-container image-container-".esc_attr( $imagePosition )."'><a href='".esc_url( get_permalink() )."'>" ;
                                     if ($imagePosition === 'above') {
                                         $imageWidth = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "full" );
-                                        $maxWidth = $imageWidth[1];
+                                        $maxWidth = ( $imageWidth && isset( $imageWidth[1] ) ) ? $imageWidth[1] : 1200;
                                         if ($maxWidth > 1200) {
                                             $maxWidth = 1200;
                                         }
@@ -79,7 +79,7 @@
                     endwhile;
                     the_posts_pagination(array( 'mid_size' => 2 ));
                 else : ?>
-                    <p><?php esc_html_e( 'No content yettt', 'jl-best-blog' ); ?></p>
+                    <p><?php esc_html_e( 'No content yet', 'jl-best-blog' ); ?></p>
                 <?php
                 endif; 
             ?>
@@ -96,7 +96,7 @@
     <!-- Archive description bottom -->
     <?php
         if (get_theme_mod( 'taxonomy-description' ) === "bottom" && $paged < 2) { 
-            esc_html( the_archive_description( '<div class="taxonomy-description container">', '</div>' ) );
+            the_archive_description( '<div class="taxonomy-description container">', '</div>' );
         }
     ?>
 </div>

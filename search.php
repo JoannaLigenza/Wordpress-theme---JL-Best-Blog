@@ -34,7 +34,7 @@
                             echo "<div class='image-container image-container-".esc_attr( $imagePosition )."'><a href='".esc_url( get_permalink() )."'>" ;
                                 if ($imagePosition === 'above') {
                                     $imageWidth = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "full" );
-                                    $maxWidth = $imageWidth[1];
+                                    $maxWidth = ( $imageWidth && isset( $imageWidth[1] ) ) ? $imageWidth[1] : 1200;
                                     if ($maxWidth > 1200) {
                                         $maxWidth = 1200;
                                     }

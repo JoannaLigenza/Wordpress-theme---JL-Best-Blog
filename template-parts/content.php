@@ -64,14 +64,14 @@ function jlbestblog_get_settings( $option ) {
                             if ( $displayImage ) {
                                 echo "<div class='image-container image-container-above'><a href='".esc_url( get_permalink() )."'>" ;
                                 $imageWidth = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "full" );
-                                $maxWidth = $imageWidth[1];
+                                $maxWidth = ( $imageWidth && isset( $imageWidth[1] ) ) ? $imageWidth[1] : 1200;
                                 if ($maxWidth > 1200) {
                                     $maxWidth = 1200;
                                 }
-                                echo esc_html( the_post_thumbnail( 'full', array( 
+                                the_post_thumbnail( 'full', array( 
                                     'sizes' => '(max-width: '.$maxWidth.'px) 100vw, '.$maxWidth.'px',
                                     'alt' => 'post-image',
-                                    ) ) );
+                                ) );
                                 echo "</a></div>" ;
                                 echo "<section class='section full-article-content'>";
                             }       

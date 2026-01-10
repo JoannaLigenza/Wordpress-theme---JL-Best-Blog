@@ -15,7 +15,7 @@
         <!-- displaying header image depends of page type -->
         <?php
         function jlbestblog_is_header_image_visible( $theme_mod ) {
-            if ( get_header_image() && esc_html( get_theme_mod( $theme_mod ) ) ) {
+            if ( get_header_image() && get_theme_mod( $theme_mod ) ) {
                 ?> <header class="header" style="background-image: url(<?php echo esc_url(get_custom_header()->url) ?>)"> <?php
             } else {
                 ?> <header class="header"> <?php
