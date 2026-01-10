@@ -1,6 +1,6 @@
 <?php
 
-    $jlbestblog_version = '2.5';
+    $jlbestblog_version = '3.1';
 
     // Adding styles and scripts
     function jlbestblog_add_theme_scripts($jlbestblog_version) {
