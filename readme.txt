@@ -118,6 +118,9 @@ No questions yet.
 == Upgrade Notice ==
 
 = 3.1 =
+Upgrade version to 3.2 - tested on WP 7.1
+
+= 3.1 =
 * Fixed bug with displaying comments count
 * Fixed PHP warnings on image processing
 * Code cleanup and optimization
