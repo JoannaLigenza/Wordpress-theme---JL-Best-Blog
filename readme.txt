@@ -4,7 +4,7 @@ Tags: blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar,
 Requires at least: 5.0
 Tested up to: 6.9
 Requires PHP: 7.0
-Stable tag : 3.1
+Stable tag : 3.2
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl.html
 
@@ -117,7 +117,7 @@ No questions yet.
 
 == Upgrade Notice ==
 
-= 3.1 =
+= 3.2 =
 Upgrade version to 3.2 - tested on WP 7.1
 
 = 3.1 =
